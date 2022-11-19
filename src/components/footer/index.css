@@ -1,0 +1,20 @@
+.footer {
+  background-color: #282c34;
+  width: 100%;
+}
+
+.container-footer {
+  color: white;
+  display: flex;
+  width: 100%;
+  max-width: 1168px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.nav-icons-footer {
+  display: flex;
+  gap: 2rem;
+}

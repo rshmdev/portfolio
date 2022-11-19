@@ -1,0 +1,74 @@
+.container-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1168px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+header {
+  background-color: #282c34;
+}
+
+ul {
+  display: flex;
+  gap: 3rem;
+  margin-top: 1.5rem;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: calc(0.6vw + 0.6vh + 0.5vmin);
+}
+
+.icons-header {
+  display: flex;
+  gap: 2rem;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  a {
+    font-size: calc(0.8vw + 0.8vh + 0.5vmin);
+  }
+}
+
+@media (max-width: 425px) {
+  .icons-header svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  a {
+    font-size: calc(0.9vw + 0.9vh + 0.5vmin);
+  }
+}
+
+@media (max-width: 375px) {
+  .icons-header svg {
+    width: 14px;
+    height: 14px;
+  }
+  a {
+    font-size: calc(0.9vw + 0.9vh + 0.5vmin);
+  }
+}
+
+@media (max-width: 320px) {
+  .icons-header svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  a {
+    font-size: calc(0.9vw + 0.9vh + 0.5vmin);
+  }
+}

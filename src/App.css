@@ -1,38 +1,303 @@
-.App {
-  text-align: center;
+.main {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1168px;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hero {
   display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text {
+  gap: 2rem;
+  color: white;
+  align-items: center;
+  display: flex;
+}
+
+.About-me {
+  color: white;
+  scroll-margin-top: 7rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+.text-about {
+  line-height: 2.3rem;
+  margin-top: 3%;
+  display: flex;
+  align-items: center;
+  font-size: calc(0.6vw + 0.6vh + 0.5vmin);
+  gap: 4rem;
+  max-width: 60%;
+}
+
+.text-about img {
+  border-radius: 50%;
+}
+
+.stacks {
+  height: 100vh;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: column;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.stacks-div {
+  margin-top: 3%;
+  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Projects {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-projects {
+  color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(0.8vw + 0.8vh + 0.5vmin);
+}
+
+.div-grid-projects {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.text-tittle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: white;
+  font-size: calc(0.8vw + 0.8vh + 0.5vmin);
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.hero-buttons button {
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.contact-me {
+  height: 100vh;
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.div-contact-me {
+  margin-top: 3rem;
+  display: flex;
+  gap: 3rem;
+}
+
+.ul-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#name {
+  width: 400px;
+  height: 40px;
+  padding: 3%;
+  font-size: calc(0.6vw + 0.6vh + 0.5vmin);
+}
+
+#email {
+  height: 40px;
+  padding: 3%;
+  font-size: calc(0.6vw + 0.6vh + 0.5vmin);
+}
+#message {
+  padding: 3%;
+  height: 7rem;
+  font-size: calc(0.6vw + 0.6vh + 0.5vmin);
+}
+
+.btn-form {
+  font-size: calc(0.6vw + 0.6vh + 0.5vmin);
+  height: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .stacks-div {
+    grid-template-columns: repeat(4, 2fr);
+    flex-wrap: nowrap;
+    max-width: 85%;
+    overflow: auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  .Projects {
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .About-me img {
+    display: none;
+  }
+  .Lottie {
+    display: none;
+  }
+
+  .text-about {
+    line-height: 1.9rem;
+    font-size: calc(1vw + 1vh + 0.5vmin);
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 540px) {
+  .stacks-div {
+    grid-template-columns: repeat(4, 2fr);
+    flex-wrap: nowrap;
+    max-width: 85%;
+    overflow: auto;
+  }
+}
+
+@media (max-width: 425px) {
+  .About-me img {
+    display: none;
+  }
+  .Lottie {
+    display: none;
+  }
+  .text-about {
+    line-height: 1.5rem;
+    font-size: calc(1vw + 1vh + 0.5vmin);
+    max-width: 77%;
+  }
+  .text-tittle {
+    margin-bottom: 2rem;
+  }
+  .ul-contact li sgv {
+    width: 15px;
+    height: 15px;
+  }
+  .ul-contact {
+    display: none;
+  }
+  #name {
+    width: 300px;
+  }
+}
+
+@media (max-width: 375px) {
+  .About-me img {
+    display: none;
+  }
+  .Lottie {
+    display: none;
+  }
+  .text-about {
+    line-height: 1.5rem;
+    font-size: calc(1vw + 1vh + 0.5vmin);
+    max-width: 75%;
+  }
+  .text-tittle {
+    margin-bottom: 2rem;
+  }
+
+  .ul-contact li sgv {
+    width: 14px;
+    height: 14px;
+  }
+  .ul-contact {
+    display: none;
+  }
+  #name {
+    width: 300px;
+  }
+}
+
+@media (max-width: 320px) {
+  .About-me img {
+    display: none;
+  }
+  .Lottie {
+    display: none;
+  }
+
+  .text-about {
+    line-height: 1.5rem;
+    font-size: calc(1vw + 1vh + 0.5vmin);
+    max-width: 70%;
+  }
+
+  .div-grid-projects {
+    max-width: 100%;
+  }
+
+  .text-tittle {
+    margin-bottom: 2rem;
+  }
+
+  .ul-contact li sgv {
+    width: 14px;
+    height: 14px;
+  }
+
+  .div-contact-me {
+    flex-direction: column;
+  }
+
+  .ul-contact {
+    display: none;
+  }
+  #name {
+    width: 300px;
   }
 }
