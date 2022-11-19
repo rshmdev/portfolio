@@ -11,6 +11,7 @@ import TravelApp from "./assets/TravelApp.png";
 import DuckPlay from "./assets/DuckPlay.png";
 import { Footer } from "./components/footer";
 import { Swiper, SwiperSlide } from "swiper/react";
+import emailjs from "@emailjs/browser";
 import {
   AiFillLinkedin,
   AiFillGithub,
@@ -21,8 +22,13 @@ import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import { Navigation, Autoplay } from "swiper";
 import { Slide } from "react-awesome-reveal";
+import { useState } from "react";
 
 function App() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -110,6 +116,38 @@ function App() {
       repository: "https://github.com/SuperDucks/superducks-final-project-m3",
     },
   ];
+
+  function SendEmail(e) {
+    e.preventDefault();
+
+    if (name === 1 || email === "" || message === "") {
+      alert("Fill in all the fields");
+      return;
+    }
+
+    const templateParams = {
+      from_name: name,
+      message: message,
+      email: email,
+    };
+
+    emailjs
+      .send(
+        "service_kvew5so",
+        "template_hhe3btq",
+        templateParams,
+        "91Hl83BAKsCT3zBqE"
+      )
+      .then(() => {
+        setName("");
+        setEmail("");
+        setMessage("");
+        alert("Email sent successfully");
+      })
+      .catch((err) => {
+        alert("An error ocurred");
+      });
+  }
 
   return (
     <div className="App">
@@ -228,22 +266,34 @@ function App() {
           <h1>CONTACT ME</h1>
         </div>
         <div className="div-contact-me">
-          <form className="form-contact" action="">
-            <input placeholder="Your name" type="text" name="name" id="name" />
+          <form className="form-contact" onSubmit={SendEmail}>
+            <input
+              placeholder="Your name"
+              onChange={(e) => setName(e.target.value)}
+              type="text"
+              name="name"
+              id="name"
+              value={name}
+            />
             <input
               placeholder="Your Email"
               type="email"
+              onChange={(e) => setEmail(e.target.value)}
               name="email"
               id="email"
+              value={email}
             />
             <textarea
               placeholder="Enter your message..."
               type="text"
+              onChange={(e) => setMessage(e.target.value)}
               name="message"
               id="message"
-              alig
+              value={message}
             />
-            <button className="btn-form">Send email</button>
+            <button type="submit" className="btn-form">
+              Send email
+            </button>
           </form>
           <ul className="ul-contact">
             <div
