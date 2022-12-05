@@ -1,6 +1,7 @@
 import "./App.css";
 import { Header } from "./components/header";
 import * as animationData from "./assets/animation.json";
+import * as SwipeData from "./assets/swipe.json";
 import myPhoto from "./assets/myPhoto.png";
 import Lottie from "react-lottie";
 import { CardStacks } from "./components/cardStacks";
@@ -33,6 +34,15 @@ function App() {
     loop: true,
     autoplay: true,
     animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const SwipeOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: SwipeData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -120,7 +130,7 @@ function App() {
   function SendEmail(e) {
     e.preventDefault();
 
-    if (name === 1 || email === "" || message === "") {
+    if (name === "" || email === "" || message === "") {
       alert("Fill in all the fields");
       return;
     }
@@ -201,6 +211,9 @@ function App() {
             <div className="text-tittle">
               <h1>TECHNOLOGIES</h1>
             </div>
+            <div className="swipe-techs">
+              <Lottie width={80} height={80} options={SwipeOptions} />
+            </div>
             <div className="stacks-div">
               {stacks.map((stack, index) => {
                 return (
@@ -214,109 +227,125 @@ function App() {
             </div>
           </section>
         </Slide>
-        <section className="Projects" id="Projects">
-          <div className="text-projects">
-            <h1>PROJECTS</h1>
-          </div>
-          <div className="div-grid-projects">
-            <Swiper
-              modules={[Navigation, Autoplay]}
-              spaceBetween={10}
-              slidesPerView={1}
-              autoplay
-              navigation
-              breakpoints={{
-                640: {
-                  slidesPerView: 1,
-                  spaceBetween: 10,
-                },
-                768: {
-                  slidesPerView: 1,
-                  spaceBetween: 10,
-                },
-                1200: {
-                  slidesPerView: 1,
-                  spaceBetween: 10,
-                },
-                1300: {
-                  slidesPerView: 2,
-                  spaceBetween: 20,
-                },
-              }}
-            >
-              {projects.map((project) => {
-                return (
-                  <SwiperSlide>
-                    <CardProjects
-                      name={project.name}
-                      description={project.description}
-                      image={project.image}
-                      live={project.live}
-                      repo={project.repository}
-                    />
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
-          </div>
-        </section>
+        <Slide>
+          <section className="Projects" id="Projects">
+            <div className="text-projects">
+              <h1>PROJECTS</h1>
+            </div>
+            <div className="div-grid-projects">
+              <Swiper
+                modules={[Navigation, Autoplay]}
+                spaceBetween={10}
+                slidesPerView={1}
+                autoplay
+                navigation
+                breakpoints={{
+                  640: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  768: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  1200: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  1300: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                  },
+                }}
+              >
+                {projects.map((project) => {
+                  return (
+                    <SwiperSlide>
+                      <CardProjects
+                        name={project.name}
+                        description={project.description}
+                        image={project.image}
+                        live={project.live}
+                        repo={project.repository}
+                      />
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+            </div>
+          </section>
+        </Slide>
       </main>
-      <footer id="Contact-me" className="contact-me">
-        <div className="text-tittle">
-          <h1>CONTACT ME</h1>
-        </div>
-        <div className="div-contact-me">
-          <form className="form-contact" onSubmit={SendEmail}>
-            <input
-              placeholder="Your name"
-              onChange={(e) => setName(e.target.value)}
-              type="text"
-              name="name"
-              id="name"
-              value={name}
-            />
-            <input
-              placeholder="Your Email"
-              type="email"
-              onChange={(e) => setEmail(e.target.value)}
-              name="email"
-              id="email"
-              value={email}
-            />
-            <textarea
-              placeholder="Enter your message..."
-              type="text"
-              onChange={(e) => setMessage(e.target.value)}
-              name="message"
-              id="message"
-              value={message}
-            />
-            <button type="submit" className="btn-form">
-              Send email
-            </button>
-          </form>
-          <ul className="ul-contact">
-            <div
-              style={{ display: "flex", alignItems: "center", color: "white" }}
-            >
-              <AiFillGithub color="white" size={22} />
-              <li>&nbsp; &nbsp; github.com/tiozinfk</li>
-            </div>
-            <div
-              style={{ display: "flex", alignItems: "center", color: "white" }}
-            >
-              <AiFillLinkedin color="white" size={22} />
-              <li>&nbsp; &nbsp; linkedin.com/in/rian-moraes</li>
-            </div>
-            <div
-              style={{ display: "flex", alignItems: "center", color: "white" }}
-            >
-              <AiOutlineWhatsApp color="white" size={22} />
-              <li>&nbsp; &nbsp; (21) 96745-3096</li>
-            </div>
-          </ul>
-        </div>
-      </footer>
+      <Slide>
+        <footer id="Contact-me" className="contact-me">
+          <div className="text-tittle">
+            <h1>CONTACT ME</h1>
+          </div>
+          <div className="div-contact-me">
+            <form className="form-contact" onSubmit={SendEmail}>
+              <input
+                placeholder="Your name"
+                onChange={(e) => setName(e.target.value)}
+                type="text"
+                name="name"
+                id="name"
+                value={name}
+              />
+              <input
+                placeholder="Your Email"
+                type="email"
+                onChange={(e) => setEmail(e.target.value)}
+                name="email"
+                id="email"
+                value={email}
+              />
+              <textarea
+                placeholder="Enter your message..."
+                type="text"
+                onChange={(e) => setMessage(e.target.value)}
+                name="message"
+                id="message"
+                value={message}
+              />
+              <button type="submit" className="btn-form">
+                Send email
+              </button>
+            </form>
+            <ul className="ul-contact">
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  color: "white",
+                }}
+              >
+                <AiFillGithub color="white" size={22} />
+                <li>&nbsp; &nbsp; github.com/tiozinfk</li>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  color: "white",
+                }}
+              >
+                <AiFillLinkedin color="white" size={22} />
+                <li>&nbsp; &nbsp; linkedin.com/in/rian-moraes</li>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  color: "white",
+                }}
+              >
+                <AiOutlineWhatsApp color="white" size={22} />
+                <li>&nbsp; &nbsp; (21) 96745-3096</li>
+              </div>
+            </ul>
+          </div>
+        </footer>
+      </Slide>
       <Footer />
     </div>
   );

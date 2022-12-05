@@ -60,6 +60,7 @@
 }
 
 .Projects {
+  margin-top: 4rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -78,6 +79,7 @@
 .div-grid-projects {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  padding: 3%;
 }
 
 .text-tittle {
@@ -121,6 +123,10 @@
   border-radius: 10px;
 }
 
+.swipe-techs {
+  display: none;
+}
+
 .contact-me {
   height: 100vh;
   display: flex;
@@ -152,22 +158,22 @@
   width: 400px;
   height: 40px;
   padding: 3%;
-  font-size: calc(0.6vw + 0.6vh + 0.5vmin);
+  font-size: calc(0.7vw + 0.7vh + 0.5vmin);
 }
 
 #email {
   height: 40px;
   padding: 3%;
-  font-size: calc(0.6vw + 0.6vh + 0.5vmin);
+  font-size: calc(0.7vw + 0.7vh + 0.5vmin);
 }
 #message {
   padding: 3%;
   height: 7rem;
-  font-size: calc(0.6vw + 0.6vh + 0.5vmin);
+  font-size: calc(0.7vw + 0.7vh + 0.5vmin);
 }
 
 .btn-form {
-  font-size: calc(0.6vw + 0.6vh + 0.5vmin);
+  font-size: calc(0.7vw + 0.7vh + 0.5vmin);
   height: 2rem;
 }
 
@@ -181,6 +187,10 @@
 
   .Projects {
     margin-top: 3rem;
+  }
+
+  .swipe-techs {
+    display: block;
   }
 }
 
@@ -197,6 +207,10 @@
     font-size: calc(1vw + 1vh + 0.5vmin);
     max-width: 70%;
   }
+
+  .hero {
+    height: 80vh;
+  }
 }
 
 @media (max-width: 540px) {
@@ -206,9 +220,16 @@
     max-width: 85%;
     overflow: auto;
   }
+
+  .hero {
+    height: 80vh;
+  }
 }
 
 @media (max-width: 425px) {
+  .hero {
+    height: 80vh;
+  }
   .About-me img {
     display: none;
   }
@@ -236,6 +257,9 @@
 }
 
 @media (max-width: 375px) {
+  .hero {
+    height: 80vh;
+  }
   .About-me img {
     display: none;
   }
@@ -261,9 +285,15 @@
   #name {
     width: 300px;
   }
+  .stacks-div {
+    max-width: 60%;
+  }
 }
 
 @media (max-width: 320px) {
+  .hero {
+    height: 80vh;
+  }
   .About-me img {
     display: none;
   }
@@ -273,7 +303,7 @@
 
   .text-about {
     line-height: 1.5rem;
-    font-size: calc(1vw + 1vh + 0.5vmin);
+    font-size: calc(1vw + 1vh + 0.9vmin);
     max-width: 70%;
   }
 
@@ -299,5 +329,9 @@
   }
   #name {
     width: 300px;
+  }
+
+  .stacks-div {
+    max-width: 70%;
   }
 }
