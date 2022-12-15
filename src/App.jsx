@@ -97,7 +97,7 @@ function App() {
       image: NuKenzie,
       description:
         'This was one of my first applications in Reactjs, it is a financial manager, with "input" and "output" functions, it also has a filter function, to separate the types of transactions',
-      live: "https://react-entrega-s1-nu-kenzie-tiozinfk-git-master-tiozinfk.vercel.app/",
+      live: "https://react-entrega-s1-nu-kenzie-tiozinfk.vercel.app/",
       repository:
         "https://github.com/Kenzie-Academy-Brasil-Developers/react-entrega-s1-nu-kenzie-tiozinfk",
     },
