@@ -131,8 +131,8 @@ function App() {
       image: Kenziehub,
       description:
         "Project developed in React js using typescript, styled components and yup for form validation, allows the user to register new technologies and define his skill level with it",
-      lie: "https://react-entrega-s2-formulario-de-cadastro-tiozinfk.vercel.app",
-      respository:
+      live: "https://react-entrega-s2-formulario-de-cadastro-tiozinfk.vercel.app",
+      repository:
         "https://github.com/Kenzie-Academy-Brasil-Developers/react-entrega-s2-formulario-de-cadastro-tiozinfk.git",
     },
   ];
