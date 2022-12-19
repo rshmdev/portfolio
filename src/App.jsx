@@ -8,7 +8,7 @@ import { CardStacks } from "./components/cardStacks";
 import { CardProjects } from "./components/cardProjects";
 import NuKenzie from "./assets/NuKenzie.png";
 import KenzieBurguer from "./assets/KenzieBurguer.png";
-import KenzieHub from "./assets/KenzieHub.png";
+import Kenziehub from "./assets/KenzieHub.png";
 import TravelApp from "./assets/TravelApp.png";
 import DuckPlay from "./assets/DuckPlay.png";
 import { Footer } from "./components/footer";
