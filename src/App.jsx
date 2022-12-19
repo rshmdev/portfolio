@@ -8,7 +8,7 @@ import { CardStacks } from "./components/cardStacks";
 import { CardProjects } from "./components/cardProjects";
 import NuKenzie from "./assets/NuKenzie.png";
 import KenzieBurguer from "./assets/KenzieBurguer.png";
-import Kenziehub from "./assets/KenzieHub.png";
+import Kenziehub from "./assets/Kenziehub.png";
 import TravelApp from "./assets/TravelApp.png";
 import DuckPlay from "./assets/DuckPlay.png";
 import { Footer } from "./components/footer";
@@ -128,7 +128,7 @@ function App() {
     },
     {
       name: "Kenzie Hub",
-      image: KenzieHub,
+      image: Kenziehub,
       description:
         "Project developed in React js using typescript, styled components and yup for form validation, allows the user to register new technologies and define his skill level with it",
       lie: "https://react-entrega-s2-formulario-de-cadastro-tiozinfk.vercel.app",
