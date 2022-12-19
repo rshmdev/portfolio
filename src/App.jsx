@@ -8,6 +8,7 @@ import { CardStacks } from "./components/cardStacks";
 import { CardProjects } from "./components/cardProjects";
 import NuKenzie from "./assets/NuKenzie.png";
 import KenzieBurguer from "./assets/KenzieBurguer.png";
+import KenzieHub from "./assets/KenzieHub.png";
 import TravelApp from "./assets/TravelApp.png";
 import DuckPlay from "./assets/DuckPlay.png";
 import { Footer } from "./components/footer";
@@ -124,6 +125,15 @@ function App() {
         "Project developed using React, Json server and typescript, it is an application with login and registration functions, authenticated users have access to a dashboard where it is possible to see several movie lists.",
       live: "https://superducks-final-project-m3.vercel.app/",
       repository: "https://github.com/SuperDucks/superducks-final-project-m3",
+    },
+    {
+      name: "Kenzie Hub",
+      image: KenzieHub,
+      description:
+        "Project developed in React js using typescript, styled components and yup for form validation, allows the user to register new technologies and define his skill level with it",
+      lie: "https://react-entrega-s2-formulario-de-cadastro-tiozinfk.vercel.app",
+      respository:
+        "https://github.com/Kenzie-Academy-Brasil-Developers/react-entrega-s2-formulario-de-cadastro-tiozinfk.git",
     },
   ];
 
