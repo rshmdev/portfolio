@@ -1,0 +1,43 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text {
+  gap: 2rem;
+  color: white;
+  align-items: center;
+  display: flex;
+ 
+  padding: 0 2rem;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.hero-buttons button {
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.Lottie {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px; /* Defina o valor máximo desejado para a largura */
+}
+
+@media (max-width: 768px) {
+  .hero-text {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 1rem;
+  }
+}

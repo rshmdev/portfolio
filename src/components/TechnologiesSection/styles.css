@@ -1,0 +1,39 @@
+.stacks {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+.stacks-div {
+  margin-top: 3%;
+  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+}
+
+.text-tittle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: white;
+  font-size: calc(0.8vw + 0.8vh + 0.5vmin);
+}
+
+.swipe-techs {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .stacks-div {
+    grid-template-columns: repeat(2, 2fr);
+  }
+
+  .swipe-techs {
+    display: block;
+    margin-top: 2rem;
+  }
+}
