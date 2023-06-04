@@ -1,17 +1,25 @@
 import "./App.css";
+import React, { useState } from "react";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import { Slide } from "react-awesome-reveal";
-import HeroSection from "./components/heroSection";
-import AboutSection from "./components/AboutSection";
-import TechnologiesSection from "./components/TechnologiesSection";
-import ProjectsSection from "./components/ProjectsSection";
-import ContactMe from "./components/ContactMe";
-import { useState } from "react";
 import Modal from "./components/modalProjects";
+
+const HeroSection = React.lazy(() => import("./components/heroSection"));
+const AboutSection = React.lazy(() => import("./components/AboutSection"));
+const TechnologiesSection = React.lazy(() =>
+  import("./components/TechnologiesSection")
+);
+const ProjectsSection = React.lazy(() =>
+  import("./components/ProjectsSection")
+);
+const ContactMe = React.lazy(() => import("./components/ContactMe"));
+const ExperienceSection = React.lazy(() =>
+  import("./components/experienceSection")
+);
 
 function App() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -39,6 +47,10 @@ function App() {
         </Slide>
         <Slide>
           <TechnologiesSection />
+        </Slide>
+
+        <Slide>
+          <ExperienceSection />
         </Slide>
         <Slide>
           <ProjectsSection openModal={openModal} />

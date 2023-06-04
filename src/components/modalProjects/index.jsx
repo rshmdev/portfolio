@@ -1,4 +1,5 @@
 import React from "react";
+import Close from "../../assets/close.svg";
 import "./styles.css";
 
 const Modal = ({ project, closeModal }) => {
@@ -10,24 +11,24 @@ const Modal = ({ project, closeModal }) => {
         <div className="modal-header">
           <h2>{name}</h2>
           <button className="btn-close" onClick={closeModal}>
-            Fechar
+            <img src={Close} alt="Close button" width={30} height={30} />
           </button>
         </div>
         <div className="modal-body">
           <div className="modal-image">
-            <img src={image} alt="projectImage" />
+            <img loading="lazy" src={image} alt="projectImage" />
           </div>
           <div className="modal-description">
             <p>{description}</p>
           </div>
-          <div className="modal-links">
-            <a target="_blank" rel="noreferrer" href={live}>
-              Live view
-            </a>
-            <a target="_blank" rel="noreferrer" href={repo}>
-              Repository
-            </a>
-          </div>
+        </div>
+        <div className="modal-links">
+          <a target="_blank" rel="noreferrer" href={live} className="live-link">
+            Live View
+          </a>
+          <a target="_blank" rel="noreferrer" href={repo} className="repo-link">
+            Repository
+          </a>
         </div>
       </div>
     </div>

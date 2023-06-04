@@ -5,23 +5,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #282c34;
-
+  background-color: #f9f9f9;
 }
-
 .modal-open {
   overflow: hidden;
 }
-  
+p,
+h1,
+h2,
+span,
+a {
+  color: #333;
+}
 html {
   scroll-behavior: smooth;
 }
-
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

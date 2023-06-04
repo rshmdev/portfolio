@@ -27,10 +27,10 @@ const HeroSection = () => {
               href="https://drive.google.com/file/d/1hFqkKBPQU65HmDMExd5_94RTrBpc9BOw/view?usp=share_link"
               download="Cv Rian moraes"
             >
-              <button>Download CV</button>
+              <button className="cv-button">Download CV</button>
             </a>
             <a href="#Contact-me">
-              <button>Contact me</button>
+              <button className="contact-button">Contact me</button>
             </a>
           </div>
         </div>

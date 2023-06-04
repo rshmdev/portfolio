@@ -4,36 +4,72 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: white;
+  padding-top: 5rem;
+  color: #fff;
 }
-
 .stacks-div {
   margin-top: 3%;
   gap: 2rem;
   display: grid;
-  grid-template-columns: repeat(4, 2fr);
+  grid-template-columns: repeat(2, 1fr);
 }
-
 .text-tittle {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  color: white;
-  font-size: calc(0.8vw + 0.8vh + 0.5vmin);
+  color: #fff;
+  font-size: 1.5rem;
+}
+.container-techs {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+@media (max-width: 920px) {
+  .container-techs {
+    flex-direction: column;
+  }
+}
+.container-texts {
+  min-width: 25rem;
+  max-width: 25rem;
+  width: 100%;
+  padding: 1rem;
+  transition: all 0.3s ease;
 }
 
+@media (max-width: 920px) {
+  .container-texts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+.container-texts p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 60ch;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
 .swipe-techs {
   display: none;
 }
-
 @media (max-width: 768px) {
   .stacks-div {
-    grid-template-columns: repeat(2, 2fr);
+    padding-top: 2rem;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0 auto;
   }
-
   .swipe-techs {
     display: block;
     margin-top: 2rem;
+  }
+  .container-texts {
+    min-width: unset;
+    width: 100%;
   }
 }

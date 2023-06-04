@@ -1,10 +1,9 @@
 .footer {
-  background-color: #282c34;
   width: 100%;
+  padding: 1rem;
 }
-
 .container-footer {
-  color: white;
+  color: #888;
   display: flex;
   width: 100%;
   max-width: 1168px;
@@ -13,8 +12,14 @@
   justify-content: space-around;
   gap: 1rem;
 }
-
 .nav-icons-footer {
   display: flex;
   gap: 2rem;
+}
+a {
+  color: #333;
+  transition: all ease 0.3s;
+}
+a:hover {
+  color: #0056b3;
 }

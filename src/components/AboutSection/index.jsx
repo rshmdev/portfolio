@@ -1,5 +1,4 @@
 import React from "react";
-import myPhoto from "../../assets/myPhoto.webp";
 import "./styles.css";
 
 const AboutSection = () => {
@@ -16,7 +15,6 @@ const AboutSection = () => {
           change and follow my dream of being a Front-end Developer and seek an
           opportunity within the programming area.
         </p>
-        <img src={myPhoto} alt="myPicture" />
       </div>
     </section>
   );

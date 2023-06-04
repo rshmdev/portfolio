@@ -6,7 +6,7 @@ const CardProjects = ({ name, image, openModal }) => {
     <div className="card-projects">
       <div className="card-image">
         <div className="card-gradient"></div>
-        <img src={image} alt="Project" />
+        <img loading="lazy" src={image} alt="Project" />
       </div>
       <div className="card-content">
         <h1>{name}</h1>

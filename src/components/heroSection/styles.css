@@ -3,41 +3,73 @@
   justify-content: center;
   align-items: center;
 }
-
 .hero-text {
   gap: 2rem;
-  color: white;
+  color: #fff;
   align-items: center;
   display: flex;
- 
   padding: 0 2rem;
 }
-
 .hero-buttons {
   margin-top: 2rem;
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
 }
-
-.hero-buttons button {
+.cv-button {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 12px 24px;
+  background-color: #0051a8;
+  color: #fff;
+  border: 2px solid #1e90ff;
+  border-radius: 4px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
   cursor: pointer;
-  width: 100px;
-  height: 40px;
-  border-radius: 10px;
 }
-
+.cv-button:hover {
+  background-color: #007bff;
+}
+.contact-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #fff;
+  color: #0054a8;
+  border: 2px solid #0054a8;
+  border-radius: 4px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.contact-button:hover {
+  background-color: #1e90ff;
+  color: #fff;
+}
 .Lottie {
   flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 500px; /* Defina o valor máximo desejado para a largura */
+  max-width: 500px;
 }
-
 @media (max-width: 768px) {
   .hero-text {
     flex-direction: column;
     text-align: center;
     padding: 0 1rem;
+  }
+}
+@media (max-width: 360px) {
+  .cv-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  .contact-button {
+    padding: 8px 16px;
+    font-size: 14px;
   }
 }

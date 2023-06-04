@@ -1,0 +1,62 @@
+.experience-section {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+.experience-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+.company-info {
+  flex: 1;
+  display: flex;
+  gap: 0.4rem;
+  flex-direction: column;
+  justify-content: center;
+}
+.company-info h3 {
+  color: #333;
+  font-size: 1.8rem;
+  margin: 0;
+}
+.company-info p {
+  color: #777;
+  margin: 0;
+}
+.activities {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.activities h4 {
+  color: #333;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+.activities ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.activities li {
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  .experience-card {
+    flex-direction: column;
+  }
+}
+.text-tittle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #fff;
+  font-size: 1.5rem;
+}

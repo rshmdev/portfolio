@@ -1,34 +1,42 @@
 [
     {
         "name": "React",
-        "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+        "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        "description": "A JavaScript library for building user interfaces"
     },
     {
         "name": "React Native",
-        "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+        "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        "description": "A framework for building native apps using React"
     },
     {
         "name": "Next.js",
-        "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+        "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+        "description": "A full-featured React framework for web development"
     },
     {
         "name": "Javascript",
-        "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+        "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+        "description": "A high-level, interpreted programming language that is object-oriented"
     },
     {
         "name": "CSS",
-        "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+        "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+        "description": "A style sheet language used for describing the presentation of an HTML document"
     },
     {
         "name": "HTML5",
-        "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+        "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+        "description": "The latest version of the markup language for web documents"
     },
     {
         "name": "Typescript",
-        "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+        "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+        "description": "A superset of JavaScript that adds optional static typing"
     },
     {
         "name": "GIT",
-        "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+        "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+        "description": "A distributed version control system for tracking changes in files"
     }
 ]

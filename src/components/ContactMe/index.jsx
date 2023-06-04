@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-import {
-  AiFillGithub,
-  AiFillLinkedin,
-  AiOutlineWhatsApp,
-} from "react-icons/ai";
+
+import Whatsapp from "../../assets/whatsapp.svg";
+import Linkedin from "../../assets/linkedin.svg";
+import Github from "../../assets/github.svg";
 import "./styles.css";
 
 function ContactMe() {
@@ -80,18 +79,36 @@ function ContactMe() {
           </button>
         </form>
         <ul className="ul-contact">
-          <div className="contact-item">
-            <AiFillGithub color="white" size={22} />
-            <li>github.com/tiozinfk</li>
-          </div>
-          <div className="contact-item">
-            <AiFillLinkedin color="white" size={22} />
-            <li>linkedin.com/in/rian-moraes</li>
-          </div>
-          <div className="contact-item">
-            <AiOutlineWhatsApp color="white" size={22} />
-            <li>(21) 96745-3096</li>
-          </div>
+          <li className="contact-item">
+            <img
+              src={Github}
+              width={20}
+              height={20}
+              loading="lazy"
+              alt="Whatsapp icon"
+            />
+            github.com/tiozinfk
+          </li>
+          <li className="contact-item">
+            <img
+              src={Linkedin}
+              width={20}
+              height={20}
+              loading="lazy"
+              alt="Linkedin icon"
+            />
+            linkedin.com/in/rian-moraes
+          </li>
+          <li className="contact-item">
+            <img
+              src={Whatsapp}
+              width={20}
+              height={20}
+              loading="lazy"
+              alt="Github icon"
+            />
+            (21) 96745-3096
+          </li>
         </ul>
       </div>
     </section>
