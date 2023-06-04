@@ -1,12 +1,18 @@
-import "./index.css";
+import React from "react";
+import "./styles.css";
 
-export const CardStacks = ({ image, name }) => {
+const CardStacks = ({ image, name, description, handleHover, handleLeave }) => {
   return (
-    <div className="card">
+    <div
+      className="card"
+      onMouseEnter={() => handleHover(description, name, image)}
+      onMouseLeave={handleLeave}
+    >
       <div className="container">
-        <img src={image} alt="stack" />
-        <h3>{name}</h3>
+        <img loading="lazy" src={image} alt="stack" />
       </div>
     </div>
   );
 };
+
+export default CardStacks;

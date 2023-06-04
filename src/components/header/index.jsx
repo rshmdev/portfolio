@@ -1,24 +1,28 @@
-import {
-  AiFillLinkedin,
-  AiFillGithub,
-  AiOutlineWhatsApp,
-} from "react-icons/ai";
-import "./index.css";
+import Whatsapp from "../../assets/whatsapp.svg";
+import Linkedin from "../../assets/linkedin.svg";
+import Github from "../../assets/github.svg";
+import "./styles.css";
 
 export const Header = () => {
   return (
-    <header>
+    <header className="header">
       <div className="container-header">
         <nav>
-          <ul>
+          <ul className="nav-links">
             <li>
-              <a href="#About">About Me</a>
+              <a href="#About">
+                <span>About Me</span>
+              </a>
             </li>
             <li>
-              <a href="#Techs">Technologies</a>
+              <a href="#Techs">
+                <span>Technologies</span>
+              </a>
             </li>
             <li>
-              <a href="#Projects">Projects</a>
+              <a href="#Projects">
+                <span>Projects</span>
+              </a>
             </li>
           </ul>
         </nav>
@@ -28,22 +32,43 @@ export const Header = () => {
               target="_blank"
               rel="noreferrer"
               href="https://github.com/tiozinfk"
+              aria-label="My Profile in GitHub"
             >
-              <AiFillGithub size={22} />
+              <img
+                src={Github}
+                width={20}
+                height={20}
+                loading="lazy"
+                alt="Github icon"
+              />
             </a>
             <a
               target="_blank"
               rel="noreferrer"
               href="https://www.linkedin.com/in/rian-moraes/"
+              aria-label="My Profile in LinkedIn"
             >
-              <AiFillLinkedin size={22} />
+              <img
+                src={Linkedin}
+                width={20}
+                height={20}
+                loading="lazy"
+                alt="Linkedin icon"
+              />
             </a>
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://api.whatsapp.com/send?phone=5521982024176&text=Ol%C3%A1%2C%20estou%20entrando%20em%20contato%20para%20saber%20sobre%20seus%20servi%C3%A7os%20de%20programador%20web"
+              aria-label="My Whatsapp number"
+              href="https://wa.me/5521967453096"
             >
-              <AiOutlineWhatsApp size={22} />
+              <img
+                src={Whatsapp}
+                width={20}
+                height={20}
+                loading="lazy"
+                alt="Whatsapp icon"
+              />
             </a>
           </div>
         </nav>

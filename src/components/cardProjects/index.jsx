@@ -1,21 +1,21 @@
-import "./index.css";
+import React from "react";
+import "./styles.css";
 
-export const CardProjects = ({ name, image, description, live, repo }) => {
+const CardProjects = ({ name, image, openModal }) => {
   return (
     <div className="card-projects">
-      <div className="container-card">
-        <img src={image} alt="projectImage" />
-        <h1>{name}</h1>
-        <p>{description}</p>
+      <div className="card-image">
+        <div className="card-gradient"></div>
+        <img loading="lazy" src={image} alt="Project" />
       </div>
-      <div className="links-projects">
-        <a target="_blank" rel="noreferrer" href={live}>
-          Live view
-        </a>
-        <a target="_blank" rel="noreferrer" href={repo}>
-          Repository
-        </a>
+      <div className="card-content">
+        <h1>{name}</h1>
+        <button className="btn-saiba-mais" onClick={openModal}>
+          Saiba mais
+        </button>
       </div>
     </div>
   );
 };
+
+export default CardProjects;

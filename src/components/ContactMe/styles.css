@@ -1,0 +1,71 @@
+.contact-me {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+.div-contact-me {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+}
+.ul-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  justify-content: center;
+  list-style: none;
+}
+.form-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  color: #333;
+  gap: 0.5rem;
+}
+#name,
+#email,
+#message {
+  width: 400px;
+  height: 40px;
+  padding: 3%;
+  font-size: 0.9rem;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+#message {
+  height: 7rem;
+}
+.btn-form {
+  font-size: 1rem;
+  height: 2.5rem;
+  background-color: #6c63ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.8s ease;
+}
+.btn-form:hover {
+  background-color: #543fd3;
+}
+@media (max-width: 768px) {
+  #name,
+  #email,
+  #message {
+    width: 100%;
+    max-width: none;
+  }
+  .div-contact-me {
+    flex-direction: column;
+  }
+}
