@@ -14,6 +14,7 @@
   align-items: center;
   font-size: 1.02rem;
   gap: 2rem;
+  text-align: center;
   max-width: 60%;
 }
 .text-about img {
