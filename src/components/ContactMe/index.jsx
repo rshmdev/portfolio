@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 
-import Whatsapp from "../../assets/whatsapp.svg";
-import Linkedin from "../../assets/linkedin.svg";
-import Github from "../../assets/github.svg";
+import {
+  AiFillLinkedin,
+  AiOutlineWhatsApp,
+  AiFillGithub,
+} from "react-icons/ai";
 import "./styles.css";
 
-function ContactMe() {
+function ContactMe({ isDark }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -79,32 +81,26 @@ function ContactMe() {
           </button>
         </form>
         <ul className="ul-contact">
-          <li className="contact-item">
-            <img
-              src={Github}
-              width={20}
-              height={20}
-              loading="lazy"
+          <li className={isDark ? "contact-item dark" : "contact-item"}>
+            <AiFillGithub
+              color={isDark ? "#fff" : "#333"}
+              size={20}
               alt="Whatsapp icon"
             />
             github.com/tiozinfk
           </li>
-          <li className="contact-item">
-            <img
-              src={Linkedin}
-              width={20}
-              height={20}
-              loading="lazy"
+          <li className={isDark ? "contact-item dark" : "contact-item"}>
+            <AiFillLinkedin
+              color={isDark ? "#fff" : "#333"}
+              size={20}
               alt="Linkedin icon"
             />
             linkedin.com/in/rian-moraes
           </li>
-          <li className="contact-item">
-            <img
-              src={Whatsapp}
-              width={20}
-              height={20}
-              loading="lazy"
+          <li className={isDark ? "contact-item dark" : "contact-item"}>
+            <AiOutlineWhatsApp
+              color={isDark ? "#fff" : "#333"}
+              size={20}
               alt="Github icon"
             />
             (21) 96745-3096

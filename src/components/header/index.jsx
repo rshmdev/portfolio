@@ -1,11 +1,16 @@
-import Whatsapp from "../../assets/whatsapp.svg";
-import Linkedin from "../../assets/linkedin.svg";
-import Github from "../../assets/github.svg";
-import "./styles.css";
+import {
+  AiFillLinkedin,
+  AiOutlineWhatsApp,
+  AiFillGithub,
+} from "react-icons/ai";
 
-export const Header = () => {
+import "./styles.css";
+import Toggle from "react-toggle";
+import "react-toggle/style.css"; // for ES6 modules
+
+export const Header = ({ isDark, setIsDark }) => {
   return (
-    <header className="header">
+    <header className={isDark ? "header dark" : "header"}>
       <div className="container-header">
         <nav>
           <ul className="nav-links">
@@ -28,17 +33,21 @@ export const Header = () => {
         </nav>
         <nav>
           <div className="icons-header">
+            <Toggle
+              checked={isDark}
+              onChange={({ target }) => setIsDark(target.checked)}
+              icons={{ checked: "🌙", unchecked: "🔆" }}
+              aria-label="Dark mode toggle"
+            />
             <a
               target="_blank"
               rel="noreferrer"
               href="https://github.com/tiozinfk"
               aria-label="My Profile in GitHub"
             >
-              <img
-                src={Github}
-                width={20}
-                height={20}
-                loading="lazy"
+              <AiFillGithub
+                color={isDark ? "#fff" : "#333"}
+                size={20}
                 alt="Github icon"
               />
             </a>
@@ -48,11 +57,9 @@ export const Header = () => {
               href="https://www.linkedin.com/in/rian-moraes/"
               aria-label="My Profile in LinkedIn"
             >
-              <img
-                src={Linkedin}
-                width={20}
-                height={20}
-                loading="lazy"
+              <AiFillLinkedin
+                color={isDark ? "#fff" : "#333"}
+                size={20}
                 alt="Linkedin icon"
               />
             </a>
@@ -62,11 +69,9 @@ export const Header = () => {
               aria-label="My Whatsapp number"
               href="https://wa.me/5521967453096"
             >
-              <img
-                src={Whatsapp}
-                width={20}
-                height={20}
-                loading="lazy"
+              <AiOutlineWhatsApp
+                color={isDark ? "#fff" : "#333"}
+                size={20}
                 alt="Whatsapp icon"
               />
             </a>

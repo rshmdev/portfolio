@@ -12,12 +12,15 @@
   justify-content: space-around;
   gap: 1rem;
 }
+
+.container-footer {
+  color: #fff;
+}
 .nav-icons-footer {
   display: flex;
   gap: 2rem;
 }
 a {
-  color: #333;
   transition: all ease 0.3s;
 }
 a:hover {

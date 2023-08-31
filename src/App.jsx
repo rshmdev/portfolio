@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 import "swiper/css";
@@ -24,6 +24,23 @@ const ExperienceSection = React.lazy(() =>
 function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const h1Elements = document?.querySelectorAll("h1");
+
+    if (isDark) {
+      document.body.classList.add("dark");
+      h1Elements?.forEach((h1) => {
+        h1.classList.add("dark");
+      });
+    } else {
+      document.body.classList.remove("dark");
+      h1Elements?.forEach((h1) => {
+        h1.classList.remove("dark");
+      });
+    }
+  }, [isDark]);
 
   const openModal = (project) => {
     setSelectedProject(project);
@@ -39,7 +56,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header setIsDark={setIsDark} isDark={isDark} />
       <main className="main">
         <HeroSection />
         <Slide>
@@ -57,9 +74,9 @@ function App() {
         </Slide>
       </main>
       <Slide>
-        <ContactMe />
+        <ContactMe isDark={isDark} />
       </Slide>
-      <Footer />
+      <Footer isDark={isDark} />
 
       {modalOpen && (
         <Modal

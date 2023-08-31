@@ -10,6 +10,7 @@
 .div-contact-me {
   margin-top: 3rem;
   display: flex;
+  width: 80%;
   flex-wrap: wrap;
   gap: 3rem;
   justify-content: center;
@@ -32,18 +33,22 @@
   color: #333;
   gap: 0.5rem;
 }
+.contact-item.dark {
+  color: #fff;
+}
 #name,
 #email,
 #message {
-  width: 400px;
+  width: 600px;
   height: 40px;
   padding: 3%;
+  resize: none;
   font-size: 0.9rem;
   border: 1px solid #333;
   border-radius: 4px;
 }
 #message {
-  height: 7rem;
+  height: 8rem;
 }
 .btn-form {
   font-size: 1rem;
@@ -63,9 +68,17 @@
   #email,
   #message {
     width: 100%;
-    max-width: none;
   }
   .div-contact-me {
     flex-direction: column;
+  }
+
+  .ul-contact {
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+    text-align: center;
+    padding: 0;
   }
 }

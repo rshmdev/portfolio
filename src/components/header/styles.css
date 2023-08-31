@@ -6,6 +6,14 @@
   background-color: rgba(249, 249, 249, 0.9);
   z-index: 190;
 }
+
+.header.dark {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.header.dark .nav-links li a {
+  color: #fff;
+}
 .container-header {
   display: flex;
   justify-content: space-between;
@@ -37,6 +45,19 @@
 }
 .icons-header a:hover {
   color: #007bff;
+}
+
+.react-toggle-track-check {
+  top: unset !important;
+  bottom: 3px !important;
+  left: 2px !important;
+}
+
+.react-toggle-track-x {
+  top: unset !important;
+  bottom: 2px !important;
+
+  right: 15px !important;
 }
 @media (max-width: 490px) {
   .container-header {
