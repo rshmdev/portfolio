@@ -8,7 +8,7 @@
 }
 
 .header.dark {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .header.dark .nav-links li a {
@@ -59,9 +59,13 @@
 
   right: 15px !important;
 }
-@media (max-width: 490px) {
+@media (max-width: 560px) {
   .container-header {
     flex-direction: column;
     padding: 1rem 1rem;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
   }
 }

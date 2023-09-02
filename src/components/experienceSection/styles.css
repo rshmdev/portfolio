@@ -2,6 +2,10 @@
   padding: 4rem;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 }
 .experience-card {
   background-color: #fff;
@@ -22,6 +26,10 @@
     display: flex;
     gap: 0.5rem;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 .company-info h2 {
   color: #333;
@@ -30,6 +38,7 @@
 }
 .company-info p {
   color: #777;
+  font-size: 1rem;
   margin: 0;
 }
 .activities {
