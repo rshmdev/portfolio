@@ -18,13 +18,13 @@ const HeroSection = () => {
       <div className="hero-text">
         <div>
           <h1>Hey, I'm Rian</h1>
-          <p>Front end developer focused on React</p>
+          <p>Front end developer focused on Next.js</p>
           <div className="hero-buttons">
             <a
               style={{ color: "black" }}
               target="_blank"
               rel="noreferrer"
-              href="https://drive.google.com/file/d/1hFqkKBPQU65HmDMExd5_94RTrBpc9BOw/view?usp=share_link"
+              href="https://drive.google.com/file/d/1P3VP6pbTqs4_aPHYfRJ4ZzrNzeOndM-7/view?usp=sharing"
               download="Cv Rian moraes"
             >
               <button className="cv-button">Download CV</button>
