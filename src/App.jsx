@@ -1,25 +1,27 @@
+// CSS IMPORTS
 import "./App.css";
-import React, { useEffect, useState } from "react";
-import { Header } from "./components/header";
-import { Footer } from "./components/footer";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
-import { Slide } from "react-awesome-reveal";
-import Modal from "./components/modalProjects";
 
-const HeroSection = React.lazy(() => import("./components/heroSection"));
-const AboutSection = React.lazy(() => import("./components/AboutSection"));
+//REACT HOOKS
+import React, { useEffect, useState } from "react";
+
+//COMPONENTS WITHOUT LAZY
+import { Header } from "./components/header";
+import { Footer } from "./components/footer";
+import Modal from "./components/projects-modal";
+import { Slide } from "react-awesome-reveal";
+
+//COMPONENTS WITH LAZY
+const HeroSection = React.lazy(() => import("./components/hero"));
+const AboutSection = React.lazy(() => import("./components/about"));
 const TechnologiesSection = React.lazy(() =>
-  import("./components/TechnologiesSection")
+  import("./components/technologies")
 );
-const ProjectsSection = React.lazy(() =>
-  import("./components/ProjectsSection")
-);
-const ContactMe = React.lazy(() => import("./components/ContactMe"));
-const ExperienceSection = React.lazy(() =>
-  import("./components/experienceSection")
-);
+const ProjectsSection = React.lazy(() => import("./components/projects"));
+const ContactMe = React.lazy(() => import("./components/contact"));
+const ExperienceSection = React.lazy(() => import("./components/experience"));
 
 function App() {
   const [selectedProject, setSelectedProject] = useState(null);

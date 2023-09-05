@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CardStacks from "../cardStacks";
+import CardStacks from "../stack-cards";
 import stacks from "../../utils/stacks.json";
 import { isMobile } from "react-device-detect"; // Importe o isMobile
 

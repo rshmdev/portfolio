@@ -1,8 +1,8 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Autoplay } from "swiper";
-import CardProjects from "../cardProjects";
-import projects from "../../utils/projectsData";
+import CardProjects from "../projects-card";
+import projects from "../../utils/projects";
 import "swiper/swiper.min.css";
 import "./styles.css";
 
