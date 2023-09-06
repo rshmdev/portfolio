@@ -19,11 +19,16 @@ const ExperienceSection = () => {
           <h3>Responsibilities</h3>
           <div>
             <p>
-              I make dailys, discoverys, planning, I work on four different
-              projects on a daily basis, among them, api using node, ecommerce
-              using next.js and redux, admin using react with craco and fuse,
-              and student area using react, I also access the database made with
-              mongodb daily for queries
+              During my time at Direção Concursos, I worked as a Junior T2
+              Front-End developer with a special focus on Next.js and SEO, and
+              occasionally ventured into the Back-End. I worked with
+              technologies such as ReactJS and Next.js to create captivating web
+              experiences that were optimized for SEO. In the Back-End, I used
+              Node.js to improve our API and performed database queries to
+              ensure that our applications had fast and secure access to the
+              necessary information. Additionally, I created attractive Landing
+              Pages in Webflow, adding value to our customer acquisition
+              strategy.
             </p>
           </div>
         </div>
