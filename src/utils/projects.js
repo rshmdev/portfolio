@@ -34,9 +34,9 @@ const projectsData = [
     name: "DuckPlay",
     image: DuckPlayImage,
     description:
-      "DuckPlay is a project developed using React, JSON Server, and TypeScript. It is an interactive web application where users can discover and stream their favorite movie.",
+      "DuckPlay is a project developed using React, API REST, and TypeScript. It is an interactive web application where users can discover and stream their favorite movie.  OBS: the api was hosted on heroku, but it is no longer free, making it impossible to create a user and login.",
     live: "https://superducks-final-project-m3.vercel.app/",
-    repository: "https://github.com/SuperDucks/superducks-final-project-m3",
+    repository: "https://github.com/tiozinfk/superducks-final-project-m3",
   },
   {
     name: "Kenzie Hub",
