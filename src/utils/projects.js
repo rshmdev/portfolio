@@ -2,7 +2,7 @@ import NuKenzieImage from "../assets/NuKenzie.webp";
 import KenzieBurguerImage from "../assets/KenzieBurguer.webp";
 import TravelAppImage from "../assets/TravelApp.webp";
 import DuckPlayImage from "../assets/DuckPlay.webp";
-import KenzieHubImage from "../assets/Kenziehub.webp";
+import YoutubeImage from "../assets/YoutubeClone.png";
 
 const projectsData = [
   {
@@ -39,13 +39,12 @@ const projectsData = [
     repository: "https://github.com/tiozinfk/superducks-final-project-m3",
   },
   {
-    name: "Kenzie Hub",
-    image: KenzieHubImage,
+    name: "Youtube",
+    image: YoutubeImage,
     description:
-      "Kenzie Hub is a project developed in React.js using TypeScript. It is a platform for Kenzie Academy students to connect, collaborate, and share resources.",
-    live: "https://react-entrega-s2-formulario-de-cadastro-tiozinfk.vercel.app",
-    repository:
-      "https://github.com/Kenzie-Academy-Brasil-Developers/react-entrega-s2-formulario-de-cadastro-tiozinfk.git",
+      "This application is a fully functional clone of YouTube, developed using React and integrated with the YouTube v3 API. It offers a range of features including a video player, the ability to search for videos by their ID, and displays related videos based on the initial tag of the selected video. Additionally, users can access detailed information such as video descriptions, channel names, channel profile pictures, and like counts. The application also offers a dark mode for enhanced user experience. This project demonstrates the capabilities of React and API integration, providing users with an interactive and familiar YouTube-like experience",
+    live: "https://youtube-omega-orcin.vercel.app/",
+    repository: "https://github.com/tiozinfk/Youtube/tree/master",
   },
 ];
 
