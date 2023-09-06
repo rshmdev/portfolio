@@ -24,10 +24,10 @@ const HeroSection = () => {
               style={{ color: "black" }}
               target="_blank"
               rel="noreferrer"
-              href="https://drive.google.com/file/d/1P3VP6pbTqs4_aPHYfRJ4ZzrNzeOndM-7/view?usp=sharing"
-              download="Cv Rian moraes"
+              href="https://drive.google.com/file/d/1oNdwPq4VzF3CgXRXROq-D-ADhjs8UY5J/view?usp=sharing"
+              download="Resume Rian Moraes"
             >
-              <button className="cv-button">Download CV</button>
+              <button className="cv-button">Download resume</button>
             </a>
             <a href="#Contact-me">
               <button className="contact-button">Contact me</button>
