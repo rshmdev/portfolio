@@ -9,11 +9,15 @@ const AboutSection = () => {
       </div>
       <div className="text-about">
         <p>
-          My passion for technology started at a young age, and as time went by
-          I became more and more interested in the area and its possibilities. I
-          had my first experience in Brazilian Air Force that made my mind
-          change and follow my dream of being a Front-end Developer and seek an
-          opportunity within the programming area.
+          Hello, my name is Rian! I'm a passionate and experienced front-end
+          developer specializing in technologies such as React, Next.js,
+          Webflow, Node.js, TypeScript and React Native. I love creating
+          innovative solutions and overcoming challenges in my projects. I'm a
+          communicative person and I love working as part of a team to achieve
+          our goals. In addition, I have a high level of knowledge in SEO and
+          performance improvement, which allows me to optimize my projects to
+          get the best results. I'm always looking for new opportunities to grow
+          and learn more.
         </p>
       </div>
     </section>

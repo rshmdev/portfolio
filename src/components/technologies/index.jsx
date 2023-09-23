@@ -1,83 +1,53 @@
-import React, { useState } from "react";
+import React from "react";
 import CardStacks from "../stack-cards";
 import stacks from "../../utils/stacks.json";
-import { isMobile } from "react-device-detect"; // Importe o isMobile
+import SwiperCore, { Navigation, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper.min.css";
 
 import "./styles.css";
 
+SwiperCore.use([Navigation, Autoplay]);
+
 const TechnologiesSection = () => {
-  const [currentDescription, setCurrentDescription] = useState(
-    "Hover the mouse over the card to see the description*."
-  );
-  const [currentTitle, setCurrentTitle] = useState("Tech name");
-  const [currentImage, setCurrentImage] = useState(null);
-
-  const [isImageActive, setIsImageActive] = useState(false);
-  const [timeoutId, setTimeoutId] = useState(null);
-
-  const handleCardHover = (description, title, image) => {
-    setCurrentDescription(description);
-    setCurrentTitle(title);
-    setCurrentImage(image);
-    setIsImageActive(true);
-
-    if (timeoutId) {
-      clearTimeout(timeoutId);
-    }
-
-    setIsImageActive(true);
-  };
-
-  const handleCardLeave = () => {
-    setCurrentDescription(
-      "Hover the mouse over the card to see the description*."
-    );
-    setCurrentTitle("Tech name");
-    setIsImageActive(false);
-
-    const newTimeoutId = setTimeout(() => {
-      setCurrentImage(null);
-    }, 300); // Tempo de atraso (300ms) para permitir a transição suave
-
-    setTimeoutId(newTimeoutId);
-  };
-
   return (
     <section className="stacks" id="Techs">
       <div className="text-tittle">
-        <h1>TECHNOLOGIES</h1>
+        <h1>SKILLS</h1>
       </div>
-      <div className={`container-techs`}>
-        {!isMobile && (
-          <div className="container-texts">
-            <h1 className="title ">{currentTitle}</h1>
-            <div className="description">
-              <p>{currentDescription}</p>
-
-              <img
-                loading="lazy"
-                src={currentImage}
-                alt="Technologie front end"
-                width={200}
-                className={isImageActive ? "active" : ""}
-              />
-            </div>
-          </div>
-        )}
-
-        <div className="stacks-div">
+      <div className="stacks-div">
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          spaceBetween={10}
+          slidesPerView={1}
+          autoplay
+          navigation
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 5,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 5,
+            },
+            1200: {
+              slidesPerView: 4,
+              spaceBetween: 10,
+            },
+          }}
+        >
           {stacks.map((stack, index) => (
-            <CardStacks
-              key={index}
-              image={stack.image}
-              isImageActive={isMobile}
-              name={stack.name}
-              description={stack.description}
-              handleHover={handleCardHover}
-              handleLeave={handleCardLeave}
-            />
+            <SwiperSlide key={stack.name}>
+              <CardStacks
+                key={index}
+                image={stack.image}
+                name={stack.name}
+                description={stack.description}
+              />
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );
