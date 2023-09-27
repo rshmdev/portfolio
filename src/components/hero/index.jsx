@@ -2,6 +2,7 @@ import React from "react";
 import Lottie from "react-lottie";
 import * as animationData from "../../assets/animation.json";
 import "./styles.css";
+import { useTranslation } from "react-i18next";
 
 const defaultOptions = {
   loop: true,
@@ -13,12 +14,14 @@ const defaultOptions = {
 };
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="hero">
       <div className="hero-text">
         <div>
-          <h1>Hey, I'm Rian</h1>
-          <p>Front end developer focused on Next.js</p>
+          <h1>{t("heroTitle")}</h1>
+          <p>{t("heroP")}</p>
           <div className="hero-buttons">
             <a
               style={{ color: "black" }}
@@ -27,10 +30,10 @@ const HeroSection = () => {
               href="https://drive.google.com/file/d/1oNdwPq4VzF3CgXRXROq-D-ADhjs8UY5J/view?usp=sharing"
               download="Resume Rian Moraes"
             >
-              <button className="cv-button">Download resume</button>
+              <button className="cv-button">{t("heroResume")}</button>
             </a>
             <a href="#Contact-me">
-              <button className="contact-button">Contact me</button>
+              <button className="contact-button">{t("heroContact")}</button>
             </a>
           </div>
         </div>

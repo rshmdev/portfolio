@@ -8,13 +8,22 @@
   gap: 2rem;
   align-items: center;
   display: flex;
+
   padding: 0 2rem;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero-text p {
+  font-size: 1.3rem;
 }
 .hero-buttons {
   margin-top: 2rem;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 2rem;
 }
 .cv-button {
@@ -25,7 +34,7 @@
   color: #fff;
   border: 2px solid #1e90ff;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 1rem;
   text-decoration: none;
   transition: background-color 0.3s ease;
   cursor: pointer;
@@ -40,7 +49,7 @@
   color: #0054a8;
   border: 2px solid #0054a8;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 1rem;
   text-decoration: none;
   transition: background-color 0.3s ease;
   cursor: pointer;

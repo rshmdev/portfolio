@@ -6,14 +6,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 
 import "./styles.css";
+import { useTranslation } from "react-i18next";
 
 SwiperCore.use([Navigation, Autoplay]);
 
 const TechnologiesSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="stacks" id="Techs">
       <div className="text-tittle">
-        <h1>SKILLS</h1>
+        <h1>{t("skillsTitle")}</h1>
       </div>
       <div className="stacks-div">
         <Swiper

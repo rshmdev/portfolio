@@ -13,8 +13,12 @@
   gap: 1rem;
 }
 
-.container-footer {
+.dark-name {
   color: #fff;
+}
+
+.name {
+  color: #333;
 }
 .nav-icons-footer {
   display: flex;

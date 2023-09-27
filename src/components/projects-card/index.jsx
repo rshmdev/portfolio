@@ -1,7 +1,10 @@
 import React from "react";
 import "./styles.css";
+import { useTranslation } from "react-i18next";
 
 const CardProjects = ({ name, image, openModal }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="card-projects">
       <div className="card-image">
@@ -11,7 +14,7 @@ const CardProjects = ({ name, image, openModal }) => {
       <div className="card-content">
         <h1>{name}</h1>
         <button className="btn-saiba-mais" onClick={openModal}>
-          Saiba mais
+          {t("projectsInfo")}
         </button>
       </div>
     </div>

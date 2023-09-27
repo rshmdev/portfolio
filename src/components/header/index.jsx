@@ -7,6 +7,7 @@ import {
 import "./styles.css";
 import Toggle from "react-toggle";
 import "react-toggle/style.css"; // for ES6 modules
+import LanguageSwitcher from "../switch";
 
 export const Header = ({ isDark, setIsDark }) => {
   return (
@@ -28,6 +29,9 @@ export const Header = ({ isDark, setIsDark }) => {
               <a href="#Projects">
                 <span>Projects</span>
               </a>
+            </li>
+            <li>
+              <LanguageSwitcher />
             </li>
           </ul>
         </nav>

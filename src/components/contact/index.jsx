@@ -7,11 +7,14 @@ import {
   AiFillGithub,
 } from "react-icons/ai";
 import "./styles.css";
+import { useTranslation } from "react-i18next";
 
 function ContactMe({ isDark }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  const { t } = useTranslation();
 
   function SendEmail(e) {
     e.preventDefault();
@@ -48,12 +51,12 @@ function ContactMe({ isDark }) {
   return (
     <section id="Contact-me" className="contact-me">
       <div className="text-tittle">
-        <h1>CONTACT ME</h1>
+        <h1>{t("contactTitle")}</h1>
       </div>
       <div className="div-contact-me">
         <form className="form-contact" onSubmit={SendEmail}>
           <input
-            placeholder="Your name"
+            placeholder={t("contactName")}
             onChange={(e) => setName(e.target.value)}
             type="text"
             name="name"
@@ -61,7 +64,7 @@ function ContactMe({ isDark }) {
             value={name}
           />
           <input
-            placeholder="Your Email"
+            placeholder={t("contactEmail")}
             type="email"
             onChange={(e) => setEmail(e.target.value)}
             name="email"
@@ -69,7 +72,7 @@ function ContactMe({ isDark }) {
             value={email}
           />
           <textarea
-            placeholder="Enter your message..."
+            placeholder={t("contactMessage")}
             type="text"
             onChange={(e) => setMessage(e.target.value)}
             name="message"
@@ -77,7 +80,7 @@ function ContactMe({ isDark }) {
             value={message}
           />
           <button type="submit" className="btn-form">
-            Send email
+            {t("contactButton")}{" "}
           </button>
         </form>
         <ul className="ul-contact">

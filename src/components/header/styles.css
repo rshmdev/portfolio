@@ -26,6 +26,12 @@
   padding-left: 0;
   gap: 2rem;
 }
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .nav-links li a {
   text-decoration: none;
   color: #333;

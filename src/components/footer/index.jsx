@@ -10,7 +10,9 @@ export const Footer = ({ isDark }) => {
     <div className="footer">
       <div className={isDark ? "container-footer dark" : "container-footer"}>
         <div>
-          <span>© 2022 Rian Moraes.</span>
+          <span className={isDark ? "dark-name" : "name"}>
+            © 2022 Rian Moraes.
+          </span>
         </div>
         <div>
           <nav className="nav-icons-footer">

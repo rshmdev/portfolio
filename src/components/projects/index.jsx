@@ -5,16 +5,18 @@ import CardProjects from "../projects-card";
 import projects from "../../utils/projects";
 import "swiper/swiper.min.css";
 import "./styles.css";
+import { useTranslation } from "react-i18next";
 
-// Carregue o módulo Swiper Navigation
 SwiperCore.use([Navigation, Autoplay]);
 
 const ProjectsSection = ({ openModal }) => {
+  const { t } = useTranslation();
+
   return (
     <>
       <section className="Projects" id="Projects">
         <div className="text-projects">
-          <h1>PROJECTS</h1>
+          <h1>{t("projectsTitle")}</h1>
         </div>
         <div className="div-grid-projects">
           <Swiper
