@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 2rem;
+  margin: 3rem 0;
 }
 .hero-text {
   gap: 2rem;
@@ -69,11 +69,14 @@
   .hero-text {
     flex-direction: column;
     text-align: center;
-    padding: 1rem 1rem;
   }
 
   .Lottie {
     display: none;
+  }
+
+  .hero-buttons {
+    justify-content: center;
   }
 }
 @media (max-width: 360px) {

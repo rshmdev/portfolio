@@ -4,7 +4,7 @@ import br from "../../assets/brasil.png";
 import us from "../../assets/estados-unidos-da-america.png";
 import "./style.css";
 
-const LanguageSwitcher = () => {
+const LanguageSwitcher = ({ isDark }) => {
   const { i18n } = useTranslation();
 
   const changeLanguage = (lng) => {
@@ -20,12 +20,15 @@ const LanguageSwitcher = () => {
     <div class="switch">
       <input
         id="language-toggle"
-        class="check-toggle check-toggle-round-flat"
+        class={"check-toggle check-toggle-round-flat"}
         type="checkbox"
         onChange={handleLanguageToggle} // Chama a função quando o checkbox muda de estado
         checked={i18n.language === "en"} // Define o estado do checkbox com base no idioma atual
       />
-      <label for="language-toggle"></label>
+      <label
+        className={isDark ? "label-dark" : "label"}
+        for="language-toggle"
+      ></label>
       <span class="on">
         <img width={18} src={br} alt="" />
       </span>

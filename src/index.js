@@ -47,6 +47,10 @@ i18n.init({
         contactEmail: "Your Email",
         contactMessage: "Enter your message...",
         contactButton: "Send Email",
+
+        headerAbout: "About Me",
+        headerStacks: "Technologies",
+        headerProjects: "Projects",
       },
     },
     pt: {
@@ -86,6 +90,10 @@ i18n.init({
         contactEmail: "Seu Email",
         contactMessage: "Insira sua mensagem...",
         contactButton: "Enviar Email",
+
+        headerAbout: "Sobre Mim",
+        headerStacks: "Habilidades",
+        headerProjects: "Projetos",
       },
     },
   },

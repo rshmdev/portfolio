@@ -43,10 +43,13 @@
 }
 .icons-header {
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 .icons-header a {
   color: #333;
+  display: flex;
+  align-items: center;
   transition: color 0.3s ease;
 }
 .icons-header a:hover {
@@ -65,7 +68,7 @@
 
   right: 15px !important;
 }
-@media (max-width: 560px) {
+@media (max-width: 700px) {
   .container-header {
     flex-direction: column;
     padding: 1rem 1rem;

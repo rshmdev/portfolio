@@ -53,18 +53,32 @@ input.check-toggle-round-flat:checked ~ .on {
   user-select: none;
 }
 
-input.check-toggle-round-flat + label {
+input.check-toggle-round-flat + .label {
   padding: 2px;
   width: 70px;
 
   height: 28px;
-  background-color: #f36f25;
+  background-color: #4d4d4d;
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
   -ms-border-radius: 60px;
   -o-border-radius: 60px;
   border-radius: 60px;
 }
+
+input.check-toggle-round-flat + .label-dark {
+  padding: 2px;
+  width: 70px;
+
+  height: 28px;
+  background-color: #19ab27;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+}
+
 input.check-toggle-round-flat + label:before,
 input.check-toggle-round-flat + label:after {
   display: block;
@@ -72,12 +86,24 @@ input.check-toggle-round-flat + label:after {
   content: "";
 }
 
-input.check-toggle-round-flat + label:before {
+input.check-toggle-round-flat + .label:before {
   top: 2px;
   left: 2px;
   bottom: 2px;
   right: 2px;
-  background-color: #f36f25;
+  background-color: #4d4d4d;
+  -webkit--moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+}
+
+input.check-toggle-round-flat + .label-dark:before {
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  right: 2px;
+  background-color: #19ab27;
   -webkit--moz-border-radius: 60px;
   -ms-border-radius: 60px;
   -o-border-radius: 60px;

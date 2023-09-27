@@ -8,8 +8,11 @@ import "./styles.css";
 import Toggle from "react-toggle";
 import "react-toggle/style.css"; // for ES6 modules
 import LanguageSwitcher from "../switch";
+import { useTranslation } from "react-i18next";
 
 export const Header = ({ isDark, setIsDark }) => {
+  const { t } = useTranslation();
+
   return (
     <header className={isDark ? "header dark" : "header"}>
       <div className="container-header">
@@ -17,26 +20,25 @@ export const Header = ({ isDark, setIsDark }) => {
           <ul className="nav-links">
             <li>
               <a href="#About">
-                <span>About Me</span>
+                <span>{t("headerAbout")}</span>
               </a>
             </li>
             <li>
               <a href="#Techs">
-                <span>Technologies</span>
+                <span>{t("headerStacks")}</span>
               </a>
             </li>
             <li>
               <a href="#Projects">
-                <span>Projects</span>
+                <span>{t("headerProjects")}</span>
               </a>
-            </li>
-            <li>
-              <LanguageSwitcher />
             </li>
           </ul>
         </nav>
         <nav>
           <div className="icons-header">
+            <LanguageSwitcher isDark={isDark} />
+
             <Toggle
               checked={isDark}
               onChange={({ target }) => setIsDark(target.checked)}
