@@ -108,12 +108,30 @@ input.check-toggle-round-flat + .label-dark:before {
   -o-border-radius: 60px;
   border-radius: 60px;
 }
-input.check-toggle-round-flat + label:after {
-  top: 2px;
+input.check-toggle-round-flat + .label:after {
+  top: 3px;
   left: 4px;
   bottom: 4px;
-  width: 32px;
-  height: 90%;
+  width: 30px;
+  height: 80%;
+  -webkit-border-radius: 50px;
+  background-color: #fff;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  -webkit-transition: margin 0.2s;
+  -moz-transition: margin 0.2s;
+  -o-transition: margin 0.2s;
+  transition: margin 0.2s;
+}
+
+input.check-toggle-round-flat + .label-dark:after {
+  top: 2.3px;
+  left: 2.6px;
+  bottom: 4px;
+  width: 33px;
+  height: 84%;
   background-color: #333;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
