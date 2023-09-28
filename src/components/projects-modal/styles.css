@@ -50,12 +50,14 @@
 }
 
 .modal-image {
-  width: 80%;
+  min-width: 300px;
+  height: 100%;
   margin-right: 20px;
 }
 
 .modal-image img {
   width: 100%;
+  height: auto;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }

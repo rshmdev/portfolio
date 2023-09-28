@@ -5,6 +5,12 @@ import App from "./App";
 import { I18nextProvider } from "react-i18next";
 import i18n from "i18next";
 
+import NuKenzieImage from "./assets/NuKenzie.webp";
+import KenzieBurguerImage from "./assets/KenzieBurguer.webp";
+import TravelAppImage from "./assets/TravelApp.webp";
+import DuckPlayImage from "./assets/DuckPlay.webp";
+import YoutubeImage from "./assets/YoutubeClone.png";
+
 i18n.init({
   interpolation: { escapeValue: false },
   lng: "pt",
@@ -40,6 +46,62 @@ i18n.init({
 
         projectsTitle: "PROJECTS",
         projectsInfo: "Know more",
+        projects: [
+          {
+            name: "NuKenzie",
+            image: NuKenzieImage,
+            description:
+              "NuKenzie was one of my first applications in React.js. It is a simple project that demonstrates my early skills in React development.",
+            live: "https://react-entrega-s1-nu-kenzie-tiozinfk.vercel.app/",
+            repository:
+              "https://github.com/Kenzie-Academy-Brasil-Developers/react-entrega-s1-nu-kenzie-tiozinfk",
+
+            repo: "repository",
+            liveText: "Live View",
+          },
+
+          {
+            name: "Kenzie Burger",
+            image: KenzieBurguerImage,
+            description:
+              "Kenzie Burger is an academic project where we had to create a web application for managing a burger restaurant. It showcases my ability to build complex applications with React.js.",
+            live: "https://react-entrega-s1-hamburgueria-da-kenzie-tiozinfk.vercel.app/",
+            repository: "https://github.com/tiozinfk/KenzieBurguer",
+            repo: "repository",
+            liveText: "Live View",
+          },
+          {
+            name: "Travel App",
+            image: TravelAppImage,
+            description:
+              "Travel App is an application made using React.js. It allows users to explore various travel destinations and plan their trips effectively.",
+            live: "https://travel-map-nine.vercel.app/",
+            repository: "https://github.com/tiozinfk/travel-map",
+            repo: "repository",
+            liveText: "Live View",
+          },
+          {
+            name: "DuckPlay",
+            image: DuckPlayImage,
+            description:
+              "DuckPlay is a project developed using React, API REST, and TypeScript. It is an interactive web application where users can discover and stream their favorite movie.  OBS: the api was hosted on heroku, but it is no longer free, making it impossible to create a user and login.",
+            live: "https://superducks-final-project-m3.vercel.app/",
+            repository:
+              "https://github.com/tiozinfk/superducks-final-project-m3",
+            repo: "repository",
+            liveText: "Live View",
+          },
+          {
+            name: "Youtube",
+            image: YoutubeImage,
+            description:
+              "This application is a fully functional clone of YouTube, developed using React and integrated with the YouTube v3 API. It offers a range of features including a video player, the ability to search for videos by their ID, and displays related videos based on the initial tag of the selected video. Additionally, users can access detailed information such as video descriptions, channel names, channel profile pictures, and like counts. The application also offers a dark mode for enhanced user experience. This project demonstrates the capabilities of React and API integration, providing users with an interactive and familiar YouTube-like experience",
+            live: "https://youtube-omega-orcin.vercel.app/",
+            repository: "https://github.com/tiozinfk/Youtube/tree/master",
+            repo: "repository",
+            liveText: "Live View",
+          },
+        ],
 
         // CONTACT ME
         contactTitle: "CONTACT ME",
@@ -83,6 +145,60 @@ i18n.init({
 
         projectsTitle: "PROJETOS",
         projectsInfo: "Saiba mais",
+        projects: [
+          {
+            name: "NuKenzie",
+            image: NuKenzieImage,
+            description:
+              "NuKenzie foi uma das minhas primeiras aplicações em React.js. É um projeto simples para gerenciamento de pagamentos que demonstra as minhas primeiras competências no desenvolvimento em React.",
+            live: "https://react-entrega-s1-nu-kenzie-tiozinfk.vercel.app/",
+            repository:
+              "https://github.com/Kenzie-Academy-Brasil-Developers/react-entrega-s1-nu-kenzie-tiozinfk",
+            repo: "Repositório",
+            liveText: "Deploy",
+          },
+          {
+            name: "Kenzie Burger",
+            image: KenzieBurguerImage,
+            description:
+              "O Kenzie Burger é um projeto académico em que tivemos de criar uma aplicação Web para gerir um restaurante de hambúrgueres, a aplicação permitia adicionar e removar produtos do carrinho, com mensagens de erro utlizando toasts. Este projeto demonstra a minha capacidade de criar aplicações complexas e responsivas com React.js.",
+            live: "https://react-entrega-s1-hamburgueria-da-kenzie-tiozinfk.vercel.app/",
+            repository: "https://github.com/tiozinfk/KenzieBurguer",
+            repo: "Repositório",
+            liveText: "Deploy",
+          },
+          {
+            name: "Travel App",
+            image: TravelAppImage,
+            description:
+              "Travel App é uma aplicação feita com React.js. Permite aos utilizadores explorar vários destinos de viagem e planear as suas viagens de forma eficaz, o usuario pode filtrar por resutantes, hoteis e atrações proximo da sua localização, tambem é possivel ver o marcador no mapa para facilitar a localização, foi utilizado a api do google.",
+            live: "https://travel-map-nine.vercel.app/",
+            repository: "https://github.com/tiozinfk/travel-map",
+            repo: "Repositório",
+            liveText: "Deploy",
+          },
+          {
+            name: "DuckPlay",
+            image: DuckPlayImage,
+            description:
+              "DuckPlay é um projeto desenvolvido com React, API REST e TypeScript. É uma aplicação web interativa onde os utilizadores podem descobrir e transmitir o seu filme favorito.  OBS: a api estava hospedada no heroku, mas não é mais gratuita, impossibilitando a criação de um usuário e login.",
+            live: "https://superducks-final-project-m3.vercel.app/",
+            repository:
+              "https://github.com/tiozinfk/superducks-final-project-m3",
+            repo: "Repositório",
+            liveText: "Deploy",
+          },
+          {
+            name: "Youtube",
+            image: YoutubeImage,
+            description:
+              "Esta aplicação é um clone totalmente funcional do YouTube, desenvolvido usando React e integrado com a API v3 do YouTube. Oferece uma série de funcionalidades, incluindo um leitor de vídeo, a capacidade de procurar vídeos pelo seu ID e apresenta vídeos relacionados com base na etiqueta inicial do vídeo selecionado. Além disso, os utilizadores podem aceder a informações detalhadas, como descrições de vídeos, nomes de canais, imagens de perfil de canais e contagens de gostos. A aplicação também oferece um modo escuro para melhorar a experiência do utilizador. Este projeto demonstra as capacidades do React e da integração de API, proporcionando aos utilizadores uma experiência interactiva e familiar semelhante à do YouTube",
+            live: "https://youtube-omega-orcin.vercel.app/",
+            repository: "https://github.com/tiozinfk/Youtube/tree/master",
+            repo: "Repositório",
+            liveText: "Deploy",
+          },
+        ],
 
         // CONTACT ME
         contactTitle: "CONTATO",

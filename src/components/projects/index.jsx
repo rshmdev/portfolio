@@ -2,7 +2,6 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Autoplay } from "swiper";
 import CardProjects from "../projects-card";
-import projects from "../../utils/projects";
 import "swiper/swiper.min.css";
 import "./styles.css";
 import { useTranslation } from "react-i18next";
@@ -40,18 +39,23 @@ const ProjectsSection = ({ openModal }) => {
               },
             }}
           >
-            {projects.map((project) => (
-              <SwiperSlide key={project.name}>
-                <CardProjects
-                  name={project.name}
-                  description={project.description}
-                  image={project.image}
-                  live={project.live}
-                  repo={project.repository}
-                  openModal={() => openModal(project)}
-                />
-              </SwiperSlide>
-            ))}
+            {t("projects", { returnObjects: true }).map((project) => {
+              console.log(project);
+              return (
+                <SwiperSlide key={project.name}>
+                  <CardProjects
+                    name={t("project.name")}
+                    description={t("project.description")}
+                    image={project.image}
+                    live={project.live}
+                    liveText={t("project.liveText")}
+                    repoText={t("project.repo")}
+                    repo={project.repository}
+                    openModal={() => openModal(project)}
+                  />
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </div>
       </section>

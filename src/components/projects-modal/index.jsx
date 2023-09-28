@@ -3,7 +3,8 @@ import Close from "../../assets/close.svg";
 import "./styles.css";
 
 const Modal = ({ project, closeModal }) => {
-  const { name, image, description, live, repository } = project;
+  const { name, image, description, live, repository, repo, liveText } =
+    project;
 
   return (
     <div className={`modal-overlay`}>
@@ -24,7 +25,7 @@ const Modal = ({ project, closeModal }) => {
         </div>
         <div className="modal-links">
           <a target="_blank" rel="noreferrer" href={live} className="live-link">
-            Live View
+            {liveText}
           </a>
           <a
             target="_blank"
@@ -32,7 +33,7 @@ const Modal = ({ project, closeModal }) => {
             href={repository}
             className="repo-link"
           >
-            Repository
+            {repo}
           </a>
         </div>
       </div>
