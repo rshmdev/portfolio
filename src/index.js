@@ -75,7 +75,7 @@ i18n.init({
 
         experienceTitle: "EXPERIÊNCIA",
         experienceDate: "JAN/2023 - SET/2023",
-        experienceInfo: "Direção concursos - PROGRAMADOR FRONT-END",
+        experienceInfo: "Direção concursos - DESENVOLVEDOR FRONT-END",
         experienceP:
           "Durante o meu tempo na Direção Concursos, trabalhei como Front-End Junior T2 com especial foco em Next.js e SEO, e ocasionalmente aventurei-me no Back-End. Trabalhei com tecnologias como ReactJS e Next.js para criar experiências web cativantes e optimizadas para SEO. No Back-End, utilizei Node.js para melhorar a nossa API e efectuei consultas à base de dados para garantir que as nossas aplicações tinham acesso rápido e seguro à informação necessária. Além disso, criei Landing Pages atractivas em Webflow, acrescentando valor à nossa estratégia de aquisição de clientes.",
 

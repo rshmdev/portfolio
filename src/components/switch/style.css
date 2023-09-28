@@ -6,14 +6,14 @@
 
 .switch > span {
   position: absolute;
-  top: 6px;
+  top: 5px;
   pointer-events: none;
   font-family: "Helvetica", Arial, sans-serif;
   font-weight: bold;
   font-size: 12px;
   text-transform: uppercase;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
-  width: 50%;
+  width: 45%;
   text-align: center;
 }
 
@@ -27,7 +27,7 @@ input.check-toggle-round-flat:checked ~ .on {
 
 .switch > span.on {
   left: 0;
-  padding-left: 2px;
+  padding-left: 7px;
   color: #f36f25;
 }
 
@@ -69,9 +69,8 @@ input.check-toggle-round-flat + .label {
 input.check-toggle-round-flat + .label-dark {
   padding: 2px;
   width: 70px;
-
   height: 28px;
-  background-color: #19ab27;
+  background-color: #a1c4aa;
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
   -ms-border-radius: 60px;
@@ -103,23 +102,24 @@ input.check-toggle-round-flat + .label-dark:before {
   left: 2px;
   bottom: 2px;
   right: 2px;
-  background-color: #19ab27;
+  background-color: #a1c4aa;
   -webkit--moz-border-radius: 60px;
   -ms-border-radius: 60px;
   -o-border-radius: 60px;
   border-radius: 60px;
 }
 input.check-toggle-round-flat + label:after {
-  top: 4px;
+  top: 2px;
   left: 4px;
   bottom: 4px;
-  width: 28px;
-  background-color: #fff;
-  -webkit-border-radius: 52px;
-  -moz-border-radius: 52px;
-  -ms-border-radius: 52px;
-  -o-border-radius: 52px;
-  border-radius: 52px;
+  width: 32px;
+  height: 90%;
+  background-color: #333;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
   -webkit-transition: margin 0.2s;
   -moz-transition: margin 0.2s;
   -o-transition: margin 0.2s;
