@@ -17,6 +17,7 @@
 .experience-container {
   display: flex;
   gap: 2rem;
+  margin-top: 3%;
 }
 
 .timeline {
@@ -101,6 +102,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem 0 !important;
   width: 100%;
   color: #fff;
   font-size: 1.5rem;
