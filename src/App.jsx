@@ -62,21 +62,21 @@ function App() {
       <Header setIsDark={setIsDark} isDark={isDark} />
       <main className="main">
         <HeroSection />
-        <Slide>
+        <Slide triggerOnce={true}>
           <AboutSection />
         </Slide>
-        <Slide>
+        <Slide triggerOnce={true}>
           <TechnologiesSection />
         </Slide>
 
-        <Slide>
+        <Slide triggerOnce={true}>
           <ExperienceSection />
         </Slide>
-        <Slide>
+        <Slide triggerOnce={true}>
           <ProjectsSection openModal={openModal} />
         </Slide>
       </main>
-      <Slide>
+      <Slide triggerOnce={true}>
         <ContactMe isDark={isDark} />
       </Slide>
       <Footer isDark={isDark} />
