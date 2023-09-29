@@ -21,17 +21,17 @@ const TechnologiesSection = () => {
       <div className="stacks-div">
         <Swiper
           modules={[Navigation, Autoplay]}
-          spaceBetween={10}
+          spaceBetween={5}
           slidesPerView={1}
           autoplay
           navigation
           breakpoints={{
-            640: {
-              slidesPerView: 1,
+            560: {
+              slidesPerView: 2,
               spaceBetween: 5,
             },
             768: {
-              slidesPerView: 2,
+              slidesPerView: 3,
               spaceBetween: 5,
             },
             1200: {

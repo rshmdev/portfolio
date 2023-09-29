@@ -38,6 +38,10 @@
   .text-about {
     max-width: 90%;
   }
+
+  .text-about p {
+    font-size: 1.1rem;
+  }
 }
 @media (max-width: 480px) {
   .text-about {
