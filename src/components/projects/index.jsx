@@ -40,7 +40,6 @@ const ProjectsSection = ({ openModal }) => {
             }}
           >
             {t("projects", { returnObjects: true }).map((project) => {
-              console.log(project);
               return (
                 <SwiperSlide key={project.name}>
                   <CardProjects

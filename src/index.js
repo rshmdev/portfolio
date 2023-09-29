@@ -113,6 +113,9 @@ i18n.init({
         headerAbout: "About Me",
         headerStacks: "Technologies",
         headerProjects: "Projects",
+
+        resume:
+          "https://drive.google.com/file/d/1WwgGTm3bbpgRTF48RKWXbfEAfzXHOOW-/view?usp=sharing",
       },
     },
     pt: {
@@ -210,6 +213,9 @@ i18n.init({
         headerAbout: "Sobre Mim",
         headerStacks: "Habilidades",
         headerProjects: "Projetos",
+
+        resume:
+          "https://drive.google.com/file/d/1oNdwPq4VzF3CgXRXROq-D-ADhjs8UY5J/view?usp=sharing",
       },
     },
   },

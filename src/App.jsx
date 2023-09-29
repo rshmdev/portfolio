@@ -12,6 +12,7 @@ import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 import Modal from "./components/projects-modal";
 import { Slide } from "react-awesome-reveal";
+import ScrollUp from "./components/scroll-up";
 
 //COMPONENTS WITH LAZY
 const HeroSection = React.lazy(() => import("./components/hero"));
@@ -87,6 +88,8 @@ function App() {
           modalOpen={modalOpen}
         />
       )}
+
+      <ScrollUp />
     </div>
   );
 }

@@ -17,23 +17,23 @@ const LanguageSwitcher = ({ isDark }) => {
   };
 
   return (
-    <div class="switch">
+    <div className="switch">
       <input
         id="language-toggle"
-        class={"check-toggle check-toggle-round-flat"}
+        className={"check-toggle check-toggle-round-flat"}
         type="checkbox"
         onChange={handleLanguageToggle} // Chama a função quando o checkbox muda de estado
         checked={i18n.language === "en"} // Define o estado do checkbox com base no idioma atual
       />
       <label
         className={isDark ? "label-dark" : "label"}
-        for="language-toggle"
+        htmlFor="language-toggle"
       ></label>
-      <span class="on">
-        <img width={18} src={br} alt="" />
+      <span className="on">
+        <img width={18} height={18} src={br} alt="" />
       </span>
-      <span class="off">
-        <img width={18} src={us} alt="" />
+      <span className="off">
+        <img width={18} height={18} src={us} alt="" />
       </span>
     </div>
   );

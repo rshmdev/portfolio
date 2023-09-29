@@ -1,17 +1,8 @@
 import React from "react";
-import Lottie from "react-lottie";
+import Lottie from "react-lottie-player";
 import * as animationData from "../../assets/animation.json";
 import "./styles.css";
 import { useTranslation } from "react-i18next";
-
-const defaultOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: animationData.default,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice",
-  },
-};
 
 const HeroSection = () => {
   const { t } = useTranslation();
@@ -27,8 +18,8 @@ const HeroSection = () => {
               style={{ color: "black" }}
               target="_blank"
               rel="noreferrer"
-              href="https://drive.google.com/file/d/1oNdwPq4VzF3CgXRXROq-D-ADhjs8UY5J/view?usp=sharing"
-              download="Resume Rian Moraes"
+              href={t("resume")}
+              download="Resume"
             >
               <button className="cv-button">{t("heroResume")}</button>
             </a>
@@ -40,10 +31,10 @@ const HeroSection = () => {
 
         <div className="Lottie">
           <Lottie
-            width={"100%"}
-            height={"100%"}
-            options={defaultOptions}
-            isClickToPauseDisabled={true}
+            style={{ width: "100%", height: "100%" }}
+            play
+            loop
+            animationData={animationData}
           />
         </div>
       </div>
