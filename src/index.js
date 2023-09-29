@@ -115,7 +115,7 @@ i18n.init({
         headerProjects: "Projects",
 
         resume:
-          "https://drive.google.com/file/d/1WwgGTm3bbpgRTF48RKWXbfEAfzXHOOW-/view?usp=sharing",
+          "https://drive.google.com/file/d/12DHiQbN_Wy-UF-o-DrhOSSlxPbFHjhU3/view?usp=sharing",
       },
     },
     pt: {
@@ -215,7 +215,7 @@ i18n.init({
         headerProjects: "Projetos",
 
         resume:
-          "https://drive.google.com/file/d/1oNdwPq4VzF3CgXRXROq-D-ADhjs8UY5J/view?usp=sharing",
+          "https://drive.google.com/file/d/1O2Ez5rU02gkvKaWKo2N3qFJ4pJYcokmY/view?usp=sharing",
       },
     },
   },
