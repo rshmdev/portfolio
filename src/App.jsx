@@ -75,10 +75,11 @@ function App() {
         <Slide triggerOnce={true}>
           <ProjectsSection openModal={openModal} />
         </Slide>
+        <Slide triggerOnce={true}>
+          <ContactMe isDark={isDark} />
+        </Slide>
       </main>
-      <Slide triggerOnce={true}>
-        <ContactMe isDark={isDark} />
-      </Slide>
+
       <Footer isDark={isDark} />
 
       {modalOpen && (

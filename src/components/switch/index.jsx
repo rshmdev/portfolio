@@ -30,10 +30,10 @@ const LanguageSwitcher = ({ isDark }) => {
         htmlFor="language-toggle"
       ></label>
       <span className="on">
-        <img width={18} height={18} src={br} alt="" />
+        <img loading="lazy" width={18} height={18} src={br} alt="" />
       </span>
       <span className="off">
-        <img width={18} height={18} src={us} alt="" />
+        <img loading="lazy" width={18} height={18} src={us} alt="" />
       </span>
     </div>
   );

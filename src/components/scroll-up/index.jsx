@@ -29,7 +29,13 @@ const ScrollUp = () => {
     <>
       {showButton && (
         <button onClick={scrollPosition} className="top-button">
-          <img width={18} height={18} src={arrow} alt="Arrow up" />
+          <img
+            loading="lazy"
+            width={18}
+            height={18}
+            src={arrow}
+            alt="Arrow up"
+          />
         </button>
       )}
     </>

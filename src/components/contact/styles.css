@@ -5,14 +5,22 @@
   flex-direction: column;
   justify-content: center;
   margin: 3rem 0;
+  padding: 0 2rem;
+}
+
+.text-tittle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
 }
 .div-contact-me {
   margin-top: 3%;
   display: flex;
-  width: 90%;
+  width: 100%;
   flex-wrap: wrap;
-  gap: 3rem;
-  justify-content: center;
+  gap: 2rem;
+  justify-content: space-between;
 }
 .ul-contact {
   display: flex;
@@ -60,7 +68,7 @@
 .btn-form:hover {
   background-color: #543fd3;
 }
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   #name,
   #email,
   #message {

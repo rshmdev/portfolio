@@ -43,7 +43,7 @@ const ProjectsSection = ({ openModal }) => {
               return (
                 <SwiperSlide key={project.name}>
                   <CardProjects
-                    name={t("project.name")}
+                    name={project.name}
                     description={t("project.description")}
                     image={project.image}
                     live={project.live}

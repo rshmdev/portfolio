@@ -68,7 +68,44 @@
 
   right: 15px !important;
 }
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.icons {
+  display: flex;
+  gap: 1.5rem;
+}
 @media (max-width: 700px) {
+  .icons-nav {
+    width: 100%;
+  }
+
+  .anchor-nav {
+    width: 100%;
+  }
+
+  .nav-links {
+    justify-content: space-around;
+  }
+
+  .icons-header {
+    justify-content: space-around;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .icons {
+    display: flex;
+    gap: 1.5rem;
+  }
   .container-header {
     flex-direction: column;
     padding: 1rem 1rem;

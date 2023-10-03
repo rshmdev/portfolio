@@ -2,10 +2,9 @@
   scroll-margin-top: 7rem;
   display: flex;
   margin: 3rem 0;
-
+  padding: 0 2rem;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
 }
 .text-about {
   line-height: 2.3rem;
@@ -13,9 +12,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.02rem;
+  width: 100%;
   gap: 2rem;
-  max-width: 90%;
+  max-width: 100%;
 }
 
 .text-about p {
@@ -30,13 +29,13 @@
 .text-tittle {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start !important;
   width: 100%;
   font-size: 1.5rem;
 }
 @media (max-width: 768px) {
   .text-about {
-    max-width: 90%;
+    max-width: 100%;
   }
 
   .text-about p {
@@ -45,6 +44,6 @@
 }
 @media (max-width: 480px) {
   .text-about {
-    max-width: 90%;
+    max-width: 100%;
   }
 }
