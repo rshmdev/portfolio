@@ -9,7 +9,7 @@ import NuKenzieImage from "./assets/NuKenzie.webp";
 import KenzieBurguerImage from "./assets/KenzieBurguer.webp";
 import TravelAppImage from "./assets/TravelApp.webp";
 import DuckPlayImage from "./assets/DuckPlay.webp";
-import YoutubeImage from "./assets/YoutubeClone.png";
+import YoutubeImage from "./assets/YoutubeClone.webp";
 
 i18n.init({
   interpolation: { escapeValue: false },
