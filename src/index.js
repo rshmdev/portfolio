@@ -95,7 +95,7 @@ i18n.init({
             name: "Youtube",
             image: YoutubeImage,
             description:
-              "This application is a fully functional clone of YouTube, developed using React and integrated with the YouTube v3 API. It offers a range of features including a video player, the ability to search for videos by their ID, and displays related videos based on the initial tag of the selected video. Additionally, users can access detailed information such as video descriptions, channel names, channel profile pictures, and like counts. The application also offers a dark mode for enhanced user experience. This project demonstrates the capabilities of React and API integration, providing users with an interactive and familiar YouTube-like experience",
+              "This is a YouTube clone built with React, integrated with the YouTube API. It includes a video player, the ability to search videos by their ID, and displays related videos based on the initial video's tag. Additionally, users can access detailed information such as video descriptions, channel names, channel profile pictures, and like counts. The application also offers a dark mode for an improved user experience. This project showcases the capabilities of React and API integration, providing users with an interactive and familiar experience akin to YouTube.",
             live: "https://youtube-omega-orcin.vercel.app/",
             repository: "https://github.com/tiozinfk/Youtube/tree/master",
             repo: "repository",
@@ -195,7 +195,7 @@ i18n.init({
             name: "Youtube",
             image: YoutubeImage,
             description:
-              "Esta aplicação é um clone totalmente funcional do YouTube, desenvolvido usando React e integrado com a API v3 do YouTube. Oferece uma série de funcionalidades, incluindo um leitor de vídeo, a capacidade de procurar vídeos pelo seu ID e apresenta vídeos relacionados com base na etiqueta inicial do vídeo selecionado. Além disso, os utilizadores podem aceder a informações detalhadas, como descrições de vídeos, nomes de canais, imagens de perfil de canais e contagens de gostos. A aplicação também oferece um modo escuro para melhorar a experiência do utilizador. Este projeto demonstra as capacidades do React e da integração de API, proporcionando aos utilizadores uma experiência interactiva e familiar semelhante à do YouTube",
+              "É uma versão do YouTube feita com React, usando a API do YouTube. Tem leitor de vídeo, busca por ID, e mostra vídeos relacionados. Mostra detalhes como descrições, nomes de canais e contagem de gostos. Tem um modo escuro. Destaca as capacidades do React e integração de API, oferecendo uma experiência semelhante ao YouTube.",
             live: "https://youtube-omega-orcin.vercel.app/",
             repository: "https://github.com/tiozinfk/Youtube/tree/master",
             repo: "Repositório",

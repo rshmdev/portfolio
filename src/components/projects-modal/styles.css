@@ -17,17 +17,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: auto;
   flex-direction: column;
-  padding: 0 2rem;
+  padding: 0rem 2rem;
 }
 
 .modal-header {
   display: flex;
+  margin-top: 6rem;
   max-width: 1300px;
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
 }
 
 .modal-header h2 {
@@ -56,6 +57,7 @@
 .modal-image {
   display: flex;
   align-items: center;
+  margin-top: 1rem;
   justify-content: center;
 }
 
@@ -85,6 +87,7 @@
   display: flex;
   justify-content: center;
   gap: 3rem;
+  margin-bottom: 2rem;
 }
 
 .modal-links a {
