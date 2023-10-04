@@ -215,7 +215,7 @@ i18n.init({
         headerProjects: "Projetos",
 
         resume:
-          "https://drive.google.com/file/d/1O2Ez5rU02gkvKaWKo2N3qFJ4pJYcokmY/view?usp=sharing",
+          "https://drive.google.com/file/d/1lf_koivMK9JEp1zUcc__tic2tgOeZzuz/view?usp=sharing",
       },
     },
   },
