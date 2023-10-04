@@ -7,8 +7,8 @@ const Modal = ({ project, closeModal }) => {
     project;
 
   return (
-    <div className={`modal-overlay`}>
-      <div className={`modal-content`}>
+    <div className="modal-overlay">
+      <div className="modal-content">
         <div className="modal-header">
           <h2>{name}</h2>
           <button className="btn-close" onClick={closeModal}>
