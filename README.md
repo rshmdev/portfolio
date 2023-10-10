@@ -1,12 +1,12 @@
 # Portfólio
 
-![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/iuricode/README-template?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/rshmdev/portfolio?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/rshmdev/portfolio?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/rshmdev/portfolio?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/rshmdev/portfolio?style=for-the-badge)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/rshmdev/portfolio?style=for-the-badge)
 
-<img src="imagem.png" alt="Exemplo imagem">
+<img src="portfolio.png" alt="Exemplo imagem">
 
 > Este projeto é a materialização da minha jornada e conquistas. Aqui, cada linha de código e cada design cuidadosamente elaborado são testemunhos do meu compromisso com a excelência. Explore e descubra a essência do meu trabalho.
 
