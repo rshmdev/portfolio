@@ -41,7 +41,7 @@ Yarn:
 yarn install
 ```
 
-#Inicie o projeto
+##Inicie o projeto
 
 Yarn:
 
