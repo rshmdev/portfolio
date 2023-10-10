@@ -22,7 +22,6 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 Para instalar o Portfólio, siga estas etapas:
 
-Linux e macOS:
 ```
 https://github.com/rshmdev/portfolio.git
 ```
