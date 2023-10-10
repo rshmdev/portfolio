@@ -22,7 +22,6 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 Para instalar o Portfólio, siga estas etapas:
 
-Linux e macOS:
 ```
 https://github.com/rshmdev/portfolio.git
 ```
@@ -31,12 +30,6 @@ https://github.com/rshmdev/portfolio.git
 
 Para usar Portfólio, siga estas etapas:
 
-Npm:
-```
-npm i
-```
-
-Yarn:
 ```
 yarn install
 ```
