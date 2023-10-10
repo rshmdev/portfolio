@@ -1,10 +1,10 @@
 # Portfólio
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/rshmdev/portfolio?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/iuricode/README-template?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/portfolio/README-template?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/portfolio/README-template?style=for-the-badge)
+![Github open issues](https://img.shields.io/github/issues/portfolio/README-template?style=for-the-badge)
+![Gihub open pull requests](https://img.shields.io/bitbucket/pr-raw/portfolio/README-template?style=for-the-badge)
 
 <img src="portfolio.png" alt="Exemplo imagem">
 
