@@ -29,7 +29,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      <a href="#About" className="down">    <AiOutlineDown size={30} /></a>
+      <a aria-label="Arrow down for more sections" href="#About" className="down">    <AiOutlineDown size={30} /></a>
 
     </section>
   );
