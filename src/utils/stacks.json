@@ -35,7 +35,6 @@
     "name": "Node.js",
     "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
   },
-
   {
     "name": "CSS",
     "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
@@ -55,5 +54,10 @@
     "name": "GIT",
     "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
     "description": "A distributed version control system for tracking changes in files"
+  },
+  {
+    "name": "Go",
+    "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
+    "description": "Go is an open source programming language that makes it simple to build secure, scalable systems"
   }
 ]

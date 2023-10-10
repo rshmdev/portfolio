@@ -1,8 +1,12 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Autoplay } from "swiper";
+import SwiperCore, { Navigation, Autoplay, EffectCoverflow, Pagination } from "swiper";
 import CardProjects from "../projects-card";
-import "swiper/swiper.min.css";
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+
 import "./styles.css";
 import { useTranslation } from "react-i18next";
 
@@ -19,10 +23,24 @@ const ProjectsSection = ({ openModal }) => {
         </div>
         <div className="div-grid-projects">
           <Swiper
-            modules={[Navigation, Autoplay]}
+            modules={[Navigation, Autoplay, EffectCoverflow, Pagination]}
+            effect={'coverflow'}
+            grabCursor={true}
             spaceBetween={10}
+            pagination={true}
             slidesPerView={1}
-            autoplay
+            loop={true}
+            autoplay={{
+              delay: 500,
+              disableOnInteraction: false
+            }}
+            coverflowEffect={{
+              rotate: 50,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: false,
+            }}
             navigation
             breakpoints={{
               640: {
@@ -35,7 +53,7 @@ const ProjectsSection = ({ openModal }) => {
               },
               1200: {
                 slidesPerView: 3,
-                spaceBetween: 10,
+                spaceBetween: 20,
               },
             }}
           >

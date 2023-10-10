@@ -27,6 +27,12 @@
   align-items: center;
 }
 
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 @media (max-width: 768px) {
   .Projects {
     height: auto;

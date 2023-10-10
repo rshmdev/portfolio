@@ -24,6 +24,7 @@ const TechnologiesSection = () => {
           spaceBetween={5}
           slidesPerView={1}
           autoplay
+          loop
           navigation
           breakpoints={{
             560: {
