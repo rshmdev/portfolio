@@ -31,22 +31,24 @@ https://github.com/rshmdev/portfolio.git
 
 Para usar Portfólio, siga estas etapas:
 
+Npm:
 ```
 npm i
 ```
-ou
 
+Yarn:
 ```
 yarn install
 ```
 
 #Inicie o projeto
+Yarn:
 
 ```
 yarn start 
 ```
-ou 
-
+ 
+Npm
 ```
 npm start 
 ```
