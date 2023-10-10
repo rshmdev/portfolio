@@ -28,11 +28,13 @@ const ProjectsSection = ({ openModal }) => {
             grabCursor={true}
             spaceBetween={10}
             pagination={true}
-            slidesPerView={1}
             loop={true}
             autoplay={{
-              delay: 500,
-              disableOnInteraction: false
+              delay: 4000,
+              disableOnInteraction: false,
+
+              pauseOnMouseEnter: true,
+              reverseDirection: true
             }}
             coverflowEffect={{
               rotate: 50,
@@ -51,10 +53,7 @@ const ProjectsSection = ({ openModal }) => {
                 slidesPerView: 2,
                 spaceBetween: 5,
               },
-              1200: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-              },
+
             }}
           >
             {t("projects", { returnObjects: true }).map((project) => {

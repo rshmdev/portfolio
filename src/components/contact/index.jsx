@@ -90,7 +90,7 @@ function ContactMe({ isDark }) {
               size={24}
               alt="Whatsapp icon"
             />
-            github.com/tiozinfk
+            github.com/rshmdev
           </li>
           <li className={isDark ? "contact-item dark" : "contact-item"}>
             <AiFillLinkedin

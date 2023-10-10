@@ -63,7 +63,7 @@ export const Header = ({ isDark, setIsDark }) => {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://github.com/tiozinfk"
+                href="https://github.com/rshmdev"
                 aria-label="My Profile in GitHub"
               >
                 <AiFillGithub

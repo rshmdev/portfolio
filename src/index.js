@@ -66,7 +66,7 @@ i18n.init({
             description:
               "Kenzie Burger is an academic project where we had to create a web application for managing a burger restaurant. It showcases my ability to build complex applications with React.js.",
             live: "https://react-entrega-s1-hamburgueria-da-kenzie-tiozinfk.vercel.app/",
-            repository: "https://github.com/tiozinfk/KenzieBurguer",
+            repository: "https://github.com/rshmdev/KenzieBurguer",
             repo: "repository",
             liveText: "Live View",
           },
@@ -76,7 +76,7 @@ i18n.init({
             description:
               "Travel App is an application made using React.js. It allows users to explore various travel destinations and plan their trips effectively.",
             live: "https://travel-map-nine.vercel.app/",
-            repository: "https://github.com/tiozinfk/travel-map",
+            repository: "https://github.com/rshmdev/travel-map",
             repo: "repository",
             liveText: "Live View",
           },
@@ -87,7 +87,7 @@ i18n.init({
               "DuckPlay is a project developed using React, API REST, and TypeScript. It is an interactive web application where users can discover and stream their favorite movie.  OBS: the api was hosted on heroku, but it is no longer free, making it impossible to create a user and login.",
             live: "https://superducks-final-project-m3.vercel.app/",
             repository:
-              "https://github.com/tiozinfk/superducks-final-project-m3",
+              "https://github.com/rshmdev/superducks-final-project-m3",
             repo: "repository",
             liveText: "Live View",
           },
@@ -97,7 +97,7 @@ i18n.init({
             description:
               "This is a YouTube clone built with React, integrated with the YouTube API. It includes a video player, the ability to search videos by their ID, and displays related videos based on the initial video's tag. Additionally, users can access detailed information such as video descriptions, channel names, channel profile pictures, and like counts. The application also offers a dark mode for an improved user experience. This project showcases the capabilities of React and API integration, providing users with an interactive and familiar experience akin to YouTube.",
             live: "https://youtube-omega-orcin.vercel.app/",
-            repository: "https://github.com/tiozinfk/Youtube/tree/master",
+            repository: "https://github.com/rshmdev/Youtube/tree/master",
             repo: "repository",
             liveText: "Live View",
           },
@@ -166,7 +166,7 @@ i18n.init({
             description:
               "O Kenzie Burger é um projeto académico em que tivemos de criar uma aplicação Web para gerir um restaurante de hambúrgueres, a aplicação permitia adicionar e removar produtos do carrinho, com mensagens de erro utlizando toasts. Este projeto demonstra a minha capacidade de criar aplicações complexas e responsivas com React.js.",
             live: "https://react-entrega-s1-hamburgueria-da-kenzie-tiozinfk.vercel.app/",
-            repository: "https://github.com/tiozinfk/KenzieBurguer",
+            repository: "https://github.com/rshmdev/KenzieBurguer",
             repo: "Repositório",
             liveText: "Deploy",
           },
@@ -176,7 +176,7 @@ i18n.init({
             description:
               "Travel App é uma aplicação feita com React.js. Permite aos utilizadores explorar vários destinos de viagem e planear as suas viagens de forma eficaz, o usuario pode filtrar por resutantes, hoteis e atrações proximo da sua localização, tambem é possivel ver o marcador no mapa para facilitar a localização, foi utilizado a api do google.",
             live: "https://travel-map-nine.vercel.app/",
-            repository: "https://github.com/tiozinfk/travel-map",
+            repository: "https://github.com/rshmdev/traveling",
             repo: "Repositório",
             liveText: "Deploy",
           },
@@ -187,7 +187,7 @@ i18n.init({
               "DuckPlay é um projeto desenvolvido com React, API REST e TypeScript. É uma aplicação web interativa onde os utilizadores podem descobrir e transmitir o seu filme favorito.  OBS: a api estava hospedada no heroku, mas não é mais gratuita, impossibilitando a criação de um usuário e login.",
             live: "https://superducks-final-project-m3.vercel.app/",
             repository:
-              "https://github.com/tiozinfk/superducks-final-project-m3",
+              "https://github.com/rshmdev/superducks-final-project-m3",
             repo: "Repositório",
             liveText: "Deploy",
           },
@@ -197,7 +197,7 @@ i18n.init({
             description:
               "É uma versão do YouTube feita com React, usando a API do YouTube. Tem leitor de vídeo, busca por ID, e mostra vídeos relacionados. Mostra detalhes como descrições, nomes de canais e contagem de gostos. Tem um modo escuro. Destaca as capacidades do React e integração de API, oferecendo uma experiência semelhante ao YouTube.",
             live: "https://youtube-omega-orcin.vercel.app/",
-            repository: "https://github.com/tiozinfk/Youtube/tree/master",
+            repository: "https://github.com/rshmdev/Youtube/tree/master",
             repo: "Repositório",
             liveText: "Deploy",
           },
