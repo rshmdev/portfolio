@@ -37,15 +37,14 @@ npm i
 ou
 
 ```
-yarn
+yarn install
 ```
 
-Inicie o projeto
+#Inicie o projeto
 
 ```
 yarn start 
 ```
-
 ou 
 
 ```
