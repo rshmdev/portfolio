@@ -75,7 +75,7 @@ function App() {
   return (
     <div className="App">
       <Header setIsDark={setIsDark} isDark={isDark} />
-      <div className="background">
+      <div className={iOS() ? "background-ios" : "background"}>
         <div className="background-opacity"></div>
       </div>
       <main className="main">
