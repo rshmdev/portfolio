@@ -68,7 +68,7 @@ export const Header = ({ isDark, setIsDark }) => {
               >
                 <AiFillGithub
                   color={isDark ? "#fff" : "#333"}
-                  size={20}
+                  size={24}
                   alt="Github icon"
                 />
               </a>
@@ -80,7 +80,7 @@ export const Header = ({ isDark, setIsDark }) => {
               >
                 <AiFillLinkedin
                   color={isDark ? "#fff" : "#333"}
-                  size={20}
+                  size={24}
                   alt="Linkedin icon"
                 />
               </a>
@@ -92,7 +92,7 @@ export const Header = ({ isDark, setIsDark }) => {
               >
                 <AiOutlineWhatsApp
                   color={isDark ? "#fff" : "#333"}
-                  size={20}
+                  size={24}
                   alt="Whatsapp icon"
                 />
               </a>

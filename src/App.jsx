@@ -45,6 +45,19 @@ function App() {
     }
   }, [isDark]);
 
+  function iOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+      // iPad on iOS 13 detection
+      || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
+
   const openModal = (project) => {
     setSelectedProject(project);
     setModalOpen(true);
@@ -57,14 +70,22 @@ function App() {
     document.body.classList.remove("modal-open");
   };
 
+
+
   return (
     <div className="App">
       <Header setIsDark={setIsDark} isDark={isDark} />
+      <div className="background">
+        <div className="background-opacity"></div>
+      </div>
       <main className="main">
         <HeroSection />
+
+
         <Slide triggerOnce={true}>
           <AboutSection />
         </Slide>
+
         <Slide triggerOnce={true}>
           <TechnologiesSection />
         </Slide>

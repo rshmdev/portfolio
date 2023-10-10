@@ -1,8 +1,8 @@
 import React from "react";
-import Lottie from "react-lottie-player";
-import * as animationData from "../../assets/animation.json";
+
 import "./styles.css";
 import { useTranslation } from "react-i18next";
+import { AiOutlineDown } from "react-icons/ai";
 
 const HeroSection = () => {
   const { t } = useTranslation();
@@ -28,16 +28,9 @@ const HeroSection = () => {
             </a>
           </div>
         </div>
-
-        <div className="Lottie">
-          <Lottie
-            style={{ width: "100%", height: "100%" }}
-            play
-            loop
-            animationData={animationData}
-          />
-        </div>
       </div>
+      <a href="#About" className="down">    <AiOutlineDown size={30} /></a>
+
     </section>
   );
 };

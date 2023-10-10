@@ -1,11 +1,11 @@
 .About-me {
   scroll-margin-top: 7rem;
   display: flex;
-  margin: 3rem 0;
   padding: 0 2rem;
   justify-content: center;
   flex-direction: column;
 }
+
 .text-about {
   line-height: 2.3rem;
   margin-top: 3%;
@@ -18,32 +18,41 @@
 }
 
 .text-about p {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  line-height: 3rem;
   margin: 0;
 }
+
 .text-about img {
   border-radius: 50%;
   max-width: 100%;
   height: auto;
 }
+
 .text-tittle {
   display: flex;
   align-items: center;
   justify-content: flex-start !important;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
+
+.text-tittle h1 {
+  margin: 0 !important;
+}
+
 @media (max-width: 768px) {
   .text-about {
     max-width: 100%;
   }
 
-  .text-about p {
-    font-size: 1.1rem;
-  }
+
+
 }
-@media (max-width: 480px) {
-  .text-about {
-    max-width: 100%;
+
+
+@media (max-width: 400px) {
+  .text-tittle {
+    font-size: 1.5rem !important;
   }
 }

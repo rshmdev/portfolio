@@ -1,7 +1,9 @@
 .footer {
   width: 100%;
   padding: 1rem;
+  margin-top: 2rem;
 }
+
 .container-footer {
   color: #888;
   display: flex;
@@ -15,18 +17,24 @@
 
 .dark-name {
   color: #fff;
+  font-size: 1.2rem;
 }
 
 .name {
+  font-size: 1.2rem;
+
   color: #333;
 }
+
 .nav-icons-footer {
   display: flex;
   gap: 2rem;
 }
+
 a {
   transition: all ease 0.3s;
 }
+
 a:hover {
   color: #0056b3;
 }

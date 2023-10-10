@@ -19,8 +19,8 @@ i18n.init({
       translation: {
         // HERO
 
-        heroTitle: "Hey, I`m Rian",
-        heroP: "Front end developer focused on Next.js",
+        heroTitle: "Rian Moraes",
+        heroP: "Full stack developer focused on Next.js",
         heroResume: "Resume",
         heroContact: "Contact me",
 
@@ -110,7 +110,7 @@ i18n.init({
         contactMessage: "Enter your message...",
         contactButton: "Send Email",
 
-        headerAbout: "About Me",
+        headerAbout: "About",
         headerStacks: "Technologies",
         headerProjects: "Projects",
 
@@ -121,8 +121,8 @@ i18n.init({
     pt: {
       translation: {
         // HERO
-        heroTitle: "Olá, sou o Rian",
-        heroP: "Programador front-end especializado em Next.js",
+        heroTitle: "Rian Moraes",
+        heroP: "Programador Full stack especializado em Next.js",
         heroResume: "Curriculo",
         heroContact: "Contato",
 
@@ -210,7 +210,7 @@ i18n.init({
         contactMessage: "Insira sua mensagem...",
         contactButton: "Enviar Email",
 
-        headerAbout: "Sobre Mim",
+        headerAbout: "Sobre",
         headerStacks: "Habilidades",
         headerProjects: "Projetos",
 

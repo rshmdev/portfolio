@@ -87,7 +87,7 @@ function ContactMe({ isDark }) {
           <li className={isDark ? "contact-item dark" : "contact-item"}>
             <AiFillGithub
               color={isDark ? "#fff" : "#333"}
-              size={20}
+              size={24}
               alt="Whatsapp icon"
             />
             github.com/tiozinfk
@@ -95,7 +95,7 @@ function ContactMe({ isDark }) {
           <li className={isDark ? "contact-item dark" : "contact-item"}>
             <AiFillLinkedin
               color={isDark ? "#fff" : "#333"}
-              size={20}
+              size={24}
               alt="Linkedin icon"
             />
             linkedin.com/in/rian-moraes
@@ -103,7 +103,7 @@ function ContactMe({ isDark }) {
           <li className={isDark ? "contact-item dark" : "contact-item"}>
             <AiOutlineWhatsApp
               color={isDark ? "#fff" : "#333"}
-              size={20}
+              size={24}
               alt="Github icon"
             />
             (21) 96745-3096

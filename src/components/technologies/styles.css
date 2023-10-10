@@ -6,7 +6,6 @@
   flex-direction: column;
   padding: 0 2rem;
 
-  margin: 3rem 0;
 }
 
 .stacks-div {
@@ -29,5 +28,11 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 2rem;
+}
+
+@media (max-width: 400px) {
+  .text-tittle {
+    font-size: 1.5rem !important;
+  }
 }
