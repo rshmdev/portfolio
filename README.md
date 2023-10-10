@@ -6,7 +6,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
 
-<img src="imagem.png" alt="Exemplo imagem">
+<img src="portfolio.jpg" alt="Exemplo imagem">
 
 > Este projeto é a materialização da minha jornada e conquistas. Aqui, cada linha de código e cada design cuidadosamente elaborado são testemunhos do meu compromisso com a excelência. Explore e descubra a essência do meu trabalho.
 
