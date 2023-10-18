@@ -28,7 +28,7 @@ i18n.init({
 
         aboutTitle: "ABOUT ME",
         aboutP:
-          "Hello, my name is Rian! I`m a passionate and experienced front-end developer specializing in technologies such as React, Next.js, Webflow, Node.js, TypeScript and React Native. I love creating innovative solutions and overcoming challenges in my projects. I`m a communicative person and I love working as part of a team to achieve our goals. In addition, I have a high level of knowledge in SEO and performance improvement, which allows me to optimize my projects to get the best results. I`m always looking for new opportunities to grow and learn more.",
+          "Hello, my name is Rian! I`m a passionate and experienced full stack developer specializing in technologies such as React, Next.js, Webflow, Node.js, TypeScript and React Native. I love creating innovative solutions and overcoming challenges in my projects. I`m a communicative person and I love working as part of a team to achieve our goals. In addition, I have a high level of knowledge in SEO and performance improvement, which allows me to optimize my projects to get the best results. I`m always looking for new opportunities to grow and learn more.",
 
         // SKILLS
 
@@ -130,7 +130,7 @@ i18n.init({
 
         aboutTitle: "SOBRE MIM",
         aboutP:
-          "Olá, meu nome é Rian! Sou um desenvolvedor front-end apaixonado e experiente, especializado em tecnologias como React, Next.js, Webflow, Node.js, TypeScript e React Native. Adoro criar soluções inovadoras e superar desafios nos meus projetos. Sou uma pessoa comunicativa e adoro trabalhar em equipa para atingir os nossos objectivos. Além disso, tenho um alto nível de conhecimento em SEO e melhoria de performance, o que me permite otimizar os meus projectos para obter os melhores resultados. Estou sempre à procura de novas oportunidades para crescer e aprender mais.",
+          "Olá, meu nome é Rian! Sou um desenvolvedor full stack apaixonado e experiente, especializado em tecnologias como React, Next.js, Webflow, Node.js, TypeScript e React Native. Adoro criar soluções inovadoras e superar desafios nos meus projetos. Sou uma pessoa comunicativa e adoro trabalhar em equipa para atingir os nossos objectivos. Além disso, tenho um alto nível de conhecimento em SEO e melhoria de performance, o que me permite otimizar os meus projectos para obter os melhores resultados. Estou sempre à procura de novas oportunidades para crescer e aprender mais.",
 
         // SKILLS
 
