@@ -10,7 +10,10 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between">
       <HeroSection />
 
-      <div id="skills" className="container flex flex-col items-center gap-14 my-20">
+      <div
+        id="skills"
+        className="container flex flex-col items-center gap-14 my-20 px-4"
+      >
         <h3 className="text-5xl font-semibold uppercase">Minhas Habilidades</h3>
 
         <div className="flex items-center flex-wrap gap-4">
@@ -20,24 +23,33 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="projects" className="container flex items-center flex-col gap-8 my-20">
+      <div
+        id="projects"
+        className="container flex items-center flex-col gap-8 my-20 px-4"
+      >
         <h3 className="text-5xl font-semibold uppercase">Projetos</h3>
 
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-col flex-wrap gap-4 sm:flex-row">
           {works.map((work, idx) => (
             <ProjectCard key={idx} {...work} />
           ))}
         </div>
       </div>
 
-      <div id="work-experience" className="container my-20 flex items-center flex-col gap-8">
+      <div
+        id="work-experience"
+        className="container my-20 flex items-center flex-col gap-8 px-4 "
+      >
         <h3 className="text-5xl font-semibold uppercase">
           Experiência Profissional
         </h3>
         <WorkExperience />
       </div>
 
-      <section id="contact" className="container my-20 flex items-center flex-col gap-8">
+      <section
+        id="contact"
+        className="container my-20 flex items-center flex-col gap-8 px-4"
+      >
         <div className="container px-6 py-12 mx-auto">
           <div className="text-center">
             <h3 className="text-5xl font-semibold uppercase">
@@ -92,7 +104,7 @@ export default function Home() {
               <h2 className="mt-4 text-lg font-medium text-gray-800 dark:text-white">
                 LinkedIn
               </h2>
-         
+
               <p className="mt-2 text-blue-500 dark:text-blue-400">
                 linkedin.com/in/rian-moraes/
               </p>
@@ -119,7 +131,7 @@ export default function Home() {
               <h2 className="mt-4 text-lg font-medium text-gray-800 dark:text-white">
                 WhatsApp
               </h2>
-          
+
               <p className="mt-2 text-blue-500 dark:text-blue-400">
                 +55 21 9 6745-3096
               </p>

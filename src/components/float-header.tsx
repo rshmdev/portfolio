@@ -19,13 +19,13 @@ export default function FloatHeader() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 h-14 z-50 ${
+      className={`fixed w-screen top-0 left-0 min-h-14 z-50 ${
         scroll > 340 ? "bg-black/95 shadow-md" : ""
       }`}
     >
       <div className="container h-full mx-auto flex items-center justify-center">
-        <nav className="">
-          <ul className="flex gap-14">
+        <nav className="py-4 w-full px-8 mx-auto">
+          <ul className="flex flex-wrap items-center gap-10 justify-center">
             <li className="hover:text-lime-50">
               <a
                 href="#hero"

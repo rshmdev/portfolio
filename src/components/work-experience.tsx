@@ -16,7 +16,7 @@ export default function WorkExperience() {
         contentArrowStyle={{
           borderRight: "7px solid  rgba(255, 255, 255, 0.1)",
         }}
-        date="NOV/2024 - PRESENT"
+        date="NOV/2023 - PRESENT"
         icon={<WorkIcon />}
         iconStyle={{ background: "rgba(255, 255, 255, 1)", color: "#fff" }}
       >
@@ -37,7 +37,7 @@ export default function WorkExperience() {
         contentArrowStyle={{
           borderRight: "7px solid  rgba(255, 255, 255, 0.1)",
         }}
-        date="OUT/2024 - PRESENT"
+        date="OUT/2023 - PRESENT"
         icon={<WorkIcon />}
         iconStyle={{ background: "rgba(255, 255, 255, 1)", color: "#fff" }}
       >
@@ -57,7 +57,7 @@ export default function WorkExperience() {
         contentArrowStyle={{
           borderRight: "7px solid  rgba(255, 255, 255, 0.1)",
         }}
-        date="JAN/2024 - SEP/2024"
+        date="JAN/2023 - SEP/2023"
         icon={<WorkIcon />}
         iconStyle={{ background: "rgba(255, 255, 255, 1)", color: "#fff" }}
       >
@@ -80,7 +80,7 @@ export default function WorkExperience() {
         visible
         icon={<WorkIcon />}
         className="vertical-timeline-element--work"
-        date="DEZ/2023 - JAN/2024"
+        date="DEZ/2022 - JAN/2023"
         iconStyle={{ background: "rgba(255, 255, 255, 1)", color: "#fff" }}
       >
         <h3 className="vertical-timeline-element-title">
