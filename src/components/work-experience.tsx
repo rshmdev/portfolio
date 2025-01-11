@@ -37,7 +37,7 @@ export default function WorkExperience() {
         contentArrowStyle={{
           borderRight: "7px solid  rgba(255, 255, 255, 0.1)",
         }}
-        date="OUT/2023 - PRESENT"
+        date="OUT/2023 - DEC/2024"
         icon={<WorkIcon />}
         iconStyle={{ background: "rgba(255, 255, 255, 1)", color: "#fff" }}
       >

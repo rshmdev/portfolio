@@ -1,5 +1,5 @@
 import ecommerce from "@images/Ecommerce.png";
-import aluno from "@images/aluno.png";
+import gapizer from "@images/gapizer-image.png";
 import assinatura from "@images/assinatura.png";
 
 const works = [
@@ -37,32 +37,25 @@ const works = [
   },
   {
     id: 5,
-    title: "Área do Aluno",
+    title: "GAPizer",
     description:
-      "Desenvolvimento da área do aluno para a plataforma de e-commerce de cursos, permitindo que os alunos assistam aulas e utilizem um sistema de questões extenso. A plataforma oferece uma experiência de aprendizado interativa e eficiente.",
-    image: aluno,
-    technologies: [
-      "React.js",
-      "TailwindCSS",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-    ],
+      "CLI para gerar apis em Go a partir de um arquivo de definição de endpoints. O projeto foi desenvolvido para facilitar a criação de APIs RESTful em Go, seguindo as melhores práticas de design de APIs.",
+    image: gapizer,
+    technologies: ["React.js", "TailwindCSS", "Go"],
     methods: [
-      "Integração com sistemas de vídeo para aulas",
-      "Implementação de um sistema de questões",
-      "Autenticação e gerenciamento de usuários",
+      "Desenvolvimento de interfaces gráficas",
+      "Geração de código a partir de templates",
+      "Integração com CLI em Go",
     ],
     benefits: [
-      "Facilita o acesso dos alunos às aulas online",
-      "Oferece uma ampla gama de questões para prática",
-      "Melhora a experiência de aprendizado com uma interface intuitiva",
-      "Permite fácil gerenciamento de progresso e desempenho",
+      "Facilita a criação de APIs RESTful em Go",
+      "Padroniza o design e a estrutura de APIs",
+      "Reduz o tempo de desenvolvimento de APIs",
     ],
     results: [
-      "Aumento da satisfação dos alunos",
-      "Melhoria na retenção e conclusão dos cursos",
-      "Redução de carga administrativa através de automação",
+      "Aumento na produtividade de desenvolvedores",
+      "Melhoria na qualidade e consistência de APIs",
+      "Redução de erros e retrabalho",
     ],
   },
   {
