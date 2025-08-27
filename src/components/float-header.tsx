@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
+import Image from "next/image";
 
 export default function FloatHeader() {
   const [scroll, setScroll] = useState(0);
@@ -75,7 +76,7 @@ export default function FloatHeader() {
         <nav ref={navRef} className="flex items-center justify-between py-4">
           {/* Logo/Brand */}
           <div className="flex items-center space-x-2">
-              <img
+              <Image
                 src="/icon.png"
                 alt="Rian Moraes"
                 width={40}

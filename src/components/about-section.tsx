@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -145,7 +146,7 @@ export default function AboutSection() {
             <div className="w-80 h-80 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500 p-1">
               <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center overflow-hidden">
                 <div className="w-72 h-72 rounded-full bg-gradient-to-br from-purple-400/20 via-pink-400/20 to-blue-400/20 flex items-center justify-center">
-                  <img
+                  <Image
                     src="/icon.png"
                     alt="Rian Moraes"
                     width={180}
