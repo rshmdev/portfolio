@@ -32,7 +32,7 @@ export default function AboutSection() {
           ease: 'power3.out',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 70%',
+            start: 'top 40%',
             toggleActions: 'play none none reverse',
           },
         }

@@ -96,7 +96,7 @@ export default function Home() {
 
       <section
         id="projects"
-        className="page-section min-h-screen relative bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-indigo-950/85 border-t border-white/5"
+        className="min-h-screen bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-indigo-950/85 border-t border-white/5"
       >
         <ProjectsSection />
       </section>
