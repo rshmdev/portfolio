@@ -257,7 +257,7 @@ export default function ContactSection() {
   return (
     <div ref={sectionRef} className="container mx-auto px-6 py-20 min-h-screen flex flex-col justify-center">
       <div className="text-center mb-16">
-        <h2 ref={titleRef} className="text-5xl lg:text-6xl font-bold text-white mb-6">
+        <h2 ref={titleRef} className="text-5xl lg:text-6xl font-bold text-white mb-6" style={{ fontSize: 'clamp(3rem, 6vw, 4rem)' }}>
           Vamos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Conversar</span>
         </h2>
         <p className="fade-in-text text-xl text-gray-300 max-w-2xl mx-auto">

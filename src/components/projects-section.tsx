@@ -66,7 +66,7 @@ export default function ProjectsSection() {
       <div className="container mx-auto px-6">
         {/* Title */}
         <div className="depth-item text-center mb-16">
-          <h2 className="text-6xl font-bold text-white mb-6">
+          <h2 className="text-6xl font-bold text-white mb-6" style={{ fontSize: 'clamp(3rem, 6vw, 4rem)' }}>
             Meus <span className="text-purple-400">Projetos</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">

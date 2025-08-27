@@ -190,6 +190,7 @@ export default function HeroSection() {
         <h1 
           ref={titleRef}
           className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-white mb-4 sm:mb-6 leading-tight px-2"
+          style={{ fontSize: 'clamp(2.25rem, 8vw, 9rem)' }}
         >
           {/* O conteúdo será inserido via JavaScript */}
         </h1>

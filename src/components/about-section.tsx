@@ -100,7 +100,7 @@ export default function AboutSection() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl">
         {/* Texto */}
         <div ref={textRef} className="space-y-6">
-          <h2 className="fade-in-text text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h2 className="fade-in-text text-5xl lg:text-6xl font-bold text-white mb-6" style={{ fontSize: 'clamp(3rem, 6vw, 4rem)' }}>
             Sobre <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Mim</span>
           </h2>
           

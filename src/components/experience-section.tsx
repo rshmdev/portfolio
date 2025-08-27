@@ -173,7 +173,7 @@ export default function ExperienceSection() {
     <div ref={sectionRef} className="container mx-auto px-4 sm:px-6 py-12 sm:py-20 min-h-screen flex flex-col justify-center">
       {/* Título da seção */}
       <div className="text-center mb-12 sm:mb-16">
-        <h2 ref={titleRef} className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
+        <h2 ref={titleRef} className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6" style={{ fontSize: 'clamp(1.875rem, 5vw, 4rem)' }}>
           Minha <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Jornada</span>
         </h2>
         <p className="text-base sm:text-xl text-gray-300 max-w-3xl mx-auto px-4">
