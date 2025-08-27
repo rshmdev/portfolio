@@ -16,18 +16,6 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-
-
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -48,10 +36,9 @@ body {
   scrollbar-color: #555 #1c1c1c; 
 }
 
-.hero-bg {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.4),  rgba(0, 0, 0, 1)), url('../../public/6226861.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
+body {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  min-height: 100vh;
 }
 
 @layer utilities {

@@ -1,144 +1,140 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HeroSection from "@/components/hero-section";
-import ProjectCard from "@/components/project-card";
-import SkillCard from "@/components/skill-card";
-import WorkExperience from "@/components/work-experience";
-import skills from "@/mocks/skills";
-import works from "@/mocks/works";
+import AboutSection from "@/components/about-section";
+import SkillsSection from "@/components/skills-section";
+import ExperienceSection from "@/components/experience-section";
+import ProjectsSection from "@/components/projects-section";
+import ContactSection from "@/components/contact-section";
+
+// Registrar plugins do GSAP
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function Home() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const ctx = gsap.context(() => {
+      // Animação inicial da página
+      gsap.fromTo(
+        ".page-section",
+        {
+          opacity: 0,
+          y: 100,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".page-section",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animação de parallax para elementos de fundo
+      gsap.utils.toArray(".parallax-element").forEach((element: any) => {
+        gsap.to(element, {
+          yPercent: -50,
+          ease: "none",
+          scrollTrigger: {
+            trigger: element,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      });
+
+      // Animação de fade in para textos
+      gsap.utils.toArray(".fade-in-text").forEach((element: any) => {
+        gsap.fromTo(
+          element,
+          {
+            opacity: 0,
+            y: 30,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <HeroSection />
-
-      <div
-        id="skills"
-        className="container flex flex-col items-center gap-14 my-20 px-4"
+    <main ref={containerRef} className="relative overflow-hidden">
+      {/* Hero Section */}
+      <section
+        id="hero"
+        className="page-section min-h-screen relative bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-purple-950/85"
       >
-        <h3 className="text-5xl font-semibold uppercase">Minhas Habilidades</h3>
+        <HeroSection />
+      </section>
 
-        <div className="flex items-center flex-wrap gap-4">
-          {skills.map((skill, idx) => (
-            <SkillCard key={idx} {...skill} />
-          ))}
-        </div>
-      </div>
-
-      <div
+      <section
         id="projects"
-        className="container flex items-center flex-col gap-8 my-20 px-4"
+        className="page-section min-h-screen relative bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-indigo-950/85 border-t border-white/5"
       >
-        <h3 className="text-5xl font-semibold uppercase">Projetos</h3>
+        <ProjectsSection />
+      </section>
 
-        <div className="flex flex-col flex-wrap gap-4 sm:flex-row">
-          {works.map((work, idx) => (
-            <ProjectCard key={idx} {...work} />
-          ))}
-        </div>
-      </div>
-
-      <div
-        id="work-experience"
-        className="container my-20 flex items-center flex-col gap-8 px-4 "
+      <section
+        id="skills"
+        className="page-section min-h-screen relative bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-indigo-950/85 border-t border-white/5"
       >
-        <h3 className="text-5xl font-semibold uppercase">
-          Experiência Profissional
-        </h3>
-        <WorkExperience />
-      </div>
+        <SkillsSection />
+      </section>
+
+      <section
+        id="experience"
+        className="page-section min-h-screen relative bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-indigo-950/85 border-t border-white/5"
+      >
+        <ExperienceSection />
+      </section>
+
+      <section
+        className="page-section min-h-screen relative bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-purple-950/85 border-t border-white/5 overflow-hidden"
+        id="about"
+      >
+        <AboutSection />
+      </section>
 
       <section
         id="contact"
-        className="container my-20 flex items-center flex-col gap-8 px-4"
+        className="page-section min-h-screen relative bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-purple-950/85 border-t border-white/5"
       >
-        <div className="container px-6 py-12 mx-auto">
-          <div className="text-center">
-            <h3 className="text-5xl font-semibold uppercase">
-              Entre em contato
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-1 gap-12 mt-10 md:grid-cols-2 lg:grid-cols-3">
-            <div className="flex flex-col items-center justify-center text-center">
-              <span className="p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-                  />
-                </svg>
-              </span>
-
-              <h2 className="mt-4 text-lg font-medium text-gray-800 dark:text-white">
-                Email
-              </h2>
-
-              <p className="mt-2 text-blue-500 dark:text-blue-400">
-                rianherminio2002@gmail.com
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center justify-center text-center">
-              <span className="p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                  />
-                </svg>
-              </span>
-
-              <h2 className="mt-4 text-lg font-medium text-gray-800 dark:text-white">
-                LinkedIn
-              </h2>
-
-              <p className="mt-2 text-blue-500 dark:text-blue-400">
-                linkedin.com/in/rian-moraes/
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center justify-center text-center">
-              <span className="p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-                  />
-                </svg>
-              </span>
-
-              <h2 className="mt-4 text-lg font-medium text-gray-800 dark:text-white">
-                WhatsApp
-              </h2>
-
-              <p className="mt-2 text-blue-500 dark:text-blue-400">
-                +55 21 9 6745-3096
-              </p>
-            </div>
-          </div>
-        </div>
+        <ContactSection />
       </section>
+
+      {/* Elementos de fundo para parallax */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="parallax-element absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl" />
+        <div className="parallax-element absolute top-3/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+        <div className="parallax-element absolute top-1/2 left-1/2 w-80 h-80 bg-pink-500/10 rounded-full blur-3xl" />
+      </div>
     </main>
   );
 }
