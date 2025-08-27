@@ -74,7 +74,7 @@ const CustomCursor: React.FC = () => {
                            target.closest('button, a, [role="button"]');
       
       setCursorColor(CURSOR_COLORS[tagName] || CURSOR_COLORS["default"]);
-      setIsHovering(isInteractive );
+      setIsHovering(Boolean(isInteractive));
       
       if (isInteractive && outerCursorRef.current) {
         gsap.to(outerCursorRef.current, {
