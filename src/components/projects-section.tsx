@@ -10,11 +10,164 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+// Componente para carousel de imagens do projeto
+interface ProjectImageCarouselProps {
+  images: string[];
+  title: string;
+  onImageClick: () => void;
+}
+
+const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = ({ images, title, onImageClick }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isImageAutoPlaying, setIsImageAutoPlaying] = useState(true);
+  const imageIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Auto-play para imagens
+  useEffect(() => {
+    if (isImageAutoPlaying && images.length > 1) {
+      imageIntervalRef.current = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % images.length);
+      }, 3000);
+    } else {
+      if (imageIntervalRef.current) {
+        clearInterval(imageIntervalRef.current);
+      }
+    }
+
+    return () => {
+      if (imageIntervalRef.current) {
+        clearInterval(imageIntervalRef.current);
+      }
+    };
+  }, [isImageAutoPlaying, images.length]);
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const goToImage = (index: number) => {
+    setCurrentImageIndex(index);
+  };
+
+  return (
+    <div 
+      className="relative overflow-hidden rounded-xl aspect-[16/9] group cursor-pointer"
+      onClick={onImageClick}
+      onMouseEnter={() => setIsImageAutoPlaying(false)}
+      onMouseLeave={() => setIsImageAutoPlaying(true)}
+    >
+      {/* Imagens */}
+      <div className="relative w-full h-full">
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-500 ${
+              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <Image
+              src={image}
+              width={800}
+              height={450}
+              alt={`${title} - Imagem ${index + 1}`}
+              className="w-full h-full object-cover object-center transition-all duration-500 group-hover:scale-110"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Overlay de hover */}
+      <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      
+      {/* Ícone de visualização */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        <div className="bg-white/20 backdrop-blur-sm rounded-full p-4">
+          <svg
+            className="w-8 h-8 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+            />
+          </svg>
+        </div>
+      </div>
+
+      {/* Controles de navegação das imagens (apenas se houver múltiplas imagens) */}
+      {images.length > 1 && (
+        <>
+          {/* Setas de navegação */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              prevImage();
+            }}
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full p-2 text-white opacity-0 group-hover:opacity-100 transition-all duration-300"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              nextImage();
+            }}
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full p-2 text-white opacity-0 group-hover:opacity-100 transition-all duration-300"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          {/* Indicadores de pontos */}
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToImage(index);
+                }}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === currentImageIndex
+                    ? "bg-white scale-125"
+                    : "bg-white/50 hover:bg-white/80"
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Contador de imagens */}
+          <div className="absolute top-2 right-2 bg-black/50 backdrop-blur-sm rounded-full px-2 py-1 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {currentImageIndex + 1}/{images.length}
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
 interface Work {
   id: number;
   title: string;
   description: string;
-  image: string;
+  images: string[];
   github: string;
   technologies: string[];
   methods: string[];
@@ -25,26 +178,11 @@ interface Work {
 export default function ProjectsSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const [selectedProject, setSelectedProject] = useState<Work | null>(null);
-  const [filteredWorks, setFilteredWorks] = useState<Work[]>(works);
-  const [selectedTech, setSelectedTech] = useState<string>("Todos");
+  const [filteredWorks] = useState<Work[]>(works);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Get all unique technologies
-  const allTechnologies = [
-    "Todos",
-    ...Array.from(new Set(works.flatMap((work) => work.technologies))),
-  ];
-
-  // Filter projects by technology
-  const filterByTechnology = (tech: string) => {
-    setSelectedTech(tech);
-    if (tech === "Todos") {
-      setFilteredWorks(works);
-    } else {
-      setFilteredWorks(
-        works.filter((work) => work.technologies.includes(tech))
-      );
-    }
-  };
 
   // Open project modal
   const openProjectModal = (project: Work) => {
@@ -58,39 +196,122 @@ export default function ProjectsSection() {
     document.body.style.overflow = "unset";
   };
 
+  // Auto-play do carousel
   useEffect(() => {
-    if (!sectionRef.current) return;
+    if (isAutoPlaying && filteredWorks.length > 1) {
+      intervalRef.current = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % filteredWorks.length);
+      }, 4000);
+    }
 
-    const section = sectionRef.current;
-    const items = section.querySelectorAll(".depth-item");
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [isAutoPlaying, filteredWorks.length]);
 
-    // Set initial state for all items
-    gsap.set(items, {
-      opacity: 0,
-      y: 30,
-      scale: 0.95,
-    });
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % filteredWorks.length);
+  };
 
-    // Animate each item individually when it enters viewport
-    gsap.utils.toArray(items).forEach((elem: any, index) => {
-      ScrollTrigger.create({
-        trigger: elem,
-        start: "top 85%",
-        end: "bottom 15%",
-        toggleActions: "play none none reverse",
-        animation: gsap.to(elem, {
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + filteredWorks.length) % filteredWorks.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Animacao do titulo
+      gsap.fromTo(
+        ".projects-title",
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".projects-title",
+            start: "top 80%",
+          },
+        }
+      );
+
+      // Animacao do filtro
+      gsap.fromTo(
+        ".filter-container",
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
           duration: 0.8,
+          delay: 0.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".filter-container",
+            start: "top 80%",
+          },
+        }
+      );
+
+      // Animacao do carousel
+      gsap.fromTo(
+        ".carousel-container",
+        { opacity: 0, scale: 0.9 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1.2,
+          delay: 0.4,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".carousel-container",
+            start: "top 80%",
+          },
+        }
+      );
+
+      // Animacao dos controles
+      gsap.fromTo(
+        ".carousel-controls",
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          delay: 0.6,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".carousel-controls",
+            start: "top 90%",
+          },
+        }
+      );
+
+      // Animacao do CTA
+      gsap.fromTo(
+        ".projects-cta",
+        { opacity: 0, y: 50, scale: 0.9 },
+        {
           opacity: 1,
           y: 0,
           scale: 1,
-          ease: "power2.out",
-          delay: index * 0.1,
-        }),
-      });
-    });
+          duration: 1,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: ".projects-cta",
+            start: "top 80%",
+          },
+        }
+      );
+    }, sectionRef);
 
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      ctx.revert();
     };
   }, []);
 
@@ -106,158 +327,233 @@ export default function ProjectsSection() {
       <section
         ref={sectionRef}
         id="projects"
-        className="min-h-screen py-20 overflow-hidden"
-        style={{ perspective: "1000px" }}
+        className="min-h-screen py-20 relative overflow-hidden"
       >
-        <div className="container mx-auto px-6">
+        {/* Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-radial from-purple-900/20 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.3)_100%)]"></div>
+          {/* Floating particles */}
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-purple-400/30 rounded-full animate-pulse"></div>
+          <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-cyan-400/40 rounded-full animate-ping"></div>
+          <div className="absolute top-1/2 left-3/4 w-3 h-3 bg-pink-400/20 rounded-full animate-bounce"></div>
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
           {/* Title */}
-          <div className="depth-item text-center mb-16">
+          <div className="projects-title text-center mb-16">
             <h2
-              className="text-6xl font-bold text-white mb-6"
+              className="text-6xl font-bold text-white mb-6 relative"
               style={{ fontSize: "clamp(3rem, 6vw, 4rem)" }}
             >
-              Meus <span className="text-purple-400">Projetos</span>
+              <span className="relative inline-block">
+                Meus{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 animate-pulse">
+                  Projetos
+                </span>
+                <div className="absolute -inset-1 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 blur-xl -z-10 animate-pulse"></div>
+              </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-              Explore alguns dos projetos que desenvolvi com tecnologias
-              modernas
+              Explore alguns dos projetos que desenvolvi com tecnologias modernas
+              <br />
+              <span className="text-purple-400 text-lg">
+                Navegue pelos meus trabalhos mais recentes
+              </span>
             </p>
-          </div>
+          </div>  
 
-          {/* Technology Filter */}
-          <div className="depth-item mb-12">
-            <div className="flex flex-wrap justify-center gap-3">
-              {allTechnologies.map((tech) => (
-                <button
-                  key={tech}
-                  onClick={() => filterByTechnology(tech)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                    selectedTech === tech
-                      ? "bg-purple-600 text-white shadow-lg shadow-purple-600/25"
-                      : "bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white"
-                  }`}
-                >
-                  {tech}
-                </button>
-              ))}
-            </div>
-          </div>
+          {/* Carousel Container */}
+          <div className="carousel-container relative max-w-6xl mx-auto mb-16">
+            <div className="relative overflow-hidden rounded-2xl">
+              {/* Slides */}
+              <div 
+                className="flex transition-transform duration-1000 ease-in-out"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                onMouseEnter={() => setIsAutoPlaying(false)}
+                onMouseLeave={() => setIsAutoPlaying(true)}
+              >
+                {filteredWorks.map((work, index) => (
+                  <div key={work.id} className="w-full flex-shrink-0">
+                    <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-purple-400/50 transition-all duration-500 hover:bg-white/15 mx-4">
+                      <div className="grid md:grid-cols-2 gap-8 items-center">
+                        {/* Project Images Carousel */}
+                        <ProjectImageCarousel 
+                          images={work.images} 
+                          title={work.title}
+                          onImageClick={() => openProjectModal(work)}
+                        />
 
-          {/* Project Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {filteredWorks.map((work, index) => (
-              <div key={work.id} className="depth-item">
-                <div
-                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-purple-400/50 transition-all duration-500 hover:bg-white/15 h-full flex flex-col group cursor-pointer"
-                  onClick={() => openProjectModal(work)}
-                >
-                  <div className="relative overflow-hidden rounded-xl mb-4 aspect-[4/3]">
-                    <Image
-                      src={work.image}
-                      width={400}
-                      height={300}
-                      alt={work.title}
-                      className="w-full h-full object-cover object-center transition-all duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
-                        <svg
-                          className="w-6 h-6 text-white"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                          />
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                          />
-                        </svg>
+                        {/* Project Info */}
+                        <div className="space-y-6">
+                          <h3 className="text-3xl font-bold text-white hover:text-purple-400 transition-colors duration-300">
+                            {work.title}
+                          </h3>
+
+                          <p className="text-gray-300 text-lg leading-relaxed">
+                            {work.description}
+                          </p>
+
+                          <div className="flex flex-wrap gap-2">
+                            {work.technologies.slice(0, 6).map((tech, techIndex) => (
+                              <span
+                                key={techIndex}
+                                className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm font-medium border border-purple-500/30"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                            {work.technologies.length > 6 && (
+                              <span className="px-3 py-1 bg-gray-500/20 text-gray-400 rounded-full text-sm font-medium">
+                                +{work.technologies.length - 6}
+                              </span>
+                            )}
+                          </div>
+
+                          <div className="flex gap-4">
+                            <button
+                              onClick={() => openProjectModal(work)}
+                              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50 flex items-center gap-2"
+                            >
+                              <span>Ver detalhes</span>
+                              <svg
+                                className="w-5 h-5"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M9 5l7 7-7 7"
+                                />
+                              </svg>
+                            </button>
+                            {work.github && (
+                            <a
+                              href={work.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="px-6 py-3 bg-transparent border-2 border-purple-500 text-purple-300 hover:bg-purple-500/10 hover:text-white rounded-lg font-semibold transition-all duration-300 flex items-center gap-2"
+                            >
+                              <svg
+                                className="w-5 h-5"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                              </svg>
+                              <span>GitHub</span>
+                            </a>
+                            )}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors duration-300">
-                    {work.title}
-                  </h3>
-
-                  <p className="text-gray-300 text-sm mb-4 flex-grow line-clamp-3">
-                    {work.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {work.technologies.slice(0, 4).map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-2 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium border border-purple-500/30"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                    {work.technologies.length > 4 && (
-                      <span className="px-2 py-1 bg-gray-500/20 text-gray-400 rounded-full text-xs font-medium">
-                        +{work.technologies.length - 4}
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="flex items-center justify-between mt-auto">
-                    <span className="text-purple-400 text-sm font-medium group-hover:text-purple-300 transition-colors">
-                      Ver detalhes
-                    </span>
-                    <svg
-                      className="w-4 h-4 text-purple-400 group-hover:translate-x-1 transition-transform"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </div>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Navigation Arrows */}
+            {filteredWorks.length > 1 && (
+              <>
+                <button
+                  onClick={prevSlide}
+                  className="absolute -left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 text-white hover:text-purple-400 transition-all duration-300 border border-white/20 hover:border-purple-400/50"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="absolute -right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 text-white hover:text-purple-400 transition-all duration-300 border border-white/20 hover:border-purple-400/50"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </>
+            )}
           </div>
 
-          {/* Call to Action */}
-          <div className="depth-item text-center">
-            <div className="bg-gradient-to-r from-purple-600/20 to-cyan-600/20 backdrop-blur-sm rounded-2xl p-8 border border-purple-400/30">
-              <h3 className="text-3xl font-bold text-white mb-4">
-                Gostou dos projetos?
-              </h3>
-              <p className="text-gray-300 mb-6">
-                Entre em contato para discutirmos seu próximo projeto
-              </p>
+          {/* Carousel Controls */}
+          {filteredWorks.length > 1 && (
+            <div className="carousel-controls flex justify-center items-center gap-6 mb-16">
+              {/* Dots Indicator */}
+              <div className="flex gap-2">
+                {filteredWorks.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToSlide(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentSlide
+                        ? "bg-gradient-to-r from-purple-500 to-cyan-500 scale-125"
+                        : "bg-white/30 hover:bg-white/50"
+                    }`}
+                  />
+                ))}
+              </div>
+
+              {/* Auto-play Toggle */}
               <button
-                onClick={() => handleNavClick("contact")}
-                className="px-8 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105"
+                onClick={() => setIsAutoPlaying(!isAutoPlaying)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
+                  isAutoPlaying
+                    ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white"
+                    : "bg-white/10 text-gray-300 hover:bg-white/20 border border-white/20"
+                }`}
               >
-                Vamos Conversar
+                {isAutoPlaying ? (
+                  <>
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+                    </svg>
+                    <span>Pausar</span>
+                  </>
+                ) : (
+                  <>
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                    <span>Reproduzir</span>
+                  </>
+                )}
               </button>
+            </div>
+          )}
+
+          {/* Call to Action */}
+          <div className="projects-cta text-center">
+            <div className="bg-gradient-to-r from-purple-600/20 to-cyan-600/20 backdrop-blur-md rounded-2xl p-8 border border-purple-400/30 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-cyan-600/10 animate-pulse"></div>
+              <div className="relative z-10">
+                <h3 className="text-3xl font-bold text-white mb-4">
+                  Gostou dos projetos?
+                </h3>
+                <p className="text-gray-300 text-lg mb-8">
+                  Entre em contato para discutirmos seu proximo projeto
+                </p>
+                <button
+                  onClick={() => handleNavClick("contact")}
+                  className="px-8 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-purple-500/50"
+                >
+                  Vamos Conversar
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Project Modal - Moved outside section to be relative to viewport */}
+      {/* Project Modal */}
       {selectedProject && (
         <div
           className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] flex items-center justify-center p-4"
           onClick={closeProjectModal}
-          style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
+          style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0 }}
         >
           <div
             className="bg-gray-900/95 backdrop-blur-md rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-purple-400/30 relative"
@@ -290,14 +586,12 @@ export default function ProjectsSection() {
 
             {/* Modal Content */}
             <div className="p-6">
-              {/* Project Image */}
-              <div className="relative overflow-hidden rounded-xl mb-6 aspect-[16/9]">
-                <Image
-                  src={selectedProject.image}
-                  width={800}
-                  height={450}
-                  alt={selectedProject.title}
-                  className="w-full h-full object-cover object-center"
+              {/* Project Images Carousel */}
+              <div className="mb-6">
+                <ProjectImageCarousel 
+                  images={selectedProject.images} 
+                  title={selectedProject.title}
+                  onImageClick={() => {}}
                 />
               </div>
 
@@ -349,7 +643,7 @@ export default function ProjectsSection() {
               {/* Benefits */}
               <div className="mb-6">
                 <h3 className="text-lg font-semibold text-white mb-3">
-                  Benefícios e Impacto
+                  Beneficios e Impacto
                 </h3>
                 <ul className="space-y-2">
                   {selectedProject.benefits.map((benefit, index) => (
@@ -367,7 +661,7 @@ export default function ProjectsSection() {
               {/* Results */}
               <div className="mb-6">
                 <h3 className="text-lg font-semibold text-white mb-3">
-                  Resultados Alcançados
+                  Resultados Alcancados
                 </h3>
                 <ul className="space-y-2">
                   {selectedProject.results.map((result, index) => (
@@ -381,30 +675,6 @@ export default function ProjectsSection() {
                   ))}
                 </ul>
               </div>
-
-              {/* <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-purple-400/20">
-                <a
-                  href={selectedProject.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 text-center flex items-center justify-center gap-2"
-                >
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                  </svg>
-                  Ver Projeto
-                </a>
-                <button
-                  onClick={() => handleNavClick("contact")}
-                  className="flex-1 px-6 py-3 bg-transparent border-2 border-purple-500 text-purple-300 hover:bg-purple-500/10 hover:text-white rounded-lg font-semibold transition-all duration-300 text-center"
-                >
-                  Falar sobre este projeto
-                </button>
-              </div> */}
             </div>
           </div>
         </div>

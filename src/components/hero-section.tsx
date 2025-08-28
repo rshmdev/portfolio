@@ -20,6 +20,9 @@ export default function HeroSection() {
     if (typeof window === 'undefined') return;
 
     const ctx = gsap.context(() => {
+      // Primeiro, tornar o título visível
+      gsap.set(titleRef.current, { opacity: 1 });
+      
       // Animação inicial do título com efeito de digitação
       const titleText = "Rian Moraes";
       const titleElement = titleRef.current;
@@ -40,10 +43,10 @@ export default function HeroSection() {
           opacity: 1,
           y: 0,
           rotationX: 0,
-          duration: 0.8,
-          stagger: 0.1,
+          duration: 0.6,
+          stagger: 0.05,
           ease: 'back.out(1.7)',
-          delay: 0.5,
+          delay: 0.1,
         });
       }
 
@@ -59,9 +62,9 @@ export default function HeroSection() {
           opacity: 1,
           y: 0,
           scale: 1,
-          duration: 1,
+          duration: 0.8,
           ease: 'power3.out',
-          delay: 1.5,
+          delay: 0.6,
         }
       );
 
@@ -77,10 +80,10 @@ export default function HeroSection() {
           opacity: 1,
           y: 0,
           scale: 1,
-          duration: 0.6,
-          stagger: 0.2,
+          duration: 0.5,
+          stagger: 0.1,
           ease: 'power2.out',
-          delay: 2,
+          delay: 1.1,
         }
       );
 
@@ -112,7 +115,7 @@ export default function HeroSection() {
             duration: 10 + Math.random() * 10,
             repeat: -1,
             ease: 'none',
-            delay: Math.random() * 5,
+            delay: Math.random() * 1,
           });
 
           gsap.to(particle, {
@@ -121,7 +124,7 @@ export default function HeroSection() {
             repeat: -1,
             yoyo: true,
             ease: 'sine.inOut',
-            delay: Math.random() * 3,
+            delay: Math.random() * 0.5,
           });
         });
       }
@@ -176,7 +179,7 @@ export default function HeroSection() {
 
       {/* Partículas flutuantes */}
       <div ref={particlesRef} className="absolute inset-0 pointer-events-none z-10">
-        {Array.from({ length: 40 }).map((_, index) => (
+        {Array.from({ length: 5 }).map((_, index) => (
           <div
             key={index}
             className="absolute w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-30"
@@ -189,7 +192,7 @@ export default function HeroSection() {
         {/* Título principal */}
         <h1 
           ref={titleRef}
-          className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-white mb-4 sm:mb-6 px-4 sm:px-6"
+          className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-white mb-4 sm:mb-6 px-4 sm:px-6 opacity-0"
           style={{ fontSize: 'clamp(2.25rem, 8vw, 9rem)', lineHeight: '1.1', letterSpacing: '-0.02em' }}
         >
           {/* O conteúdo será inserido via JavaScript */}
@@ -198,13 +201,13 @@ export default function HeroSection() {
         {/* Subtítulo */}
         <p 
           ref={subtitleRef}
-          className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto px-4"
+          className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto px-4 opacity-0"
         >
           Desenvolvedor <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-semibold">Full Stack</span> criando experiências digitais inovadoras
         </p>
 
         {/* Call to Actions */}
-        <div ref={ctaRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
+        <div ref={ctaRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 opacity-0">
           <button
             onClick={() => scrollToSection('projects')}
             className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500/50 text-sm sm:text-base"
@@ -232,7 +235,16 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 opacity-0" ref={ref => {
+        if (ref) {
+          gsap.to(ref, {
+            opacity: 1,
+            delay: 1.5,
+            duration: 0.4,
+            ease: 'power2.out'
+          });
+        }
+      }}>
         <div className="flex flex-col items-center gap-2 text-gray-400 animate-bounce">
           <span className="text-sm font-medium">Scroll</span>
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -243,8 +255,8 @@ export default function HeroSection() {
 
       {/* Elementos decorativos */}
       <div className="absolute top-10 sm:top-20 left-4 sm:left-20 w-16 sm:w-32 h-16 sm:h-32 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-10 sm:bottom-20 right-4 sm:right-20 w-20 sm:w-40 h-20 sm:h-40 bg-pink-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/2 left-2 sm:left-10 w-12 sm:w-24 h-12 sm:h-24 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+      <div className="absolute bottom-10 sm:bottom-20 right-4 sm:right-20 w-20 sm:w-40 h-20 sm:h-40 bg-pink-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.3s' }} />
+      <div className="absolute top-1/2 left-2 sm:left-10 w-12 sm:w-24 h-12 sm:h-24 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.6s' }} />
     </div>
   );
 }

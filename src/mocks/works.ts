@@ -1,45 +1,18 @@
-
 const works = [
   {
     id: 1,
-    title: "GAPIzer",
-    description:
-      "Ferramenta CLI desenvolvida em Go que permite gerar APIs completas a partir de um arquivo de configuração YAML. Cria estrutura do projeto, rotas, handlers, middlewares (autenticação e logging), documentação Swagger e muito mais. Ideal para desenvolvedores que desejam agilidade no desenvolvimento de APIs.",
-    image: "/gapizer.webp",
-    github: "https://www.npmjs.com/package/gapizer",
-    technologies: [
-      "Go",
-      "CLI",
-      "YAML",
-      "Swagger",
-      "REST API",
-      "NPM",
-    ],
-    methods: [
-      "Desenvolvimento de ferramenta CLI em Go",
-      "Geração automática de código a partir de YAML",
-      "Implementação de middlewares e documentação",
-      "Publicação no NPM para distribuição",
-    ],
-    benefits: [
-      "Acelera significativamente o desenvolvimento de APIs",
-      "Padroniza estrutura e boas práticas de projeto",
-      "Gera documentação automática com Swagger",
-      "Reduz tempo de setup inicial de projetos",
-    ],
-    results: [
-      "500+ downloads em uma semana",
-      "Ferramenta criada para fins de estudo e aprendizado",
-      "Demonstração de habilidades em Go e desenvolvimento CLI",
-    ],
-  },
-  {
-    id: 2,
     title: "Intellifix",
     description:
       "Plataforma industrial inovadora que transforma a manutenção através de tecnologia de ponta. Como líder técnico, criei o projeto do zero junto com a equipe, desenvolvendo uma solução completa para otimização de processos industriais com IA, IoT e análise preditiva.",
-    image: "/intellifix.png",
-    github: "https://smigroup.com.br/en/intellifix-transforme-sua-industria-com-tecnologia-de-ponta-pt-br/",
+    images: [
+      "/intellifix-bct-dash.png",
+      "/intellifix-plan-gantt.png",
+      "/intellifix-plan-home.png",
+      "/intellifix-bct-home.png",
+      "/intellifix-oee-factory.png",
+    ],
+    github:
+      "",
     technologies: [
       "React.js",
       "Next.js",
@@ -69,12 +42,45 @@ const works = [
     ],
   },
   {
+    id: 2,
+    title: "GAPIzer",
+    description:
+      "Ferramenta CLI desenvolvida em Go que permite gerar APIs completas a partir de um arquivo de configuração YAML. Cria estrutura do projeto, rotas, handlers, middlewares (autenticação e logging), documentação Swagger e muito mais. Ideal para desenvolvedores que desejam agilidade no desenvolvimento de APIs.",
+    images: [
+      "/gapizer.gif",
+    ],
+    github: "https://github.com/rshmdev/gapizer",
+    technologies: ["Go", "CLI", "YAML", "Swagger", "REST API", "NPM"],
+    methods: [
+      "Desenvolvimento de ferramenta CLI em Go",
+      "Geração automática de código a partir de YAML",
+      "Implementação de middlewares e documentação",
+      "Publicação no NPM para distribuição",
+    ],
+    benefits: [
+      "Acelera significativamente o desenvolvimento de APIs",
+      "Padroniza estrutura e boas práticas de projeto",
+      "Gera documentação automática com Swagger",
+      "Reduz tempo de setup inicial de projetos",
+    ],
+    results: [
+      "500+ downloads em uma semana",
+      "Ferramenta criada para fins de estudo e aprendizado",
+      "Demonstração de habilidades em Go e desenvolvimento CLI",
+    ],
+  },
+  {
     id: 3,
     title: "Cultura Connect",
     description:
       "Plataforma inovadora para gestão e promoção de projetos culturais no Brasil. Conecta artistas, produtores culturais, empresas e patrocinadores em um ecossistema colaborativo que fortalece a cultura brasileira. Democratiza o acesso à gestão cultural profissional com ferramentas modernas e intuitivas.",
-    image: "/cultura-connect.png",
-    github: "https://github.com/",
+    images: [
+      "/cultura-connect-home.png",
+      "/cultura-connect-login.png",
+      "/cultura-connect-register.png",
+      "/cultura-connect-new-project.png",
+    ],
+    github: "",
     technologies: [
       "React.js",
       "Next.js",
@@ -107,8 +113,12 @@ const works = [
     title: "Razão Quest App",
     description:
       "Aplicativo mobile desenvolvido para transformar a experiência dos alunos através da gamificação, incentivando aprendizado e boas atitudes. Os alunos acumulam moedas e XP completando missões, podem trocar por produtos na loja interna, e professores podem premiar ou penalizar baseado em desempenho.",
-    image: "/razao-quest.webp",
-    github: "https://github.com/",
+    images: [
+      "/razao-quest-app-home.jpeg",
+      "/razao-quest-app-login.jpeg",
+      "/razao-quest-app-ranking.jpeg",
+    ],
+    github: "",
     technologies: [
       "React Native",
       "TypeScript",
@@ -126,7 +136,7 @@ const works = [
     benefits: [
       "Transforma experiência educacional através de gamificação",
       "Incentiva aprendizado e comportamentos positivos",
-      "Facilita gestão escolar do progresso dos alunos",
+      "Facilita ge/stão escolar do progresso dos alunos",
       "Aumenta engajamento e motivação estudantil",
     ],
     results: [
@@ -140,8 +150,8 @@ const works = [
     title: "Razão Quest Admin",
     description:
       "Painel administrativo completo do Razão Quest App, onde coordenadores e professores gerenciam todas as funcionalidades da plataforma de gamificação escolar. Inclui cadastro de missões, definição de produtos/recompensas, controle de estoque, atribuição de bonificações e monitoramento de progresso.",
-    image: "/razao-quest-admin.webp",
-    github: "https://github.com/",
+    images: ["/razao-quest-admin-attitudes.png", "/razao-quest-admin-home.png"],
+    github: "",
     technologies: [
       "React.js",
       "Next.js",

@@ -37,12 +37,12 @@ export default function FloatHeader() {
     if (headerRef.current && navRef.current) {
       gsap.fromTo(headerRef.current, 
         { y: -100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, delay: 0.5, ease: "power2.out" }
+        { y: 0, opacity: 1, duration: 0.6, delay: 0.05, ease: "power2.out" }
       );
       
       gsap.fromTo(navRef.current.querySelectorAll('li'), 
         { y: -20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, delay: 1, ease: "power2.out" }
+        { y: 0, opacity: 1, duration: 0.4, stagger: 0.05, delay: 0.3, ease: "power2.out" }
       );
     }
 
@@ -66,7 +66,7 @@ export default function FloatHeader() {
   return (
     <header
       ref={headerRef}
-      className={`fixed w-full top-0 left-0 z-50 transition-all duration-500 ${
+      className={`fixed w-full top-0 left-0 z-50 transition-all duration-500 opacity-0 ${
         scroll > 100 
           ? "bg-gradient-to-r from-slate-950/95 via-gray-900/95 to-slate-950/95 backdrop-blur-xl shadow-2xl" 
           : "bg-transparent"

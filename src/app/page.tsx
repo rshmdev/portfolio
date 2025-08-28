@@ -89,7 +89,7 @@ export default function Home() {
       {/* Hero Section */}
       <section
         id="hero"
-        className="page-section min-h-screen relative bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-purple-950/85"
+        className="min-h-screen relative bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-purple-950/85"
       >
         <HeroSection />
       </section>
