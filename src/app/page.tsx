@@ -24,7 +24,7 @@ export default function Home() {
     const ctx = gsap.context(() => {
       // Animação inicial da página
       gsap.fromTo(
-        ".page-section",
+        ".",
         {
           opacity: 0,
           y: 100,
@@ -36,7 +36,7 @@ export default function Home() {
           stagger: 0.2,
           ease: "power3.out",
           scrollTrigger: {
-            trigger: ".page-section",
+            trigger: ".",
             start: "top 80%",
             end: "bottom 20%",
             toggleActions: "play none none reverse",
@@ -103,20 +103,20 @@ export default function Home() {
 
       <section
         id="skills"
-        className="page-section min-h-screen relative bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-indigo-950/85 border-t border-white/5"
+        className=" min-h-screen relative bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-indigo-950/85 border-t border-white/5"
       >
         <SkillsSection />
       </section>
 
       <section
         id="experience"
-        className="page-section min-h-screen relative bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-indigo-950/85 border-t border-white/5"
+        className=" min-h-screen relative bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-indigo-950/85 border-t border-white/5"
       >
         <ExperienceSection />
       </section>
 
       <section
-        className="page-section min-h-screen relative bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-purple-950/85 border-t border-white/5 overflow-hidden"
+        className=" min-h-screen relative bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-purple-950/85 border-t border-white/5 overflow-hidden"
         id="about"
       >
         <AboutSection />
@@ -124,7 +124,7 @@ export default function Home() {
 
       <section
         id="contact"
-        className="page-section min-h-screen relative bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-purple-950/85 border-t border-white/5"
+        className=" min-h-screen relative bg-gradient-to-br from-slate-950/90 via-slate-900/90 to-purple-950/85 border-t border-white/5"
       >
         <ContactSection />
       </section>
