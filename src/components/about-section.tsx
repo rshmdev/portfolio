@@ -4,12 +4,14 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
 export default function AboutSection() {
+  const t = useTranslations('about');
   const sectionRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -102,29 +104,24 @@ export default function AboutSection() {
         {/* Texto */}
         <div ref={textRef} className="space-y-6">
           <h2 className="fade-in-text text-5xl lg:text-6xl font-bold text-white mb-6" style={{ fontSize: 'clamp(3rem, 6vw, 4rem)' }}>
-            Sobre <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Mim</span>
+            {t('title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">{t('titleHighlight')}</span>
           </h2>
           
           <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
             <p className="fade-in-text">
-              Olá! Eu sou <strong className="text-white">Rian Moraes</strong>, um desenvolvedor full stack apaixonado por criar 
-              experiências digitais inovadoras e funcionais.
+              {t('intro')} <strong className="text-white">{t('name')}</strong>{t('introDescription')}
             </p>
             
             <p className="fade-in-text">
-              Com expertise em <strong className="text-purple-400">React</strong>, <strong className="text-purple-400">Next.js</strong>, 
-              <strong className="text-purple-400"> Node.js</strong> e <strong className="text-purple-400">TypeScript</strong>, 
-              transformo ideias em soluções web modernas e escaláveis.
+              {t('expertise')}
             </p>
             
             <p className="fade-in-text">
-              Minha jornada no desenvolvimento web começou com curiosidade e evoluiu para uma paixão por 
-              tecnologias de ponta, sempre buscando as melhores práticas e padrões de código.
+              {t('journey')}
             </p>
             
             <p className="fade-in-text">
-              Quando não estou codando, gosto de explorar novas tecnologias, contribuir para projetos 
-              open source e compartilhar conhecimento com a comunidade de desenvolvedores.
+              {t('interests')}
             </p>
           </div>
 
@@ -148,7 +145,7 @@ export default function AboutSection() {
                 <div className="w-72 h-72 rounded-full bg-gradient-to-br from-purple-400/20 via-pink-400/20 to-blue-400/20 flex items-center justify-center">
                   <Image
                     src="/icon.png"
-                    alt="Rian Moraes"
+                    alt={t('name')}
                     width={180}
                     height={180}
                     className="w-full h-full rounded-full object-cover"

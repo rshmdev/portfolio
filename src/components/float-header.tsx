@@ -3,11 +3,18 @@
 import { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
+import { useTranslations, useLocale } from 'next-intl';
+import { useRouter, usePathname } from 'next/navigation';
 
 export default function FloatHeader() {
+  const t = useTranslations('navigation');
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
   const [scroll, setScroll] = useState(0);
   const [activeSection, setActiveSection] = useState('');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const navRef = useRef<HTMLElement>(null);
 
@@ -63,6 +70,14 @@ export default function FloatHeader() {
     setIsMobileMenuOpen(false);
   };
 
+  const handleLanguageChange = (newLocale: string) => {
+    const segments = pathname.split('/');
+    segments[1] = newLocale;
+    const newPath = segments.join('/');
+    router.push(newPath);
+    setIsLanguageMenuOpen(false);
+  };
+
   return (
     <header
       ref={headerRef}
@@ -98,24 +113,25 @@ export default function FloatHeader() {
           </button>
 
           {/* Desktop Navigation Links */}
-          <ul className="hidden md:flex items-center space-x-8">
-            <li>
-              <a
-                href="#hero"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick("hero");
-                }}
-                className={`relative transition-all duration-300 group cursor-pointer px-3 py-2 rounded-lg ${
-                  activeSection === 'hero' 
-                    ? 'text-cyan-400 bg-slate-700/30' 
-                    : 'text-gray-400 hover:text-gray-200'
-                }`}
-              >
-                <span className="relative z-10">Início</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-700/30 to-gray-700/30 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -z-10"></div>
-              </a>
-            </li>
+          <div className="hidden md:flex items-center space-x-8">
+            <ul className="flex items-center space-x-8">
+              <li>
+                <a
+                  href="#hero"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick("hero");
+                  }}
+                  className={`relative transition-all duration-300 group cursor-pointer px-3 py-2 rounded-lg ${
+                    activeSection === 'hero' 
+                      ? 'text-cyan-400 bg-slate-700/30' 
+                      : 'text-gray-400 hover:text-gray-200'
+                  }`}
+                >
+                  <span className="relative z-10">{t('home')}</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-slate-700/30 to-gray-700/30 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -z-10"></div>
+                </a>
+              </li>
             <li>
               <a
                 href="#about"
@@ -129,7 +145,7 @@ export default function FloatHeader() {
                     : 'text-gray-400 hover:text-gray-200'
                 }`}
               >
-                <span className="relative z-10">Sobre</span>
+                <span className="relative z-10">{t('about')}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-700/30 to-gray-700/30 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -z-10"></div>
               </a>
             </li>
@@ -146,7 +162,7 @@ export default function FloatHeader() {
                     : 'text-gray-400 hover:text-gray-200'
                 }`}
               >
-                <span className="relative z-10">Skills</span>
+                <span className="relative z-10">{t('skills')}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-700/30 to-gray-700/30 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -z-10"></div>
               </a>
             </li>
@@ -163,7 +179,7 @@ export default function FloatHeader() {
                     : 'text-gray-400 hover:text-gray-200'
                 }`}
               >
-                <span className="relative z-10">Experiência</span>
+                <span className="relative z-10">{t('experience')}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-700/30 to-gray-700/30 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -z-10"></div>
               </a>
             </li>
@@ -180,23 +196,66 @@ export default function FloatHeader() {
                     : 'text-gray-400 hover:text-gray-200'
                 }`}
               >
-                <span className="relative z-10">Projetos</span>
+                <span className="relative z-10">{t('projects')}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-700/30 to-gray-700/30 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -z-10"></div>
               </a>
             </li>
             <li>
-              <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick("contact");
-                }}
-                className="relative px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg hover:from-cyan-400 hover:to-purple-500 transition-all duration-300 transform hover:scale-105 cursor-pointer"
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick("contact");
+                  }}
+                  className="relative px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg hover:from-cyan-400 hover:to-purple-500 transition-all duration-300 transform hover:scale-105 cursor-pointer"
+                >
+                  {t('contact')}
+                </a>
+              </li>
+            </ul>
+
+            {/* Language Selector */}
+            <div className="relative">
+              <button
+                onClick={() => setIsLanguageMenuOpen(!isLanguageMenuOpen)}
+                className="flex items-center space-x-2 px-3 py-2 text-gray-400 hover:text-gray-200 transition-colors rounded-lg hover:bg-slate-700/30"
               >
-                Contato
-              </a>
-            </li>
-          </ul>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                </svg>
+                <span className="uppercase text-sm font-medium">{locale}</span>
+                <svg className={`w-4 h-4 transition-transform duration-200 ${isLanguageMenuOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {/* Language Dropdown */}
+              {isLanguageMenuOpen && (
+                <div className="absolute top-full right-0 mt-2 w-32 bg-slate-900/95 backdrop-blur-md border border-slate-700 rounded-lg shadow-xl z-50">
+                  <button
+                    onClick={() => handleLanguageChange('pt')}
+                    className={`w-full text-left px-4 py-3 text-sm transition-colors rounded-t-lg ${
+                      locale === 'pt' 
+                        ? 'text-cyan-400 bg-slate-700/50' 
+                        : 'text-gray-300 hover:text-white hover:bg-slate-700/30'
+                    }`}
+                  >
+                    🇧🇷 Português
+                  </button>
+                  <button
+                    onClick={() => handleLanguageChange('en')}
+                    className={`w-full text-left px-4 py-3 text-sm transition-colors rounded-b-lg ${
+                      locale === 'en' 
+                        ? 'text-cyan-400 bg-slate-700/50' 
+                        : 'text-gray-300 hover:text-white hover:bg-slate-700/30'
+                    }`}
+                  >
+                    🇺🇸 English
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
 
           {/* Mobile Navigation Menu */}
           <div className={`md:hidden absolute top-full left-0 w-full bg-gradient-to-r from-slate-950/98 via-gray-900/98 to-slate-950/98 backdrop-blur-xl border-t border-gray-700/50 transition-all duration-300 ${
@@ -216,7 +275,7 @@ export default function FloatHeader() {
                       : 'text-gray-400 hover:text-gray-200 hover:bg-slate-700/30'
                   }`}
                 >
-                  Início
+                  {t('home')}
                 </a>
               </li>
               <li>
@@ -232,7 +291,7 @@ export default function FloatHeader() {
                       : 'text-gray-400 hover:text-gray-200 hover:bg-slate-700/30'
                   }`}
                 >
-                  Sobre
+                  {t('about')}
                 </a>
               </li>
               <li>
@@ -248,7 +307,7 @@ export default function FloatHeader() {
                       : 'text-gray-400 hover:text-gray-200 hover:bg-slate-700/30'
                   }`}
                 >
-                  Skills
+                  {t('skills')}
                 </a>
               </li>
               <li>
@@ -264,7 +323,7 @@ export default function FloatHeader() {
                       : 'text-gray-400 hover:text-gray-200 hover:bg-slate-700/30'
                   }`}
                 >
-                  Experiência
+                  {t('experience')}
                 </a>
               </li>
               <li>
@@ -280,22 +339,51 @@ export default function FloatHeader() {
                       : 'text-gray-400 hover:text-gray-200 hover:bg-slate-700/30'
                   }`}
                 >
-                  Projetos
+                  {t('projects')}
                 </a>
               </li>
               <li>
-                <a
-                  href="#contact"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("contact");
-                  }}
-                  className="block px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg hover:from-cyan-400 hover:to-purple-500 transition-all duration-300 text-center"
-                >
-                  Contato
-                </a>
-              </li>
-            </ul>
+                  <a
+                    href="#contact"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick("contact");
+                    }}
+                    className="block px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg hover:from-cyan-400 hover:to-purple-500 transition-all duration-300 text-center"
+                  >
+                    {t('contact')}
+                  </a>
+                </li>
+              </ul>
+
+              {/* Mobile Language Selector */}
+              <div className="mt-4 pt-4 border-t border-gray-700/50">
+                <div className="px-4 py-2 text-gray-400 text-sm font-medium mb-2">
+                  {t('language')}
+                </div>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => handleLanguageChange('pt')}
+                    className={`flex-1 px-4 py-3 text-sm transition-colors rounded-lg ${
+                      locale === 'pt' 
+                        ? 'text-cyan-400 bg-slate-700/50' 
+                        : 'text-gray-300 hover:text-white hover:bg-slate-700/30'
+                    }`}
+                  >
+                    🇧🇷 Português
+                  </button>
+                  <button
+                    onClick={() => handleLanguageChange('en')}
+                    className={`flex-1 px-4 py-3 text-sm transition-colors rounded-lg ${
+                      locale === 'en' 
+                        ? 'text-cyan-400 bg-slate-700/50' 
+                        : 'text-gray-300 hover:text-white hover:bg-slate-700/30'
+                    }`}
+                  >
+                    🇺🇸 English
+                  </button>
+                </div>
+              </div>
           </div>
         </nav>
       </div>

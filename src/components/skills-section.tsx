@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 import skills from '@/mocks/skills';
 
 if (typeof window !== 'undefined') {
@@ -10,6 +11,7 @@ if (typeof window !== 'undefined') {
 }
 
 export default function SkillsSection() {
+  const t = useTranslations('skills');
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const skillsGridRef = useRef<HTMLDivElement>(null);
@@ -121,10 +123,10 @@ export default function SkillsSection() {
     <div ref={sectionRef} className="container mx-auto px-6 py-20 min-h-screen flex flex-col justify-center">
       <div className="text-center mb-16">
         <h2 ref={titleRef} className="text-5xl lg:text-6xl font-bold text-white mb-6" style={{ fontSize: 'clamp(3rem, 6vw, 4rem)' }}>
-          Minhas <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Habilidades</span>
+          {t('title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">{t('titleHighlight')}</span>
         </h2>
         <p className="fade-in-text text-xl text-gray-300 max-w-2xl mx-auto">
-          Tecnologias e ferramentas que domino para criar soluções completas e inovadoras
+          {t('description')}
         </p>
       </div>
 
@@ -163,10 +165,10 @@ export default function SkillsSection() {
       {/* Seção de estatísticas */}
       <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
         {[
-          { number: '3+', label: 'Anos de Experiência' },
-          { number: '50+', label: 'Projetos Concluídos' },
-          { number: '15+', label: 'Tecnologias' },
-          { number: '100%', label: 'Dedicação' },
+          { number: '3+', label: t('stats.experience') },
+          { number: '50+', label: t('stats.projects') },
+          { number: '15+', label: t('stats.technologies') },
+          { number: '100%', label: t('stats.dedication') },
         ].map((stat, index) => (
           <div key={index} className="text-center fade-in-text">
             <div className="text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-2">

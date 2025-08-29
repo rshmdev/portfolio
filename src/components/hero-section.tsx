@@ -3,12 +3,14 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
 export default function HeroSection() {
+  const t = useTranslations('hero');
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -24,7 +26,7 @@ export default function HeroSection() {
       gsap.set(titleRef.current, { opacity: 1 });
       
       // Animação inicial do título com efeito de digitação
-      const titleText = "Rian Moraes";
+      const titleText = t('name');
       const titleElement = titleRef.current;
       if (titleElement) {
         titleElement.innerHTML = '';
@@ -203,7 +205,7 @@ export default function HeroSection() {
           ref={subtitleRef}
           className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto px-4 opacity-0"
         >
-          Desenvolvedor <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-semibold">Full Stack</span> criando experiências digitais inovadoras
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-semibold">{t('title')}</span> {t('subtitle')}
         </p>
 
         {/* Call to Actions */}
@@ -213,7 +215,7 @@ export default function HeroSection() {
             className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500/50 text-sm sm:text-base"
           >
             <span className="flex items-center justify-center gap-2">
-              Ver Projetos
+              {t('cta')}
               <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -228,7 +230,7 @@ export default function HeroSection() {
               <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
-              Vamos Conversar
+              {t('contact')}
             </span>
           </button>
         </div>

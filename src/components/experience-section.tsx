@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -20,64 +21,67 @@ interface Experience {
   type: 'current' | 'past';
 }
 
-const experiences: Experience[] = [
-  {
-    id: 1,
-    company: "SMI",
-    position: "Líder Técnico do Intellifix",
-    period: "2023 - Presente",
-    duration: "1+ ano",
-    description: "Atualmente lidero o desenvolvimento técnico da plataforma Intellifix, sendo responsável pela implementação de novas funcionalidades e otimização da plataforma. Minha trajetória na SMI incluiu três posições: iniciei como Desenvolvedor Júnior focado no desenvolvimento da plataforma, fui promovido a Desenvolvedor Pleno Full Stack após dois meses, ampliando minha atuação para projetos de grandes empresas globais do setor industrial.",
-    achievements: [
-      "Promoção de Júnior para Líder Técnico em menos de 1 ano",
-      "Liderança técnica de equipe de desenvolvimento",
-      "Implementação de arquiteturas escaláveis para clientes enterprise",
-      "Otimização de performance da plataforma Intellifix",
-      "Mentoria e referência técnica para desenvolvedores"
-    ],
-    technologies: ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "Azure"],
-    type: "current"
-  },
-  {
-    id: 2,
-    company: "Facil.tel",
-    position: "Desenvolvedor Frontend",
-    period: "2023",
-    duration: "8 meses",
-    description: "Iniciei como único desenvolvedor front-end, trabalhando em um sistema legado em Angular.js com layout inconsistente e baixa performance. Após análise técnica detalhada, propus e executei a refatoração completa da aplicação para Next.js 14, modernizando toda a arquitetura frontend.",
-    achievements: [
-      "Refatoração completa de Angular.js legado para Next.js 14",
-      "Expansão internacional: habilitação de vendas de SIM e eSIMs globalmente",
-      "Aumento significativo nas vendas através de melhor UX/UI",
-      "Melhoria drástica de performance e escalabilidade",
-      "Implementação de design system consistente"
-    ],
-    technologies: ["Next.js 14", "React", "TypeScript", "Tailwind CSS", "Angular.js"],
-    type: "past"
-  },
-  {
-    id: 3,
-    company: "Direção Concursos",
-    position: "Desenvolvedor Frontend Júnior T2",
-    period: "Jan 2023 - Set 2023",
-    duration: "9 meses",
-    description: "Como desenvolvedor front-end júnior T2, fui responsável por criar experiências web atraentes com foco específico em Next.js e otimização SEO. Ocasionalmente, atuei no desenvolvimento back-end, ampliando minha experiência full-stack.",
-    achievements: [
-      "Desenvolvimento de interfaces responsivas com foco em SEO",
-      "Criação de Landing Pages no Webflow para aquisição de clientes",
-      "Otimização de APIs Node.js para melhor performance",
-      "Implementação de consultas otimizadas em banco de dados",
-      "Aumento da visibilidade nos motores de busca"
-    ],
-    technologies: ["React", "Next.js", "Node.js", "Webflow", "SEO", "JavaScript"],
-    type: "past"
-  }
-];
+
 
 export default function ExperienceSection() {
+  const t = useTranslations('experience');
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
+
+  const experiences = [
+    {
+      id: 1,
+      company: "SMI",
+      position: t('jobs.smi.position'),
+      period: t('jobs.smi.period'),
+      duration: t('jobs.smi.duration'),
+      description: t('jobs.smi.description'),
+      achievements: [
+        t('jobs.smi.achievements.0'),
+        t('jobs.smi.achievements.1'),
+        t('jobs.smi.achievements.2'),
+        t('jobs.smi.achievements.3'),
+        t('jobs.smi.achievements.4')
+      ],
+      technologies: ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "Azure"],
+      type: "current" as const
+    },
+    {
+      id: 2,
+      company: "Facil.tel",
+      position: t('jobs.faciltel.position'),
+      period: t('jobs.faciltel.period'),
+      duration: t('jobs.faciltel.duration'),
+      description: t('jobs.faciltel.description'),
+      achievements: [
+        t('jobs.faciltel.achievements.0'),
+        t('jobs.faciltel.achievements.1'),
+        t('jobs.faciltel.achievements.2'),
+        t('jobs.faciltel.achievements.3'),
+        t('jobs.faciltel.achievements.4')
+      ],
+      technologies: ["Next.js 14", "React", "TypeScript", "Tailwind CSS", "Angular.js"],
+      type: "past" as const
+    },
+    {
+      id: 3,
+      company: "Direção Concursos",
+      position: t('jobs.direcao.position'),
+      period: t('jobs.direcao.period'),
+      duration: t('jobs.direcao.duration'),
+      description: t('jobs.direcao.description'),
+      achievements: [
+        t('jobs.direcao.achievements.0'),
+        t('jobs.direcao.achievements.1'),
+        t('jobs.direcao.achievements.2'),
+        t('jobs.direcao.achievements.3'),
+        t('jobs.direcao.achievements.4')
+      ],
+      technologies: ["React", "Next.js", "Node.js", "Webflow", "SEO", "JavaScript"],
+      type: "past" as const
+    }
+  ];
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -174,10 +178,10 @@ export default function ExperienceSection() {
       {/* Título da seção */}
       <div className="text-center mb-12 sm:mb-16">
         <h2 ref={titleRef} className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6" style={{ fontSize: 'clamp(1.875rem, 5vw, 4rem)' }}>
-          Minha <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Jornada</span>
+          {t('title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">{t('titleHighlight')}</span>
         </h2>
         <p className="text-base sm:text-xl text-gray-300 max-w-3xl mx-auto px-4">
-          Uma trajetória de crescimento constante e evolução técnica
+          {t('description')}
         </p>
       </div>
 
@@ -187,7 +191,7 @@ export default function ExperienceSection() {
         <div className="absolute left-4 lg:left-1/2 lg:transform lg:-translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-500 via-pink-500 to-blue-500 timeline-line origin-top" />
 
         {/* Cards de experiência */}
-        <div className="space-y-8 sm:space-y-16">
+        <div className="space-y-8 sm:space-y-16 ">
           {experiences.map((exp, index) => (
             <div key={exp.id} className={`experience-card relative flex items-start lg:items-center ${
               index % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'
@@ -211,7 +215,7 @@ export default function ExperienceSection() {
                       </h3>
                       {exp.type === 'current' && (
                         <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs font-semibold rounded-full border border-green-500/30 self-start">
-                          Atual
+                          {t('current')}
                         </span>
                       )}
                     </div>
@@ -230,7 +234,7 @@ export default function ExperienceSection() {
 
                   {/* Conquistas */}
                   <div className="mb-4">
-                    <h5 className="text-xs sm:text-sm font-semibold text-white mb-2">Principais Conquistas:</h5>
+                    <h5 className="text-xs sm:text-sm font-semibold text-white mb-2">{t('achievements')}:</h5>
                     <ul className="space-y-1">
                       {exp.achievements.map((achievement, i) => (
                         <li key={i} className="text-xs text-gray-400 flex items-start gap-2">
@@ -243,7 +247,7 @@ export default function ExperienceSection() {
 
                   {/* Tecnologias */}
                   <div>
-                    <h5 className="text-xs sm:text-sm font-semibold text-white mb-2">Tecnologias:</h5>
+                    <h5 className="text-xs sm:text-sm font-semibold text-white mb-2">{t('technologies')}:</h5>
                     <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech) => (
                         <span 
@@ -269,16 +273,16 @@ export default function ExperienceSection() {
       <div className="text-center mt-16">
         <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 backdrop-blur-sm rounded-2xl p-8 border border-purple-400/30 max-w-2xl mx-auto">
           <h3 className="text-2xl font-bold text-white mb-4">
-            Vamos trabalhar juntos?
+            {t('cta.title')}
           </h3>
           <p className="text-gray-300 mb-6">
-            Estou sempre aberto a novos desafios e oportunidades de crescimento
+            {t('cta.description')}
           </p>
           <button 
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105"
           >
-            Entre em Contato
+            {t('cta.button')}
           </button>
         </div>
       </div>

@@ -1,0 +1,404 @@
+{
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Rian Moraes",
+    "title": "Full Stack Developer",
+    "subtitle": "creating innovative digital solutions.",
+    "cta": "View Projects",
+    "contact": "Get in Touch"
+  },
+  "about": {
+    "title": "About",
+    "titleHighlight": "Me",
+    "intro": "Hello, I'm",
+    "name": "Rian Moraes ",
+    "introDescription": "Full Stack Developer passionate about creating innovative and impactful digital solutions.",
+    "description": "I'm a full stack developer passionate about creating exceptional digital experiences. With expertise in modern technologies, I transform complex concepts into elegant and functional solutions.",
+    "expertise": "Specialized in modern web development, focusing on React, Node.js and scalable architectures. I have experience leading projects from concept to production.",
+    "journey": "My development journey started in 2020, and since then I've been building applications that make a difference in people's lives and business success.",
+    "interests": "When I'm not coding, I enjoy studying new technologies, contributing to open source projects and sharing knowledge with the dev community.",
+    "info": {
+      "name": "Name",
+      "nameValue": "Rian Moraes",
+      "location": "Location",
+      "locationValue": "Brazil",
+      "experience": "Experience",
+      "experienceValue": "3+ years",
+      "email": "Email",
+      "emailValue": "rianherminio2002@gmail.com"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "titleHighlight": "Technical",
+    "description": "Technologies and tools I master to create complete and efficient solutions.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "tools": "Tools"
+    },
+    "stats": {
+      "experience": "3+ Years of Experience",
+      "projects": "50+ Completed Projects",
+      "technologies": "20+ Technologies",
+      "dedication": "100% Dedication"
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "titleHighlight": "Professional",
+    "description": "My professional journey building innovative and impactful solutions.",
+    "current": "Current",
+    "achievements": "Achievements",
+    "technologies": "Technologies",
+    "positions": {
+      "fullstack": "Full Stack Developer",
+      "frontend": "Frontend Developer",
+      "backend": "Backend Developer"
+    },
+    "companies": {
+      "freelance": "Freelancer",
+      "startup": "Tech Startup",
+      "agency": "Digital Agency"
+    },
+    "descriptions": {
+      "fullstack": "Development of complete web applications using React, Node.js and relational and non-relational databases.",
+      "frontend": "Creation of modern and responsive interfaces focused on user experience and performance.",
+      "backend": "Development of RESTful and GraphQL APIs, integration with external services and performance optimization."
+    },
+    "jobs": {
+      "smi": {
+        "position": "Intellifix Technical Lead",
+        "period": "2023 - Present",
+        "duration": "1+ year",
+        "description": "Currently leading the technical development of the Intellifix platform, responsible for implementing new features and platform optimization. My journey at SMI included three positions: I started as a Junior Developer focused on platform development, was promoted to Full Stack Mid-level Developer after two months, expanding my work to projects for large global companies in the industrial sector.",
+        "achievements": [
+          "Promotion from Junior to Technical Lead in less than 1 year",
+          "Technical leadership of development team",
+          "Implementation of scalable architectures for enterprise clients",
+          "Intellifix platform performance optimization",
+          "Mentoring and technical reference for developers"
+        ]
+      },
+      "faciltel": {
+        "position": "Frontend Developer",
+        "period": "2023 - 2024",
+        "duration": "1 year",
+        "description": "Started as the sole front-end developer, working on a legacy Angular.js system with inconsistent layout and low performance. After detailed technical analysis, I proposed and executed a complete application refactoring to Next.js 14, modernizing the entire frontend architecture.",
+        "achievements": [
+          "Complete refactoring from legacy Angular.js to Next.js 14",
+          "International expansion: enabling SIM and eSIM sales globally",
+          "Significant sales increase through better UX/UI",
+          "Drastic improvement in performance and scalability",
+          "Implementation of consistent design system"
+        ]
+      },
+      "direcao": {
+        "position": "Junior Frontend Developer T2",
+        "period": "Jan 2023 - Sep 2023",
+        "duration": "9 months",
+        "description": "As a junior T2 front-end developer, I was responsible for creating attractive web experiences with specific focus on Next.js and SEO optimization. Occasionally, I worked on back-end development, expanding my full-stack experience.",
+        "achievements": [
+          "Development of responsive interfaces with SEO focus",
+          "Creation of Landing Pages in Webflow for client acquisition",
+          "Node.js API optimization for better performance",
+          "Implementation of optimized database queries",
+          "Increased visibility in search engines"
+        ]
+      }
+    },
+    "cta": {
+      "title": "Interested in working with me?",
+      "description": "Let's talk about how I can contribute to your project.",
+      "button": "Get in Touch"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "titleHighlight": "Portfolio",
+    "description": "Explore my projects and see how I turn ideas into digital solutions.",
+    "subtitle": "Featured Projects",
+    "modal": {
+      "technologies": "Technologies",
+      "about": "About the Project",
+      "methods": "Methods",
+      "benefits": "Benefits",
+      "results": "Results",
+      "viewDetails": "View Details",
+      "github": "View on GitHub",
+      "close": "Close"
+    },
+     "intellifix": {
+       "title": "IntelliFix",
+       "description": "Intelligent code analysis tool that identifies bugs, suggests improvements, and optimizes performance. Developed with advanced algorithms and machine learning to assist developers in creating cleaner, more efficient code.",
+       "methods": [
+         "Static code analysis with advanced algorithms",
+         "Machine learning integration for pattern recognition",
+         "Multi-language support and extensible architecture",
+         "Real-time analysis and intelligent suggestions"
+       ],
+       "benefits": [
+         "Significantly reduces bugs in production code",
+         "Improves code quality and maintainability",
+         "Accelerates development process",
+         "Helps developers learn best practices"
+       ],
+       "results": [
+         "Comprehensive code analysis tool",
+         "Advanced bug detection system",
+         "Positive feedback from developer community",
+         "Simple integration into CI/CD pipelines"
+       ]
+     },
+     "gapizer": {
+       "title": "Gapizer",
+       "description": "Advanced web application for gap analysis and strategic planning. Helps organizations identify improvement opportunities, define action plans, and track progress towards their strategic objectives.",
+       "methods": [
+         "Full-stack development with React and Node.js",
+         "Advanced data analysis and visualization",
+         "Intuitive interface for strategic planning",
+         "Integration with business management systems"
+       ],
+       "benefits": [
+         "Facilitates strategic decision making",
+         "Identifies improvement opportunities clearly",
+         "Tracks progress towards objectives",
+         "Modern and professional interface"
+       ],
+       "results": [
+         "Complete strategic analysis platform",
+         "Advanced data visualization system",
+         "Positive feedback from developer community",
+         "Simple integration into CI/CD pipelines"
+       ]
+     },
+     "culturaconnect": {
+       "title": "Cultura Connect",
+       "description": "Complete web platform to connect artists and cultural producers. Developed with focus on user experience, offers tools for creating, promoting and managing cultural events, promoting local culture.",
+       "methods": [
+         "Full-stack development with React and TypeScript",
+         "Robust backend with Node.js and Prisma ORM",
+         "Secure authentication and user management",
+         "Responsive design and intuitive interface"
+       ],
+       "benefits": [
+         "Efficiently connects artists and producers",
+         "Facilitates promotion of cultural events",
+         "Promotes local and regional culture",
+         "Modern and easy-to-use interface"
+       ],
+       "results": [
+         "Complete and functional platform developed",
+         "Authentication and management system implemented",
+         "Responsive interface for all devices",
+         "Academic project with focus on social impact"
+       ]
+     },
+     "razaoquest": {
+       "title": "Razão Quest App",
+       "description": "Gamified mobile application for public exam studies. Developed in React Native with ranking system, achievements and progression. Transforms learning into an engaging and motivating experience for exam candidates.",
+       "methods": [
+         "Mobile development with React Native and Expo",
+         "Gamification system and achievements",
+         "Backend integrated with Firebase",
+         "UX/UI design focused on engagement"
+       ],
+       "benefits": [
+         "Makes studying more engaging and fun",
+         "Ranking system motivates healthy competition",
+         "Tracks user progress and performance",
+         "Intuitive and responsive interface"
+       ],
+       "results": [
+         "Complete application with gamification system",
+         "Modern and engaging interface",
+         "Functional ranking and achievements system",
+         "Project focused on education and motivation"
+       ]
+     },
+     "razaoquestadmin": {
+       "title": "Razão Quest Admin",
+       "description": "Web administrative panel for managing the Razão Quest application. Developed in React with modern interface, allows complete control of users, missions, rewards and real-time statistics.",
+       "methods": [
+         "Web development with React and TypeScript",
+         "Complete administrative dashboard",
+         "Integration with mobile app API",
+         "Responsive and intuitive interface"
+       ],
+       "benefits": [
+         "Total control over the gamified system",
+         "Real-time data and statistics visualization",
+         "Efficient user and content management",
+         "Modern and functional administrative interface"
+       ],
+       "results": [
+         "Complete and functional administrative panel",
+         "Management system integrated with mobile app",
+         "Dashboard with detailed metrics and reports",
+         "Essential tool for system administration"
+       ]
+     },
+     "cta": {
+       "title": "Like what you see?",
+      "description": "Let's work together on your next project!",
+      "button": "Get in Touch"
+    }
+  },
+  "works": {
+    "intellifix": {
+      "title": "Intellifix",
+      "description": "Innovative industrial platform that transforms maintenance through cutting-edge technology. As technical leader, I created the project from scratch with the team, developing a complete solution for industrial process optimization with AI, IoT and predictive analysis.",
+      "methods": [
+        "Technical leadership and system architecture",
+        "Full-stack platform development",
+        "Integration with industrial IoT devices",
+        "Implementation of AI algorithms for predictive analysis"
+      ],
+      "benefits": [
+        "Revolutionizes industrial maintenance processes",
+        "Reduces operational costs through predictive maintenance",
+        "Increases efficiency and productivity of operations",
+        "Provides real-time insights on equipment"
+      ],
+      "results": [
+        "Project developed from scratch as technical leader",
+        "Enterprise solution in production",
+        "Digital transformation of industrial processes"
+      ]
+    },
+    "gapizer": {
+      "title": "GAPIzer",
+      "description": "CLI tool developed in Go that allows generating complete APIs from a YAML configuration file. Creates project structure, routes, handlers, middlewares (authentication and logging), Swagger documentation and much more. Ideal for developers who want agility in API development.",
+      "methods": [
+        "CLI tool development in Go",
+        "Automatic code generation from YAML",
+        "Implementation of middlewares and documentation",
+        "NPM publication for distribution"
+      ],
+      "benefits": [
+        "Significantly accelerates API development",
+        "Standardizes structure and project best practices",
+        "Generates automatic documentation with Swagger",
+        "Reduces initial project setup time"
+      ],
+      "results": [
+        "500+ downloads in one week",
+        "Tool created for study and learning purposes",
+        "Demonstration of Go and CLI development skills"
+      ]
+    },
+    "culturaconnect": {
+      "title": "Cultura Connect",
+      "description": "Innovative platform for management and promotion of cultural projects in Brazil. Connects artists, cultural producers, companies and sponsors in a collaborative ecosystem that strengthens Brazilian culture. Democratizes access to professional cultural management with modern and intuitive tools.",
+      "methods": [
+        "Complete platform development from scratch",
+        "System architecture for cultural management",
+        "Intuitive interface for different types of users",
+        "Connection system between artists and sponsors"
+      ],
+      "benefits": [
+        "Democratizes access to professional cultural management",
+        "Facilitates meeting between talent and opportunity",
+        "Strengthens Brazilian cultural ecosystem",
+        "Offers modern tools for cultural creators"
+      ],
+      "results": [
+        "Project developed entirely from scratch",
+        "Complete platform for cultural project management",
+        "Contribution to strengthening Brazilian culture"
+      ]
+    },
+    "razaoquest": {
+      "title": "Razão Quest App",
+      "description": "Mobile application developed to transform student experience through gamification, encouraging learning and good attitudes. Students accumulate coins and XP by completing missions, can exchange for products in the internal store, and teachers can reward or penalize based on performance.",
+      "methods": [
+        "Cross-platform native mobile development",
+        "Gamification system with coins and XP",
+        "Integration with existing school system",
+        "QR Code implementation for student access"
+      ],
+      "benefits": [
+        "Transforms educational experience through gamification",
+        "Encourages learning and positive behaviors",
+        "Facilitates school management of student progress",
+        "Increases student engagement and motivation"
+      ],
+      "results": [
+        "Application in production in school with 200+ students",
+        "System fully integrated into school environment",
+        "Proven positive impact on student engagement"
+      ]
+    },
+    "razaoquestadmin": {
+      "title": "Razão Quest Admin",
+      "description": "Complete administrative panel for Razão Quest App, where coordinators and teachers manage all functionalities of the school gamification platform. Includes mission registration, product/reward definition, inventory control, bonus attribution and progress monitoring.",
+      "methods": [
+        "Complete administrative panel development",
+        "RBAC system implementation for access control",
+        "Intuitive interface for school management",
+        "Full integration with mobile application"
+      ],
+      "benefits": [
+        "Total control over gamification experience",
+        "Intuitive interface for educators",
+        "Effective management of rewards and progress",
+        "Alignment with pedagogical objectives"
+      ],
+      "results": [
+        "Robust administrative panel in production",
+        "Role-based access control system",
+        "Essential tool for school gamification management"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "titleHighlight": "Me",
+    "subtitle": "Let's work together?",
+    "description": "I'm always open to new opportunities and interesting projects. Get in touch!",
+    "availability": {
+      "title": "Availability",
+      "description": "I'm available for new projects and opportunities. Get in touch!"
+    },
+    "methods": {
+      "title": "Other Contact Methods",
+      "description": "Prefer another communication method? Choose the option that is most convenient for you."
+    },
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Enter your full name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter your best email"
+      },
+      "subject": "Subject",
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell me about your project or idea..."
+      },
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message. Please try again."
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Try Again",
+    "previous": "Previous",
+    "next": "Next"
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "hero": {
+    "greeting": "Olá, eu sou",
+    "name": "Rian Moraes",
+    "title": "Desenvolvedor Full Stack",
+    "subtitle": "criando experiências digitais inovadoras.",
+    "cta": "Ver Projetos",
+    "contact": "Entrar em Contato"
+  },
+  "about": {
+    "title": "Sobre",
+    "titleHighlight": "Mim",
+    "intro": "Olá, eu sou",
+    "name": "Rian Moraes ",
+    "introDescription": "Desenvolvedor Full Stack apaixonado por criar soluções digitais inovadoras e impactantes.",
+    "description": "Sou um desenvolvedor full stack apaixonado por criar experiências digitais excepcionais. Com expertise em tecnologias modernas, transformo conceitos complexos em soluções elegantes e funcionais.",
+    "expertise": "Especializado em desenvolvimento web moderno, com foco em React, Node.js e arquiteturas escaláveis. Tenho experiência em liderar projetos do conceito à produção.",
+    "journey": "Minha jornada no desenvolvimento começou em 2020, e desde então venho construindo aplicações que fazem a diferença na vida das pessoas e no sucesso dos negócios.",
+    "interests": "Quando não estou codando, gosto de estudar novas tecnologias, contribuir com projetos open source e compartilhar conhecimento com a comunidade dev.",
+    "skills": "Habilidades principais",
+    "values": "Valores profissionais",
+    "info": {
+      "name": "Nome",
+      "nameValue": "Rian Moraes",
+      "location": "Localização",
+      "locationValue": "Brasil",
+      "experience": "Experiência",
+      "experienceValue": "3+ anos",
+      "email": "Email",
+      "emailValue": "rianherminio2002@gmail.com"
+    }
+  },
+  "skills": {
+    "title": "Habilidades",
+    "titleHighlight": "Técnicas",
+    "description": "Tecnologias e ferramentas que domino para criar soluções completas e eficientes.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Banco de Dados",
+      "tools": "Ferramentas"
+    },
+    "stats": {
+      "experience": "3+ Anos de Experiência",
+      "projects": "50+ Projetos Concluídos",
+      "technologies": "20+ Tecnologias",
+      "dedication": "100% Dedicação"
+    }
+  },
+  "experience": {
+    "title": "Experiência",
+    "titleHighlight": "Profissional",
+    "description": "Minha jornada profissional construindo soluções inovadoras e impactantes.",
+    "current": "Atual",
+    "achievements": "Conquistas",
+    "technologies": "Tecnologias",
+    "positions": {
+      "fullstack": "Desenvolvedor Full Stack",
+      "frontend": "Desenvolvedor Frontend",
+      "backend": "Desenvolvedor Backend"
+    },
+    "companies": {
+      "freelance": "Freelancer",
+      "startup": "Startup Tech",
+      "agency": "Agência Digital"
+    },
+    "descriptions": {
+      "fullstack": "Desenvolvimento de aplicações web completas utilizando React, Node.js e bancos de dados relacionais e não-relacionais.",
+      "frontend": "Criação de interfaces modernas e responsivas com foco na experiência do usuário e performance.",
+      "backend": "Desenvolvimento de APIs RESTful e GraphQL, integração com serviços externos e otimização de performance."
+    },
+    "jobs": {
+      "smi": {
+        "position": "Líder Técnico do Intellifix",
+        "period": "2023 - Presente",
+        "duration": "1+ ano",
+        "description": "Atualmente lidero o desenvolvimento técnico da plataforma Intellifix, sendo responsável pela implementação de novas funcionalidades e otimização da plataforma. Minha trajetória na SMI incluiu três posições: iniciei como Desenvolvedor Júnior focado no desenvolvimento da plataforma, fui promovido a Desenvolvedor Pleno Full Stack após dois meses, ampliando minha atuação para projetos de grandes empresas globais do setor industrial.",
+        "achievements": [
+          "Promoção de Júnior para Líder Técnico em menos de 1 ano",
+          "Liderança técnica de equipe de desenvolvimento",
+          "Implementação de arquiteturas escaláveis para clientes enterprise",
+          "Otimização de performance da plataforma Intellifix",
+          "Mentoria e referência técnica para desenvolvedores"
+        ]
+      },
+      "faciltel": {
+        "position": "Desenvolvedor Frontend",
+        "period": "2023 - 2024",
+        "duration": "1 ano",
+        "description": "Iniciei como único desenvolvedor front-end, trabalhando em um sistema legado em Angular.js com layout inconsistente e baixa performance. Após análise técnica detalhada, propus e executei a refatoração completa da aplicação para Next.js 14, modernizando toda a arquitetura frontend.",
+        "achievements": [
+          "Refatoração completa de Angular.js legado para Next.js 14",
+          "Expansão internacional: habilitação de vendas de SIM e eSIMs globalmente",
+          "Aumento significativo nas vendas através de melhor UX/UI",
+          "Melhoria drástica de performance e escalabilidade",
+          "Implementação de design system consistente"
+        ]
+      },
+      "direcao": {
+        "position": "Desenvolvedor Frontend Júnior T2",
+        "period": "Jan 2023 - Set 2023",
+        "duration": "9 meses",
+        "description": "Como desenvolvedor front-end júnior T2, fui responsável por criar experiências web atraentes com foco específico em Next.js e otimização SEO. Ocasionalmente, atuei no desenvolvimento back-end, ampliando minha experiência full-stack.",
+        "achievements": [
+          "Desenvolvimento de interfaces responsivas com foco em SEO",
+          "Criação de Landing Pages no Webflow para aquisição de clientes",
+          "Otimização de APIs Node.js para melhor performance",
+          "Implementação de consultas otimizadas em banco de dados",
+          "Aumento da visibilidade nos motores de busca"
+        ]
+      }
+    },
+    "cta": {
+      "title": "Interessado em trabalhar comigo?",
+      "description": "Vamos conversar sobre como posso contribuir com seu projeto.",
+      "button": "Entrar em Contato"
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "titleHighlight": "Portfolio",
+    "description": "Explore meus projetos e veja como transformo ideias em soluções digitais.",
+    "subtitle": "Projetos em Destaque",
+    "pause": "Pausar",
+    "github": "Ver no GitHub",
+    "modal": {
+      "technologies": "Tecnologias",
+      "about": "Sobre o Projeto",
+      "methods": "Métodos",
+      "benefits": "Benefícios",
+      "results": "Resultados",
+      "viewDetails": "Ver Detalhes",
+      "github": "Ver no GitHub",
+      "close": "Fechar"
+    },
+    "intellifix": {
+      "title": "IntelliFix",
+      "description": "Ferramenta inteligente de análise de código que identifica bugs, sugere melhorias e otimiza performance. Desenvolvida com algoritmos avançados e machine learning para auxiliar desenvolvedores na criação de código mais limpo e eficiente.",
+      "methods": [
+        "Análise estática de código com algoritmos avançados",
+        "Integração de machine learning para reconhecimento de padrões",
+        "Suporte multi-linguagem e arquitetura extensível",
+        "Análise em tempo real e sugestões inteligentes"
+      ],
+      "benefits": [
+        "Reduz significativamente bugs em código de produção",
+        "Melhora qualidade e manutenibilidade do código",
+        "Acelera processo de desenvolvimento",
+        "Ajuda desenvolvedores a aprender boas práticas"
+      ],
+      "results": [
+        "Ferramenta completa de análise de código",
+        "Sistema avançado de detecção de bugs",
+        "Feedback positivo da comunidade de desenvolvedores",
+        "Integração simples em pipelines CI/CD"
+      ]
+    },
+    "gapizer": {
+      "title": "Gapizer",
+      "description": "Aplicação web avançada para análise de lacunas e planejamento estratégico. Ajuda organizações a identificar oportunidades de melhoria, definir planos de ação e acompanhar progresso em direção aos objetivos estratégicos.",
+      "methods": [
+        "Desenvolvimento full-stack com React e Node.js",
+        "Análise avançada de dados e visualização",
+        "Interface intuitiva para planejamento estratégico",
+        "Integração com sistemas de gestão empresarial"
+      ],
+      "benefits": [
+        "Facilita tomada de decisões estratégicas",
+        "Identifica oportunidades de melhoria claramente",
+        "Acompanha progresso em direção aos objetivos",
+        "Interface moderna e profissional"
+      ],
+      "results": [
+        "Plataforma completa de análise estratégica",
+        "Sistema avançado de visualização de dados",
+        "Feedback positivo da comunidade de desenvolvedores",
+        "Integração simples em pipelines CI/CD"
+      ]
+    },
+    "culturaconnect": {
+      "title": "Cultura Connect",
+      "description": "Plataforma web completa para conectar artistas e produtores culturais. Desenvolvida com foco na experiência do usuário, oferece ferramentas para criação, divulgação e gestão de eventos culturais, promovendo a cultura local.",
+      "methods": [
+        "Desenvolvimento full-stack com React e TypeScript",
+        "Backend robusto com Node.js e Prisma ORM",
+        "Autenticação segura e gestão de usuários",
+        "Design responsivo e interface intuitiva"
+      ],
+      "benefits": [
+        "Conecta artistas e produtores de forma eficiente",
+        "Facilita a divulgação de eventos culturais",
+        "Promove a cultura local e regional",
+        "Interface moderna e fácil de usar"
+      ],
+      "results": [
+        "Plataforma completa desenvolvida e funcional",
+        "Sistema de autenticação e gestão implementado",
+        "Interface responsiva para todos os dispositivos",
+        "Projeto acadêmico com foco em impacto social"
+      ]
+    },
+    "razaoquest": {
+      "title": "Razão Quest App",
+      "description": "Aplicativo mobile gamificado para estudos de concursos públicos. Desenvolvido em React Native com sistema de ranking, conquistas e progressão. Transforma o aprendizado em uma experiência envolvente e motivadora para concurseiros.",
+      "methods": [
+        "Desenvolvimento mobile com React Native e Expo",
+        "Sistema de gamificação e conquistas",
+        "Backend integrado com Firebase",
+        "Design UX/UI focado em engajamento"
+      ],
+      "benefits": [
+        "Torna o estudo mais envolvente e divertido",
+        "Sistema de ranking motiva competição saudável",
+        "Acompanha progresso e performance do usuário",
+        "Interface intuitiva e responsiva"
+      ],
+      "results": [
+        "Aplicativo completo com sistema de gamificação",
+        "Interface moderna e engajante",
+        "Sistema de ranking e conquistas funcionais",
+        "Projeto focado em educação e motivação"
+      ]
+    },
+    "razaoquestadmin": {
+      "title": "Razão Quest Admin",
+      "description": "Painel administrativo web para gerenciamento do aplicativo Razão Quest. Desenvolvido em React com interface moderna, permite controle completo de usuários, missões, recompensas e estatísticas em tempo real.",
+      "methods": [
+        "Desenvolvimento web com React e TypeScript",
+        "Dashboard administrativo completo",
+        "Integração com API do aplicativo mobile",
+        "Interface responsiva e intuitiva"
+      ],
+      "benefits": [
+        "Controle total sobre o sistema gamificado",
+        "Visualização de dados e estatísticas em tempo real",
+        "Gestão eficiente de usuários e conteúdo",
+        "Interface administrativa moderna e funcional"
+      ],
+      "results": [
+        "Painel administrativo completo e funcional",
+        "Sistema de gestão integrado ao app mobile",
+        "Dashboard com métricas e relatórios detalhados",
+        "Ferramenta essencial para administração do sistema"
+      ]
+    },
+    "cta": {
+      "title": "Gostou do que viu?",
+      "description": "Vamos trabalhar juntos no seu próximo projeto!",
+      "button": "Entrar em Contato"
+    }
+  },
+ "contact": {
+    "title": "Contato",
+    "titleHighlight": "Comigo",
+    "subtitle": "Vamos trabalhar juntos?",
+    "description": "Estou sempre aberto a novas oportunidades e projetos interessantes. Entre em contato!",
+    "availability": {
+      "title": "Disponibilidade",
+      "description": "Estou disponível para novos projetos e oportunidades. Entre em contato!"
+    },
+    "methods": {
+      "title": "Outros Métodos de Contato",
+      "description": "Prefere outro meio de comunicação? Escolha a opção que for mais conveniente para você."
+    },
+    "form": {
+      "name": {
+        "label": "Nome",
+        "placeholder": "Digite seu nome completo"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Digite seu melhor email"
+      },
+      "subject": "Assunto",
+      "message": {
+        "label": "Mensagem",
+        "placeholder": "Conte-me sobre seu projeto ou ideia..."
+      },
+      "send": "Enviar Mensagem",
+      "sending": "Enviando...",
+      "success": "Mensagem enviada com sucesso!",
+      "error": "Erro ao enviar mensagem. Tente novamente."
+    }
+  },
+  "navigation": {
+    "home": "Início",
+    "about": "Sobre",
+    "skills": "Habilidades",
+    "experience": "Experiência",
+    "projects": "Projetos",
+    "contact": "Contato",
+    "language": "Idioma"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Erro",
+    "retry": "Tentar Novamente",
+    "previous": "Anterior",
+    "next": "Próximo"
+  }
+}

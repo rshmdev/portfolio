@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 import { sendEmail, initEmailJS } from '@/lib/emailjs';
 
 if (typeof window !== 'undefined') {
@@ -10,6 +11,7 @@ if (typeof window !== 'undefined') {
 }
 
 export default function ContactSection() {
+  const t = useTranslations('contact');
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
@@ -174,7 +176,7 @@ export default function ContactSection() {
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       setSubmitStatus({
         type: 'error',
-        message: 'Por favor, preencha todos os campos.'
+        message: t('form.validation.required')
       });
       return;
     }
@@ -188,7 +190,7 @@ export default function ContactSection() {
       if (result.success) {
         setSubmitStatus({
           type: 'success',
-          message: 'Mensagem enviada com sucesso! Entrarei em contato em breve.'
+          message: t('form.success')
         });
         
         // Limpar formulário
@@ -211,7 +213,7 @@ export default function ContactSection() {
     } catch (error) {
       setSubmitStatus({
         type: 'error',
-        message: 'Erro inesperado. Tente novamente ou use outro meio de contato.'
+        message: t('form.error')
       });
     } finally {
       setIsSubmitting(false);
@@ -258,10 +260,10 @@ export default function ContactSection() {
     <div ref={sectionRef} className="container mx-auto px-6 py-20 min-h-screen flex flex-col justify-center">
       <div className="text-center mb-16">
         <h2 ref={titleRef} className="text-5xl lg:text-6xl font-bold text-white mb-6" style={{ fontSize: 'clamp(3rem, 6vw, 4rem)' }}>
-          Vamos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Conversar</span>
+          {t('title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">{t('titleHighlight')}</span>
         </h2>
         <p className="fade-in-text text-xl text-gray-300 max-w-2xl mx-auto">
-          Tem um projeto em mente? Vamos transformar suas ideias em realidade!
+          {t('description')}
         </p>
       </div>
 
@@ -271,7 +273,7 @@ export default function ContactSection() {
           <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                Nome Completo
+                {t('form.name.label')}
               </label>
               <input
                 type="text"
@@ -281,13 +283,13 @@ export default function ContactSection() {
                 onChange={handleInputChange}
                 required
                 className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
-                placeholder="Seu nome completo"
+                placeholder={t('form.name.placeholder')}
               />
             </div>
 
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                Email
+                {t('form.email.label')}
               </label>
               <input
                 type="email"
@@ -297,13 +299,13 @@ export default function ContactSection() {
                 onChange={handleInputChange}
                 required
                 className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
-                placeholder="seu@email.com"
+                placeholder={t('form.email.placeholder')}
               />
             </div>
 
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                Mensagem
+                {t('form.message.label')}
               </label>
               <textarea
                 id="message"
@@ -313,7 +315,7 @@ export default function ContactSection() {
                 required
                 rows={6}
                 className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300 resize-none"
-                placeholder="Conte-me sobre seu projeto..."
+                placeholder={t('form.message.placeholder')}
               />
             </div>
 
@@ -329,14 +331,14 @@ export default function ContactSection() {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    Enviando...
+                    {t('form.sending')}
                   </>
                 ) : (
                   <>
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                     </svg>
-                    Enviar Mensagem
+                    {t('form.send')}
                   </>
                 )}
               </span>
@@ -370,10 +372,10 @@ export default function ContactSection() {
         <div ref={contactInfoRef} className="space-y-8">
           <div className="mb-8">
             <h3 className="text-2xl font-semibold text-white mb-4">
-              Outras formas de contato
+              {t('methods.title')}
             </h3>
             <p className="text-gray-300">
-              Prefere outro meio de comunicação? Escolha a opção que for mais conveniente para você.
+              {t('methods.description')}
             </p>
           </div>
 
@@ -413,11 +415,11 @@ export default function ContactSection() {
             <div className="flex items-center gap-3 mb-3">
               <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
               <h4 className="text-lg font-semibold text-white">
-                Disponível para novos projetos
+                {t('availability.title')}
               </h4>
             </div>
             <p className="text-gray-300 text-sm">
-              Atualmente aceitando novos projetos e colaborações. Tempo de resposta: 24-48 horas.
+              {t('availability.description')}
             </p>
           </div>
         </div>
