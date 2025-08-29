@@ -152,27 +152,27 @@
        ]
      },
      "gapizer": {
-       "title": "Gapizer",
-       "description": "Advanced web application for gap analysis and strategic planning. Helps organizations identify improvement opportunities, define action plans, and track progress towards their strategic objectives.",
-       "methods": [
-         "Full-stack development with React and Node.js",
-         "Advanced data analysis and visualization",
-         "Intuitive interface for strategic planning",
-         "Integration with business management systems"
-       ],
-       "benefits": [
-         "Facilitates strategic decision making",
-         "Identifies improvement opportunities clearly",
-         "Tracks progress towards objectives",
-         "Modern and professional interface"
-       ],
-       "results": [
-         "Complete strategic analysis platform",
-         "Advanced data visualization system",
-         "Positive feedback from developer community",
-         "Simple integration into CI/CD pipelines"
-       ]
-     },
+      "title": "Gapizer",
+      "description": "CLI tool built in Go to generate complete Go APIs from YML files. Significantly accelerates development by automating API structure creation, reducing development time and ensuring code consistency.",
+      "methods": [
+        "Go development for maximum performance",
+        "YML file parsing for API definition",
+        "Automatic structured Go code generation",
+        "Intuitive CLI with multiple configuration options"
+      ],
+      "benefits": [
+        "Drastically accelerates API development",
+        "Ensures consistency and standards in generated code",
+        "Reduces human errors in structure creation",
+        "Facilitates project maintenance and scalability"
+      ],
+      "results": [
+        "Complete and functional CLI tool",
+        "70% reduction in API creation time",
+        "Clean and well-structured Go code generated automatically",
+        "Growing adoption by Go developer community"
+      ]
+    },
      "culturaconnect": {
        "title": "Cultura Connect",
        "description": "Complete web platform to connect artists and cultural producers. Developed with focus on user experience, offers tools for creating, promoting and managing cultural events, promoting local culture.",

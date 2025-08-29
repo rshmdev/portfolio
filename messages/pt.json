@@ -157,24 +157,24 @@
     },
     "gapizer": {
       "title": "Gapizer",
-      "description": "Aplicação web avançada para análise de lacunas e planejamento estratégico. Ajuda organizações a identificar oportunidades de melhoria, definir planos de ação e acompanhar progresso em direção aos objetivos estratégicos.",
+      "description": "CLI feita em Go para gerar APIs completas em Go a partir de arquivos YML. Acelera significativamente o desenvolvimento ao automatizar a criação de estruturas de API, reduzindo tempo de desenvolvimento e garantindo consistência no código.",
       "methods": [
-        "Desenvolvimento full-stack com React e Node.js",
-        "Análise avançada de dados e visualização",
-        "Interface intuitiva para planejamento estratégico",
-        "Integração com sistemas de gestão empresarial"
+        "Desenvolvimento em Go para máxima performance",
+        "Parsing de arquivos YML para definição de APIs",
+        "Geração automática de código Go estruturado",
+        "CLI intuitiva com múltiplas opções de configuração"
       ],
       "benefits": [
-        "Facilita tomada de decisões estratégicas",
-        "Identifica oportunidades de melhoria claramente",
-        "Acompanha progresso em direção aos objetivos",
-        "Interface moderna e profissional"
+        "Acelera drasticamente o desenvolvimento de APIs",
+        "Garante consistência e padrões no código gerado",
+        "Reduz erros humanos na criação de estruturas",
+        "Facilita manutenção e escalabilidade de projetos"
       ],
       "results": [
-        "Plataforma completa de análise estratégica",
-        "Sistema avançado de visualização de dados",
-        "Feedback positivo da comunidade de desenvolvedores",
-        "Integração simples em pipelines CI/CD"
+        "Ferramenta CLI completa e funcional",
+        "Redução de 70% no tempo de criação de APIs",
+        "Código Go limpo e bem estruturado gerado automaticamente",
+        "Adoção crescente pela comunidade de desenvolvedores Go"
       ]
     },
     "culturaconnect": {
