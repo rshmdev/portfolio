@@ -56,13 +56,13 @@ const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = ({ images, tit
 
   return (
     <div 
-      className="relative overflow-hidden rounded-xl aspect-[16/9] group cursor-pointer"
+      className="relative overflow-hidden rounded-xl group cursor-pointer min-h-[180px] sm:min-h-[220px] md:min-h-[260px] aspect-[16/9]"
       onClick={onImageClick}
       onMouseEnter={() => setIsImageAutoPlaying(false)}
       onMouseLeave={() => setIsImageAutoPlaying(true)}
     >
       {/* Imagens */}
-      <div className="relative w-full h-full">
+      <div className="relative w-full h-full min-h-[180px] sm:min-h-[220px] md:min-h-[260px]">
         {images.map((image, index) => (
           <div
             key={index}
@@ -76,6 +76,7 @@ const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = ({ images, tit
               height={450}
               alt={`${title} - Image ${index + 1}`}
               className="w-full h-full object-cover object-center transition-all duration-500 group-hover:scale-110"
+              priority
             />
           </div>
         ))}
@@ -377,45 +378,47 @@ export default function ProjectsSection() {
               >
                 {filteredWorks.map((work, index) => (
                   <div key={work.id} className="w-full flex-shrink-0">
-                    <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-purple-400/50 transition-all duration-500 hover:bg-white/15 mx-4">
-                      <div className="grid md:grid-cols-2 gap-8 items-center">
+                    <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md rounded-2xl p-4 md:p-8 border border-white/20 hover:border-purple-400/50 transition-all duration-500 hover:bg-white/15 mx-2 md:mx-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center">
                         {/* Project Images Carousel */}
-                        <ProjectImageCarousel 
-                          images={work.images} 
-                          title={work.titleKey}
-                          onImageClick={() => openProjectModal(work)}
-                        />
+                        <div className="w-full flex justify-center items-center mb-4 md:mb-0">
+                          <ProjectImageCarousel 
+                            images={work.images} 
+                            title={work.titleKey}
+                            onImageClick={() => openProjectModal(work)}
+                          />
+                        </div>
 
                         {/* Project Info */}
-                        <div className="space-y-6">
-                          <h3 className="text-3xl font-bold text-white hover:text-purple-400 transition-colors duration-300">
+                        <div className="space-y-4 md:space-y-6 flex flex-col items-center md:items-start text-center md:text-left">
+                          <h3 className="text-2xl md:text-3xl font-bold text-white hover:text-purple-400 transition-colors duration-300">
                             {t(work.titleKey)}
                           </h3>
 
-                          <p className="text-gray-300 text-lg leading-relaxed">
+                          <p className="text-gray-300 text-base md:text-lg leading-relaxed">
                             {t(work.descriptionKey)}
                           </p>
 
-                          <div className="flex flex-wrap gap-2">
+                          <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                             {work.technologies.slice(0, 6).map((tech, techIndex) => (
                               <span
                                 key={techIndex}
-                                className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm font-medium border border-purple-500/30"
+                                className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs md:text-sm font-medium border border-purple-500/30"
                               >
                                 {tech}
                               </span>
                             ))}
                             {work.technologies.length > 6 && (
-                              <span className="px-3 py-1 bg-gray-500/20 text-gray-400 rounded-full text-sm font-medium">
+                              <span className="px-3 py-1 bg-gray-500/20 text-gray-400 rounded-full text-xs md:text-sm font-medium">
                                 +{work.technologies.length - 6}
                               </span>
                             )}
                           </div>
 
-                          <div className="flex gap-4">
+                          <div className="flex flex-col md:flex-row gap-3 md:gap-4 w-full justify-center md:justify-start items-center">
                             <button
                               onClick={() => openProjectModal(work)}
-                              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50 flex items-center gap-2"
+                              className="w-full md:w-auto px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50 flex items-center justify-center gap-2"
                             >
                               <span>{t('modal.viewDetails')}</span>
                               <svg
@@ -437,7 +440,7 @@ export default function ProjectsSection() {
                               href={work.github}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="px-6 py-3 bg-transparent border-2 border-purple-500 text-purple-300 hover:bg-purple-500/10 hover:text-white rounded-lg font-semibold transition-all duration-300 flex items-center gap-2"
+                              className="w-full md:w-auto px-6 py-3 bg-transparent border-2 border-purple-500 text-purple-300 hover:bg-purple-500/10 hover:text-white rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2"
                             >
                               <svg
                                 className="w-5 h-5"

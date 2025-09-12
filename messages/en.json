@@ -117,6 +117,7 @@
   "projects": {
     "title": "Projects",
     "titleHighlight": "Portfolio",
+    "play": "Play",
     "description": "Explore my projects and see how I turn ideas into digital solutions.",
     "subtitle": "Featured Projects",
     "modal": {

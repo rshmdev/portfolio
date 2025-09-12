@@ -122,6 +122,7 @@
     "description": "Explore meus projetos e veja como transformo ideias em soluções digitais.",
     "subtitle": "Projetos em Destaque",
     "pause": "Pausar",
+    "play": "Executar",
     "github": "Ver no GitHub",
     "modal": {
       "technologies": "Tecnologias",

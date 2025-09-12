@@ -392,11 +392,11 @@ export default function ContactSection() {
                   <div className={`contact-icon p-3 bg-gradient-to-br ${method.color} rounded-lg text-white`}>
                     {method.icon}
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h4 className="text-lg font-semibold text-white group-hover:text-purple-400 transition-colors">
                       {method.title}
                     </h4>
-                    <p className="text-gray-300 group-hover:text-white transition-colors">
+                    <p className="text-gray-300 group-hover:text-white transition-colors break-words text-sm max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
                       {method.value}
                     </p>
                   </div>
