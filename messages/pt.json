@@ -244,6 +244,50 @@
         "Ferramenta essencial para administração do sistema"
       ]
     },
+    "pdrlelo": {
+      "title": "PDR & Lelo",
+      "description": "Landing page moderna para empresa de descartáveis no Rio de Janeiro. Desenvolvida com foco em conversão e experiência do usuário, utilizando animações GSAP fluidas e otimizações avançadas de SEO para máxima visibilidade nos mecanismos de busca.",
+      "methods": [
+        "Desenvolvimento com Next.js para performance otimizada",
+        "Animações fluidas e interativas com GSAP",
+        "Otimizações avançadas de SEO e Core Web Vitals",
+        "Design responsivo focado em conversão"
+      ],
+      "benefits": [
+        "Aumenta significativamente a conversão de visitantes",
+        "Melhora posicionamento nos resultados de busca",
+        "Experiência de usuário envolvente e profissional",
+        "Carregamento rápido e performance otimizada"
+      ],
+      "results": [
+        "Landing page profissional em produção",
+        "Animações GSAP implementadas com sucesso",
+        "Otimizações de SEO aplicadas efetivamente",
+        "Projeto focado em resultados comerciais"
+      ]
+    },
+    "digitalfactory": {
+      "title": "Digital Factory",
+      "description": "Sistema completo de fábrica digital com simulação IIoT, monitoramento em tempo real e análise de dados industriais. Desenvolvido com arquitetura distribuída utilizando .NET, React, MQTT e TimescaleDB para processos de Indústria 4.0.",
+      "methods": [
+        "Arquitetura distribuída com .NET 9 e React/TypeScript",
+        "Sistema IIoT com simuladores de 7 linhas de produção",
+        "Comunicação MQTT para dados em tempo real",
+        "TimescaleDB para armazenamento de séries temporais"
+      ],
+      "benefits": [
+        "Monitoramento completo de processos industriais",
+        "Análise preditiva e manutenção preventiva",
+        "Dashboards em tempo real com métricas de OEE",
+        "Simulação realística de ambiente industrial"
+      ],
+      "results": [
+        "Sistema completo de fábrica digital funcional",
+        "7 simuladores IIoT com diferentes tipos de sensores",
+        "API robusta para consulta de dados industriais",
+        "Dashboard moderno com visualização em tempo real"
+      ]
+    },
     "cta": {
       "title": "Gostou do que viu?",
       "description": "Vamos trabalhar juntos no seu próximo projeto!",

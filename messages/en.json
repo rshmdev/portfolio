@@ -118,6 +118,8 @@
     "title": "Projects",
     "titleHighlight": "Portfolio",
     "play": "Play",
+    "pause": "Pause",
+    "github": "View on GitHub",
     "description": "Explore my projects and see how I turn ideas into digital solutions.",
     "subtitle": "Featured Projects",
     "modal": {
@@ -240,6 +242,50 @@
          "Essential tool for system administration"
        ]
      },
+     "pdrlelo": {
+       "title": "PDR & Lelo",
+       "description": "Modern landing page for a disposables company in Rio de Janeiro. Developed with focus on conversion and user experience, using fluid GSAP animations and advanced SEO optimizations for maximum visibility in search engines.",
+       "methods": [
+         "Development with Next.js for optimized performance",
+         "Fluid and interactive animations with GSAP",
+         "Advanced SEO optimizations and Core Web Vitals",
+         "Responsive design focused on conversion"
+       ],
+       "benefits": [
+         "Significantly increases visitor conversion",
+         "Improves positioning in search results",
+         "Engaging and professional user experience",
+         "Fast loading and optimized performance"
+       ],
+       "results": [
+         "Professional landing page in production",
+         "GSAP animations successfully implemented",
+         "SEO optimizations effectively applied",
+         "Project focused on commercial results"
+       ]
+     },
+     "digitalfactory": {
+       "title": "Digital Factory",
+       "description": "Complete digital factory system with IIoT simulation, real-time monitoring and industrial data analysis. Developed with distributed architecture using .NET, React, MQTT and TimescaleDB for Industry 4.0 processes.",
+       "methods": [
+         "Distributed architecture with .NET 9 and React/TypeScript",
+         "IIoT system with 7 production line simulators",
+         "MQTT communication for real-time data",
+         "TimescaleDB for time series data storage"
+       ],
+       "benefits": [
+         "Complete monitoring of industrial processes",
+         "Predictive analysis and preventive maintenance",
+         "Real-time dashboards with OEE metrics",
+         "Realistic simulation of industrial environment"
+       ],
+       "results": [
+         "Complete functional digital factory system",
+         "7 IIoT simulators with different sensor types",
+         "Robust API for industrial data queries",
+         "Modern dashboard with real-time visualization"
+       ]
+     },
      "cta": {
        "title": "Like what you see?",
       "description": "Let's work together on your next project!",
@@ -350,6 +396,50 @@
         "Robust administrative panel in production",
         "Role-based access control system",
         "Essential tool for school gamification management"
+      ]
+    },
+    "pdrlelo": {
+      "title": "PDR & Lelo",
+      "description": "Modern and conversion-focused landing page for PDR & Lelo, a disposables company in Rio de Janeiro. Developed with Next.js and GSAP animations to create an engaging user experience that effectively converts visitors into customers in the disposables market.",
+      "methods": [
+        "Landing page development with Next.js",
+        "Implementation of GSAP animations for engagement",
+        "Advanced SEO optimization for search visibility",
+        "Conversion-focused design and UX"
+      ],
+      "benefits": [
+        "Increases lead generation and conversions",
+        "Improves online presence in the disposables market",
+        "Creates professional and trustworthy brand image",
+        "Optimizes user experience for business goals"
+      ],
+      "results": [
+        "Professional landing page delivered and deployed",
+        "Smooth GSAP animations enhancing user experience",
+        "SEO optimization increasing organic visibility",
+        "Commercial website focused on lead generation"
+      ]
+    },
+    "digitalfactory": {
+      "title": "Digital Factory",
+      "description": "Comprehensive Industry 4.0 digital factory system with complete IIoT simulation, real-time data processing, and advanced analytics. Built with modern distributed architecture featuring .NET microservices, React dashboard, and TimescaleDB for handling massive industrial sensor data streams.",
+      "methods": [
+        "Microservices architecture with .NET 9 backend",
+        "Real-time React dashboard with WebSocket updates",
+        "MQTT broker integration for sensor data ingestion",
+        "Docker containerization for scalable deployment"
+      ],
+      "benefits": [
+        "Complete digital transformation for industrial processes",
+        "Real-time monitoring with predictive maintenance capabilities",
+        "Scalable architecture supporting multiple production lines",
+        "Modern Industry 4.0 compliance and standards"
+      ],
+      "results": [
+        "Full-scale digital factory system with 7 production lines",
+        "Real-time processing of thousands of sensor data points",
+        "Comprehensive dashboard with OEE and KPI monitoring",
+        "Demonstration of advanced IIoT architecture skills"
       ]
     }
   },
