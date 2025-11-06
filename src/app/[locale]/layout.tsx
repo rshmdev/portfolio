@@ -5,6 +5,12 @@ import CustomCursor from "@/components/custom-cursor";
 import FloatHeader from "@/components/float-header";
 import "react-vertical-timeline-component/style.min.css";
 import { NextIntlClientProvider } from "next-intl";
+import { 
+  generatePersonSchema, 
+  generateWebsiteSchema, 
+  generateSoftwareApplicationSchema,
+  generateOrganizationSchema 
+} from "@/lib/structured-data";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -19,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Rian Moraes - Desenvolvedor Full Stack",
   },
   description:
-    "🚀 Rian Moraes - Desenvolvedor Full Stack Sênior especializado em React, Next.js, Node.js, TypeScript, .NET, MySQL, PostgreSQL, Azure. +5 anos criando soluções web inovadoras, sistemas enterprise e experiências digitais excepcionais. Portfolio profissional com projetos reais.",
+    "🚀 Rian Moraes - Desenvolvedor Full Stack Sênior com +5 anos de experiência. Especialista em React, Next.js, Node.js, TypeScript, .NET, Go, Azure. Líder técnico na SMI desenvolvendo Intellifix (Industry 4.0). Criador do Gapizer CLI, Digital Factory IIoT, sistemas educacionais gamificados e landing pages otimizadas. Portfolio profissional com projetos reais em industrial IoT, ferramentas de desenvolvimento, educação e e-commerce.",
   keywords: [
     // Nome e marca pessoal
     "Rian Moraes",
@@ -57,6 +63,7 @@ export const metadata: Metadata = {
     "MongoDB developer",
     "database developer",
     "SQL developer",
+    "TimescaleDB",
     // Cloud e DevOps
     "Azure developer",
     "cloud developer",
@@ -71,12 +78,59 @@ export const metadata: Metadata = {
     "TypeScript",
     "C#",
     "SQL",
+    "Go developer",
+    "Golang",
+    // Projetos específicos - Industrial/IoT
+    "Industry 4.0 developer",
+    "IIoT developer",
+    "Industrial IoT",
+    "Digital Factory",
+    "MQTT developer",
+    "sensor data processing",
+    "predictive maintenance",
+    "industrial automation",
+    "factory simulation",
+    "OEE monitoring",
+    // Projetos específicos - Ferramentas
+    "CLI tool developer",
+    "Gapizer",
+    "API generator",
+    "code generation",
+    "YAML parser",
+    "Swagger documentation",
+    "development tools",
+    // Projetos específicos - Educação
+    "gamification developer",
+    "educational apps",
+    "React Native developer",
+    "mobile app development",
+    "school management system",
+    "learning platform",
+    // Projetos específicos - Cultural/Social
+    "cultural platform",
+    "artist management",
+    "event management",
+    "social impact projects",
+    "community platform",
+    // Projetos específicos - E-commerce/Landing
+    "landing page developer",
+    "GSAP animations",
+    "animation developer",
+    "conversion optimization",
+    "SEO specialist",
+    "e-commerce solutions",
+    "business websites",
+    "PDR descartaveis",
     // Localização e mercado
     "desenvolvedor Brasil",
     "desenvolvedor São Paulo",
     "freelancer Brasil",
     "consultor tecnologia",
     "tech lead",
+    "technical leadership",
+    "SMI Intellifix",
+    "Faciltel",
+    "Direção Concursos",
     // Serviços
     "desenvolvimento web",
     "criação de sites",
@@ -85,6 +139,16 @@ export const metadata: Metadata = {
     "e-commerce",
     "landing pages",
     "portfolio profissional",
+    "sistema enterprise",
+    "microservices",
+    "real-time applications",
+    // Tecnologias avançadas
+    "microservices architecture",
+    "distributed systems",
+    "real-time data processing",
+    "websocket implementation",
+    "container orchestration",
+    "scalable applications",
     // Experiência
     "5 anos experiência",
     "desenvolvedor experiente",
@@ -92,6 +156,16 @@ export const metadata: Metadata = {
     "arquitetura software",
     "clean code",
     "boas práticas",
+    "code quality",
+    "performance optimization",
+    "team leadership",
+    // Setores de atuação
+    "industrial software",
+    "educational technology",
+    "cultural technology",
+    "business automation",
+    "digital transformation",
+    "startup development",
   ].join(", "),
   authors: [{ name: "Rian Moraes", url: "https://github.com/rshmdev" }],
   creator: "Rian Moraes",
@@ -103,7 +177,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://rianmoraes.dev"),
+  metadataBase: new URL("https://rshmdev.com"),
   alternates: {
     canonical: "/",
     languages: {
@@ -115,9 +189,17 @@ export const metadata: Metadata = {
     title:
       "Rian Moraes - Desenvolvedor Full Stack Sênior | React, Next.js, Node.js, TypeScript",
     description:
-      "🚀 Desenvolvedor Full Stack com +5 anos de experiência. Especialista em React, Next.js, Node.js, TypeScript, .NET, Azure. Criando soluções web inovadoras e sistemas enterprise. Veja meu portfolio com projetos reais!",
+      "🚀 Desenvolvedor Full Stack com +5 anos de experiência. Especialista em React, Next.js, Node.js, TypeScript, .NET, Azure. Criando soluções web inovadoras e sistemas enterprise. Veja meu portfolio com projetos reais em Industry 4.0, IIoT, educação e e-commerce!",
     url: "https://rianmoraes.dev",
     siteName: "Rian Moraes - Portfolio Desenvolvedor Full Stack",
+    images: [
+      {
+        url: '/api/og?title=Rian%20Moraes%20-%20Desenvolvedor%20Full%20Stack&description=Especialista%20em%20React,%20Next.js,%20Industry%204.0%20e%20IIoT',
+        width: 1200,
+        height: 630,
+        alt: 'Rian Moraes - Desenvolvedor Full Stack Portfolio',
+      },
+    ],
     locale: "pt_BR",
     type: "profile",
   },
@@ -141,14 +223,6 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
-    },
-  },
-  verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
-    other: {
-      "msvalidate.01": "your-bing-verification-code",
     },
   },
   other: {
@@ -192,7 +266,7 @@ export default function RootLayout({
           content="/web-app-manifest-192x192.png"
         />
         <meta name="msapplication-config" content="/browserconfig.xml" />
-        <link rel="canonical" href="https://rianmoraes.dev" />
+        <link rel="canonical" href="https://rshmdev.com" />
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
         <link rel="robots" href="/robots.txt" />
         <meta name="geo.region" content="BR-SP" />
@@ -251,157 +325,12 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Rian Moraes",
-              alternateName: "rshmdev",
-              jobTitle: "Desenvolvedor Full Stack Sênior",
-              description:
-                "Desenvolvedor Full Stack Sênior com mais de 5 anos de experiência especializado em React, Next.js, Node.js, TypeScript, .NET, MySQL, PostgreSQL e Azure. Líder técnico com expertise em arquitetura de software e desenvolvimento de sistemas enterprise.",
-              url: "https://rianmoraes.dev",
-              image: "https://rianmoraes.dev/profile-image.jpg",
-              email: "contato@rianmoraes.dev",
-              telephone: "+55-11-99999-9999",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "São Paulo",
-                addressRegion: "SP",
-                addressCountry: "BR",
-              },
-              sameAs: [
-                "https://github.com/rshmdev",
-                "https://linkedin.com/in/rshmdev",
-                "https://twitter.com/rshmdev",
-              ],
-              knowsAbout: [
-                "React",
-                "Next.js",
-                "Node.js",
-                "TypeScript",
-                "JavaScript",
-                "C#",
-                ".NET",
-                "Python",
-                "MySQL",
-                "PostgreSQL",
-                "NoSQL",
-                "MongoDB",
-                "Azure",
-                "Docker",
-                "Kubernetes",
-                "CI/CD",
-                "DevOps",
-                "REST API",
-                "GraphQL",
-                "Microservices",
-                "Clean Architecture",
-                "SOLID Principles",
-                "Design Patterns",
-                "Agile",
-                "Scrum",
-                "Git",
-                "GitHub",
-                "Full Stack Development",
-                "Frontend Development",
-                "Backend Development",
-                "Web Development",
-                "Software Architecture",
-                "Database Design",
-                "Cloud Computing",
-              ],
-              hasOccupation: {
-                "@type": "Occupation",
-                name: "Desenvolvedor Full Stack",
-                occupationLocation: {
-                  "@type": "City",
-                  name: "São Paulo, Brasil",
-                },
-                skills:
-                  "React, Next.js, Node.js, TypeScript, .NET, Azure, MySQL, PostgreSQL",
-              },
-              alumniOf: {
-                "@type": "Organization",
-                name: "Universidade/Curso de Tecnologia",
-              },
-              worksFor: {
-                "@type": "Organization",
-                name: "SMI",
-                description: "Líder Técnico do Intellifix",
-              },
-              award: [
-                "Líder Técnico SMI",
-                "Desenvolvedor Full Stack Sênior",
-                "Especialista em React e Next.js",
-              ],
-              memberOf: {
-                "@type": "Organization",
-                name: "Comunidade de Desenvolvedores Brasil",
-              },
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Rian Moraes - Portfolio Desenvolvedor Full Stack",
-              alternateName: "rshmdev Portfolio",
-              url: "https://rianmoraes.dev",
-              description:
-                "Portfolio profissional de Rian Moraes, desenvolvedor full stack sênior especializado em React, Next.js, Node.js, TypeScript e tecnologias modernas.",
-              author: {
-                "@type": "Person",
-                name: "Rian Moraes",
-              },
-              inLanguage: "pt-BR",
-              copyrightYear: "2024",
-              copyrightHolder: {
-                "@type": "Person",
-                name: "Rian Moraes",
-              },
-              potentialAction: {
-                "@type": "SearchAction",
-                target: "https://rianmoraes.dev/?s={search_term_string}",
-                "query-input": "required name=search_term_string",
-              },
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "ProfessionalService",
-              name: "Rian Moraes - Desenvolvimento Full Stack",
-              description:
-                "Serviços profissionais de desenvolvimento web full stack, criação de aplicações React, Next.js, sistemas Node.js e soluções em nuvem Azure.",
-              provider: {
-                "@type": "Person",
-                name: "Rian Moraes",
-              },
-              areaServed: "Brasil",
-              availableLanguage: ["pt-BR", "en-US"],
-              serviceType: [
-                "Desenvolvimento Web",
-                "Desenvolvimento Full Stack",
-                "Consultoria em React",
-                "Desenvolvimento Next.js",
-                "Arquitetura de Software",
-                "Desenvolvimento de APIs",
-                "Integração de Sistemas",
-                "Otimização de Performance",
-              ],
-              offers: {
-                "@type": "Offer",
-                description:
-                  "Desenvolvimento de aplicações web modernas e escaláveis",
-                areaServed: "Brasil",
-              },
-            }),
+            __html: JSON.stringify([
+              generatePersonSchema('pt'),
+              generateWebsiteSchema('pt'),
+              generateOrganizationSchema('pt'),
+              ...generateSoftwareApplicationSchema()
+            ]),
           }}
         />
       </head>
