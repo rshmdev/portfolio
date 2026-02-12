@@ -1,13 +1,8 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useTranslations } from 'next-intl';
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 export default function HeroSection() {
   const t = useTranslations('hero');
@@ -15,208 +10,206 @@ export default function HeroSection() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
-  const particlesRef = useRef<HTMLDivElement>(null);
-  const backgroundRef = useRef<HTMLDivElement>(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
+    const { ScrollTrigger } = require('gsap/ScrollTrigger');
+    gsap.registerPlugin(ScrollTrigger);
+
     const ctx = gsap.context(() => {
-      // Primeiro, tornar o título visível
-      gsap.set(titleRef.current, { opacity: 1 });
-      
-      // Animação inicial do título com efeito de digitação
-      const titleText = t('name');
-      const titleElement = titleRef.current;
-      if (titleElement) {
-        titleElement.innerHTML = '';
-        
-        // Criar spans para cada letra
-        titleText.split('').forEach((char, index) => {
-          const span = document.createElement('span');
-          span.textContent = char === ' ' ? '\u00A0' : char;
-          span.style.opacity = '0';
-          span.style.transform = 'translateY(100px) rotateX(90deg)';
-          titleElement.appendChild(span);
-        });
+      const timeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-        // Animar cada letra
-        gsap.to(titleElement.children, {
-          opacity: 1,
-          y: 0,
-          rotationX: 0,
-          duration: 0.6,
-          stagger: 0.05,
-          ease: 'back.out(1.7)',
-          delay: 0.1,
-        });
-      }
+      // Badge entrance
+      timeline.fromTo(
+        '.hero-badge',
+        { y: -30, opacity: 0, scale: 0.8 },
+        { y: 0, opacity: 1, scale: 1, duration: 0.6 },
+        0.3
+      );
 
-      // Animação do subtítulo
-      gsap.fromTo(
+      // Animate title
+      timeline.fromTo(
+        titleRef.current,
+        { y: 100, opacity: 0, filter: 'blur(10px)' },
+        { y: 0, opacity: 1, filter: 'blur(0px)', duration: 1.2 },
+        0.4
+      );
+
+      // Animate subtitle
+      timeline.fromTo(
         subtitleRef.current,
-        {
-          opacity: 0,
-          y: 50,
-          scale: 0.8,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          ease: 'power3.out',
-          delay: 0.6,
-        }
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8 },
+        0.8
       );
 
-      // Animação dos CTAs
-      gsap.fromTo(
+      // Animate CTAs
+      timeline.fromTo(
         ctaRef.current?.children || [],
-        {
-          opacity: 0,
-          y: 30,
-          scale: 0.9,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.5,
-          stagger: 0.1,
-          ease: 'power2.out',
-          delay: 1.1,
-        }
+        { y: 30, opacity: 0, scale: 0.9 },
+        { y: 0, opacity: 1, scale: 1, duration: 0.6, stagger: 0.12 },
+        1.1
       );
 
-      // Animação de parallax no scroll
-      gsap.to(backgroundRef.current, {
-        yPercent: -50,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: heroRef.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
+      // Tech stack
+      timeline.fromTo(
+        '.hero-tech',
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5, stagger: 0.06 },
+        1.3
+      );
+
+      // Scroll indicator
+      timeline.fromTo(
+        '.scroll-indicator',
+        { opacity: 0, y: -10 },
+        { opacity: 1, y: 0, duration: 0.5 },
+        1.8
+      );
+
+      // ========== SCROLL PIN EFFECT ==========
+      // Pin the hero section and fade/scale it out as you scroll
+      ScrollTrigger.create({
+        trigger: heroRef.current,
+        start: 'top top',
+        end: 'bottom top',
+        pin: true,
+        pinSpacing: false,
+        onUpdate: (self: any) => {
+          const progress = self.progress;
+          if (heroRef.current) {
+            // Scale down, blur and fade as you scroll
+            gsap.set(heroRef.current, {
+              scale: 1 - progress * 0.15,
+              opacity: 1 - progress * 1.2,
+              filter: `blur(${progress * 8}px)`,
+            });
+          }
         },
       });
 
-      // Animação das partículas flutuantes
-      const particles = particlesRef.current?.children;
-      if (particles) {
-        Array.from(particles).forEach((particle, index) => {
-          gsap.set(particle, {
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
-            scale: Math.random() * 0.5 + 0.5,
-          });
+      // Floating animation for decorative elements
+      gsap.to('.float-element', {
+        y: -20,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+        stagger: 0.3
+      });
 
-          gsap.to(particle, {
-            y: '-=100',
-            rotation: 360,
-            duration: 10 + Math.random() * 10,
-            repeat: -1,
-            ease: 'none',
-            delay: Math.random() * 1,
-          });
+      // Parallax orbs
+      gsap.to('.parallax-orb-1', {
+        y: -40,
+        x: 20,
+        duration: 5,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+      });
 
-          gsap.to(particle, {
-            x: '+=50',
-            duration: 8 + Math.random() * 8,
-            repeat: -1,
-            yoyo: true,
-            ease: 'sine.inOut',
-            delay: Math.random() * 0.5,
-          });
-        });
-      }
+      gsap.to('.parallax-orb-2', {
+        y: -30,
+        x: -15,
+        duration: 7,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+      });
 
-      // Efeito de mouse move
-      const handleMouseMove = (e: MouseEvent) => {
-        const { clientX, clientY } = e;
-        const centerX = window.innerWidth / 2;
-        const centerY = window.innerHeight / 2;
-        
-        const moveX = (clientX - centerX) * 0.01;
-        const moveY = (clientY - centerY) * 0.01;
-
-        gsap.to(titleRef.current, {
-          x: moveX,
-          y: moveY,
-          duration: 0.5,
-          ease: 'power2.out',
-        });
-
-        gsap.to(subtitleRef.current, {
-          x: moveX * 0.5,
-          y: moveY * 0.5,
-          duration: 0.7,
-          ease: 'power2.out',
-        });
-      };
-
-      window.addEventListener('mousemove', handleMouseMove);
-
-      return () => {
-        window.removeEventListener('mousemove', handleMouseMove);
-      };
     }, heroRef);
 
-    return () => ctx.revert();
+    // Mouse parallax effect
+    const handleMouseMove = (e: MouseEvent) => {
+      const { clientX, clientY } = e;
+      const x = (clientX / window.innerWidth - 0.5) * 20;
+      const y = (clientY / window.innerHeight - 0.5) * 20;
+      setMousePos({ x, y });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      ctx.revert();
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
   }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      element?.scrollIntoView({ behavior: 'smooth' });
-    }
+    element?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <div ref={heroRef} className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Background animado */}
-      <div ref={backgroundRef} className="absolute inset-0 z-0">
-        {/* Background transparente para permitir que o fundo do body apareça */}
+    <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 py-20" style={{ zIndex: 1 }}>
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Gradient Orbs with parallax */}
+        <div
+          className="parallax-orb-1 absolute top-20 left-10 w-72 h-72 rounded-full opacity-20 blur-3xl"
+          style={{
+            background: 'radial-gradient(circle, var(--color-primary) 0%, transparent 70%)',
+            transform: `translate(${mousePos.x * 0.5}px, ${mousePos.y * 0.5}px)`,
+            transition: 'transform 0.3s ease-out',
+          }}
+        />
+        <div
+          className="parallax-orb-2 absolute bottom-20 right-10 w-96 h-96 rounded-full opacity-15 blur-3xl"
+          style={{
+            background: 'radial-gradient(circle, var(--color-accent) 0%, transparent 70%)',
+            transform: `translate(${mousePos.x * -0.3}px, ${mousePos.y * -0.3}px)`,
+            transition: 'transform 0.3s ease-out',
+          }}
+        />
+
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.03]"
+          style={{ backgroundImage: 'linear-gradient(var(--color-slate) 1px, transparent 1px), linear-gradient(90deg, var(--color-slate) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+
+        {/* Decorative pinging dots */}
+        <div className="absolute top-1/4 right-1/4 w-2 h-2 rounded-full animate-ping opacity-30" style={{ backgroundColor: 'var(--color-primary)' }} />
+        <div className="absolute bottom-1/3 left-1/4 w-1.5 h-1.5 rounded-full animate-ping opacity-20" style={{ backgroundColor: 'var(--color-accent)', animationDelay: '1s' }} />
+        <div className="absolute top-1/3 right-1/3 w-1 h-1 rounded-full animate-ping opacity-25" style={{ backgroundColor: 'var(--color-secondary)', animationDelay: '2s' }} />
       </div>
 
-      {/* Partículas flutuantes */}
-      <div ref={particlesRef} className="absolute inset-0 pointer-events-none z-10">
-        {Array.from({ length: 5 }).map((_, index) => (
-          <div
-            key={index}
-            className="absolute w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-30"
-          />
-        ))}
-      </div>
+      {/* Content */}
+      <div className="relative z-10 max-w-6xl mx-auto text-center">
+        {/* Badge */}
+        <div className="hero-badge inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-full text-sm font-medium animate-glow-pulse"
+          style={{
+            background: 'rgba(70, 102, 255, 0.06)',
+            border: '1px solid rgba(70, 102, 255, 0.15)',
+          }}>
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ backgroundColor: '#4ade80' }} />
+            <span className="relative inline-flex rounded-full h-2 w-2" style={{ backgroundColor: '#4ade80' }} />
+          </span>
+          <span style={{ color: 'var(--text-secondary)' }}>Disponível para novos projetos</span>
+        </div>
 
-      {/* Conteúdo principal */}
-      <div className="relative z-20 text-center px-6 max-w-5xl mx-auto">
-        {/* Título principal */}
-        <h1 
-          ref={titleRef}
-          className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-white mb-4 sm:mb-6 px-4 sm:px-6 opacity-0"
-          style={{ fontSize: 'clamp(2.25rem, 8vw, 9rem)', lineHeight: '1.1', letterSpacing: '-0.02em' }}
-        >
-          {/* O conteúdo será inserido via JavaScript */}
+        {/* Main Title */}
+        <h1 ref={titleRef} className="heading-xl mb-6" style={{ color: 'var(--text-primary)' }}>
+          {t('greeting')}{' '}
+          <span className="gradient-text">{t('name')}</span>
         </h1>
 
-        {/* Subtítulo */}
-        <p 
-          ref={subtitleRef}
-          className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto px-4 opacity-0"
-        >
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-semibold">{t('title')}</span> {t('subtitle')}
+        {/* Subtitle */}
+        <p ref={subtitleRef} className="body-lg mb-12 max-w-3xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
+          <span className="font-semibold gradient-text">{t('title')}</span>{' '}
+          {t('subtitle')}
         </p>
 
-        {/* Call to Actions */}
-        <div ref={ctaRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 opacity-0">
+        {/* CTA Buttons */}
+        <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button
             onClick={() => scrollToSection('projects')}
-            className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500/50 text-sm sm:text-base"
+            className="btn-primary w-full sm:w-auto group"
           >
             <span className="flex items-center justify-center gap-2">
               {t('cta')}
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </span>
@@ -224,41 +217,55 @@ export default function HeroSection() {
 
           <button
             onClick={() => scrollToSection('contact')}
-            className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-purple-500 hover:bg-purple-500/10 text-purple-300 hover:text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500/50 text-sm sm:text-base"
+            className="btn-secondary w-full sm:w-auto group"
           >
             <span className="flex items-center justify-center gap-2">
-              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
               {t('contact')}
             </span>
           </button>
         </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 opacity-0" ref={ref => {
-        if (ref) {
-          gsap.to(ref, {
-            opacity: 1,
-            delay: 1.5,
-            duration: 0.4,
-            ease: 'power2.out'
-          });
-        }
-      }}>
-        <div className="flex flex-col items-center gap-2 text-gray-400 animate-bounce">
-          <span className="text-sm font-medium">Scroll</span>
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+        {/* Tech Stack Pills */}
+        <div className="mt-16 flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+          {['React', 'Next.js', 'TypeScript', 'Node.js', '.NET', 'Azure', 'PostgreSQL'].map((tech) => (
+            <div
+              key={tech}
+              className="hero-tech px-4 py-2 rounded-full text-sm font-medium transition-all duration-500 hover:scale-110 cursor-default"
+              style={{
+                background: 'rgba(255, 255, 255, 0.03)',
+                border: '1px solid rgba(255, 255, 255, 0.06)',
+                color: 'var(--text-muted)',
+              }}
+            >
+              {tech}
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Elementos decorativos */}
-      <div className="absolute top-10 sm:top-20 left-4 sm:left-20 w-16 sm:w-32 h-16 sm:h-32 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-10 sm:bottom-20 right-4 sm:right-20 w-20 sm:w-40 h-20 sm:h-40 bg-pink-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.3s' }} />
-      <div className="absolute top-1/2 left-2 sm:left-10 w-12 sm:w-24 h-12 sm:h-24 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.6s' }} />
-    </div>
+      {/* Scroll Indicator */}
+      <div className="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2">
+        <div
+          className="flex flex-col items-center gap-2 cursor-pointer group"
+          onClick={() => scrollToSection('about')}
+        >
+          <span className="text-xs font-medium tracking-widest uppercase" style={{ color: 'var(--text-muted)' }}>Scroll</span>
+          <div
+            className="w-6 h-10 rounded-full flex items-start justify-center pt-2"
+            style={{ border: '2px solid rgba(255, 255, 255, 0.15)' }}
+          >
+            <div
+              className="w-1.5 h-3 rounded-full animate-bounce"
+              style={{
+                background: 'linear-gradient(180deg, var(--color-primary), var(--color-accent))',
+              }}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

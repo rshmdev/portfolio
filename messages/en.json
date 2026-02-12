@@ -32,6 +32,8 @@
     "title": "Skills",
     "titleHighlight": "Technical",
     "description": "Technologies and tools I master to create complete and efficient solutions.",
+    "area": "Area",
+    "scrollHint": "Scroll to explore",
     "categories": {
       "frontend": "Frontend",
       "backend": "Backend",
@@ -122,6 +124,7 @@
     "github": "View on GitHub",
     "description": "Explore my projects and see how I turn ideas into digital solutions.",
     "subtitle": "Featured Projects",
+    "scrollHint": "Continue scrolling",
     "modal": {
       "technologies": "Technologies",
       "about": "About the Project",
@@ -129,32 +132,34 @@
       "benefits": "Benefits",
       "results": "Results",
       "viewDetails": "View Details",
+      "viewSite": "View Site",
+      "screenshots": "Screenshots",
       "github": "View on GitHub",
       "close": "Close"
     },
-     "intellifix": {
-       "title": "IntelliFix",
-       "description": "Intelligent code analysis tool that identifies bugs, suggests improvements, and optimizes performance. Developed with advanced algorithms and machine learning to assist developers in creating cleaner, more efficient code.",
-       "methods": [
-         "Static code analysis with advanced algorithms",
-         "Machine learning integration for pattern recognition",
-         "Multi-language support and extensible architecture",
-         "Real-time analysis and intelligent suggestions"
-       ],
-       "benefits": [
-         "Significantly reduces bugs in production code",
-         "Improves code quality and maintainability",
-         "Accelerates development process",
-         "Helps developers learn best practices"
-       ],
-       "results": [
-         "Comprehensive code analysis tool",
-         "Advanced bug detection system",
-         "Positive feedback from developer community",
-         "Simple integration into CI/CD pipelines"
-       ]
-     },
-     "gapizer": {
+    "intellifix": {
+      "title": "IntelliFix",
+      "description": "Intelligent code analysis tool that identifies bugs, suggests improvements, and optimizes performance. Developed with advanced algorithms and machine learning to assist developers in creating cleaner, more efficient code.",
+      "methods": [
+        "Static code analysis with advanced algorithms",
+        "Machine learning integration for pattern recognition",
+        "Multi-language support and extensible architecture",
+        "Real-time analysis and intelligent suggestions"
+      ],
+      "benefits": [
+        "Significantly reduces bugs in production code",
+        "Improves code quality and maintainability",
+        "Accelerates development process",
+        "Helps developers learn best practices"
+      ],
+      "results": [
+        "Comprehensive code analysis tool",
+        "Advanced bug detection system",
+        "Positive feedback from developer community",
+        "Simple integration into CI/CD pipelines"
+      ]
+    },
+    "gapizer": {
       "title": "Gapizer",
       "description": "CLI tool built in Go to generate complete Go APIs from YML files. Significantly accelerates development by automating API structure creation, reducing development time and ensuring code consistency.",
       "methods": [
@@ -176,118 +181,118 @@
         "Growing adoption by Go developer community"
       ]
     },
-     "culturaconnect": {
-       "title": "Cultura Connect",
-       "description": "Complete web platform to connect artists and cultural producers. Developed with focus on user experience, offers tools for creating, promoting and managing cultural events, promoting local culture.",
-       "methods": [
-         "Full-stack development with React and TypeScript",
-         "Robust backend with Node.js and Prisma ORM",
-         "Secure authentication and user management",
-         "Responsive design and intuitive interface"
-       ],
-       "benefits": [
-         "Efficiently connects artists and producers",
-         "Facilitates promotion of cultural events",
-         "Promotes local and regional culture",
-         "Modern and easy-to-use interface"
-       ],
-       "results": [
-         "Complete and functional platform developed",
-         "Authentication and management system implemented",
-         "Responsive interface for all devices",
-         "Academic project with focus on social impact"
-       ]
-     },
-     "razaoquest": {
-       "title": "Razão Quest App",
-       "description": "Gamified mobile application for public exam studies. Developed in React Native with ranking system, achievements and progression. Transforms learning into an engaging and motivating experience for exam candidates.",
-       "methods": [
-         "Mobile development with React Native and Expo",
-         "Gamification system and achievements",
-         "Backend integrated with Firebase",
-         "UX/UI design focused on engagement"
-       ],
-       "benefits": [
-         "Makes studying more engaging and fun",
-         "Ranking system motivates healthy competition",
-         "Tracks user progress and performance",
-         "Intuitive and responsive interface"
-       ],
-       "results": [
-         "Complete application with gamification system",
-         "Modern and engaging interface",
-         "Functional ranking and achievements system",
-         "Project focused on education and motivation"
-       ]
-     },
-     "razaoquestadmin": {
-       "title": "Razão Quest Admin",
-       "description": "Web administrative panel for managing the Razão Quest application. Developed in React with modern interface, allows complete control of users, missions, rewards and real-time statistics.",
-       "methods": [
-         "Web development with React and TypeScript",
-         "Complete administrative dashboard",
-         "Integration with mobile app API",
-         "Responsive and intuitive interface"
-       ],
-       "benefits": [
-         "Total control over the gamified system",
-         "Real-time data and statistics visualization",
-         "Efficient user and content management",
-         "Modern and functional administrative interface"
-       ],
-       "results": [
-         "Complete and functional administrative panel",
-         "Management system integrated with mobile app",
-         "Dashboard with detailed metrics and reports",
-         "Essential tool for system administration"
-       ]
-     },
-     "pdrlelo": {
-       "title": "PDR & Lelo",
-       "description": "Modern landing page for a disposables company in Rio de Janeiro. Developed with focus on conversion and user experience, using fluid GSAP animations and advanced SEO optimizations for maximum visibility in search engines.",
-       "methods": [
-         "Development with Next.js for optimized performance",
-         "Fluid and interactive animations with GSAP",
-         "Advanced SEO optimizations and Core Web Vitals",
-         "Responsive design focused on conversion"
-       ],
-       "benefits": [
-         "Significantly increases visitor conversion",
-         "Improves positioning in search results",
-         "Engaging and professional user experience",
-         "Fast loading and optimized performance"
-       ],
-       "results": [
-         "Professional landing page in production",
-         "GSAP animations successfully implemented",
-         "SEO optimizations effectively applied",
-         "Project focused on commercial results"
-       ]
-     },
-     "digitalfactory": {
-       "title": "Digital Factory",
-       "description": "Complete digital factory system with IIoT simulation, real-time monitoring and industrial data analysis. Developed with distributed architecture using .NET, React, MQTT and TimescaleDB for Industry 4.0 processes.",
-       "methods": [
-         "Distributed architecture with .NET 9 and React/TypeScript",
-         "IIoT system with 7 production line simulators",
-         "MQTT communication for real-time data",
-         "TimescaleDB for time series data storage"
-       ],
-       "benefits": [
-         "Complete monitoring of industrial processes",
-         "Predictive analysis and preventive maintenance",
-         "Real-time dashboards with OEE metrics",
-         "Realistic simulation of industrial environment"
-       ],
-       "results": [
-         "Complete functional digital factory system",
-         "7 IIoT simulators with different sensor types",
-         "Robust API for industrial data queries",
-         "Modern dashboard with real-time visualization"
-       ]
-     },
-     "cta": {
-       "title": "Like what you see?",
+    "culturaconnect": {
+      "title": "Cultura Connect",
+      "description": "Complete web platform to connect artists and cultural producers. Developed with focus on user experience, offers tools for creating, promoting and managing cultural events, promoting local culture.",
+      "methods": [
+        "Full-stack development with React and TypeScript",
+        "Robust backend with Node.js and Prisma ORM",
+        "Secure authentication and user management",
+        "Responsive design and intuitive interface"
+      ],
+      "benefits": [
+        "Efficiently connects artists and producers",
+        "Facilitates promotion of cultural events",
+        "Promotes local and regional culture",
+        "Modern and easy-to-use interface"
+      ],
+      "results": [
+        "Complete and functional platform developed",
+        "Authentication and management system implemented",
+        "Responsive interface for all devices",
+        "Academic project with focus on social impact"
+      ]
+    },
+    "razaoquest": {
+      "title": "Razão Quest App",
+      "description": "Gamified mobile application for public exam studies. Developed in React Native with ranking system, achievements and progression. Transforms learning into an engaging and motivating experience for exam candidates.",
+      "methods": [
+        "Mobile development with React Native and Expo",
+        "Gamification system and achievements",
+        "Backend integrated with Firebase",
+        "UX/UI design focused on engagement"
+      ],
+      "benefits": [
+        "Makes studying more engaging and fun",
+        "Ranking system motivates healthy competition",
+        "Tracks user progress and performance",
+        "Intuitive and responsive interface"
+      ],
+      "results": [
+        "Complete application with gamification system",
+        "Modern and engaging interface",
+        "Functional ranking and achievements system",
+        "Project focused on education and motivation"
+      ]
+    },
+    "razaoquestadmin": {
+      "title": "Razão Quest Admin",
+      "description": "Web administrative panel for managing the Razão Quest application. Developed in React with modern interface, allows complete control of users, missions, rewards and real-time statistics.",
+      "methods": [
+        "Web development with React and TypeScript",
+        "Complete administrative dashboard",
+        "Integration with mobile app API",
+        "Responsive and intuitive interface"
+      ],
+      "benefits": [
+        "Total control over the gamified system",
+        "Real-time data and statistics visualization",
+        "Efficient user and content management",
+        "Modern and functional administrative interface"
+      ],
+      "results": [
+        "Complete and functional administrative panel",
+        "Management system integrated with mobile app",
+        "Dashboard with detailed metrics and reports",
+        "Essential tool for system administration"
+      ]
+    },
+    "pdrlelo": {
+      "title": "PDR & Lelo",
+      "description": "Modern landing page for a disposables company in Rio de Janeiro. Developed with focus on conversion and user experience, using fluid GSAP animations and advanced SEO optimizations for maximum visibility in search engines.",
+      "methods": [
+        "Development with Next.js for optimized performance",
+        "Fluid and interactive animations with GSAP",
+        "Advanced SEO optimizations and Core Web Vitals",
+        "Responsive design focused on conversion"
+      ],
+      "benefits": [
+        "Significantly increases visitor conversion",
+        "Improves positioning in search results",
+        "Engaging and professional user experience",
+        "Fast loading and optimized performance"
+      ],
+      "results": [
+        "Professional landing page in production",
+        "GSAP animations successfully implemented",
+        "SEO optimizations effectively applied",
+        "Project focused on commercial results"
+      ]
+    },
+    "digitalfactory": {
+      "title": "Digital Factory",
+      "description": "Complete digital factory system with IIoT simulation, real-time monitoring and industrial data analysis. Developed with distributed architecture using .NET, React, MQTT and TimescaleDB for Industry 4.0 processes.",
+      "methods": [
+        "Distributed architecture with .NET 9 and React/TypeScript",
+        "IIoT system with 7 production line simulators",
+        "MQTT communication for real-time data",
+        "TimescaleDB for time series data storage"
+      ],
+      "benefits": [
+        "Complete monitoring of industrial processes",
+        "Predictive analysis and preventive maintenance",
+        "Real-time dashboards with OEE metrics",
+        "Realistic simulation of industrial environment"
+      ],
+      "results": [
+        "Complete functional digital factory system",
+        "7 IIoT simulators with different sensor types",
+        "Robust API for industrial data queries",
+        "Modern dashboard with real-time visualization"
+      ]
+    },
+    "cta": {
+      "title": "Like what you see?",
       "description": "Let's work together on your next project!",
       "button": "Get in Touch"
     }
@@ -447,14 +452,19 @@
     "title": "Contact",
     "titleHighlight": "Me",
     "subtitle": "Let's work together?",
+    "bigCta": "Let's talk?",
     "description": "I'm always open to new opportunities and interesting projects. Get in touch!",
     "availability": {
-      "title": "Availability",
+      "title": "Available",
       "description": "I'm available for new projects and opportunities. Get in touch!"
     },
     "methods": {
-      "title": "Other Contact Methods",
+      "title": "Send a message",
       "description": "Prefer another communication method? Choose the option that is most convenient for you."
+    },
+    "footer": {
+      "madeWith": "Made with 💙 by Rian",
+      "rights": "Rian Hermínio. All rights reserved."
     },
     "form": {
       "name": {

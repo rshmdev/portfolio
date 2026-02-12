@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useTranslations } from 'next-intl';
@@ -10,23 +10,53 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+const skillIcons: Record<number, string> = {
+  1: '⚛️',
+  2: '🔧',
+  3: '🗃️',
+  4: '☁️',
+  5: '💻',
+  6: '🛠️',
+  7: '🏗️',
+  8: '🔒',
+};
+
+const skillColors: Record<number, string> = {
+  1: '#61DAFB',
+  2: '#68A063',
+  3: '#336791',
+  4: '#0089D6',
+  5: '#F7DF1E',
+  6: '#F05033',
+  7: '#8B5CF6',
+  8: '#EF4444',
+};
+
+const skillTechTags: Record<number, string[]> = {
+  1: ['React', 'Next.js', 'TypeScript', 'Tailwind', 'Zustand', 'Framer Motion'],
+  2: ['Node.js', 'NestJS', '.NET', 'GraphQL', 'WebSocket', 'Express'],
+  3: ['PostgreSQL', 'MongoDB', 'Redis', 'Prisma', 'MySQL', 'TypeORM'],
+  4: ['Azure', 'Docker', 'CI/CD', 'GitHub Actions', 'Terraform', 'K8s'],
+  5: ['JavaScript', 'TypeScript', 'C#', 'Python', 'SQL', 'Go'],
+  6: ['Git', 'Docker', 'Jest', 'Cypress', 'Playwright', 'Scrum'],
+  7: ['DDD', 'CQRS', 'Microservices', 'Clean Arch', 'RabbitMQ', 'Kafka'],
+  8: ['Redis Cache', 'OWASP', 'JWT', 'OAuth2', 'LGPD', 'SSL/TLS'],
+};
+
 export default function SkillsSection() {
   const t = useTranslations('skills');
   const sectionRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const skillsGridRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === 'undefined' || !sectionRef.current || !trackRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Animação do título
+      // Header animation
       gsap.fromTo(
-        titleRef.current,
-        {
-          y: 50,
-          opacity: 0,
-        },
+        '.skills-header',
+        { y: 50, opacity: 0 },
         {
           y: 0,
           opacity: 1,
@@ -35,84 +65,80 @@ export default function SkillsSection() {
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 70%',
-            toggleActions: 'play none none reverse',
           },
         }
       );
 
-      // Animação dos cards de skills
+      // Divider
       gsap.fromTo(
-        '.skill-card',
+        '.skills-divider',
+        { scaleX: 0 },
         {
-          y: 80,
-          opacity: 0,
-          scale: 0.8,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 0.8,
-          stagger: 0.1,
+          scaleX: 1,
+          duration: 1,
           ease: 'power3.out',
           scrollTrigger: {
-            trigger: skillsGridRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
+            trigger: sectionRef.current,
+            start: 'top 70%',
           },
         }
       );
 
-      // Animações de hover para os cards
-      const skillCards = document.querySelectorAll('.skill-card');
-      skillCards.forEach((card) => {
-        const handleMouseEnter = () => {
-          gsap.to(card, {
-            y: -10,
-            scale: 1.05,
-            duration: 0.3,
-            ease: 'power2.out',
-          });
-          
-          gsap.to(card.querySelector('.skill-icon'), {
-            rotation: 360,
-            duration: 0.6,
-            ease: 'power2.out',
-          });
-        };
+      // ===== HORIZONTAL SCROLL =====
+      const track = trackRef.current!;
+      const cards = track.querySelectorAll('.hscroll-card');
+      const totalCards = cards.length;
 
-        const handleMouseLeave = () => {
-          gsap.to(card, {
-            y: 0,
-            scale: 1,
-            duration: 0.3,
-            ease: 'power2.out',
-          });
-        };
+      // Calculate total scroll distance: each card width + gaps
+      // We want to scroll from first card to last card in view
+      const getScrollAmount = () => {
+        const trackWidth = track.scrollWidth;
+        const viewportWidth = window.innerWidth;
+        return -(trackWidth - viewportWidth + 60); // 60px for padding
+      };
 
-        card.addEventListener('mouseenter', handleMouseEnter);
-        card.addEventListener('mouseleave', handleMouseLeave);
+      const scrollTween = gsap.to(track, {
+        x: getScrollAmount,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top top',
+          end: () => `+=${Math.abs(getScrollAmount()) * 1.5}`,
+          pin: true,
+          pinSpacing: true,
+          scrub: 2,
+          onUpdate: (self) => {
+            const idx = Math.min(
+              Math.floor(self.progress * totalCards),
+              totalCards - 1
+            );
+            setCurrentIndex(idx);
+          },
+          invalidateOnRefresh: true,
+        },
       });
 
-      // Animação de progresso das barras de skill
-      gsap.utils.toArray('.skill-progress').forEach((progress: any) => {
-        const width = progress.dataset.width;
-        gsap.fromTo(
-          progress,
-          {
-            width: '0%',
-          },
-          {
-            width: width + '%',
-            duration: 1.5,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: progress,
-              start: 'top 85%',
-              toggleActions: 'play none none reverse',
-            },
-          }
-        );
+      // Individual card parallax - text lags behind for depth
+      cards.forEach((card) => {
+        const inner = card.querySelector('.hscroll-card-inner');
+        if (inner) {
+          gsap.fromTo(
+            inner,
+            { x: 80, opacity: 0.5 },
+            {
+              x: 0,
+              opacity: 1,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: card,
+                containerAnimation: scrollTween,
+                start: 'left 90%',
+                end: 'left 30%',
+                scrub: true,
+              },
+            }
+          );
+        }
       });
     }, sectionRef);
 
@@ -120,66 +146,180 @@ export default function SkillsSection() {
   }, []);
 
   return (
-    <div ref={sectionRef} className="container mx-auto px-6 py-20 min-h-screen flex flex-col justify-center">
-      <div className="text-center mb-16">
-        <h2 ref={titleRef} className="text-5xl lg:text-6xl font-bold text-white mb-6" style={{ fontSize: 'clamp(3rem, 6vw, 4rem)' }}>
-          {t('title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">{t('titleHighlight')}</span>
-        </h2>
-        <p className="fade-in-text text-xl text-gray-300 max-w-2xl mx-auto">
-          {t('description')}
-        </p>
+    <section ref={sectionRef} className="relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 rounded-full opacity-10 blur-3xl"
+          style={{ background: 'radial-gradient(circle, var(--color-secondary) 0%, transparent 70%)' }} />
+        <div className="absolute top-1/3 left-1/4 w-64 h-64 rounded-full opacity-5 blur-3xl animate-float-delayed"
+          style={{ background: 'radial-gradient(circle, var(--color-primary) 0%, transparent 70%)' }} />
       </div>
 
-      <div ref={skillsGridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
-        {skills.map((skill, index) => (
-          <div
-            key={index}
-            className="skill-card group relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300"
-          >
-            {/* Efeito de brilho no hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
-            <div className="relative z-10">
-              {/* Ícone */}
-              <div className="skill-icon w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-lg flex items-center justify-center">
-                <img 
-                  src={skill.icon} 
-                  alt={skill.name}
-                  className="w-10 h-10 object-contain filter brightness-110"
-                />
+      {/* Content wrapper - takes full viewport height when pinned */}
+      <div className="relative z-10 h-screen flex flex-col">
+        {/* Header - fixed at top */}
+        <div className="pt-24 pb-8 px-6">
+          <div className="skills-header max-w-6xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div>
+              <h2 className="heading-lg mb-3">
+                {t('title')}{' '}
+                <span className="gradient-text">{t('titleHighlight')}</span>
+              </h2>
+              <div className="skills-divider w-16 h-0.5 rounded-full"
+                style={{
+                  background: 'linear-gradient(90deg, var(--color-primary), var(--color-accent))',
+                  transformOrigin: 'left',
+                }}
+              />
+            </div>
+
+            {/* Progress */}
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                {skills.map((_, idx) => (
+                  <div
+                    key={idx}
+                    className="transition-all duration-500"
+                    style={{
+                      width: currentIndex === idx ? '28px' : '6px',
+                      height: '6px',
+                      borderRadius: '3px',
+                      background: currentIndex === idx
+                        ? `linear-gradient(90deg, ${skillColors[idx + 1] || 'var(--color-primary)'}, var(--color-accent))`
+                        : 'rgba(255, 255, 255, 0.1)',
+                    }}
+                  />
+                ))}
               </div>
-
-              {/* Nome da skill */}
-              <h3 className="text-lg font-semibold text-white text-center mb-3">
-                {skill.name}
-              </h3>
-
-              {/* Partículas decorativas */}
-              <div className="absolute top-2 right-2 w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping" />
-              <div className="absolute bottom-2 left-2 w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping" style={{ animationDelay: '0.5s' }} />
+              <span className="text-sm font-mono" style={{ color: 'var(--text-muted)' }}>
+                {String(currentIndex + 1).padStart(2, '0')}/{String(skills.length).padStart(2, '0')}
+              </span>
             </div>
           </div>
-        ))}
-      </div>
+        </div>
 
-      {/* Seção de estatísticas */}
-      <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-        {[
-          { number: '3+', label: t('stats.experience') },
-          { number: '50+', label: t('stats.projects') },
-          { number: '15+', label: t('stats.technologies') },
-          { number: '100%', label: t('stats.dedication') },
-        ].map((stat, index) => (
-          <div key={index} className="text-center fade-in-text">
-            <div className="text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-2">
-              {stat.number}
-            </div>
-            <div className="text-gray-300 text-sm lg:text-base">
-              {stat.label}
-            </div>
+        {/* Horizontal Track */}
+        <div className="flex-1 flex items-center overflow-visible">
+          <div
+            ref={trackRef}
+            className="flex gap-8 pl-6 md:pl-[max(2rem,calc((100vw-72rem)/2))]"
+            style={{ willChange: 'transform' }}
+          >
+            {skills.map((skill, index) => (
+              <div
+                key={skill.id}
+                className="hscroll-card flex-shrink-0"
+                style={{ width: 'min(500px, 85vw)' }}
+              >
+                <div className="hscroll-card-inner h-full">
+                  <div
+                    className="group h-full rounded-3xl p-8 relative overflow-hidden transition-all duration-500 hover:translate-y-[-4px]"
+                    style={{
+                      background: 'var(--bg-glass)',
+                      border: '1px solid var(--border-color)',
+                    }}
+                  >
+                    {/* Card number background */}
+                    <div
+                      className="absolute -top-4 -right-4 text-[10rem] font-bold leading-none opacity-[0.03] pointer-events-none select-none"
+                      style={{ fontFamily: 'var(--font-header)' }}
+                    >
+                      {String(index + 1).padStart(2, '0')}
+                    </div>
+
+                    {/* Accent line top */}
+                    <div
+                      className="absolute top-0 left-0 w-full h-[3px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      style={{ background: `linear-gradient(90deg, ${skillColors[skill.id]}, transparent)` }}
+                    />
+
+                    {/* Header */}
+                    <div className="flex items-start gap-4 mb-6">
+                      <div
+                        className="text-4xl p-3 rounded-2xl transition-all duration-500 group-hover:scale-110"
+                        style={{
+                          background: `${skillColors[skill.id]}10`,
+                          boxShadow: `0 0 0 1px ${skillColors[skill.id]}20`,
+                        }}
+                      >
+                        {skillIcons[skill.id]}
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold mb-1 transition-colors duration-300 group-hover:text-white"
+                          style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-header)' }}>
+                          {skill.name}
+                        </h3>
+                        <span
+                          className="text-xs font-semibold uppercase tracking-wider"
+                          style={{ color: skillColors[skill.id] }}
+                        >
+                          {t('area')} {String(index + 1).padStart(2, '0')}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-sm leading-relaxed mb-6" style={{ color: 'var(--text-secondary)' }}>
+                      {skill.description.length > 200
+                        ? skill.description.substring(0, 200) + '...'
+                        : skill.description
+                      }
+                    </p>
+
+                    {/* Tech Tags */}
+                    <div className="flex flex-wrap gap-2">
+                      {(skillTechTags[skill.id] || []).map((tech, techIdx) => (
+                        <span
+                          key={techIdx}
+                          className="px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300 hover:scale-105"
+                          style={{
+                            backgroundColor: `${skillColors[skill.id]}08`,
+                            color: skillColors[skill.id],
+                            border: `1px solid ${skillColors[skill.id]}15`,
+                          }}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Icon image */}
+                    <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                      <img
+                        src={skill.icon}
+                        alt={skill.name}
+                        className="w-10 h-10 object-contain"
+                        style={{ filter: 'brightness(1.5) drop-shadow(0 0 10px rgba(255,255,255,0.2))' }}
+                      />
+                    </div>
+
+                    {/* Hover glow */}
+                    <div
+                      className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                      style={{
+                        boxShadow: `inset 0 0 60px ${skillColors[skill.id]}05, 0 0 40px ${skillColors[skill.id]}08`,
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {/* End spacer */}
+            <div className="flex-shrink-0" style={{ width: '30vw' }} />
           </div>
-        ))}
+        </div>
+
+        {/* Scroll hint */}
+        <div className="pb-8 px-6 flex items-center justify-center gap-2">
+          <svg className="w-4 h-4" style={{ color: 'var(--text-muted)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+          <span className="text-xs font-medium tracking-widest uppercase" style={{ color: 'var(--text-muted)' }}>
+            {t('scrollHint')}
+          </span>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

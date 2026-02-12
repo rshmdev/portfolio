@@ -16,13 +16,11 @@ export default function FloatHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
-  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setScroll(window.scrollY);
       
-      // Detectar seção ativa
       const sections = ['hero', 'about', 'skills', 'experience', 'projects', 'contact'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
@@ -40,215 +38,156 @@ export default function FloatHeader() {
 
     window.addEventListener("scroll", handleScroll);
 
-    // Animação inicial do header
-    if (headerRef.current && navRef.current) {
+    if (headerRef.current) {
       gsap.fromTo(headerRef.current, 
         { y: -100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, delay: 0.05, ease: "power2.out" }
-      );
-      
-      gsap.fromTo(navRef.current.querySelectorAll('li'), 
-        { y: -20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.4, stagger: 0.05, delay: 0.3, ease: "power2.out" }
+        { y: 0, opacity: 1, duration: 0.8, delay: 0.3, ease: "power3.out" }
       );
     }
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
 
   const handleNavClick = (section: string) => {
     const element = document.getElementById(section);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    element?.scrollIntoView({ behavior: "smooth" });
     setIsMobileMenuOpen(false);
   };
 
   const handleLanguageChange = (newLocale: string) => {
     const segments = pathname.split('/');
     segments[1] = newLocale;
-    const newPath = segments.join('/');
-    router.push(newPath);
+    router.push(segments.join('/'));
     setIsLanguageMenuOpen(false);
   };
+
+  const navItems = [
+    { id: 'hero', label: t('home') },
+    { id: 'about', label: t('about') },
+    { id: 'skills', label: t('skills') },
+    { id: 'experience', label: t('experience') },
+    { id: 'projects', label: t('projects') },
+  ];
+
+  const isScrolled = scroll > 50;
 
   return (
     <header
       ref={headerRef}
-      className={`fixed w-full top-0 left-0 z-50 transition-all duration-500 opacity-0 ${
-        scroll > 100 
-          ? "bg-gradient-to-r from-slate-950/95 via-gray-900/95 to-slate-950/95 backdrop-blur-xl shadow-2xl" 
-          : "bg-transparent"
-      }`}
+      className="fixed w-full top-0 left-0 z-50"
+      style={{
+        transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+        background: isScrolled 
+          ? 'rgba(10, 14, 39, 0.85)' 
+          : 'transparent',
+        backdropFilter: isScrolled ? 'blur(20px)' : 'none',
+        WebkitBackdropFilter: isScrolled ? 'blur(20px)' : 'none',
+        borderBottom: isScrolled 
+          ? '1px solid rgba(70, 102, 255, 0.08)' 
+          : '1px solid transparent',
+        boxShadow: isScrolled 
+          ? '0 8px 32px rgba(0, 0, 0, 0.3)' 
+          : 'none',
+      }}
     >
       <div className="max-w-7xl mx-auto px-6">
-        <nav ref={navRef} className="flex items-center justify-between py-4">
-          {/* Logo/Brand */}
-          <div className="flex items-center space-x-2">
-              <Image
-                src="/icon.png"
-                alt="Rian Moraes"
-                width={40}
-                height={40}
+        <nav className="flex items-center justify-between py-4">
+          {/* Logo */}
+          <div 
+            className="flex items-center gap-3 cursor-pointer group"
+            onClick={() => handleNavClick('hero')}
+          >
+            <div className="relative">
+              <Image 
+                src="/icon.png" 
+                alt="Rian Moraes" 
+                width={40} 
+                height={40} 
+                className="rounded-full transition-transform duration-300 group-hover:scale-110" 
               />
+              <div 
+                className="absolute -inset-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{ 
+                  background: 'linear-gradient(135deg, var(--color-primary), var(--color-accent))',
+                  filter: 'blur(8px)',
+                  zIndex: -1 
+                }}
+              />
+            </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={toggleMobileMenu}
-            className="md:hidden text-white p-2 rounded-lg hover:bg-gray-800 transition-colors"
-            aria-label="Toggle menu"
-          >
-            <div className="w-6 h-6 flex flex-col justify-center items-center">
-              <span className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
-              <span className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-              <span className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMobileMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
-            </div>
-          </button>
-
-          {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
-            <ul className="flex items-center space-x-8">
-              <li>
-                <a
-                  href="#hero"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("hero");
-                  }}
-                  className={`relative transition-all duration-300 group cursor-pointer px-3 py-2 rounded-lg ${
-                    activeSection === 'hero' 
-                      ? 'text-cyan-400 bg-slate-700/30' 
-                      : 'text-gray-400 hover:text-gray-200'
-                  }`}
-                >
-                  <span className="relative z-10">{t('home')}</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-slate-700/30 to-gray-700/30 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -z-10"></div>
-                </a>
-              </li>
-            <li>
-              <a
-                href="#about"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick("about");
-                }}
-                className={`relative transition-all duration-300 group cursor-pointer px-3 py-2 rounded-lg ${
-                  activeSection === 'about' 
-                    ? 'text-cyan-400 bg-slate-700/30' 
-                    : 'text-gray-400 hover:text-gray-200'
-                }`}
-              >
-                <span className="relative z-10">{t('about')}</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-700/30 to-gray-700/30 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -z-10"></div>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#skills"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick("skills");
-                }}
-                className={`relative transition-all duration-300 group cursor-pointer px-3 py-2 rounded-lg ${
-                  activeSection === 'skills' 
-                    ? 'text-cyan-400 bg-slate-700/30' 
-                    : 'text-gray-400 hover:text-gray-200'
-                }`}
-              >
-                <span className="relative z-10">{t('skills')}</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-700/30 to-gray-700/30 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -z-10"></div>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#experience"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick("experience");
-                }}
-                className={`relative transition-all duration-300 group cursor-pointer px-3 py-2 rounded-lg ${
-                  activeSection === 'experience' 
-                    ? 'text-cyan-400 bg-slate-700/30' 
-                    : 'text-gray-400 hover:text-gray-200'
-                }`}
-              >
-                <span className="relative z-10">{t('experience')}</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-700/30 to-gray-700/30 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -z-10"></div>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#projects"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick("projects");
-                }}
-                className={`relative transition-all duration-300 group cursor-pointer px-3 py-2 rounded-lg ${
-                  activeSection === 'projects' 
-                    ? 'text-cyan-400 bg-slate-700/30' 
-                    : 'text-gray-400 hover:text-gray-200'
-                }`}
-              >
-                <span className="relative z-10">{t('projects')}</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-700/30 to-gray-700/30 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -z-10"></div>
-              </a>
-            </li>
-            <li>
-                <a
-                  href="#contact"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("contact");
-                  }}
-                  className="relative px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg hover:from-cyan-400 hover:to-purple-500 transition-all duration-300 transform hover:scale-105 cursor-pointer"
-                >
-                  {t('contact')}
-                </a>
-              </li>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            <ul className="flex items-center gap-1">
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => handleNavClick(item.id)}
+                    className="relative px-4 py-2 rounded-lg transition-all duration-300 font-medium text-sm"
+                    style={{ 
+                      color: activeSection === item.id 
+                        ? 'var(--color-primary-light)' 
+                        : 'var(--text-secondary)' 
+                    }}
+                  >
+                    {item.label}
+                    {/* Active indicator line */}
+                    <span 
+                      className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 rounded-full transition-all duration-300"
+                      style={{
+                        width: activeSection === item.id ? '60%' : '0%',
+                        background: 'linear-gradient(90deg, var(--color-primary), var(--color-accent))',
+                      }}
+                    />
+                  </button>
+                </li>
+              ))}
             </ul>
+
+            <button
+              onClick={() => handleNavClick("contact")}
+              className="btn-primary text-sm !px-5 !py-2.5 !rounded-lg"
+            >
+              {t('contact')}
+            </button>
 
             {/* Language Selector */}
             <div className="relative">
               <button
                 onClick={() => setIsLanguageMenuOpen(!isLanguageMenuOpen)}
-                className="flex items-center space-x-2 px-3 py-2 text-gray-400 hover:text-gray-200 transition-colors rounded-lg hover:bg-slate-700/30"
+                className="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/5"
+                style={{ color: 'var(--text-secondary)' }}
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                 </svg>
-                <span className="uppercase text-sm font-medium">{locale}</span>
-                <svg className={`w-4 h-4 transition-transform duration-200 ${isLanguageMenuOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
+                <span className="uppercase text-xs font-semibold tracking-wider">{locale}</span>
               </button>
 
-              {/* Language Dropdown */}
               {isLanguageMenuOpen && (
-                <div className="absolute top-full right-0 mt-2 w-32 bg-slate-900/95 backdrop-blur-md border border-slate-700 rounded-lg shadow-xl z-50">
+                <div 
+                  className="absolute top-full right-0 mt-2 w-36 rounded-xl shadow-xl overflow-hidden"
+                  style={{
+                    background: 'rgba(10, 14, 39, 0.95)',
+                    backdropFilter: 'blur(20px)',
+                    border: '1px solid rgba(70, 102, 255, 0.15)',
+                  }}
+                >
                   <button
                     onClick={() => handleLanguageChange('pt')}
-                    className={`w-full text-left px-4 py-3 text-sm transition-colors rounded-t-lg ${
-                      locale === 'pt' 
-                        ? 'text-cyan-400 bg-slate-700/50' 
-                        : 'text-gray-300 hover:text-white hover:bg-slate-700/30'
+                    className={`w-full text-left px-4 py-3 text-sm transition-colors ${
+                      locale === 'pt' ? 'gradient-text bg-white/5' : 'hover:bg-white/5'
                     }`}
+                    style={{ color: locale === 'pt' ? undefined : 'var(--text-secondary)' }}
                   >
                     🇧🇷 Português
                   </button>
                   <button
                     onClick={() => handleLanguageChange('en')}
-                    className={`w-full text-left px-4 py-3 text-sm transition-colors rounded-b-lg ${
-                      locale === 'en' 
-                        ? 'text-cyan-400 bg-slate-700/50' 
-                        : 'text-gray-300 hover:text-white hover:bg-slate-700/30'
+                    className={`w-full text-left px-4 py-3 text-sm transition-colors ${
+                      locale === 'en' ? 'gradient-text bg-white/5' : 'hover:bg-white/5'
                     }`}
+                    style={{ color: locale === 'en' ? undefined : 'var(--text-secondary)' }}
                   >
                     🇺🇸 English
                   </button>
@@ -257,135 +196,86 @@ export default function FloatHeader() {
             </div>
           </div>
 
-          {/* Mobile Navigation Menu */}
-          <div className={`md:hidden absolute top-full left-0 w-full bg-gradient-to-r from-slate-950/98 via-gray-900/98 to-slate-950/98 backdrop-blur-xl border-t border-gray-700/50 transition-all duration-300 ${
-            isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-          }`}>
-            <ul className="flex flex-col py-4 px-6 space-y-2">
-              <li>
-                <a
-                  href="#hero"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("hero");
-                  }}
-                  className={`block px-4 py-3 rounded-lg transition-all duration-300 ${
-                    activeSection === 'hero' 
-                      ? 'text-cyan-400 bg-slate-700/50' 
-                      : 'text-gray-400 hover:text-gray-200 hover:bg-slate-700/30'
-                  }`}
-                >
-                  {t('home')}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#about"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("about");
-                  }}
-                  className={`block px-4 py-3 rounded-lg transition-all duration-300 ${
-                    activeSection === 'about' 
-                      ? 'text-cyan-400 bg-slate-700/50' 
-                      : 'text-gray-400 hover:text-gray-200 hover:bg-slate-700/30'
-                  }`}
-                >
-                  {t('about')}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#skills"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("skills");
-                  }}
-                  className={`block px-4 py-3 rounded-lg transition-all duration-300 ${
-                    activeSection === 'skills' 
-                      ? 'text-cyan-400 bg-slate-700/50' 
-                      : 'text-gray-400 hover:text-gray-200 hover:bg-slate-700/30'
-                  }`}
-                >
-                  {t('skills')}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#experience"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("experience");
-                  }}
-                  className={`block px-4 py-3 rounded-lg transition-all duration-300 ${
-                    activeSection === 'experience' 
-                      ? 'text-cyan-400 bg-slate-700/50' 
-                      : 'text-gray-400 hover:text-gray-200 hover:bg-slate-700/30'
-                  }`}
-                >
-                  {t('experience')}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#projects"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("projects");
-                  }}
-                  className={`block px-4 py-3 rounded-lg transition-all duration-300 ${
-                    activeSection === 'projects' 
-                      ? 'text-cyan-400 bg-slate-700/50' 
-                      : 'text-gray-400 hover:text-gray-200 hover:bg-slate-700/30'
-                  }`}
-                >
-                  {t('projects')}
-                </a>
-              </li>
-              <li>
-                  <a
-                    href="#contact"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavClick("contact");
-                    }}
-                    className="block px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg hover:from-cyan-400 hover:to-purple-500 transition-all duration-300 text-center"
-                  >
-                    {t('contact')}
-                  </a>
-                </li>
-              </ul>
-
-              {/* Mobile Language Selector */}
-              <div className="mt-4 pt-4 border-t border-gray-700/50">
-                <div className="px-4 py-2 text-gray-400 text-sm font-medium mb-2">
-                  {t('language')}
-                </div>
-                <div className="flex gap-2">
-                  <button
-                    onClick={() => handleLanguageChange('pt')}
-                    className={`flex-1 px-4 py-3 text-sm transition-colors rounded-lg ${
-                      locale === 'pt' 
-                        ? 'text-cyan-400 bg-slate-700/50' 
-                        : 'text-gray-300 hover:text-white hover:bg-slate-700/30'
-                    }`}
-                  >
-                    🇧🇷 Português
-                  </button>
-                  <button
-                    onClick={() => handleLanguageChange('en')}
-                    className={`flex-1 px-4 py-3 text-sm transition-colors rounded-lg ${
-                      locale === 'en' 
-                        ? 'text-cyan-400 bg-slate-700/50' 
-                        : 'text-gray-300 hover:text-white hover:bg-slate-700/30'
-                    }`}
-                  >
-                    🇺🇸 English
-                  </button>
-                </div>
-              </div>
-          </div>
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 rounded-lg hover:bg-white/5 transition-colors"
+            style={{ color: 'var(--text-primary)' }}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isMobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
         </nav>
+
+        {/* Mobile Menu */}
+        <div 
+          className="md:hidden overflow-hidden transition-all duration-500 ease-out"
+          style={{
+            maxHeight: isMobileMenuOpen ? '400px' : '0',
+            opacity: isMobileMenuOpen ? 1 : 0,
+          }}
+        >
+          <div 
+            className="rounded-xl my-2 p-4"
+            style={{
+              background: 'rgba(10, 14, 39, 0.95)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(70, 102, 255, 0.1)',
+            }}
+          >
+            <ul className="space-y-1">
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => handleNavClick(item.id)}
+                    className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-300 ${
+                      activeSection === item.id ? 'gradient-text bg-white/5' : 'hover:bg-white/5'
+                    }`}
+                    style={{ color: activeSection === item.id ? undefined : 'var(--text-secondary)' }}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+              <li>
+                <button
+                  onClick={() => handleNavClick("contact")}
+                  className="w-full btn-primary text-sm mt-2"
+                >
+                  {t('contact')}
+                </button>
+              </li>
+            </ul>
+
+            <div className="mt-4 pt-4 border-t" style={{ borderColor: 'rgba(70, 102, 255, 0.1)' }}>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => handleLanguageChange('pt')}
+                  className={`flex-1 px-4 py-3 text-sm rounded-lg transition-colors ${
+                    locale === 'pt' ? 'gradient-text bg-white/5' : 'hover:bg-white/5'
+                  }`}
+                  style={{ color: locale === 'pt' ? undefined : 'var(--text-secondary)' }}
+                >
+                  🇧🇷 PT
+                </button>
+                <button
+                  onClick={() => handleLanguageChange('en')}
+                  className={`flex-1 px-4 py-3 text-sm rounded-lg transition-colors ${
+                    locale === 'en' ? 'gradient-text bg-white/5' : 'hover:bg-white/5'
+                  }`}
+                  style={{ color: locale === 'en' ? undefined : 'var(--text-secondary)' }}
+                >
+                  🇺🇸 EN
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
   );

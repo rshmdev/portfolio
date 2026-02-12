@@ -34,6 +34,8 @@
     "title": "Habilidades",
     "titleHighlight": "Técnicas",
     "description": "Tecnologias e ferramentas que domino para criar soluções completas e eficientes.",
+    "area": "Área",
+    "scrollHint": "Scroll para explorar",
     "categories": {
       "frontend": "Frontend",
       "backend": "Backend",
@@ -121,6 +123,7 @@
     "titleHighlight": "Portfolio",
     "description": "Explore meus projetos e veja como transformo ideias em soluções digitais.",
     "subtitle": "Projetos em Destaque",
+    "scrollHint": "Continue rolando",
     "pause": "Pausar",
     "play": "Executar",
     "github": "Ver no GitHub",
@@ -131,6 +134,8 @@
       "benefits": "Benefícios",
       "results": "Resultados",
       "viewDetails": "Ver Detalhes",
+      "viewSite": "Ver Site",
+      "screenshots": "Screenshots",
       "github": "Ver no GitHub",
       "close": "Fechar"
     },
@@ -294,18 +299,23 @@
       "button": "Entrar em Contato"
     }
   },
- "contact": {
+  "contact": {
     "title": "Contato",
     "titleHighlight": "Comigo",
     "subtitle": "Vamos trabalhar juntos?",
+    "bigCta": "Vamos conversar?",
     "description": "Estou sempre aberto a novas oportunidades e projetos interessantes. Entre em contato!",
     "availability": {
-      "title": "Disponibilidade",
+      "title": "Disponível",
       "description": "Estou disponível para novos projetos e oportunidades. Entre em contato!"
     },
     "methods": {
-      "title": "Outros Métodos de Contato",
+      "title": "Envie uma mensagem",
       "description": "Prefere outro meio de comunicação? Escolha a opção que for mais conveniente para você."
+    },
+    "footer": {
+      "madeWith": "Feito com 💙 por Rian",
+      "rights": "Rian Hermínio. Todos os direitos reservados."
     },
     "form": {
       "name": {
