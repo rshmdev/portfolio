@@ -45,6 +45,40 @@
       "projects": "50+ Completed Projects",
       "technologies": "20+ Technologies",
       "dedication": "100% Dedication"
+    },
+    "items": {
+      "1": {
+        "name": "Frontend Development",
+        "description": "Expert in React 18+ and Next.js 14+ for building modern and performant web applications. Full mastery of the React ecosystem including Server Components, advanced hooks, Zustand/Redux for state management, React Query for data caching. Solid experience in TypeScript, Tailwind CSS, Framer Motion for animations and mobile-first responsive development."
+      },
+      "2": {
+        "name": "Backend Development",
+        "description": "Backend developer proficient in Node.js with Express and Fastify, NestJS for robust enterprise architectures. Solid experience with .NET Core/5+ and ASP.NET for high-performance applications. Specialized in RESTful APIs, GraphQL with Apollo Server, JWT/OAuth2 authentication, WebSockets for real-time, and implementation of Clean Architecture and SOLID principles."
+      },
+      "3": {
+        "name": "Databases",
+        "description": "Expertise in relational databases MySQL 8+, PostgreSQL 15+ with advanced query and index optimization. Experience with NoSQL including MongoDB for documents, Redis for caching and sessions. Proficient in ORMs like Prisma, TypeORM, Sequelize and Entity Framework. Knowledge in procedures, triggers, materialized views and backup/recovery strategies."
+      },
+      "4": {
+        "name": "Cloud & DevOps",
+        "description": "Microsoft Azure specialist with App Service, Container Apps, Azure Functions and Virtual Machines. Full mastery of CI/CD using Azure DevOps Pipelines, GitHub Actions and GitLab CI. Advanced experience in Docker, Docker Compose, application containerization and orchestration. Infrastructure automation with Terraform and monitoring with Application Insights."
+      },
+      "5": {
+        "name": "Programming Languages",
+        "description": "Proficient in JavaScript ES2023+ and TypeScript 5+ for modern full-stack development with static typing. Solid experience with C# 11+ for enterprise .NET applications and Python 3.11+ for automation, scripts, data analysis with Pandas/NumPy. Advanced knowledge in SQL for complex data manipulation, stored procedures and performance optimization."
+      },
+      "6": {
+        "name": "Tools & Methodologies",
+        "description": "Expertise in Git with GitFlow, GitHub/GitLab for collaborative versioning. Docker for containerization and Kubernetes for production orchestration. Proficient in VS Code, Visual Studio, WebStorm IDEs with advanced debugging. Experience with Jest, Cypress, Playwright for automated testing. Scrum/Kanban agile methodologies and Clean Code practices."
+      },
+      "7": {
+        "name": "Architecture & Design Patterns",
+        "description": "Software architecture specialist including Microservices, Clean Architecture, Hexagonal Architecture and Domain-Driven Design (DDD). Implementation of design patterns like Repository, Factory, Observer and Dependency Injection. Experience in Event-Driven Architecture, CQRS, message brokers (RabbitMQ, Apache Kafka) and resilient distributed systems."
+      },
+      "8": {
+        "name": "Performance & Security",
+        "description": "Focus on performance optimization with caching techniques (Redis, CDN), lazy loading, code splitting and bundle optimization. Robust security implementation including HTTPS, CORS, rate limiting, data sanitization, OWASP Top 10 prevention. Experience with SSL/TLS, multi-factor authentication and LGPD/GDPR compliance."
+      }
     }
   },
   "experience": {
@@ -157,6 +191,29 @@
         "Advanced bug detection system",
         "Positive feedback from developer community",
         "Simple integration into CI/CD pipelines"
+      ]
+    },
+    "marianafisio": {
+      "title": "Home Care Physiotherapy Landing Page",
+      "description": "Institutional landing page focused on patient acquisition through WhatsApp, combining local-content strategy, social proof, and technical SEO.",
+      "methods": [
+        "Local intent research and service keyword mapping.",
+        "Conversion-oriented section architecture.",
+        "Human-centered copywriting focused on clarity and trust.",
+        "Persistent CTA for fast WhatsApp contact.",
+        "Semantic FAQ with structured data markup."
+      ],
+      "benefits": [
+        "Clearer value proposition for local audiences.",
+        "Optimized mobile experience for conversion.",
+        "Fast loading and strong technical performance.",
+        "Stronger visual trust with social proof.",
+        "Shorter path to first contact."
+      ],
+      "results": [
+        "Professional digital presence for the service.",
+        "Higher potential for qualified leads.",
+        "Solid base for local traffic campaigns."
       ]
     },
     "gapizer": {

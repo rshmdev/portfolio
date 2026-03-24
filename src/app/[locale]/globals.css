@@ -1,106 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* Color Palette - Professional Tech Theme */
-  --color-primary: #4666FF;
-  --color-primary-dark: #1139FF;
-  --color-primary-light: #6680FF;
-  --color-secondary: #1560BD;
-  --color-secondary-dark: #0E407D;
-  --color-secondary-light: #4A93EB;
-  --color-accent: #008B8B;
-  --color-accent-dark: #005C5C;
-  --color-accent-light: #00C8C8;
+  /* Color Palette - Premium Dark Theme (Taste Skill) */
+  --color-primary: #10b981; /* Emerald Accent */
+  --color-primary-dark: #059669;
+  --color-primary-light: #34d399;
+  --color-secondary: #fafafa; /* Pure White Accent */
+  --color-secondary-dark: #a1a1aa;
+  --color-secondary-light: #ffffff;
+  --color-accent: #10b981;
+  --color-accent-dark: #059669;
+  --color-accent-light: #34d399;
   
-  /* Neutrals */
-  --color-dark: #0A0E27;
-  --color-dark-slate: #2F4F4F;
-  --color-slate: #536878;
-  --color-slate-light: #879BAB;
-  --color-slate-lighter: #C3CDD5;
+  /* Absolute Neutrals (Zinc) */
+  --color-dark: #09090b; /* Zinc 950 */
+  --color-dark-slate: #18181b; /* Zinc 900 */
+  --color-slate: #27272a; /* Zinc 800 */
+  --color-slate-light: #52525b; /* Zinc 600 */
+  --color-slate-lighter: #a1a1aa; /* Zinc 400 */
   
   /* Backgrounds */
-  --bg-primary: #0A0E27;
-  --bg-secondary: #131829;
-  --bg-tertiary: #1C2333;
-  --bg-glass: rgba(255, 255, 255, 0.05);
-  --bg-glass-hover: rgba(255, 255, 255, 0.08);
+  --bg-primary: #09090b; /* Zinc 950 */
+  --bg-secondary: #09090b;
+  --bg-tertiary: #18181b; /* Zinc 900 */
+  --bg-glass: rgba(24, 24, 27, 0.4);
+  --bg-glass-hover: rgba(39, 39, 42, 0.6);
   
   /* Text Colors */
-  --text-primary: #FFFFFF;
-  --text-secondary: #C3CDD5;
-  --text-muted: #879BAB;
+  --text-primary: #fafafa;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
   
   /* Borders */
-  --border-color: rgba(255, 255, 255, 0.1);
-  --border-color-hover: rgba(70, 102, 255, 0.3);
+  --border-color: rgba(255, 255, 255, 0.05); /* Liquid glass refraction base */
+  --border-color-hover: rgba(255, 255, 255, 0.1);
   
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
-  --shadow-glow: 0 0 20px rgba(70, 102, 255, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  --shadow-glow: inset 0 1px 0 rgba(255, 255, 255, 0.1); /* Liquid glass inner shadow */
   
   /* Typography */
-  --font-header: 'Space Grotesk', sans-serif;
-  --font-body: 'Source Sans 3', sans-serif;
+  --font-header: 'Outfit', sans-serif;
+  --font-body: 'Outfit', sans-serif;
 }
 
 * {
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: var(--color-primary) var(--bg-secondary);
+  scrollbar-color: var(--color-slate-light) var(--bg-primary);
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  background: var(--color-slate);
   border-radius: 10px;
-  border: 2px solid var(--bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-secondary-light) 100%);
+  background: var(--color-slate-light);
 }
 
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-body);
-  min-height: 100vh;
+  min-height: 100dvh;
   position: relative;
   overflow-x: hidden;
 }
 
-/* Animated Background */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(70, 102, 255, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(0, 139, 139, 0.06) 0%, transparent 50%),
-    radial-gradient(circle at 40% 20%, rgba(21, 96, 189, 0.05) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Noise Texture Overlay */
+/* Noise Texture Overlay for grain effect */
 body::after {
   content: '';
   position: fixed;
@@ -108,10 +91,10 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.015;
+  opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   pointer-events: none;
-  z-index: 0;
+  z-index: 50;
 }
 
 /* ==========================================
@@ -438,10 +421,10 @@ body::after {
   }
   
   .btn-primary {
-    @apply px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-    color: white;
-    box-shadow: 0 4px 15px rgba(70, 102, 255, 0.3);
+    @apply px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1;
+    background: var(--color-primary);
+    color: var(--bg-primary);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
     font-family: var(--font-header);
     position: relative;
     overflow: hidden;
@@ -454,7 +437,7 @@ body::after {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     transition: left 0.5s;
   }
 
@@ -463,20 +446,21 @@ body::after {
   }
   
   .btn-primary:hover {
-    box-shadow: 0 6px 25px rgba(70, 102, 255, 0.5);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    background: var(--color-primary-light);
   }
   
   .btn-secondary {
-    @apply px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105;
+    @apply px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1;
     background: transparent;
-    color: var(--color-primary);
-    border: 2px solid var(--color-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
     font-family: var(--font-header);
   }
   
   .btn-secondary:hover {
-    background: rgba(70, 102, 255, 0.1);
-    box-shadow: 0 4px 15px rgba(70, 102, 255, 0.2);
+    background: var(--bg-glass);
+    border-color: var(--color-primary);
   }
   
   .card-glass {
@@ -529,5 +513,13 @@ body::after {
     background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
     border-radius: 2px;
     margin: 0 auto;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }

@@ -78,12 +78,12 @@ export default function FloatHeader() {
       style={{
         transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
         background: isScrolled 
-          ? 'rgba(10, 14, 39, 0.85)' 
+          ? 'rgba(9, 9, 11, 0.85)' 
           : 'transparent',
         backdropFilter: isScrolled ? 'blur(20px)' : 'none',
         WebkitBackdropFilter: isScrolled ? 'blur(20px)' : 'none',
         borderBottom: isScrolled 
-          ? '1px solid rgba(70, 102, 255, 0.08)' 
+          ? '1px solid var(--border-color)' 
           : '1px solid transparent',
         boxShadow: isScrolled 
           ? '0 8px 32px rgba(0, 0, 0, 0.3)' 
@@ -168,9 +168,9 @@ export default function FloatHeader() {
                 <div 
                   className="absolute top-full right-0 mt-2 w-36 rounded-xl shadow-xl overflow-hidden"
                   style={{
-                    background: 'rgba(10, 14, 39, 0.95)',
+                    background: 'rgba(9, 9, 11, 0.95)',
                     backdropFilter: 'blur(20px)',
-                    border: '1px solid rgba(70, 102, 255, 0.15)',
+                    border: '1px solid var(--border-color)',
                   }}
                 >
                   <button
@@ -223,9 +223,9 @@ export default function FloatHeader() {
           <div 
             className="rounded-xl my-2 p-4"
             style={{
-              background: 'rgba(10, 14, 39, 0.95)',
+              background: 'rgba(9, 9, 11, 0.95)',
               backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(70, 102, 255, 0.1)',
+              border: '1px solid var(--border-color)',
             }}
           >
             <ul className="space-y-1">
@@ -252,7 +252,7 @@ export default function FloatHeader() {
               </li>
             </ul>
 
-            <div className="mt-4 pt-4 border-t" style={{ borderColor: 'rgba(70, 102, 255, 0.1)' }}>
+            <div className="mt-4 pt-4 border-t" style={{ borderColor: 'var(--border-color)' }}>
               <div className="flex gap-2">
                 <button
                   onClick={() => handleLanguageChange('pt')}

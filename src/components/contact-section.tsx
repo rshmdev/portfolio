@@ -482,13 +482,6 @@ export default function ContactSection() {
 
         {/* Footer */}
         <div className="contact-footer mt-24 text-center">
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="h-[1px] w-12" style={{ background: 'linear-gradient(90deg, transparent, var(--border-color))' }} />
-            <span className="text-sm font-medium" style={{ color: 'var(--text-muted)' }}>
-              {t('footer.madeWith')}
-            </span>
-            <div className="h-[1px] w-12" style={{ background: 'linear-gradient(90deg, var(--border-color), transparent)' }} />
-          </div>
           <p className="text-xs" style={{ color: 'var(--text-muted)', opacity: 0.5 }}>
             © {new Date().getFullYear()} {t('footer.rights')}
           </p>

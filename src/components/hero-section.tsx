@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { useTranslations } from 'next-intl';
+import { BGPattern } from '@/components/ui/bg-pattern';
 
 export default function HeroSection() {
   const t = useTranslations('hero');
@@ -146,47 +147,38 @@ export default function HeroSection() {
     <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 py-20" style={{ zIndex: 1 }}>
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Gradient Orbs with parallax */}
+        {/* Minimal Gradient Accent */}
         <div
-          className="parallax-orb-1 absolute top-20 left-10 w-72 h-72 rounded-full opacity-20 blur-3xl"
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[400px] opacity-10 pointer-events-none blur-[100px]"
           style={{
-            background: 'radial-gradient(circle, var(--color-primary) 0%, transparent 70%)',
-            transform: `translate(${mousePos.x * 0.5}px, ${mousePos.y * 0.5}px)`,
-            transition: 'transform 0.3s ease-out',
-          }}
-        />
-        <div
-          className="parallax-orb-2 absolute bottom-20 right-10 w-96 h-96 rounded-full opacity-15 blur-3xl"
-          style={{
-            background: 'radial-gradient(circle, var(--color-accent) 0%, transparent 70%)',
-            transform: `translate(${mousePos.x * -0.3}px, ${mousePos.y * -0.3}px)`,
-            transition: 'transform 0.3s ease-out',
+            background: 'radial-gradient(circle at top, var(--color-primary) 0%, transparent 60%)',
           }}
         />
 
         {/* Grid Pattern */}
-        <div className="absolute inset-0 opacity-[0.03]"
-          style={{ backgroundImage: 'linear-gradient(var(--color-slate) 1px, transparent 1px), linear-gradient(90deg, var(--color-slate) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
-
-        {/* Decorative pinging dots */}
-        <div className="absolute top-1/4 right-1/4 w-2 h-2 rounded-full animate-ping opacity-30" style={{ backgroundColor: 'var(--color-primary)' }} />
-        <div className="absolute bottom-1/3 left-1/4 w-1.5 h-1.5 rounded-full animate-ping opacity-20" style={{ backgroundColor: 'var(--color-accent)', animationDelay: '1s' }} />
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 rounded-full animate-ping opacity-25" style={{ backgroundColor: 'var(--color-secondary)', animationDelay: '2s' }} />
+        <BGPattern
+          variant="grid"
+          mask="fade-bottom"
+          fill="var(--color-slate-light)"
+          size={60}
+          className="opacity-[0.10]"
+        />
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto text-center">
         {/* Badge */}
-        <div className="hero-badge inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-full text-sm font-medium animate-glow-pulse"
+        <div className="hero-badge inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-full text-sm font-medium"
           style={{
-            background: 'rgba(70, 102, 255, 0.06)',
-            border: '1px solid rgba(70, 102, 255, 0.15)',
+            background: 'var(--bg-glass)',
+            border: '1px solid var(--border-color)',
+            boxShadow: 'var(--shadow-glow)',
           }}>
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ backgroundColor: '#4ade80' }} />
-            <span className="relative inline-flex rounded-full h-2 w-2" style={{ backgroundColor: '#4ade80' }} />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ backgroundColor: 'var(--color-primary)' }} />
+            <span className="relative inline-flex rounded-full h-2 w-2" style={{ backgroundColor: 'var(--color-primary)' }} />
           </span>
-          <span style={{ color: 'var(--text-secondary)' }}>Disponível para novos projetos</span>
+          <span style={{ color: 'var(--text-primary)' }}>Disponível para novos projetos</span>
         </div>
 
         {/* Main Title */}
@@ -233,10 +225,11 @@ export default function HeroSection() {
           {['React', 'Next.js', 'TypeScript', 'Node.js', '.NET', 'Azure', 'PostgreSQL'].map((tech) => (
             <div
               key={tech}
-              className="hero-tech px-4 py-2 rounded-full text-sm font-medium transition-all duration-500 hover:scale-110 cursor-default"
+              className="hero-tech px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:-translate-y-1 cursor-default hover:text-white"
               style={{
-                background: 'rgba(255, 255, 255, 0.03)',
-                border: '1px solid rgba(255, 255, 255, 0.06)',
+                background: 'var(--bg-glass)',
+                border: '1px solid var(--border-color)',
+                boxShadow: 'var(--shadow-glow)',
                 color: 'var(--text-muted)',
               }}
             >

@@ -247,7 +247,7 @@ export default function SkillsSection() {
                       <div>
                         <h3 className="text-xl font-bold mb-1 transition-colors duration-300 group-hover:text-white"
                           style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-header)' }}>
-                          {skill.name}
+                          {t(`items.${skill.id}.name`)}
                         </h3>
                         <span
                           className="text-xs font-semibold uppercase tracking-wider"
@@ -260,9 +260,9 @@ export default function SkillsSection() {
 
                     {/* Description */}
                     <p className="text-sm leading-relaxed mb-6" style={{ color: 'var(--text-secondary)' }}>
-                      {skill.description.length > 200
-                        ? skill.description.substring(0, 200) + '...'
-                        : skill.description
+                      {t(`items.${skill.id}.description`).length > 200
+                        ? t(`items.${skill.id}.description`).substring(0, 200) + '...'
+                        : t(`items.${skill.id}.description`)
                       }
                     </p>
 
@@ -287,7 +287,7 @@ export default function SkillsSection() {
                     <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-500">
                       <img
                         src={skill.icon}
-                        alt={skill.name}
+                        alt={t(`items.${skill.id}.name`)}
                         className="w-10 h-10 object-contain"
                         style={{ filter: 'brightness(1.5) drop-shadow(0 0 10px rgba(255,255,255,0.2))' }}
                       />

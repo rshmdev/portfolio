@@ -142,6 +142,29 @@ const works = [
     benefitsKey: "digitalfactory.benefits",
     resultsKey: "digitalfactory.results",
   },
+  {
+    id: 8,
+    titleKey: "marianafisio.title",
+    descriptionKey: "marianafisio.description",
+    images: [
+      "/mariana-fisio-home.png",
+      "/mariana-fisio-services.png",
+      "/mariana-fisio-benefits.png",
+      "/mariana-fisio-testimonials.png",
+    ],
+    github: "",
+    technologies: [
+      "HTML5",
+      "TailwindCSS",
+      "JavaScript",
+      "Responsive Design",
+      "SEO",
+      "Schema.org",
+    ],
+    methodsKey: "marianafisio.methods",
+    benefitsKey: "marianafisio.benefits",
+    resultsKey: "marianafisio.results",
+  },
 ];
 
 export default works;
