@@ -15,7 +15,7 @@ export const seoConfig = {
   meta: {
     pt: {
       title: 'Rian Moraes - Desenvolvedor Full Stack | React, Next.js, Node.js, TypeScript',
-      description: '🚀 Rian Moraes - Desenvolvedor Full Stack Sênior com +5 anos de experiência. Especialista em React, Next.js, Node.js, TypeScript, .NET, Go, Azure. Líder técnico na SMI desenvolvendo Intellifix (Industry 4.0). Criador do Gapizer CLI, Digital Factory IIoT, sistemas educacionais gamificados e landing pages otimizadas. Portfolio profissional com projetos reais em industrial IoT, ferramentas de desenvolvimento, educação e e-commerce.',
+      description: 'Rian Moraes - Desenvolvedor Full Stack e Líder Técnico. Especialista em React, Next.js, Node.js, TypeScript, .NET, Go e Azure. Líder técnico do Intellifix (Indústria 4.0) na SMI. Criador do Gapizer (CLI em Go), Digital Factory IIoT, apps educacionais gamificados e landing pages de alta performance. Portfólio com projetos reais em IoT industrial, ferramentas de desenvolvimento, educação e web.',
       keywords: [
         // Core competências
         'Rian Moraes', 'rshmdev', 'desenvolvedor full stack', 'React developer', 'Next.js specialist',
@@ -44,7 +44,7 @@ export const seoConfig = {
     },
     en: {
       title: 'Rian Moraes - Full Stack Developer | React, Next.js, Node.js, TypeScript',
-      description: '🚀 Rian Moraes - Senior Full Stack Developer with +5 years of experience. Expert in React, Next.js, Node.js, TypeScript, .NET, Go, Azure. Technical leader at SMI developing Intellifix (Industry 4.0). Creator of Gapizer CLI, Digital Factory IIoT, gamified educational systems and optimized landing pages. Professional portfolio with real projects in industrial IoT, development tools, education and e-commerce.',
+      description: 'Rian Moraes - Full Stack Developer and Tech Lead. Expert in React, Next.js, Node.js, TypeScript, .NET, Go and Azure. Technical lead of Intellifix (Industry 4.0) at SMI. Creator of Gapizer (Go CLI), Digital Factory IIoT, gamified educational apps and high-performance landing pages. Portfolio with real projects in industrial IoT, development tools, education and web.',
       keywords: [
         // Core competencies 
         'Rian Moraes', 'rshmdev', 'full stack developer', 'React developer', 'Next.js specialist',

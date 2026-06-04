@@ -6,9 +6,9 @@ export const generatePersonSchema = (locale: string = 'pt') => {
     "@type": "Person",
     "name": "Rian Moraes",
     "alternateName": "rshmdev",
-    "description": isEnglish 
-      ? "Senior Full Stack Developer specialized in React, Next.js, Node.js, TypeScript, .NET, and Industry 4.0 solutions"
-      : "Desenvolvedor Full Stack Sênior especializado em React, Next.js, Node.js, TypeScript, .NET e soluções Industry 4.0",
+    "description": isEnglish
+      ? "Full Stack Developer and Tech Lead specialized in React, Next.js, Node.js, TypeScript, .NET, and Industry 4.0 solutions"
+      : "Desenvolvedor Full Stack e Líder Técnico especializado em React, Next.js, Node.js, TypeScript, .NET e soluções de Indústria 4.0",
     "url": "https://rshmdev.com",
     "image": "https://rshmdev.com/rian-moraes.jpg",
     "sameAs": [
@@ -16,7 +16,7 @@ export const generatePersonSchema = (locale: string = 'pt') => {
       "https://linkedin.com/in/rianmoraes",
       "https://twitter.com/rshmdev"
     ],
-    "jobTitle": isEnglish ? "Senior Full Stack Developer" : "Desenvolvedor Full Stack Sênior",
+    "jobTitle": isEnglish ? "Tech Lead & Full Stack Developer" : "Líder Técnico e Desenvolvedor Full Stack",
     "worksFor": {
       "@type": "Organization",
       "name": "SMI",
@@ -61,9 +61,9 @@ export const generateWebsiteSchema = (locale: string = 'pt') => {
     "@context": "https://schema.org",
     "@type": "Website",
     "name": isEnglish ? "Rian Moraes - Portfolio" : "Rian Moraes - Portfólio",
-    "description": isEnglish 
-      ? "Portfolio of Rian Moraes, Senior Full Stack Developer specialized in modern web technologies and Industry 4.0 solutions"
-      : "Portfólio de Rian Moraes, Desenvolvedor Full Stack Sênior especializado em tecnologias web modernas e soluções Industry 4.0",
+    "description": isEnglish
+      ? "Portfolio of Rian Moraes, Full Stack Developer and Tech Lead specialized in modern web technologies and Industry 4.0 solutions"
+      : "Portfólio de Rian Moraes, Desenvolvedor Full Stack e Líder Técnico especializado em tecnologias web modernas e soluções de Indústria 4.0",
     "url": "https://rshmdev.com",
     "inLanguage": [
       {

@@ -17,6 +17,13 @@ const nextConfig = {
             hostname: 'via.placeholder.com',
             port: '',
             pathname: '/**',
+          },
+          {
+            // WordPress mShots — on-demand site screenshots
+            protocol: 'https',
+            hostname: 's.wp.com',
+            port: '',
+            pathname: '/mshots/**',
           }
         ],
       },

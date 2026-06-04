@@ -1,561 +1,436 @@
 {
   "hero": {
-    "greeting": "Hello, I'm",
     "name": "Rian Moraes",
-    "title": "Full Stack Developer",
-    "subtitle": "creating innovative digital solutions.",
-    "cta": "View Projects",
-    "contact": "Get in Touch"
-  },
-  "about": {
-    "title": "About",
-    "titleHighlight": "Me",
-    "intro": "Hello, I'm",
-    "name": "Rian Moraes ",
-    "introDescription": "Full Stack Developer passionate about creating innovative and impactful digital solutions.",
-    "description": "I'm a full stack developer passionate about creating exceptional digital experiences. With expertise in modern technologies, I transform complex concepts into elegant and functional solutions.",
-    "expertise": "Specialized in modern web development, focusing on React, Node.js and scalable architectures. I have experience leading projects from concept to production.",
-    "journey": "My development journey started in 2020, and since then I've been building applications that make a difference in people's lives and business success.",
-    "interests": "When I'm not coding, I enjoy studying new technologies, contributing to open source projects and sharing knowledge with the dev community.",
-    "info": {
-      "name": "Name",
-      "nameValue": "Rian Moraes",
-      "location": "Location",
-      "locationValue": "Brazil",
-      "experience": "Experience",
-      "experienceValue": "3+ years",
-      "email": "Email",
-      "emailValue": "rianherminio2002@gmail.com"
-    }
-  },
-  "skills": {
-    "title": "Skills",
-    "titleHighlight": "Technical",
-    "description": "Technologies and tools I master to create complete and efficient solutions.",
-    "area": "Area",
-    "scrollHint": "Scroll to explore",
-    "categories": {
-      "frontend": "Frontend",
-      "backend": "Backend",
-      "database": "Database",
-      "tools": "Tools"
-    },
-    "stats": {
-      "experience": "3+ Years of Experience",
-      "projects": "50+ Completed Projects",
-      "technologies": "20+ Technologies",
-      "dedication": "100% Dedication"
-    },
-    "items": {
-      "1": {
-        "name": "Frontend Development",
-        "description": "Expert in React 18+ and Next.js 14+ for building modern and performant web applications. Full mastery of the React ecosystem including Server Components, advanced hooks, Zustand/Redux for state management, React Query for data caching. Solid experience in TypeScript, Tailwind CSS, Framer Motion for animations and mobile-first responsive development."
-      },
-      "2": {
-        "name": "Backend Development",
-        "description": "Backend developer proficient in Node.js with Express and Fastify, NestJS for robust enterprise architectures. Solid experience with .NET Core/5+ and ASP.NET for high-performance applications. Specialized in RESTful APIs, GraphQL with Apollo Server, JWT/OAuth2 authentication, WebSockets for real-time, and implementation of Clean Architecture and SOLID principles."
-      },
-      "3": {
-        "name": "Databases",
-        "description": "Expertise in relational databases MySQL 8+, PostgreSQL 15+ with advanced query and index optimization. Experience with NoSQL including MongoDB for documents, Redis for caching and sessions. Proficient in ORMs like Prisma, TypeORM, Sequelize and Entity Framework. Knowledge in procedures, triggers, materialized views and backup/recovery strategies."
-      },
-      "4": {
-        "name": "Cloud & DevOps",
-        "description": "Microsoft Azure specialist with App Service, Container Apps, Azure Functions and Virtual Machines. Full mastery of CI/CD using Azure DevOps Pipelines, GitHub Actions and GitLab CI. Advanced experience in Docker, Docker Compose, application containerization and orchestration. Infrastructure automation with Terraform and monitoring with Application Insights."
-      },
-      "5": {
-        "name": "Programming Languages",
-        "description": "Proficient in JavaScript ES2023+ and TypeScript 5+ for modern full-stack development with static typing. Solid experience with C# 11+ for enterprise .NET applications and Python 3.11+ for automation, scripts, data analysis with Pandas/NumPy. Advanced knowledge in SQL for complex data manipulation, stored procedures and performance optimization."
-      },
-      "6": {
-        "name": "Tools & Methodologies",
-        "description": "Expertise in Git with GitFlow, GitHub/GitLab for collaborative versioning. Docker for containerization and Kubernetes for production orchestration. Proficient in VS Code, Visual Studio, WebStorm IDEs with advanced debugging. Experience with Jest, Cypress, Playwright for automated testing. Scrum/Kanban agile methodologies and Clean Code practices."
-      },
-      "7": {
-        "name": "Architecture & Design Patterns",
-        "description": "Software architecture specialist including Microservices, Clean Architecture, Hexagonal Architecture and Domain-Driven Design (DDD). Implementation of design patterns like Repository, Factory, Observer and Dependency Injection. Experience in Event-Driven Architecture, CQRS, message brokers (RabbitMQ, Apache Kafka) and resilient distributed systems."
-      },
-      "8": {
-        "name": "Performance & Security",
-        "description": "Focus on performance optimization with caching techniques (Redis, CDN), lazy loading, code splitting and bundle optimization. Robust security implementation including HTTPS, CORS, rate limiting, data sanitization, OWASP Top 10 prevention. Experience with SSL/TLS, multi-factor authentication and LGPD/GDPR compliance."
-      }
-    }
-  },
-  "experience": {
-    "title": "Experience",
-    "titleHighlight": "Professional",
-    "description": "My professional journey building innovative and impactful solutions.",
-    "current": "Current",
-    "achievements": "Achievements",
-    "technologies": "Technologies",
-    "positions": {
-      "fullstack": "Full Stack Developer",
-      "frontend": "Frontend Developer",
-      "backend": "Backend Developer"
-    },
-    "companies": {
-      "freelance": "Freelancer",
-      "startup": "Tech Startup",
-      "agency": "Digital Agency"
-    },
-    "descriptions": {
-      "fullstack": "Development of complete web applications using React, Node.js and relational and non-relational databases.",
-      "frontend": "Creation of modern and responsive interfaces focused on user experience and performance.",
-      "backend": "Development of RESTful and GraphQL APIs, integration with external services and performance optimization."
-    },
-    "jobs": {
-      "smi": {
-        "position": "Intellifix Technical Lead",
-        "period": "2023 - Present",
-        "duration": "1+ year",
-        "description": "Currently leading the technical development of the Intellifix platform, responsible for implementing new features and platform optimization. My journey at SMI included three positions: I started as a Junior Developer focused on platform development, was promoted to Full Stack Mid-level Developer after two months, expanding my work to projects for large global companies in the industrial sector.",
-        "achievements": [
-          "Promotion from Junior to Technical Lead in less than 1 year",
-          "Technical leadership of development team",
-          "Implementation of scalable architectures for enterprise clients",
-          "Intellifix platform performance optimization",
-          "Mentoring and technical reference for developers"
-        ]
-      },
-      "faciltel": {
-        "position": "Frontend Developer",
-        "period": "2023 - 2024",
-        "duration": "1 year",
-        "description": "Started as the sole front-end developer, working on a legacy Angular.js system with inconsistent layout and low performance. After detailed technical analysis, I proposed and executed a complete application refactoring to Next.js 14, modernizing the entire frontend architecture.",
-        "achievements": [
-          "Complete refactoring from legacy Angular.js to Next.js 14",
-          "International expansion: enabling SIM and eSIM sales globally",
-          "Significant sales increase through better UX/UI",
-          "Drastic improvement in performance and scalability",
-          "Implementation of consistent design system"
-        ]
-      },
-      "direcao": {
-        "position": "Junior Frontend Developer T2",
-        "period": "Jan 2023 - Sep 2023",
-        "duration": "9 months",
-        "description": "As a junior T2 front-end developer, I was responsible for creating attractive web experiences with specific focus on Next.js and SEO optimization. Occasionally, I worked on back-end development, expanding my full-stack experience.",
-        "achievements": [
-          "Development of responsive interfaces with SEO focus",
-          "Creation of Landing Pages in Webflow for client acquisition",
-          "Node.js API optimization for better performance",
-          "Implementation of optimized database queries",
-          "Increased visibility in search engines"
-        ]
-      }
-    },
-    "cta": {
-      "title": "Interested in working with me?",
-      "description": "Let's talk about how I can contribute to your project.",
-      "button": "Get in Touch"
-    }
+    "role": "Full-Stack Developer · Tech Lead",
+    "statementA": "I build software that ships",
+    "statementB": "and stays standing.",
+    "lede": "Today I lead IntelliFix, an Industry 4.0 platform at SMI. From front-end to deploy — through IoT, real-time data, and command-line tooling.",
+    "metaLocation": "Brazil",
+    "metaRole": "Tech Lead @ SMI",
+    "metaSince": "Coding since 2020",
+    "available": "Open to new projects",
+    "ctaWork": "See the work",
+    "ctaContact": "Get in touch",
+    "scroll": "Scroll"
   },
   "projects": {
+    "label": "Selected work",
     "title": "Projects",
-    "titleHighlight": "Portfolio",
-    "play": "Play",
-    "pause": "Pause",
-    "github": "View on GitHub",
-    "description": "Explore my projects and see how I turn ideas into digital solutions.",
-    "subtitle": "Featured Projects",
-    "scrollHint": "Continue scrolling",
+    "intro": "A selection of what I've built — products in production, tools, and real systems. Click for details.",
+    "open": "View details",
     "modal": {
-      "technologies": "Technologies",
-      "about": "About the Project",
-      "methods": "Methods",
-      "benefits": "Benefits",
-      "results": "Results",
-      "viewDetails": "View Details",
-      "viewSite": "View Site",
-      "screenshots": "Screenshots",
+      "about": "About",
+      "methods": "How it was built",
+      "benefits": "Why it matters",
+      "results": "Outcome",
+      "screenshots": "Screens",
       "github": "View on GitHub",
-      "close": "Close"
+      "viewSite": "Visit site",
+      "close": "Close",
+      "stack": "Stack"
     },
     "intellifix": {
       "title": "IntelliFix",
-      "description": "Intelligent code analysis tool that identifies bugs, suggests improvements, and optimizes performance. Developed with advanced algorithms and machine learning to assist developers in creating cleaner, more efficient code.",
-      "methods": [
-        "Static code analysis with advanced algorithms",
-        "Machine learning integration for pattern recognition",
-        "Multi-language support and extensible architecture",
-        "Real-time analysis and intelligent suggestions"
-      ],
-      "benefits": [
-        "Significantly reduces bugs in production code",
-        "Improves code quality and maintainability",
-        "Accelerates development process",
-        "Helps developers learn best practices"
-      ],
-      "results": [
-        "Comprehensive code analysis tool",
-        "Advanced bug detection system",
-        "Positive feedback from developer community",
-        "Simple integration into CI/CD pipelines"
-      ]
-    },
-    "marianafisio": {
-      "title": "Home Care Physiotherapy Landing Page",
-      "description": "Institutional landing page focused on patient acquisition through WhatsApp, combining local-content strategy, social proof, and technical SEO.",
-      "methods": [
-        "Local intent research and service keyword mapping.",
-        "Conversion-oriented section architecture.",
-        "Human-centered copywriting focused on clarity and trust.",
-        "Persistent CTA for fast WhatsApp contact.",
-        "Semantic FAQ with structured data markup."
-      ],
-      "benefits": [
-        "Clearer value proposition for local audiences.",
-        "Optimized mobile experience for conversion.",
-        "Fast loading and strong technical performance.",
-        "Stronger visual trust with social proof.",
-        "Shorter path to first contact."
-      ],
-      "results": [
-        "Professional digital presence for the service.",
-        "Higher potential for qualified leads.",
-        "Solid base for local traffic campaigns."
-      ]
-    },
-    "gapizer": {
-      "title": "Gapizer",
-      "description": "CLI tool built in Go to generate complete Go APIs from YML files. Significantly accelerates development by automating API structure creation, reducing development time and ensuring code consistency.",
-      "methods": [
-        "Go development for maximum performance",
-        "YML file parsing for API definition",
-        "Automatic structured Go code generation",
-        "Intuitive CLI with multiple configuration options"
-      ],
-      "benefits": [
-        "Drastically accelerates API development",
-        "Ensures consistency and standards in generated code",
-        "Reduces human errors in structure creation",
-        "Facilitates project maintenance and scalability"
-      ],
-      "results": [
-        "Complete and functional CLI tool",
-        "70% reduction in API creation time",
-        "Clean and well-structured Go code generated automatically",
-        "Growing adoption by Go developer community"
-      ]
-    },
-    "culturaconnect": {
-      "title": "Cultura Connect",
-      "description": "Complete web platform to connect artists and cultural producers. Developed with focus on user experience, offers tools for creating, promoting and managing cultural events, promoting local culture.",
-      "methods": [
-        "Full-stack development with React and TypeScript",
-        "Robust backend with Node.js and Prisma ORM",
-        "Secure authentication and user management",
-        "Responsive design and intuitive interface"
-      ],
-      "benefits": [
-        "Efficiently connects artists and producers",
-        "Facilitates promotion of cultural events",
-        "Promotes local and regional culture",
-        "Modern and easy-to-use interface"
-      ],
-      "results": [
-        "Complete and functional platform developed",
-        "Authentication and management system implemented",
-        "Responsive interface for all devices",
-        "Academic project with focus on social impact"
-      ]
-    },
-    "razaoquest": {
-      "title": "Razão Quest App",
-      "description": "Gamified mobile application for public exam studies. Developed in React Native with ranking system, achievements and progression. Transforms learning into an engaging and motivating experience for exam candidates.",
-      "methods": [
-        "Mobile development with React Native and Expo",
-        "Gamification system and achievements",
-        "Backend integrated with Firebase",
-        "UX/UI design focused on engagement"
-      ],
-      "benefits": [
-        "Makes studying more engaging and fun",
-        "Ranking system motivates healthy competition",
-        "Tracks user progress and performance",
-        "Intuitive and responsive interface"
-      ],
-      "results": [
-        "Complete application with gamification system",
-        "Modern and engaging interface",
-        "Functional ranking and achievements system",
-        "Project focused on education and motivation"
-      ]
-    },
-    "razaoquestadmin": {
-      "title": "Razão Quest Admin",
-      "description": "Web administrative panel for managing the Razão Quest application. Developed in React with modern interface, allows complete control of users, missions, rewards and real-time statistics.",
-      "methods": [
-        "Web development with React and TypeScript",
-        "Complete administrative dashboard",
-        "Integration with mobile app API",
-        "Responsive and intuitive interface"
-      ],
-      "benefits": [
-        "Total control over the gamified system",
-        "Real-time data and statistics visualization",
-        "Efficient user and content management",
-        "Modern and functional administrative interface"
-      ],
-      "results": [
-        "Complete and functional administrative panel",
-        "Management system integrated with mobile app",
-        "Dashboard with detailed metrics and reports",
-        "Essential tool for system administration"
-      ]
-    },
-    "pdrlelo": {
-      "title": "PDR & Lelo",
-      "description": "Modern landing page for a disposables company in Rio de Janeiro. Developed with focus on conversion and user experience, using fluid GSAP animations and advanced SEO optimizations for maximum visibility in search engines.",
-      "methods": [
-        "Development with Next.js for optimized performance",
-        "Fluid and interactive animations with GSAP",
-        "Advanced SEO optimizations and Core Web Vitals",
-        "Responsive design focused on conversion"
-      ],
-      "benefits": [
-        "Significantly increases visitor conversion",
-        "Improves positioning in search results",
-        "Engaging and professional user experience",
-        "Fast loading and optimized performance"
-      ],
-      "results": [
-        "Professional landing page in production",
-        "GSAP animations successfully implemented",
-        "SEO optimizations effectively applied",
-        "Project focused on commercial results"
-      ]
-    },
-    "digitalfactory": {
-      "title": "Digital Factory",
-      "description": "Complete digital factory system with IIoT simulation, real-time monitoring and industrial data analysis. Developed with distributed architecture using .NET, React, MQTT and TimescaleDB for Industry 4.0 processes.",
-      "methods": [
-        "Distributed architecture with .NET 9 and React/TypeScript",
-        "IIoT system with 7 production line simulators",
-        "MQTT communication for real-time data",
-        "TimescaleDB for time series data storage"
-      ],
-      "benefits": [
-        "Complete monitoring of industrial processes",
-        "Predictive analysis and preventive maintenance",
-        "Real-time dashboards with OEE metrics",
-        "Realistic simulation of industrial environment"
-      ],
-      "results": [
-        "Complete functional digital factory system",
-        "7 IIoT simulators with different sensor types",
-        "Robust API for industrial data queries",
-        "Modern dashboard with real-time visualization"
-      ]
-    },
-    "cta": {
-      "title": "Like what you see?",
-      "description": "Let's work together on your next project!",
-      "button": "Get in Touch"
-    }
-  },
-  "works": {
-    "intellifix": {
-      "title": "Intellifix",
-      "description": "Innovative industrial platform that transforms maintenance through cutting-edge technology. As technical leader, I created the project from scratch with the team, developing a complete solution for industrial process optimization with AI, IoT and predictive analysis.",
+      "tagline": "Industry 4.0 platform · Tech Lead",
+      "description": "Industrial platform that optimizes maintenance and production with IoT, real-time data, and predictive analysis. As technical lead, I drive the architecture and full-stack development of the product — now used by global companies in the industrial sector.",
       "methods": [
         "Technical leadership and system architecture",
         "Full-stack platform development",
         "Integration with industrial IoT devices",
-        "Implementation of AI algorithms for predictive analysis"
+        "Predictive analysis algorithms over equipment data"
       ],
       "benefits": [
-        "Revolutionizes industrial maintenance processes",
-        "Reduces operational costs through predictive maintenance",
+        "Cuts operating costs through predictive maintenance",
         "Increases efficiency and productivity of operations",
-        "Provides real-time insights on equipment"
+        "Delivers real-time insight into equipment",
+        "Standardizes maintenance across plants"
       ],
       "results": [
-        "Project developed from scratch as technical leader",
+        "Led from scratch as technical lead",
         "Enterprise solution in production",
-        "Digital transformation of industrial processes"
+        "Real digital transformation of industrial processes"
       ]
     },
     "gapizer": {
-      "title": "GAPIzer",
-      "description": "CLI tool developed in Go that allows generating complete APIs from a YAML configuration file. Creates project structure, routes, handlers, middlewares (authentication and logging), Swagger documentation and much more. Ideal for developers who want agility in API development.",
+      "title": "Gapizer",
+      "tagline": "Go CLI · API scaffolding",
+      "description": "A Go command-line tool that generates complete APIs from a single YAML file: project structure, routes, handlers, middlewares (auth and logging), Swagger docs, and more. Speed without giving up consistency.",
       "methods": [
-        "CLI tool development in Go",
+        "CLI development in Go",
         "Automatic code generation from YAML",
-        "Implementation of middlewares and documentation",
+        "Middleware and documentation implementation",
         "NPM publication for distribution"
       ],
       "benefits": [
-        "Significantly accelerates API development",
-        "Standardizes structure and project best practices",
-        "Generates automatic documentation with Swagger",
-        "Reduces initial project setup time"
+        "Dramatically speeds up the start of an API project",
+        "Standardizes structure and best practices",
+        "Generates Swagger documentation automatically",
+        "Removes the repetitive setup of each project"
       ],
       "results": [
-        "500+ downloads in one week",
-        "Tool created for study and learning purposes",
-        "Demonstration of Go and CLI development skills"
+        "500+ downloads in the first week",
+        "Open source, built to learn Go in depth",
+        "Hands-on demonstration of Go and CLI building"
       ]
     },
     "culturaconnect": {
       "title": "Cultura Connect",
-      "description": "Innovative platform for management and promotion of cultural projects in Brazil. Connects artists, cultural producers, companies and sponsors in a collaborative ecosystem that strengthens Brazilian culture. Democratizes access to professional cultural management with modern and intuitive tools.",
+      "tagline": "Cultural platform · Full-stack",
+      "description": "Platform for managing and promoting cultural projects in Brazil. Connects artists, producers, companies, and sponsors in a collaborative ecosystem, with modern cultural-management tooling.",
       "methods": [
-        "Complete platform development from scratch",
-        "System architecture for cultural management",
-        "Intuitive interface for different types of users",
+        "Full platform development, from scratch",
+        "Architecture for cultural management",
+        "Interface for different user profiles",
         "Connection system between artists and sponsors"
       ],
       "benefits": [
-        "Democratizes access to professional cultural management",
-        "Facilitates meeting between talent and opportunity",
-        "Strengthens Brazilian cultural ecosystem",
-        "Offers modern tools for cultural creators"
+        "Brings talent and opportunity closer",
+        "Eases fundraising for cultural projects",
+        "Strengthens the Brazilian cultural ecosystem",
+        "Puts professional management within a creator's reach"
       ],
       "results": [
-        "Project developed entirely from scratch",
+        "Built entirely from scratch",
         "Complete platform for cultural project management",
-        "Contribution to strengthening Brazilian culture"
+        "Focused on real social impact"
       ]
     },
     "razaoquest": {
-      "title": "Razão Quest App",
-      "description": "Mobile application developed to transform student experience through gamification, encouraging learning and good attitudes. Students accumulate coins and XP by completing missions, can exchange for products in the internal store, and teachers can reward or penalize based on performance.",
+      "title": "Razão Quest",
+      "tagline": "Mobile app · Educational gamification",
+      "description": "A mobile app that turns the school routine into a game: students earn coins and XP by completing missions, redeem them in the in-app store, and teachers reward or penalize based on performance. Access via QR Code.",
       "methods": [
-        "Cross-platform native mobile development",
+        "Mobile development with React Native",
         "Gamification system with coins and XP",
-        "Integration with existing school system",
-        "QR Code implementation for student access"
+        "Integration with the existing school system",
+        "Student access via QR Code"
       ],
       "benefits": [
-        "Transforms educational experience through gamification",
-        "Encourages learning and positive behaviors",
-        "Facilitates school management of student progress",
-        "Increases student engagement and motivation"
+        "Increases student engagement",
+        "Encourages learning and good behavior",
+        "Gives the school visibility into progress",
+        "Makes the educational experience more active"
       ],
       "results": [
-        "Application in production in school with 200+ students",
-        "System fully integrated into school environment",
-        "Proven positive impact on student engagement"
+        "In production at a school with 200+ students",
+        "Fully integrated into the school environment",
+        "Proven positive impact on engagement"
       ]
     },
     "razaoquestadmin": {
       "title": "Razão Quest Admin",
-      "description": "Complete administrative panel for Razão Quest App, where coordinators and teachers manage all functionalities of the school gamification platform. Includes mission registration, product/reward definition, inventory control, bonus attribution and progress monitoring.",
+      "tagline": "Admin panel · RBAC",
+      "description": "The panel where coordinators and teachers manage the whole gamification platform: mission setup, products and rewards, inventory control, bonus attribution, and progress tracking.",
       "methods": [
-        "Complete administrative panel development",
-        "RBAC system implementation for access control",
-        "Intuitive interface for school management",
-        "Full integration with mobile application"
+        "Full admin-panel development",
+        "Role-based access control (RBAC)",
+        "Interface designed for school management",
+        "Full integration with the mobile app"
       ],
       "benefits": [
-        "Total control over gamification experience",
+        "Total control over the gamification experience",
         "Intuitive interface for educators",
-        "Effective management of rewards and progress",
-        "Alignment with pedagogical objectives"
+        "Efficient management of rewards and progress",
+        "Aligned with pedagogical goals"
       ],
       "results": [
-        "Robust administrative panel in production",
-        "Role-based access control system",
-        "Essential tool for school gamification management"
+        "Robust panel in production",
+        "Role-based access control",
+        "Essential tool for managing the gamification"
       ]
     },
     "pdrlelo": {
       "title": "PDR & Lelo",
-      "description": "Modern and conversion-focused landing page for PDR & Lelo, a disposables company in Rio de Janeiro. Developed with Next.js and GSAP animations to create an engaging user experience that effectively converts visitors into customers in the disposables market.",
+      "tagline": "Landing page · Next.js + GSAP",
+      "description": "Conversion-focused landing page for PDR & Lelo, a disposables company in Rio de Janeiro. Built in Next.js with GSAP animations and technical SEO to turn visitors into customers.",
       "methods": [
-        "Landing page development with Next.js",
-        "Implementation of GSAP animations for engagement",
-        "Advanced SEO optimization for search visibility",
-        "Conversion-focused design and UX"
+        "Landing page development in Next.js",
+        "GSAP animations for engagement",
+        "Technical SEO for organic visibility",
+        "Conversion-oriented design and UX"
       ],
       "benefits": [
         "Increases lead generation and conversions",
-        "Improves online presence in the disposables market",
-        "Creates professional and trustworthy brand image",
-        "Optimizes user experience for business goals"
+        "Improves the brand's online presence",
+        "Projects a professional, trustworthy image",
+        "Optimizes the visitor's path to contact"
       ],
       "results": [
-        "Professional landing page delivered and deployed",
-        "Smooth GSAP animations enhancing user experience",
-        "SEO optimization increasing organic visibility",
-        "Commercial website focused on lead generation"
+        "Professional landing page delivered and live",
+        "Smooth GSAP animations lifting the experience",
+        "Technical SEO increasing organic visibility"
       ]
     },
     "digitalfactory": {
       "title": "Digital Factory",
-      "description": "Comprehensive Industry 4.0 digital factory system with complete IIoT simulation, real-time data processing, and advanced analytics. Built with modern distributed architecture featuring .NET microservices, React dashboard, and TimescaleDB for handling massive industrial sensor data streams.",
+      "tagline": "Industry 4.0 · IIoT · .NET + MQTT",
+      "description": "A digital-factory system for Industry 4.0 with full IIoT simulation, real-time data processing, and analytics. Distributed architecture with .NET microservices, a React dashboard, and TimescaleDB for massive sensor-data streams.",
       "methods": [
-        "Microservices architecture with .NET 9 backend",
-        "Real-time React dashboard with WebSocket updates",
-        "MQTT broker integration for sensor data ingestion",
-        "Docker containerization for scalable deployment"
+        "Microservices architecture with .NET 9",
+        "Real-time React dashboard via WebSocket",
+        "Sensor-data ingestion through an MQTT broker",
+        "Docker containerization to scale"
       ],
       "benefits": [
-        "Complete digital transformation for industrial processes",
-        "Real-time monitoring with predictive maintenance capabilities",
-        "Scalable architecture supporting multiple production lines",
-        "Modern Industry 4.0 compliance and standards"
+        "Complete monitoring of industrial processes",
+        "Predictive maintenance over real data",
+        "Scalable architecture for multiple lines",
+        "Adherence to Industry 4.0 standards"
       ],
       "results": [
-        "Full-scale digital factory system with 7 production lines",
-        "Real-time processing of thousands of sensor data points",
-        "Comprehensive dashboard with OEE and KPI monitoring",
-        "Demonstration of advanced IIoT architecture skills"
+        "Digital factory with 7 production lines",
+        "Real-time processing of thousands of sensor points",
+        "Full dashboard with OEE and KPIs",
+        "Demonstration of advanced IIoT architecture"
+      ]
+    },
+    "marianafisio": {
+      "title": "Home-Care Physiotherapy",
+      "tagline": "Landing page · Health · Local SEO",
+      "description": "Institutional landing page for patient acquisition via WhatsApp, with local content, social proof, and technical SEO. Mobile-first and fast.",
+      "methods": [
+        "Local intent research and service keyword mapping",
+        "Conversion-oriented section architecture",
+        "Human-centered copy focused on clarity and trust",
+        "Persistent CTA for fast WhatsApp contact",
+        "Semantic FAQ with structured-data markup"
+      ],
+      "benefits": [
+        "Clearer value proposition for local audiences",
+        "Mobile experience optimized for conversion",
+        "Fast loading and strong performance",
+        "Stronger visual trust through social proof"
+      ],
+      "results": [
+        "Professional digital presence for the service",
+        "Higher potential for qualified leads",
+        "Solid base for local traffic campaigns"
+      ]
+    },
+    "lumiris": {
+      "title": "Lumiris",
+      "tagline": "SaaS · Records for Occupational Therapists",
+      "description": "A patient-records SaaS for occupational therapists. CREFITO-standard structured anamnesis, audio evolution that AI transcribes and organizes, and a quarterly report generated automatically for the health plan — without losing clinical rigor. Fully LGPD-compliant.",
+      "methods": [
+        "CREFITO-standard structured anamnesis, exportable to PDF",
+        "Audio evolution with AI transcription and organization",
+        "Automatic quarterly report cross-referencing evolutions and goals",
+        "Built with Next.js + Drizzle, focused on LGPD and security"
+      ],
+      "benefits": [
+        "Quarterly report: from 2-3 hours to ~20 minutes",
+        "Session evolution: from 10 minutes to ~2",
+        "Complete records in one place — no Word, notebook, or WhatsApp",
+        "Encrypted data, on servers in Brazil"
+      ],
+      "results": [
+        "Own SaaS in production, from concept to deploy",
+        "Free, Student, and Pro plans live",
+        "Working AI flow (audio → evolution → report)"
+      ]
+    },
+    "lumia": {
+      "title": "Lumia Acessórios",
+      "tagline": "E-commerce · Semi-fine jewelry",
+      "description": "Semi-fine jewelry store on Nuvemshop, with a category-based catalog and a mobile-first buying journey. Theme customization, product showcasing, and sales SEO.",
+      "methods": [
+        "Theme customization and category catalog on Nuvemshop",
+        "Mobile-first layout oriented to purchase",
+        "Performance and image optimization",
+        "Technical SEO for products"
+      ],
+      "benefits": [
+        "Presentation that highlights each piece",
+        "Fast, smooth checkout on mobile",
+        "Better organic visibility",
+        "Ready base for traffic campaigns"
+      ],
+      "results": [
+        "Store live, in production",
+        "Browsable, responsive catalog"
+      ]
+    },
+    "bassani": {
+      "title": "Bassani Filmmaker",
+      "tagline": "Landing page · Photo & video",
+      "description": "Landing page for a photographer and filmmaker, focused on showcasing the visual portfolio and converting to contact. Clean visuals, scroll rhythm, and fast loading.",
+      "methods": [
+        "Structure oriented to a visual portfolio",
+        "Animations and scroll rhythm",
+        "Light, responsive design",
+        "Clear contact CTA"
+      ],
+      "benefits": [
+        "Full spotlight on the visual work",
+        "Smooth experience on any screen",
+        "Fast loading",
+        "Short path to contact"
+      ],
+      "results": [
+        "Landing live, in production",
+        "Professional portfolio presentation"
+      ]
+    },
+    "cassinovegas": {
+      "title": "Cassino Vegas",
+      "tagline": "iGaming platform · Online casino",
+      "description": "Online casino (iGaming) platform with a game catalog, user area, and real-time operations. Focused on performance and a smooth experience under load.",
+      "methods": [
+        "Highly interactive front-end",
+        "Integration with game providers",
+        "Real-time updates",
+        "User account and wallet flows"
+      ],
+      "benefits": [
+        "Smooth experience during play",
+        "Fast catalog navigation",
+        "Fully responsive interface",
+        "Scalable base for growth"
+      ],
+      "results": [
+        "iGaming platform in production",
+        "Integrated game catalog"
+      ]
+    },
+    "blackpearl": {
+      "title": "Black Pearl Broker",
+      "tagline": "Trading platform · IQ Option style",
+      "description": "IQ Option-style trading platform: real-time charts, trade execution, and an investor area. Live data and an interface built for speed.",
+      "methods": [
+        "Real-time charts and quotes",
+        "Trade flow and investor account",
+        "Interface built for speed",
+        "Live-data components"
+      ],
+      "benefits": [
+        "Real-time market data",
+        "Fast, responsive execution",
+        "Clear experience for the investor",
+        "Architecture ready for volume"
+      ],
+      "results": [
+        "Platform in production",
+        "Real-time trades and quotes"
       ]
     }
   },
+  "experience": {
+    "label": "Track record",
+    "title": "Experience",
+    "current": "Current",
+    "achievements": "Highlights",
+    "stack": "Stack",
+    "jobs": {
+      "smi": {
+        "position": "Technical Lead — IntelliFix",
+        "company": "SMI",
+        "period": "2023 — now",
+        "description": "I lead the technical development of the IntelliFix platform: new features, architecture, and performance. I joined as a junior, became a full-stack mid-level dev in two months, and reached technical lead in under a year, serving large global industrial companies.",
+        "achievements": [
+          "From junior to technical lead in under 1 year",
+          "Technical leadership of the dev team",
+          "Scalable architectures for enterprise clients",
+          "Platform performance optimization",
+          "Mentoring and technical reference for the team"
+        ]
+      },
+      "faciltel": {
+        "position": "Frontend Developer",
+        "company": "Facil.tel",
+        "period": "2023 — 2024",
+        "description": "I joined as the sole front-end dev on a legacy Angular.js system — inconsistent layout, poor performance. After a technical review, I proposed and executed a full refactor to Next.js 14, modernizing the whole front-end architecture.",
+        "achievements": [
+          "Full refactor from Angular.js to Next.js 14",
+          "International expansion: global SIM and eSIM sales",
+          "Sales lift through better UX/UI",
+          "Major gains in performance and scale",
+          "Implemented a consistent design system"
+        ]
+      },
+      "direcao": {
+        "position": "Junior Frontend Developer",
+        "company": "Direção Concursos",
+        "period": "2023",
+        "description": "I built web experiences focused on Next.js and SEO, and occasionally worked on the back-end — which broadened my full-stack view.",
+        "achievements": [
+          "Responsive interfaces with SEO focus",
+          "Landing pages for client acquisition",
+          "Node.js API optimization",
+          "More efficient database queries",
+          "Increased search-engine visibility"
+        ]
+      }
+    }
+  },
+  "about": {
+    "label": "About",
+    "title": "About",
+    "p1": "I'm a full-stack developer. I started coding in 2020 and, at SMI, went from junior to technical lead in under a year — today I drive the development of IntelliFix, an Industry 4.0 platform used by global companies.",
+    "p2": "I like hard problems: real-time data, factory-floor integration, refactoring legacy, command-line tooling. I write from front-end to deploy, and I care about what happens after the code ships — performance, maintenance, and the next dev who'll touch it.",
+    "stackTitle": "Stack & capabilities",
+    "capabilities": {
+      "frontend": {
+        "title": "Front-end",
+        "items": ["React / Next.js", "TypeScript", "Tailwind CSS", "GSAP / Framer Motion"]
+      },
+      "backend": {
+        "title": "Back-end",
+        "items": ["Node.js / NestJS", ".NET", "REST / GraphQL", "WebSockets"]
+      },
+      "data": {
+        "title": "Data",
+        "items": ["PostgreSQL", "TimescaleDB", "MongoDB / Redis", "Prisma"]
+      },
+      "infra": {
+        "title": "Infra & IoT",
+        "items": ["Azure", "Docker / CI-CD", "MQTT", "IIoT / Industry 4.0"]
+      }
+    },
+    "info": {
+      "location": "Location",
+      "locationValue": "Brazil — remote",
+      "role": "Role",
+      "roleValue": "Tech Lead · Full-Stack",
+      "available": "Availability",
+      "availableValue": "Open to new projects"
+    }
+  },
   "contact": {
-    "title": "Contact",
-    "titleHighlight": "Me",
-    "subtitle": "Let's work together?",
-    "bigCta": "Let's talk?",
-    "description": "I'm always open to new opportunities and interesting projects. Get in touch!",
-    "availability": {
-      "title": "Available",
-      "description": "I'm available for new projects and opportunities. Get in touch!"
-    },
-    "methods": {
-      "title": "Send a message",
-      "description": "Prefer another communication method? Choose the option that is most convenient for you."
-    },
-    "footer": {
-      "madeWith": "Made with 💙 by Rian",
-      "rights": "Rian Hermínio. All rights reserved."
+    "label": "Contact",
+    "big": "Let's build something.",
+    "lede": "Got a project, a role, or just an idea? Send me a message — I reply fast.",
+    "email": "rianherminio2002@gmail.com",
+    "social": {
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "email": "Email"
     },
     "form": {
-      "name": {
-        "label": "Name",
-        "placeholder": "Enter your full name"
-      },
-      "email": {
-        "label": "Email",
-        "placeholder": "Enter your best email"
-      },
-      "subject": "Subject",
-      "message": {
-        "label": "Message",
-        "placeholder": "Tell me about your project or idea..."
-      },
-      "send": "Send Message",
+      "name": { "label": "Name", "placeholder": "Your name" },
+      "email": { "label": "Email", "placeholder": "you@email.com" },
+      "message": { "label": "Message", "placeholder": "Tell me about the project or idea..." },
+      "send": "Send message",
       "sending": "Sending...",
-      "success": "Message sent successfully!",
-      "error": "Error sending message. Please try again."
+      "success": "Message sent. I'll get back to you soon.",
+      "error": "Couldn't send. Try again?",
+      "required": "Please fill in all fields."
+    },
+    "footer": {
+      "rights": "Rian Moraes. All rights reserved.",
+      "built": "Built with Next.js"
     }
   },
   "navigation": {
-    "home": "Home",
-    "about": "About",
-    "skills": "Skills",
-    "experience": "Experience",
     "projects": "Projects",
+    "experience": "Experience",
+    "about": "About",
     "contact": "Contact",
     "language": "Language"
   },
   "common": {
     "loading": "Loading...",
     "error": "Error",
-    "retry": "Try Again",
+    "retry": "Try again",
     "previous": "Previous",
     "next": "Next"
   }

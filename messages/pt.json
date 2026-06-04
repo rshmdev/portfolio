@@ -1,412 +1,436 @@
 {
   "hero": {
-    "greeting": "Olá, eu sou",
     "name": "Rian Moraes",
-    "title": "Desenvolvedor Full Stack",
-    "subtitle": "criando experiências digitais inovadoras.",
-    "cta": "Ver Projetos",
-    "contact": "Entrar em Contato"
-  },
-  "about": {
-    "title": "Sobre",
-    "titleHighlight": "Mim",
-    "intro": "Olá, eu sou",
-    "name": "Rian Moraes ",
-    "introDescription": "Desenvolvedor Full Stack apaixonado por criar soluções digitais inovadoras e impactantes.",
-    "description": "Sou um desenvolvedor full stack apaixonado por criar experiências digitais excepcionais. Com expertise em tecnologias modernas, transformo conceitos complexos em soluções elegantes e funcionais.",
-    "expertise": "Especializado em desenvolvimento web moderno, com foco em React, Node.js e arquiteturas escaláveis. Tenho experiência em liderar projetos do conceito à produção.",
-    "journey": "Minha jornada no desenvolvimento começou em 2020, e desde então venho construindo aplicações que fazem a diferença na vida das pessoas e no sucesso dos negócios.",
-    "interests": "Quando não estou codando, gosto de estudar novas tecnologias, contribuir com projetos open source e compartilhar conhecimento com a comunidade dev.",
-    "skills": "Habilidades principais",
-    "values": "Valores profissionais",
-    "info": {
-      "name": "Nome",
-      "nameValue": "Rian Moraes",
-      "location": "Localização",
-      "locationValue": "Brasil",
-      "experience": "Experiência",
-      "experienceValue": "3+ anos",
-      "email": "Email",
-      "emailValue": "rianherminio2002@gmail.com"
-    }
-  },
-  "skills": {
-    "title": "Habilidades",
-    "titleHighlight": "Técnicas",
-    "description": "Tecnologias e ferramentas que domino para criar soluções completas e eficientes.",
-    "area": "Área",
-    "scrollHint": "Scroll para explorar",
-    "categories": {
-      "frontend": "Frontend",
-      "backend": "Backend",
-      "database": "Banco de Dados",
-      "tools": "Ferramentas"
-    },
-    "stats": {
-      "experience": "3+ Anos de Experiência",
-      "projects": "50+ Projetos Concluídos",
-      "technologies": "20+ Tecnologias",
-      "dedication": "100% Dedicação"
-    },
-    "items": {
-      "1": {
-        "name": "Desenvolvimento Frontend",
-        "description": "Especialista em React 18+ e Next.js 14+ para desenvolvimento de aplicações web modernas e performáticas. Domínio completo do ecossistema React incluindo Server Components, hooks avançados, Zustand/Redux para gerenciamento de estado, React Query para cache de dados. Experiência sólida em TypeScript, Tailwind CSS, Framer Motion para animações e desenvolvimento responsivo mobile-first."
-      },
-      "2": {
-        "name": "Desenvolvimento Backend",
-        "description": "Desenvolvedor backend proficiente em Node.js com Express e Fastify, NestJS para arquiteturas enterprise robustas. Experiência sólida com .NET Core/5+ e ASP.NET para aplicações de alta performance. Especializado em APIs RESTful, GraphQL com Apollo Server, autenticação JWT/OAuth2, WebSockets para real-time, e implementação de Clean Architecture e SOLID principles."
-      },
-      "3": {
-        "name": "Bancos de Dados",
-        "description": "Expertise em bancos relacionais MySQL 8+, PostgreSQL 15+ com otimização avançada de queries e índices. Experiência com NoSQL incluindo MongoDB para documentos, Redis para cache e sessões. Proficiente em ORMs como Prisma, TypeORM, Sequelize e Entity Framework. Conhecimento em procedures, triggers, views materializadas e estratégias de backup/recovery."
-      },
-      "4": {
-        "name": "Cloud & DevOps",
-        "description": "Especialista em Microsoft Azure com App Service, Container Apps, Azure Functions e Virtual Machines. Domínio completo de CI/CD usando Azure DevOps Pipelines, GitHub Actions e GitLab CI. Experiência avançada em Docker, Docker Compose, containerização de aplicações e orquestração. Automação de infraestrutura com Terraform e monitoramento com Application Insights."
-      },
-      "5": {
-        "name": "Linguagens de Programação",
-        "description": "Proficiente em JavaScript ES2023+ e TypeScript 5+ para desenvolvimento full-stack moderno com tipagem estática. Experiência sólida com C# 11+ para aplicações .NET enterprise e Python 3.11+ para automação, scripts, análise de dados com Pandas/NumPy. Conhecimento avançado em SQL para manipulação complexa de dados, stored procedures e otimização de performance."
-      },
-      "6": {
-        "name": "Ferramentas & Metodologias",
-        "description": "Expertise em Git com GitFlow, GitHub/GitLab para versionamento colaborativo. Docker para containerização e Kubernetes para orquestração em produção. Proficiente em IDEs VS Code, Visual Studio, WebStorm com debugging avançado. Experiência com Jest, Cypress, Playwright para testes automatizados. Metodologias ágeis Scrum/Kanban e práticas de Clean Code."
-      },
-      "7": {
-        "name": "Arquitetura & Design Patterns",
-        "description": "Especialista em arquiteturas de software incluindo Microserviços, Clean Architecture, Hexagonal Architecture e Domain-Driven Design (DDD). Implementação de design patterns como Repository, Factory, Observer e Dependency Injection. Experiência em Event-Driven Architecture, CQRS, message brokers (RabbitMQ, Apache Kafka) e sistemas distribuídos resilientes."
-      },
-      "8": {
-        "name": "Performance & Segurança",
-        "description": "Foco em otimização de performance com técnicas de caching (Redis, CDN), lazy loading, code splitting e bundle optimization. Implementação de segurança robusta incluindo HTTPS, CORS, rate limiting, sanitização de dados, prevenção contra OWASP Top 10. Experiência com SSL/TLS, autenticação multi-fator e compliance com LGPD/GDPR."
-      }
-    }
-  },
-  "experience": {
-    "title": "Experiência",
-    "titleHighlight": "Profissional",
-    "description": "Minha jornada profissional construindo soluções inovadoras e impactantes.",
-    "current": "Atual",
-    "achievements": "Conquistas",
-    "technologies": "Tecnologias",
-    "positions": {
-      "fullstack": "Desenvolvedor Full Stack",
-      "frontend": "Desenvolvedor Frontend",
-      "backend": "Desenvolvedor Backend"
-    },
-    "companies": {
-      "freelance": "Freelancer",
-      "startup": "Startup Tech",
-      "agency": "Agência Digital"
-    },
-    "descriptions": {
-      "fullstack": "Desenvolvimento de aplicações web completas utilizando React, Node.js e bancos de dados relacionais e não-relacionais.",
-      "frontend": "Criação de interfaces modernas e responsivas com foco na experiência do usuário e performance.",
-      "backend": "Desenvolvimento de APIs RESTful e GraphQL, integração com serviços externos e otimização de performance."
-    },
-    "jobs": {
-      "smi": {
-        "position": "Líder Técnico do Intellifix",
-        "period": "2023 - Presente",
-        "duration": "1+ ano",
-        "description": "Atualmente lidero o desenvolvimento técnico da plataforma Intellifix, sendo responsável pela implementação de novas funcionalidades e otimização da plataforma. Minha trajetória na SMI incluiu três posições: iniciei como Desenvolvedor Júnior focado no desenvolvimento da plataforma, fui promovido a Desenvolvedor Pleno Full Stack após dois meses, ampliando minha atuação para projetos de grandes empresas globais do setor industrial.",
-        "achievements": [
-          "Promoção de Júnior para Líder Técnico em menos de 1 ano",
-          "Liderança técnica de equipe de desenvolvimento",
-          "Implementação de arquiteturas escaláveis para clientes enterprise",
-          "Otimização de performance da plataforma Intellifix",
-          "Mentoria e referência técnica para desenvolvedores"
-        ]
-      },
-      "faciltel": {
-        "position": "Desenvolvedor Frontend",
-        "period": "2023 - 2024",
-        "duration": "1 ano",
-        "description": "Iniciei como único desenvolvedor front-end, trabalhando em um sistema legado em Angular.js com layout inconsistente e baixa performance. Após análise técnica detalhada, propus e executei a refatoração completa da aplicação para Next.js 14, modernizando toda a arquitetura frontend.",
-        "achievements": [
-          "Refatoração completa de Angular.js legado para Next.js 14",
-          "Expansão internacional: habilitação de vendas de SIM e eSIMs globalmente",
-          "Aumento significativo nas vendas através de melhor UX/UI",
-          "Melhoria drástica de performance e escalabilidade",
-          "Implementação de design system consistente"
-        ]
-      },
-      "direcao": {
-        "position": "Desenvolvedor Frontend Júnior T2",
-        "period": "Jan 2023 - Set 2023",
-        "duration": "9 meses",
-        "description": "Como desenvolvedor front-end júnior T2, fui responsável por criar experiências web atraentes com foco específico em Next.js e otimização SEO. Ocasionalmente, atuei no desenvolvimento back-end, ampliando minha experiência full-stack.",
-        "achievements": [
-          "Desenvolvimento de interfaces responsivas com foco em SEO",
-          "Criação de Landing Pages no Webflow para aquisição de clientes",
-          "Otimização de APIs Node.js para melhor performance",
-          "Implementação de consultas otimizadas em banco de dados",
-          "Aumento da visibilidade nos motores de busca"
-        ]
-      }
-    },
-    "cta": {
-      "title": "Interessado em trabalhar comigo?",
-      "description": "Vamos conversar sobre como posso contribuir com seu projeto.",
-      "button": "Entrar em Contato"
-    }
+    "role": "Desenvolvedor Full-Stack · Líder Técnico",
+    "statementA": "Construo software que vai pra produção",
+    "statementB": "e continua de pé.",
+    "lede": "Hoje lidero o IntelliFix, uma plataforma de Indústria 4.0 na SMI. Do front-end ao deploy — passando por IoT, dados em tempo real e ferramentas de linha de comando.",
+    "metaLocation": "Brasil",
+    "metaRole": "Líder Técnico @ SMI",
+    "metaSince": "Programando desde 2020",
+    "available": "Aberto a novos projetos",
+    "ctaWork": "Ver os projetos",
+    "ctaContact": "Falar comigo",
+    "scroll": "Role"
   },
   "projects": {
+    "label": "Trabalho selecionado",
     "title": "Projetos",
-    "titleHighlight": "Portfolio",
-    "description": "Explore meus projetos e veja como transformo ideias em soluções digitais.",
-    "subtitle": "Projetos em Destaque",
-    "scrollHint": "Continue rolando",
-    "pause": "Pausar",
-    "play": "Executar",
-    "github": "Ver no GitHub",
+    "intro": "Uma seleção do que construí — produtos em produção, ferramentas e sistemas reais. Clique para ver os detalhes.",
+    "open": "Ver detalhes",
     "modal": {
-      "technologies": "Tecnologias",
-      "about": "Sobre o Projeto",
-      "methods": "Métodos",
-      "benefits": "Benefícios",
-      "results": "Resultados",
-      "viewDetails": "Ver Detalhes",
-      "viewSite": "Ver Site",
-      "screenshots": "Screenshots",
+      "about": "Sobre",
+      "methods": "Como foi feito",
+      "benefits": "Por que importa",
+      "results": "Resultado",
+      "screenshots": "Telas",
       "github": "Ver no GitHub",
-      "close": "Fechar"
-    },
-    "marianafisio": {
-      "title": "Landing Page de Fisioterapia Domiciliar",
-      "description": "Pagina institucional focada em captacao de pacientes via WhatsApp, com estrutura de conteudo local, provas sociais e SEO tecnico.",
-      "methods": [
-        "Pesquisa de intencao local e mapeamento de palavras-chave de servico.",
-        "Arquitetura de secoes orientada a conversao.",
-        "Copy humanizada com foco em clareza e confianca.",
-        "CTA persistente para contato rapido no WhatsApp.",
-        "FAQ semantico com marcacao estruturada para buscadores."
-      ],
-      "benefits": [
-        "Mais clareza de proposta para o publico local.",
-        "Experiencia mobile otimizada para conversao.",
-        "Carregamento rapido e boa performance tecnica.",
-        "Maior confianca visual com provas sociais.",
-        "Jornada simplificada para contato imediato."
-      ],
-      "results": [
-        "Presenca digital profissional para o servico.",
-        "Maior potencial de leads qualificados.",
-        "Base solida para campanhas de trafego local."
-      ]
+      "viewSite": "Ver site",
+      "close": "Fechar",
+      "stack": "Stack"
     },
     "intellifix": {
       "title": "IntelliFix",
-      "description": "Ferramenta inteligente de análise de código que identifica bugs, sugere melhorias e otimiza performance. Desenvolvida com algoritmos avançados e machine learning para auxiliar desenvolvedores na criação de código mais limpo e eficiente.",
+      "tagline": "Plataforma de Indústria 4.0 · Líder Técnico",
+      "description": "Plataforma industrial que otimiza manutenção e produção com IoT, dados em tempo real e análise preditiva. Como líder técnico, conduzo a arquitetura e o desenvolvimento full-stack do produto — hoje em uso por empresas globais do setor industrial.",
       "methods": [
-        "Análise estática de código com algoritmos avançados",
-        "Integração de machine learning para reconhecimento de padrões",
-        "Suporte multi-linguagem e arquitetura extensível",
-        "Análise em tempo real e sugestões inteligentes"
+        "Liderança técnica e arquitetura do sistema",
+        "Desenvolvimento full-stack da plataforma",
+        "Integração com dispositivos de IoT industrial",
+        "Algoritmos de análise preditiva sobre dados de equipamentos"
       ],
       "benefits": [
-        "Reduz significativamente bugs em código de produção",
-        "Melhora qualidade e manutenibilidade do código",
-        "Acelera processo de desenvolvimento",
-        "Ajuda desenvolvedores a aprender boas práticas"
+        "Reduz custos operacionais com manutenção preditiva",
+        "Aumenta a eficiência e a produtividade da operação",
+        "Entrega insights em tempo real sobre os equipamentos",
+        "Padroniza processos de manutenção entre plantas"
       ],
       "results": [
-        "Ferramenta completa de análise de código",
-        "Sistema avançado de detecção de bugs",
-        "Feedback positivo da comunidade de desenvolvedores",
-        "Integração simples em pipelines CI/CD"
+        "Projeto conduzido do zero como líder técnico",
+        "Solução enterprise em produção",
+        "Transformação digital de processos industriais reais"
       ]
     },
     "gapizer": {
       "title": "Gapizer",
-      "description": "CLI feita em Go para gerar APIs completas em Go a partir de arquivos YML. Acelera significativamente o desenvolvimento ao automatizar a criação de estruturas de API, reduzindo tempo de desenvolvimento e garantindo consistência no código.",
+      "tagline": "CLI em Go · Geração de APIs",
+      "description": "Ferramenta de linha de comando em Go que gera APIs completas a partir de um arquivo YAML: estrutura do projeto, rotas, handlers, middlewares (autenticação e logging), documentação Swagger e mais. Para quem quer agilidade sem abrir mão de padrão.",
       "methods": [
-        "Desenvolvimento em Go para máxima performance",
-        "Parsing de arquivos YML para definição de APIs",
-        "Geração automática de código Go estruturado",
-        "CLI intuitiva com múltiplas opções de configuração"
+        "Desenvolvimento da CLI em Go",
+        "Geração automática de código a partir de YAML",
+        "Implementação de middlewares e documentação",
+        "Publicação no NPM para distribuição"
       ],
       "benefits": [
-        "Acelera drasticamente o desenvolvimento de APIs",
-        "Garante consistência e padrões no código gerado",
-        "Reduz erros humanos na criação de estruturas",
-        "Facilita manutenção e escalabilidade de projetos"
+        "Acelera muito o início de um projeto de API",
+        "Padroniza estrutura e boas práticas",
+        "Gera documentação Swagger automaticamente",
+        "Reduz o setup repetitivo de cada projeto"
       ],
       "results": [
-        "Ferramenta CLI completa e funcional",
-        "Redução de 70% no tempo de criação de APIs",
-        "Código Go limpo e bem estruturado gerado automaticamente",
-        "Adoção crescente pela comunidade de desenvolvedores Go"
+        "500+ downloads na primeira semana",
+        "Projeto open source, criado para estudar Go a fundo",
+        "Demonstração prática de Go e construção de CLIs"
       ]
     },
     "culturaconnect": {
       "title": "Cultura Connect",
-      "description": "Plataforma web completa para conectar artistas e produtores culturais. Desenvolvida com foco na experiência do usuário, oferece ferramentas para criação, divulgação e gestão de eventos culturais, promovendo a cultura local.",
+      "tagline": "Plataforma cultural · Full-stack",
+      "description": "Plataforma para gestão e divulgação de projetos culturais no Brasil. Conecta artistas, produtores, empresas e patrocinadores num ecossistema colaborativo, com ferramentas modernas de gestão cultural.",
       "methods": [
-        "Desenvolvimento full-stack com React e TypeScript",
-        "Backend robusto com Node.js e Prisma ORM",
-        "Autenticação segura e gestão de usuários",
-        "Design responsivo e interface intuitiva"
+        "Desenvolvimento completo da plataforma, do zero",
+        "Arquitetura voltada para gestão cultural",
+        "Interface para diferentes perfis de usuário",
+        "Sistema de conexão entre artistas e patrocinadores"
       ],
       "benefits": [
-        "Conecta artistas e produtores de forma eficiente",
-        "Facilita a divulgação de eventos culturais",
-        "Promove a cultura local e regional",
-        "Interface moderna e fácil de usar"
+        "Aproxima talento e oportunidade",
+        "Facilita a captação para projetos culturais",
+        "Fortalece o ecossistema cultural brasileiro",
+        "Coloca gestão profissional ao alcance do criador"
       ],
       "results": [
-        "Plataforma completa desenvolvida e funcional",
-        "Sistema de autenticação e gestão implementado",
-        "Interface responsiva para todos os dispositivos",
-        "Projeto acadêmico com foco em impacto social"
+        "Projeto desenvolvido inteiramente do zero",
+        "Plataforma completa para gestão de projetos culturais",
+        "Foco em impacto social real"
       ]
     },
     "razaoquest": {
-      "title": "Razão Quest App",
-      "description": "Aplicativo mobile gamificado para estudos de concursos públicos. Desenvolvido em React Native com sistema de ranking, conquistas e progressão. Transforma o aprendizado em uma experiência envolvente e motivadora para concurseiros.",
+      "title": "Razão Quest",
+      "tagline": "App mobile · Gamificação educacional",
+      "description": "App mobile que transforma a rotina escolar em jogo: alunos acumulam moedas e XP cumprindo missões, trocam por produtos na loja interna, e professores recompensam ou penalizam com base no desempenho. Acesso por QR Code.",
       "methods": [
-        "Desenvolvimento mobile com React Native e Expo",
-        "Sistema de gamificação e conquistas",
-        "Backend integrado com Firebase",
-        "Design UX/UI focado em engajamento"
+        "Desenvolvimento mobile com React Native",
+        "Sistema de gamificação com moedas e XP",
+        "Integração com o sistema escolar existente",
+        "Acesso dos alunos via QR Code"
       ],
       "benefits": [
-        "Torna o estudo mais envolvente e divertido",
-        "Sistema de ranking motiva competição saudável",
-        "Acompanha progresso e performance do usuário",
-        "Interface intuitiva e responsiva"
+        "Aumenta o engajamento dos alunos",
+        "Incentiva aprendizado e bons comportamentos",
+        "Dá visibilidade do progresso para a escola",
+        "Torna a experiência educacional mais ativa"
       ],
       "results": [
-        "Aplicativo completo com sistema de gamificação",
-        "Interface moderna e engajante",
-        "Sistema de ranking e conquistas funcionais",
-        "Projeto focado em educação e motivação"
+        "Em produção numa escola com 200+ alunos",
+        "Sistema integrado ao ambiente escolar",
+        "Impacto positivo comprovado no engajamento"
       ]
     },
     "razaoquestadmin": {
       "title": "Razão Quest Admin",
-      "description": "Painel administrativo web para gerenciamento do aplicativo Razão Quest. Desenvolvido em React com interface moderna, permite controle completo de usuários, missões, recompensas e estatísticas em tempo real.",
+      "tagline": "Painel administrativo · RBAC",
+      "description": "Painel onde coordenadores e professores gerenciam toda a plataforma de gamificação: cadastro de missões, definição de produtos e recompensas, controle de estoque, atribuição de bônus e acompanhamento de progresso.",
       "methods": [
-        "Desenvolvimento web com React e TypeScript",
-        "Dashboard administrativo completo",
-        "Integração com API do aplicativo mobile",
-        "Interface responsiva e intuitiva"
+        "Desenvolvimento completo do painel administrativo",
+        "Controle de acesso por papéis (RBAC)",
+        "Interface pensada para a gestão escolar",
+        "Integração total com o app mobile"
       ],
       "benefits": [
-        "Controle total sobre o sistema gamificado",
-        "Visualização de dados e estatísticas em tempo real",
-        "Gestão eficiente de usuários e conteúdo",
-        "Interface administrativa moderna e funcional"
+        "Controle total sobre a experiência de gamificação",
+        "Interface intuitiva para educadores",
+        "Gestão eficiente de recompensas e progresso",
+        "Alinhamento com os objetivos pedagógicos"
       ],
       "results": [
-        "Painel administrativo completo e funcional",
-        "Sistema de gestão integrado ao app mobile",
-        "Dashboard com métricas e relatórios detalhados",
-        "Ferramenta essencial para administração do sistema"
+        "Painel robusto em produção",
+        "Controle de acesso baseado em papéis",
+        "Ferramenta essencial para a gestão da gamificação"
       ]
     },
     "pdrlelo": {
       "title": "PDR & Lelo",
-      "description": "Landing page moderna para empresa de descartáveis no Rio de Janeiro. Desenvolvida com foco em conversão e experiência do usuário, utilizando animações GSAP fluidas e otimizações avançadas de SEO para máxima visibilidade nos mecanismos de busca.",
+      "tagline": "Landing page · Next.js + GSAP",
+      "description": "Landing page focada em conversão para a PDR & Lelo, empresa de descartáveis do Rio de Janeiro. Construída em Next.js com animações em GSAP e SEO técnico para transformar visitantes em clientes.",
       "methods": [
-        "Desenvolvimento com Next.js para performance otimizada",
-        "Animações fluidas e interativas com GSAP",
-        "Otimizações avançadas de SEO e Core Web Vitals",
-        "Design responsivo focado em conversão"
+        "Desenvolvimento da landing em Next.js",
+        "Animações em GSAP para engajamento",
+        "SEO técnico para visibilidade orgânica",
+        "Design e UX orientados a conversão"
       ],
       "benefits": [
-        "Aumenta significativamente a conversão de visitantes",
-        "Melhora posicionamento nos resultados de busca",
-        "Experiência de usuário envolvente e profissional",
-        "Carregamento rápido e performance otimizada"
+        "Aumenta geração de leads e conversões",
+        "Melhora a presença online da marca",
+        "Passa imagem profissional e confiável",
+        "Otimiza a jornada do visitante até o contato"
       ],
       "results": [
-        "Landing page profissional em produção",
-        "Animações GSAP implementadas com sucesso",
-        "Otimizações de SEO aplicadas efetivamente",
-        "Projeto focado em resultados comerciais"
+        "Landing profissional entregue e em produção",
+        "Animações GSAP fluidas elevando a experiência",
+        "SEO técnico aumentando a visibilidade orgânica"
       ]
     },
     "digitalfactory": {
       "title": "Digital Factory",
-      "description": "Sistema completo de fábrica digital com simulação IIoT, monitoramento em tempo real e análise de dados industriais. Desenvolvido com arquitetura distribuída utilizando .NET, React, MQTT e TimescaleDB para processos de Indústria 4.0.",
+      "tagline": "Indústria 4.0 · IIoT · .NET + MQTT",
+      "description": "Sistema de fábrica digital para Indústria 4.0 com simulação IIoT completa, processamento de dados em tempo real e analytics. Arquitetura distribuída com microsserviços em .NET, dashboard em React e TimescaleDB para volumes massivos de dados de sensores.",
       "methods": [
-        "Arquitetura distribuída com .NET 9 e React/TypeScript",
-        "Sistema IIoT com simuladores de 7 linhas de produção",
-        "Comunicação MQTT para dados em tempo real",
-        "TimescaleDB para armazenamento de séries temporais"
+        "Arquitetura de microsserviços com .NET 9",
+        "Dashboard React em tempo real via WebSocket",
+        "Ingestão de dados de sensores via broker MQTT",
+        "Containerização com Docker para escalar"
       ],
       "benefits": [
         "Monitoramento completo de processos industriais",
-        "Análise preditiva e manutenção preventiva",
-        "Dashboards em tempo real com métricas de OEE",
-        "Simulação realística de ambiente industrial"
+        "Manutenção preditiva sobre dados reais",
+        "Arquitetura escalável para múltiplas linhas",
+        "Aderência a padrões de Indústria 4.0"
       ],
       "results": [
-        "Sistema completo de fábrica digital funcional",
-        "7 simuladores IIoT com diferentes tipos de sensores",
-        "API robusta para consulta de dados industriais",
-        "Dashboard moderno com visualização em tempo real"
+        "Fábrica digital com 7 linhas de produção",
+        "Processamento em tempo real de milhares de pontos de sensor",
+        "Dashboard completo com OEE e KPIs",
+        "Demonstração de arquitetura IIoT avançada"
       ]
     },
-    "cta": {
-      "title": "Gostou do que viu?",
-      "description": "Vamos trabalhar juntos no seu próximo projeto!",
-      "button": "Entrar em Contato"
+    "marianafisio": {
+      "title": "Fisioterapia Domiciliar",
+      "tagline": "Landing page · Saúde · SEO local",
+      "description": "Página institucional para captação de pacientes via WhatsApp, com conteúdo local, provas sociais e SEO técnico. Mobile-first e rápida.",
+      "methods": [
+        "Pesquisa de intenção local e palavras-chave de serviço",
+        "Arquitetura de seções orientada à conversão",
+        "Copy humanizada, com foco em clareza e confiança",
+        "CTA persistente para contato rápido no WhatsApp",
+        "FAQ semântico com marcação estruturada"
+      ],
+      "benefits": [
+        "Proposta mais clara para o público local",
+        "Experiência mobile otimizada para conversão",
+        "Carregamento rápido e boa performance",
+        "Mais confiança visual com provas sociais"
+      ],
+      "results": [
+        "Presença digital profissional para o serviço",
+        "Maior potencial de leads qualificados",
+        "Base sólida para campanhas de tráfego local"
+      ]
+    },
+    "lumiris": {
+      "title": "Lumiris",
+      "tagline": "SaaS · Prontuário para Terapeutas Ocupacionais",
+      "description": "SaaS de prontuário para terapeutas ocupacionais. Anamnese estruturada no padrão CREFITO, evolução por áudio que a IA transcreve e organiza, e relatório trimestral gerado automaticamente pro plano de saúde — sem perder o rigor clínico. Tudo com conformidade LGPD.",
+      "methods": [
+        "Anamnese estruturada no padrão CREFITO, exportável em PDF",
+        "Evolução por áudio com transcrição e organização por IA",
+        "Relatório trimestral automático cruzando evoluções e objetivos",
+        "Construído em Next.js + Drizzle, com foco em LGPD e segurança"
+      ],
+      "benefits": [
+        "Relatório trimestral: de 2-3 horas para ~20 minutos",
+        "Evolução da sessão: de 10 minutos para ~2",
+        "Prontuário completo num lugar só — sem Word, caderno e WhatsApp",
+        "Dados criptografados, em servidores no Brasil"
+      ],
+      "results": [
+        "SaaS próprio em produção, do conceito ao deploy",
+        "Planos Free, Estudante e Profissional no ar",
+        "Fluxo de IA (áudio → evolução → relatório) funcional"
+      ]
+    },
+    "lumia": {
+      "title": "Lumia Acessórios",
+      "tagline": "E-commerce · Semi joias",
+      "description": "Loja de semi joias na Nuvemshop, com catálogo por categorias e jornada de compra pensada pra mobile. Customização de tema, valorização do produto e SEO de venda.",
+      "methods": [
+        "Customização de tema e catálogo por categorias na Nuvemshop",
+        "Layout mobile-first orientado à compra",
+        "Otimização de performance e imagens",
+        "SEO técnico voltado a produtos"
+      ],
+      "benefits": [
+        "Apresentação que valoriza cada peça",
+        "Compra rápida e fluida no celular",
+        "Mais visibilidade orgânica",
+        "Base pronta para campanhas de tráfego"
+      ],
+      "results": [
+        "Loja no ar, em produção",
+        "Catálogo navegável e responsivo"
+      ]
+    },
+    "bassani": {
+      "title": "Bassani Filmmaker",
+      "tagline": "Landing page · Fotografia & vídeo",
+      "description": "Landing page para uma fotógrafa e filmmaker, focada em mostrar o portfólio visual e converter em contato. Visual limpo, ritmo de scroll e carregamento rápido.",
+      "methods": [
+        "Estrutura voltada para portfólio visual",
+        "Animações e ritmo de scroll",
+        "Design responsivo e leve",
+        "CTA claro para contato"
+      ],
+      "benefits": [
+        "Destaque total para o trabalho visual",
+        "Experiência fluida em qualquer tela",
+        "Carregamento rápido",
+        "Caminho curto até o contato"
+      ],
+      "results": [
+        "Landing no ar, em produção",
+        "Apresentação profissional do portfólio"
+      ]
+    },
+    "cassinovegas": {
+      "title": "Cassino Vegas",
+      "tagline": "Plataforma iGaming · Cassino online",
+      "description": "Plataforma de cassino online (iGaming) com catálogo de jogos, área do usuário e operações em tempo real. Foco em performance e experiência fluida sob carga.",
+      "methods": [
+        "Front-end de alta interatividade",
+        "Integração com provedores de jogos",
+        "Atualizações em tempo real",
+        "Fluxos de conta e carteira do usuário"
+      ],
+      "benefits": [
+        "Experiência fluida durante o jogo",
+        "Navegação rápida pelo catálogo",
+        "Interface totalmente responsiva",
+        "Base escalável para crescimento"
+      ],
+      "results": [
+        "Plataforma iGaming em produção",
+        "Catálogo de jogos integrado"
+      ]
+    },
+    "blackpearl": {
+      "title": "Black Pearl Broker",
+      "tagline": "Plataforma de trading · Estilo IQ Option",
+      "description": "Plataforma de trading no estilo IQ Option: gráficos em tempo real, execução de operações e área do investidor. Dados ao vivo e interface focada em velocidade.",
+      "methods": [
+        "Gráficos e cotações em tempo real",
+        "Fluxo de operações e conta do investidor",
+        "Interface focada em velocidade",
+        "Componentes de dados ao vivo"
+      ],
+      "benefits": [
+        "Dados de mercado em tempo real",
+        "Execução rápida e responsiva",
+        "Experiência clara para o investidor",
+        "Arquitetura preparada para volume"
+      ],
+      "results": [
+        "Plataforma em produção",
+        "Operações e cotações em tempo real"
+      ]
+    }
+  },
+  "experience": {
+    "label": "Trajetória",
+    "title": "Experiência",
+    "current": "Atual",
+    "achievements": "Destaques",
+    "stack": "Stack",
+    "jobs": {
+      "smi": {
+        "position": "Líder Técnico — IntelliFix",
+        "company": "SMI",
+        "period": "2023 — agora",
+        "description": "Lidero o desenvolvimento técnico da plataforma IntelliFix: novas funcionalidades, arquitetura e performance. Entrei como júnior, virei pleno full-stack em dois meses e cheguei a líder técnico em menos de um ano, atendendo grandes empresas globais do setor industrial.",
+        "achievements": [
+          "De júnior a líder técnico em menos de 1 ano",
+          "Liderança técnica do time de desenvolvimento",
+          "Arquiteturas escaláveis para clientes enterprise",
+          "Otimização de performance da plataforma",
+          "Mentoria e referência técnica do time"
+        ]
+      },
+      "faciltel": {
+        "position": "Desenvolvedor Frontend",
+        "company": "Facil.tel",
+        "period": "2023 — 2024",
+        "description": "Entrei como único front-end, sobre um sistema legado em Angular.js — layout inconsistente e baixa performance. Depois de uma análise técnica, propus e executei a refatoração completa para Next.js 14, modernizando toda a arquitetura de front.",
+        "achievements": [
+          "Refatoração completa de Angular.js para Next.js 14",
+          "Expansão internacional: venda de SIM e eSIM global",
+          "Aumento de vendas com melhor UX/UI",
+          "Ganho expressivo de performance e escala",
+          "Implementação de um design system consistente"
+        ]
+      },
+      "direcao": {
+        "position": "Desenvolvedor Frontend Jr.",
+        "company": "Direção Concursos",
+        "period": "2023",
+        "description": "Criei experiências web com foco em Next.js e SEO, e ocasionalmente atuei no back-end — o que ampliou minha visão full-stack.",
+        "achievements": [
+          "Interfaces responsivas com foco em SEO",
+          "Landing pages para aquisição de clientes",
+          "Otimização de APIs em Node.js",
+          "Consultas de banco mais eficientes",
+          "Mais visibilidade nos motores de busca"
+        ]
+      }
+    }
+  },
+  "about": {
+    "label": "Sobre",
+    "title": "Sobre",
+    "p1": "Sou desenvolvedor full-stack. Comecei a programar em 2020 e, na SMI, fui de júnior a líder técnico em menos de um ano — hoje conduzo o desenvolvimento do IntelliFix, uma plataforma de Indústria 4.0 usada por empresas globais.",
+    "p2": "Gosto de problema difícil: dado em tempo real, integração com chão de fábrica, refatorar legado, ferramenta de linha de comando. Escrevo do front-end ao deploy e me importo com o que vem depois que o código sobe — performance, manutenção e o próximo dev que vai mexer nele.",
+    "stackTitle": "Stack & capacidades",
+    "capabilities": {
+      "frontend": {
+        "title": "Front-end",
+        "items": ["React / Next.js", "TypeScript", "Tailwind CSS", "GSAP / Framer Motion"]
+      },
+      "backend": {
+        "title": "Back-end",
+        "items": ["Node.js / NestJS", ".NET", "REST / GraphQL", "WebSockets"]
+      },
+      "data": {
+        "title": "Dados",
+        "items": ["PostgreSQL", "TimescaleDB", "MongoDB / Redis", "Prisma"]
+      },
+      "infra": {
+        "title": "Infra & IoT",
+        "items": ["Azure", "Docker / CI-CD", "MQTT", "IIoT / Indústria 4.0"]
+      }
+    },
+    "info": {
+      "location": "Localização",
+      "locationValue": "Brasil — remoto",
+      "role": "Função",
+      "roleValue": "Líder Técnico · Full-Stack",
+      "available": "Disponibilidade",
+      "availableValue": "Aberto a novos projetos"
     }
   },
   "contact": {
-    "title": "Contato",
-    "titleHighlight": "Comigo",
-    "subtitle": "Vamos trabalhar juntos?",
-    "bigCta": "Vamos conversar?",
-    "description": "Estou sempre aberto a novas oportunidades e projetos interessantes. Entre em contato!",
-    "availability": {
-      "title": "Disponível",
-      "description": "Estou disponível para novos projetos e oportunidades. Entre em contato!"
-    },
-    "methods": {
-      "title": "Envie uma mensagem",
-      "description": "Prefere outro meio de comunicação? Escolha a opção que for mais conveniente para você."
-    },
-    "footer": {
-      "madeWith": "Feito com 💙 por Rian",
-      "rights": "Rian Hermínio. Todos os direitos reservados."
+    "label": "Contato",
+    "big": "Vamos construir algo.",
+    "lede": "Tem um projeto, uma vaga ou só uma ideia? Me manda uma mensagem — respondo rápido.",
+    "email": "rianherminio2002@gmail.com",
+    "social": {
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "email": "Email"
     },
     "form": {
-      "name": {
-        "label": "Nome",
-        "placeholder": "Digite seu nome completo"
-      },
-      "email": {
-        "label": "Email",
-        "placeholder": "Digite seu melhor email"
-      },
-      "subject": "Assunto",
-      "message": {
-        "label": "Mensagem",
-        "placeholder": "Conte-me sobre seu projeto ou ideia..."
-      },
-      "send": "Enviar Mensagem",
+      "name": { "label": "Nome", "placeholder": "Seu nome" },
+      "email": { "label": "Email", "placeholder": "seu@email.com" },
+      "message": { "label": "Mensagem", "placeholder": "Me conta sobre o projeto ou a ideia..." },
+      "send": "Enviar mensagem",
       "sending": "Enviando...",
-      "success": "Mensagem enviada com sucesso!",
-      "error": "Erro ao enviar mensagem. Tente novamente."
+      "success": "Mensagem enviada. Te respondo em breve.",
+      "error": "Erro ao enviar. Tenta de novo?",
+      "required": "Preenche todos os campos, por favor."
+    },
+    "footer": {
+      "rights": "Rian Moraes. Todos os direitos reservados.",
+      "built": "Construído com Next.js"
     }
   },
   "navigation": {
-    "home": "Início",
-    "about": "Sobre",
-    "skills": "Habilidades",
-    "experience": "Experiência",
     "projects": "Projetos",
+    "experience": "Experiência",
+    "about": "Sobre",
     "contact": "Contato",
     "language": "Idioma"
   },
   "common": {
     "loading": "Carregando...",
     "error": "Erro",
-    "retry": "Tentar Novamente",
+    "retry": "Tentar de novo",
     "previous": "Anterior",
     "next": "Próximo"
   }

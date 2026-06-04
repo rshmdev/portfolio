@@ -1,21 +1,34 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Fraunces, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import CustomCursor from "@/components/custom-cursor";
 import FloatHeader from "@/components/float-header";
-import "react-vertical-timeline-component/style.min.css";
 import { NextIntlClientProvider } from "next-intl";
-import { 
-  generatePersonSchema, 
-  generateWebsiteSchema, 
+import {
+  generatePersonSchema,
+  generateWebsiteSchema,
   generateSoftwareApplicationSchema,
-  generateOrganizationSchema 
+  generateOrganizationSchema
 } from "@/lib/structured-data";
 
-const poppins = Poppins({
+const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-fraunces",
+  axes: ["opsz", "SOFT"],
+});
+
+const hanken = Hanken_Grotesk({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-hanken",
+  weight: ["400", "500", "600", "700"],
+});
+
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-jetbrains",
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -25,7 +38,7 @@ export const metadata: Metadata = {
     template: "%s | Rian Moraes - Desenvolvedor Full Stack",
   },
   description:
-    "🚀 Rian Moraes - Desenvolvedor Full Stack Sênior com +5 anos de experiência. Especialista em React, Next.js, Node.js, TypeScript, .NET, Go, Azure. Líder técnico na SMI desenvolvendo Intellifix (Industry 4.0). Criador do Gapizer CLI, Digital Factory IIoT, sistemas educacionais gamificados e landing pages otimizadas. Portfolio profissional com projetos reais em industrial IoT, ferramentas de desenvolvimento, educação e e-commerce.",
+    "Rian Moraes — Desenvolvedor Full Stack e Líder Técnico. Especialista em React, Next.js, Node.js, TypeScript, .NET, Go e Azure. Líder técnico do Intellifix (Indústria 4.0) na SMI. Criador do Gapizer (CLI em Go), Digital Factory IIoT, apps educacionais gamificados e landing pages de alta performance. Portfólio com projetos reais em IoT industrial, ferramentas de desenvolvimento, educação e web.",
   keywords: [
     // Nome e marca pessoal
     "Rian Moraes",
@@ -187,9 +200,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Rian Moraes - Desenvolvedor Full Stack Sênior | React, Next.js, Node.js, TypeScript",
+      "Rian Moraes - Desenvolvedor Full Stack e Líder Técnico | React, Next.js, Node.js, TypeScript",
     description:
-      "🚀 Desenvolvedor Full Stack com +5 anos de experiência. Especialista em React, Next.js, Node.js, TypeScript, .NET, Azure. Criando soluções web inovadoras e sistemas enterprise. Veja meu portfolio com projetos reais em Industry 4.0, IIoT, educação e e-commerce!",
+      "Desenvolvedor Full Stack e Líder Técnico. Especialista em React, Next.js, Node.js, TypeScript, .NET e Azure. Projetos reais em Indústria 4.0, IIoT, ferramentas dev e web.",
     url: "https://rianmoraes.dev",
     siteName: "Rian Moraes - Portfolio Desenvolvedor Full Stack",
     images: [
@@ -208,9 +221,9 @@ export const metadata: Metadata = {
     site: "@rshmdev",
     creator: "@rshmdev",
     title:
-      "Rian Moraes - Desenvolvedor Full Stack Sênior | React, Next.js, Node.js",
+      "Rian Moraes - Desenvolvedor Full Stack e Líder Técnico | React, Next.js, Node.js",
     description:
-      "🚀 +5 anos criando soluções web inovadoras. Especialista em React, Next.js, Node.js, TypeScript, .NET, Azure. Portfolio com projetos reais!",
+      "Desenvolvedor Full Stack e Líder Técnico. React, Next.js, Node.js, TypeScript, .NET, Azure. Portfólio com projetos reais em Indústria 4.0 e ferramentas dev.",
   },
   robots: {
     index: true,
@@ -231,9 +244,9 @@ export const metadata: Metadata = {
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "black-translucent",
     "mobile-web-app-capable": "yes",
-    "msapplication-TileColor": "#000000",
+    "msapplication-TileColor": "#f1ede2",
     "msapplication-config": "/browserconfig.xml",
-    "theme-color": "#000000",
+    "theme-color": "#f1ede2",
   },
 };
 
@@ -243,7 +256,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={`${fraunces.variable} ${hanken.variable} ${jetbrains.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -260,7 +273,7 @@ export default function RootLayout({
         />
         <meta name="apple-mobile-web-app-title" content="Rian Moraes" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="msapplication-TileColor" content="#0f172a" />
+        <meta name="msapplication-TileColor" content="#f1ede2" />
         <meta
           name="msapplication-TileImage"
           content="/web-app-manifest-192x192.png"
@@ -298,19 +311,10 @@ export default function RootLayout({
         <meta name="format-detection" content="address=no" />
         <meta name="format-detection" content="email=no" />
         <meta name="referrer" content="origin-when-cross-origin" />
-        <meta name="color-scheme" content="dark light" />
-        <meta name="supported-color-schemes" content="dark light" />
-        <meta
-          name="theme-color"
-          content="#0f172a"
-          media="(prefers-color-scheme: dark)"
-        />
-        <meta
-          name="theme-color"
-          content="#ffffff"
-          media="(prefers-color-scheme: light)"
-        />
-        <meta name="msapplication-navbutton-color" content="#0f172a" />
+        <meta name="color-scheme" content="light" />
+        <meta name="supported-color-schemes" content="light" />
+        <meta name="theme-color" content="#f1ede2" />
+        <meta name="msapplication-navbutton-color" content="#f1ede2" />
         <meta
           name="apple-mobile-web-app-status-bar-style"
           content="black-translucent"
@@ -334,10 +338,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={poppins.className}>
+      <body>
         <NextIntlClientProvider>
           <FloatHeader />
-          <CustomCursor />
           {children}
         </NextIntlClientProvider>
       </body>
