@@ -19,7 +19,10 @@ export default function ContactSection() {
 
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
-  const [status, setStatus] = useState<{ type: "success" | "error" | null; msg: string }>({
+  const [status, setStatus] = useState<{
+    type: "success" | "error" | null;
+    msg: string;
+  }>({
     type: null,
     msg: "",
   });
@@ -28,8 +31,9 @@ export default function ContactSection() {
     initEmailJS();
   }, []);
 
-  const change = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const change = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -58,7 +62,10 @@ export default function ContactSection() {
     "w-full bg-transparent border-0 border-b py-3 font-sans text-base focus:outline-none transition-colors";
 
   return (
-    <div className="pt-24 md:pt-36 pb-12" style={{ background: "var(--paper-2)" }}>
+    <div
+      className="pt-24 md:pt-36 pb-12"
+      style={{ background: "var(--paper-2)" }}
+    >
       <div className="shell">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -67,8 +74,14 @@ export default function ContactSection() {
           transition={{ duration: 0.9, ease }}
         >
           <span className="label">{t("label")}</span>
-          <h2 className="display display-xl mt-4 max-w-[14ch] text-balance">{t("big")}</h2>
-          <a href={`mailto:${email}`} className="link display display-md inline-block mt-6" style={{ fontSize: "clamp(1.5rem,4vw,2.5rem)" }}>
+          <h2 className="display display-xl mt-4 max-w-[14ch] text-balance">
+            {t("big")}
+          </h2>
+          <a
+            href={`mailto:${email}`}
+            className="link display display-md inline-block mt-6"
+            style={{ fontSize: "clamp(1.5rem,4vw,2.5rem)" }}
+          >
             {email}
           </a>
           <p className="lede max-w-[42ch] mt-8 text-pretty">{t("lede")}</p>
@@ -86,25 +99,78 @@ export default function ContactSection() {
           >
             <div className="grid sm:grid-cols-2 gap-7">
               <div>
-                <label htmlFor="name" className="label block mb-1">{t("form.name.label")}</label>
-                <input id="name" name="name" value={form.name} onChange={change} placeholder={t("form.name.placeholder")} className={field} style={{ borderColor: "var(--line-strong)", color: "var(--ink)" }} />
+                <label htmlFor="name" className="label block mb-1">
+                  {t("form.name.label")}
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  value={form.name}
+                  onChange={change}
+                  placeholder={t("form.name.placeholder")}
+                  className={field}
+                  style={{
+                    borderColor: "var(--line-strong)",
+                    color: "var(--ink)",
+                  }}
+                />
               </div>
               <div>
-                <label htmlFor="email" className="label block mb-1">{t("form.email.label")}</label>
-                <input id="email" name="email" type="email" value={form.email} onChange={change} placeholder={t("form.email.placeholder")} className={field} style={{ borderColor: "var(--line-strong)", color: "var(--ink)" }} />
+                <label htmlFor="email" className="label block mb-1">
+                  {t("form.email.label")}
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={form.email}
+                  onChange={change}
+                  placeholder={t("form.email.placeholder")}
+                  className={field}
+                  style={{
+                    borderColor: "var(--line-strong)",
+                    color: "var(--ink)",
+                  }}
+                />
               </div>
             </div>
             <div>
-              <label htmlFor="message" className="label block mb-1">{t("form.message.label")}</label>
-              <textarea id="message" name="message" rows={4} value={form.message} onChange={change} placeholder={t("form.message.placeholder")} className={`${field} resize-none`} style={{ borderColor: "var(--line-strong)", color: "var(--ink)" }} />
+              <label htmlFor="message" className="label block mb-1">
+                {t("form.message.label")}
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
+                value={form.message}
+                onChange={change}
+                placeholder={t("form.message.placeholder")}
+                className={`${field} resize-none`}
+                style={{
+                  borderColor: "var(--line-strong)",
+                  color: "var(--ink)",
+                }}
+              />
             </div>
             <div className="flex flex-wrap items-center gap-5">
-              <button type="submit" disabled={submitting} className="btn disabled:opacity-50">
+              <button
+                type="submit"
+                disabled={submitting}
+                className="btn disabled:opacity-50"
+              >
                 {submitting ? t("form.sending") : t("form.send")}
                 {!submitting && <span aria-hidden>→</span>}
               </button>
               {status.type && (
-                <span className="font-mono text-sm" style={{ color: status.type === "success" ? "var(--ink)" : "var(--accent)" }}>
+                <span
+                  className="font-mono text-sm"
+                  style={{
+                    color:
+                      status.type === "success"
+                        ? "var(--ink)"
+                        : "var(--accent)",
+                  }}
+                >
                   {status.msg}
                 </span>
               )}
@@ -129,8 +195,15 @@ export default function ContactSection() {
                     className="group flex items-center justify-between py-3 border-b transition-colors"
                     style={{ borderColor: "var(--line)" }}
                   >
-                    <span className="display" style={{ fontSize: "1.4rem" }}>{t(`social.${s.key}`)}</span>
-                    <span className="text-lg transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[var(--accent)]" aria-hidden>↗</span>
+                    <span className="display" style={{ fontSize: "1.4rem" }}>
+                      {t(`social.${s.key}`)}
+                    </span>
+                    <span
+                      className="text-lg transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[var(--accent)]"
+                      aria-hidden
+                    >
+                      ↗
+                    </span>
                   </a>
                 </li>
               ))}
@@ -139,11 +212,13 @@ export default function ContactSection() {
         </div>
 
         {/* footer */}
-        <footer className="mt-24 md:mt-32 pt-6 flex flex-col sm:flex-row justify-between gap-3" style={{ borderTop: "1px solid var(--line)" }}>
+        <footer
+          className="mt-24 md:mt-32 pt-6 flex flex-col sm:flex-row justify-between gap-3"
+          style={{ borderTop: "1px solid var(--line)" }}
+        >
           <span className="label normal-case tracking-normal">
             © {new Date().getFullYear()} {t("footer.rights")}
-          </span>
-          <span className="label normal-case tracking-normal">{t("footer.built")}</span>
+          </span>{" "}
         </footer>
       </div>
     </div>

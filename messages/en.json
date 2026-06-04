@@ -416,8 +416,7 @@
       "required": "Please fill in all fields."
     },
     "footer": {
-      "rights": "Rian Moraes. All rights reserved.",
-      "built": "Built with Next.js"
+      "rights": "Rian Moraes. All rights reserved."
     }
   },
   "navigation": {

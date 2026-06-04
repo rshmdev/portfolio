@@ -416,9 +416,8 @@
       "required": "Preenche todos os campos, por favor."
     },
     "footer": {
-      "rights": "Rian Moraes. Todos os direitos reservados.",
-      "built": "Construído com Next.js"
-    }
+      "rights": "Rian Moraes. Todos os direitos reservados."
+      }
   },
   "navigation": {
     "projects": "Projetos",
